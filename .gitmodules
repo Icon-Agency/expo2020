@@ -1,0 +1,3 @@
+[submodule "themes/custom/canbs"]
+	path = themes/custom/canbs
+	url = git@github.com:Icon-Agency/canbs.git
