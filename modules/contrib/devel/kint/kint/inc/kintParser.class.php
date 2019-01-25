@@ -493,7 +493,12 @@ abstract class kintParser extends kintVariableData
 				$access = "public";
 			}
 
-			$value = $property->getValue( $variable );
+      $old_handler = set_error_handler(function () use (&$value) {
+        $value = NULL;
+        return TRUE;
+      });
+      $value = $property->getValue($variable);
+      set_error_handler($old_handler);
 
 			$output           = kintParser::factory( $value, self::escape( $name ) );
 			$output->access   = $access;
