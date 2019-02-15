@@ -1,0 +1,85 @@
+#block-portal {
+  margin-left: 40px;
+  display: inline-block;
+  @include media-breakpoint-down(lg) {
+    margin-left: 30px;
+  }
+  @include media-breakpoint-down(md) {
+    margin-left: 20px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-left: 10px;
+  }
+  @include media-breakpoint-down(xs) {
+    display: none;
+  }
+  .portal-menu {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 16;
+    color: color('brand_purple');
+
+    li,
+    ul,
+    ol {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    a {
+      white-space: nowrap;
+    }
+
+    /* top level */
+    > li {
+      > a {
+        padding: $input-btn-padding-y $input-btn-padding-x;
+        height: calc(2.375rem - 2px);
+        border: solid 2px $gray-border;
+        border-radius: $border-radius;
+        display: block;
+        font-size: $font-size-sm;
+        font-weight: 600;
+
+        &:hover, &:active, &:focus {
+          background-color: color('brand_purple');
+          color: $white;
+        }
+
+      }
+    }
+
+    /* closed submenu */
+    li > ul {
+      display: none;
+    }
+
+    /* expanded submenu */
+    li.hover > ul,
+    [aria-expanded="true"] + ul {
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: calc(-5rem - 2px);
+      border: 1px solid red;
+      background-color: blue;
+    }
+
+    /* aria helper */
+    .js-submenu-expand {
+      background-color: yellow;
+      color: black;
+      border: 1px solid black;
+      border-radius: 0;
+      padding: 6px 12px;
+      position: absolute !important;
+      bottom: -2.6em;
+      display: block;
+      z-index: 16;
+      font-size: $font-size-sm;
+      white-space: nowrap;
+    }
+  }
+}

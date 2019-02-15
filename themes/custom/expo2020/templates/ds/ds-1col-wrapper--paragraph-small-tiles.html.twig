@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+
+{% set is_list = field_style['#items'][0].value == 'list' %}
+
+{%
+  set classes = [
+    'style--' ~ field_style['#items'][0].value
+  ]
+%}
+
+<{{ outer_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix', classes) }}>
+
+  {{ title_suffix.contextual_links }}
+
+  <{{ ds_content_wrapper }}{{ ds_content_attributes }}>
+    {{ ds_content }}
+  </{{ ds_content_wrapper }}>
+
+</{{ outer_wrapper }}>

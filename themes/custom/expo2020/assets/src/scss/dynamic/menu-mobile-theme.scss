@@ -1,0 +1,24 @@
+@charset 'utf-8';
+
+// Config
+@import '~@/scss/variables';
+
+
+/**
+ * Just some basic overrides to normal theme.
+ */
+@import '~jquery.mmenu/dist/jquery.mmenu.all.css';
+
+.mm-menu {
+  --mm-color-background: #{$gray-700};
+  --mm-color-background-emphasis: #{$black};
+  --mm-color-background-highlight: #{$gray-900};
+  --mm-color-border: #{$gray-600};
+  --mm-color-text: white;
+  --mm-color-text-dimmed: #{$gray-400};
+  --mm-color-button: #{$gray-300};
+}
+
+.mm-listitem:after {
+  left: 0;
+}

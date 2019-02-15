@@ -1,0 +1,81 @@
+{#
+/**
+ * @file
+ * Display Suite reset template.
+ *
+ * Available variables:
+ * - ds_content: content of the ds_content region
+ */
+#}
+
+{% set vertical = paragraph.getParentEntity().field_pathway_orientation.value == 'vertical' %}
+
+{% set classes = [] %}
+
+{% for x in field_pathway_left_class['#items'] %}
+    {% set classes = classes|merge([x.value]) %}
+
+    {% if x.value matches '/-top-/' or x.value matches '/-bottom-/' %}
+        {% set classes = classes|merge(['left-double']) %}
+    {% else %}
+        {% set classes = classes|merge(['left']) %}
+    {% endif %}
+{% endfor %}
+
+
+{% for x in field_pathway_right_class['#items'] %}
+    {% set classes = classes|merge([x.value]) %}
+
+    {% if x.value matches '/-top-/' or x.value matches '/-bottom-/' %}
+        {% set classes = classes|merge(['right-double']) %}
+    {% else %}
+        {% set classes = classes|merge(['right']) %}
+    {% endif %}
+{% endfor %}
+
+{% set cleaned_classes = [] %}
+
+{% for class in classes %}
+   {% if class not in cleaned_classes %}
+      {% set cleaned_classes = cleaned_classes|merge([class]) %}
+   {% endif %}
+{% endfor %}
+
+
+<div{{ attributes.addClass(cleaned_classes) }}>
+    <div class="wrap">
+        {% if vertical %}
+            <div class="inner">
+                {% if ds_hidden.field_icon[0] %}
+                    {{ ds_hidden.field_icon }}
+                {% else %}
+                    <div class="field field-name-field-icon no-icon">
+                        &nbsp;
+                    </div>
+                {% endif %}
+
+                <div class="text">
+                    {{ ds_hidden.field_wysiwyg }}
+                    {{ ds_hidden.field_link }}
+                </div>
+            </div>
+        {% else %}
+            {% for link in field_link['#items'] %}
+            <a href="{{ link.url }}">
+                {% if ds_hidden.field_icon[0] %}
+                    {{ ds_hidden.field_icon }}
+                {% else %}
+                    <div class="field field-name-field-icon no-icon">
+                        &nbsp;
+                    </div>
+                {% endif %}
+
+                <div class="text">
+                    <div class="a">{{ link.title }}</div>
+                </div>
+            </a>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+

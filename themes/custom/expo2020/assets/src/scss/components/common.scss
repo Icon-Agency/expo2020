@@ -1,0 +1,69 @@
+body {
+  font-family: "Work Sans", sans-serif;
+
+  h1, h2, h3, h4, h5 {
+    font-weight: 600;
+  }
+  h1 {
+    font-size: $h1-font-size;
+  }
+  h2 {
+    font-size: $h2-font-size;
+  }
+  h3 {
+    font-size: $h3-font-size;
+  }
+  h4 {
+    font-size: $h4-font-size;
+  }
+  h5 {
+    font-size: $h5-font-size;
+  }
+}
+
+// Colours
+.colour-primary-orange {
+  color: $primary-orange !important;
+}
+.colour-primary-brown {
+  color: $primary-brown !important;
+}
+.colour-primary-turquoise {
+  color: $primary-turquoise !important;
+}
+.colour-primary-blue {
+  color: $primary-blue !important;
+}
+.colour-black {
+  color: $black !important;
+}
+.colour-white {
+  color: $white !important;
+}
+
+// Buttons
+.btn {
+  padding: .5rem 3rem;
+  font-family: 'Rubik', sans-serif;
+  margin-top: 3rem;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+.btn-white {
+  background-color: $white;
+  border-color: $white;
+  color: $primary-blue;
+  &:hover, &:active, &:focus {
+    background-color: $gray-300;
+    border-color: $gray-300;
+    color: $primary-blue;
+  }
+}
+.btn-primary-blue {
+  background-color: $primary-blue;
+  border-color: $primary-blue;
+}
+.btn-primary-orange {
+  background-color: $primary-orange;
+  border-color: $primary-orange;
+}

@@ -1,0 +1,86 @@
+/* footer */
+.extra,
+.footer-section {
+    position: relative;
+    z-index: 100;
+}
+
+.footer {
+    background-color: $gray-900;
+    padding-bottom: 5rem;
+}
+.footer-left {
+    margin-top: 5rem;
+    margin-left: 30%;
+}
+.footer a {
+    color: $white;
+}
+.footer ul {
+    list-style: none;
+    display: inline-flex;
+}
+.footer li {
+    margin: 0 1rem;
+}
+.social-icon {
+    margin-bottom: 5rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
+}
+.social-icon i {
+    margin: 0 .5rem;
+}
+.footer-title {
+    font-family: 'Rubik', sans-serif;
+    color: $primary-turquoise;
+    margin-top: 5rem;
+}
+.footer-text {
+    color: #fff;
+    font-weight: 500;
+    width: 30%;
+}
+.footer-form {
+    width: 30%;
+}
+.footer-form button {
+    background-color: $primary-turquoise;
+    border-color: $primary-turquoise;
+    color: $body-color;
+}
+
+/* back to top */
+#to-top {
+    background: #56D6C9;
+    border-radius: 50%;
+    bottom: 5px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    filter: alpha(opacity=60);
+    opacity: .7;
+    height: 55px;
+    padding-top: 13px;
+    position: fixed;
+    right: 5px;
+    text-align: center;
+    width: 55px;
+    z-index: 200;
+}
+
+#to-top:active,
+#to-top:focus,
+#to-top:hover {
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+#to-top:active i::before, #to-top:focus i::before, #to-top:hover i::before {
+    margin-top: 3px;
+    transform: scale(1.6);
+}
+#to-top i::before {
+    margin-top: 4px;
+    transform: scale(1.1);
+    transition: transform 0.3s, margin-top 0.6s;
+}

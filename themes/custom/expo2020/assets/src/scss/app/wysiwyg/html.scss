@@ -1,0 +1,24 @@
+html {
+
+  font-size: $font-size-base;
+
+    @include media-breakpoint-down(md) {
+      font-size: $font-size-base-md;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: $font-size-base-sm;
+    }
+}
+
+
+// article ::selection {
+//   background: color('brand_purple');
+//   color: #fff;
+// }
+// article ::-moz-selection {
+//   background: color('brand_purple');
+//   color: #fff;
+// }
+
+

@@ -1,0 +1,54 @@
+$hamburger-padding-x: 5px;
+$hamburger-padding-y: 5px;
+$hamburger-layer-width: 25px;
+$hamburger-layer-height: 3px;
+$hamburger-layer-spacing: 5px;
+$hamburger-layer-color: #000;
+$hamburger-layer-border-radius: 4px;
+$hamburger-hover-opacity: 0.7;
+$hamburger-hover-transition-duration: 0.15s;
+$hamburger-hover-transition-timing-function: linear;
+
+// To use CSS filters as the hover effect instead of opacity,
+// set $hamburger-hover-use-filter as true and
+// change the value of $hamburger-hover-filter accordingly.
+$hamburger-hover-use-filter: false;
+$hamburger-hover-filter: opacity(50%);
+
+// Types (Remove or comment out what you don’t need)
+$hamburger-types: (
+  spin, spin-r
+);
+
+
+@import "~hamburgers/_sass/hamburgers/hamburgers";
+
+
+@include media-breakpoint-down(md) {
+    #mobile-menu-button {
+      @include media-breakpoint-down(lg) {
+        margin-left: 30px;
+      }
+      @include media-breakpoint-down(md) {
+        margin-left: 20px;
+      }
+      @include media-breakpoint-down(sm) {
+        margin-left: 10px;
+      }
+        display: block !important;
+        padding-top: 0;
+
+        > span {
+            vertical-align: middle;
+        }
+
+        .label {
+            display: inline-block;
+            line-height: 1;
+            margin-right: 5px;
+        }
+    }
+    #block-mainnavigation {
+        display: none;
+    }
+}

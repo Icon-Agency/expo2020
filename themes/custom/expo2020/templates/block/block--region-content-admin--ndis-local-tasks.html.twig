@@ -1,0 +1,14 @@
+{% extends  "block.html.twig" %}
+{% block content %}
+  {% if content %}
+    <nav class="tabs" role="navigation" aria-label="{{ 'Tabs'|t }}">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+    </nav>
+  {% endif %}
+{% endblock %}

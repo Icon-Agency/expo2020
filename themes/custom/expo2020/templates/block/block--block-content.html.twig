@@ -1,0 +1,4 @@
+{% extends  "block.html.twig" %}
+{%
+  set attributes = attributes.addClass('block-block-content--type-' ~ elements.content['#bundle']|clean_class)
+%}

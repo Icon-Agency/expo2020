@@ -1,0 +1,11 @@
+.field-name-field-wysiwyg,
+.field--type-text-with-summary {
+
+    a {
+      border-bottom: 2px solid color('brand_green');
+      &:hover, &:active, &:focus {
+        background-color: color('brand_green');
+        color: $black;
+      }
+    }
+}

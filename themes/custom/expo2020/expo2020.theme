@@ -1,0 +1,293 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+use Drupal\Core\Link;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Block\BlockPluginInterface;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ */
+function expo2020_form_system_theme_settings_alter(&$form, FormStateInterface $form_state)
+{
+  unset($form['affix']);
+  unset($form['fonts']);
+  unset($form['components']['navbar']);
+}
+
+/**
+ * Implements hook_preprocess_html();
+ */
+function expo2020_preprocess_html(&$variables)
+{
+  $exception = \Drupal::requestStack()->getCurrentRequest()->attributes->get('exception');
+  if ($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
+    $variables['attributes']['class'][] = 'error-page';
+  }
+}
+
+/**
+ * Implements hook_preprocess_page();
+ */
+function expo2020_preprocess_page(&$variables) {
+
+  $dev = (getenv('EXPO_THEME_MODE') === 'dev');
+
+  if ($dev) {
+    $libs = ['expo2020/dev-global-styling'];
+  } else {
+    $libs = ['expo2020/global-styling'];
+  }
+
+  foreach ($libs as $lib) {
+    $variables['#attached']['library'][] = $lib;
+  }
+
+  // Junk
+  unset($variables['navbar_attributes']);
+  unset($variables['container']);
+
+  // We shift this inwards to match design requirements
+  if (!empty($variables['content_attributes']['class'])) {
+    $variables['content_attributes']->removeClass('col');
+  }
+
+  $variables['content_main_attributes'] = new Attribute();
+  $variables['content_main_attributes']->addClass('panels', 'main-container');
+
+  // Mobile menus
+  $menus = ["main", "portal"];
+
+  $combined_tree = [];
+  $menu_tree     = \Drupal::menuTree();
+  $parameters    = $menu_tree->getCurrentRouteMenuTreeParameters(trim($menus[0]));
+  $manipulators  = [
+    // Show links to nodes that are accessible for the current user.
+    ['callable' => 'menu.default_tree_manipulators:checkNodeAccess'],
+    // Only show links that are accessible for the current user.
+    ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+    // Use the default sorting of menu links.
+    ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+  ];
+  // Force the entire tree to be build by setting expandParents to an
+  // empty array.
+  $parameters->expandedParents = [];
+  // Iterate over the menus and merge them together.
+  foreach ($menus as $menu_name) {
+    $tree_items       = $menu_tree->load(trim($menu_name), $parameters);
+    $tree_manipulated = $menu_tree->transform($tree_items, $manipulators);
+    $combined_tree    = array_merge($combined_tree, $tree_manipulated);
+  }
+
+  $menu = $menu_tree->build($combined_tree);
+
+  $menu['#theme']     = 'menu__mobile';
+  $menu['#menu_name'] = 'mobile';
+
+  $variables['mobile_menu'] = [
+    '#prefix' => '<nav id="mobile-menu" role="navigation" aria-hidden="true" hidden style="dislay: none">',
+    '#suffix' => '</nav>',
+    '#markup' => \Drupal::service("renderer")->renderRoot($menu),
+  ];
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function expo2020_preprocess_block(&$variables)
+{
+  if ($variables['base_plugin_id'] === 'block_content' && !empty($variables['label'])) {
+    if (isset($variables['content']['block_description'][0][0])) {
+      // Fix up the block title
+      $false_title = $variables['content']['block_description'][0][0]['#markup'];
+      $replaced    = preg_replace('/(<h[0-9]>)(.*?)(<\/h[0-9]>)/i', '$1' . $variables['label'] . '$3', $false_title);
+      // Replace the content
+      $variables['content']['block_description'][0][0]['#markup'] = $replaced;
+      // Hide original
+      $variables['label'] = null;
+    }
+  }
+
+  if ($variables['base_plugin_id'] === 'menu_block' && !empty($variables['elements']['#id'])) {
+    $block = Block::load($variables['elements']['#id']);
+    // Add so we can subtheme the block suggestions on this region
+    $variables['content']['#menu_block_configuration']['region']          = $block->getRegion();
+    $variables['content']['#menu_block_configuration']['top_level_title'] = _expo2020_get_top_menu_title();
+
+  }
+}
+
+/**
+ * Returns the title of the top level menu item for the current node.
+ * @return Link
+ */
+function _expo2020_get_top_menu_title()
+{
+  $result = &drupal_static(__FUNCTION__);
+
+  if (is_null($result)) {
+    $menu_items = _expo2020_get_top_menu_title_for_menu('main');
+
+    if (empty($menu_items)) {
+      $menu_items = _expo2020_get_top_menu_title_for_menu('footer');
+    }
+
+    if (!empty($menu_items)) {
+      $menu_item = reset($menu_items);
+      $url       = $menu_item->link->getUrlObject();
+      $title     = $menu_item->link->getTitle();
+      $result    = Link::fromTextAndUrl($title, $url);
+    } else {
+      $result = [];
+    }
+  }
+
+  return $result;
+}
+
+/**
+ * @param $menu
+ * @return \Drupal\Core\Menu\MenuLinkTreeElement
+ */
+function _expo2020_get_top_menu_title_for_menu($menu)
+{
+  $menu_tree  = Drupal::menuTree();
+  $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu);
+  $parameters->setTopLevelOnly();
+
+  $menu_items = $menu_tree->load('main', $parameters);
+
+  $menu_items = array_filter($menu_items, function ($item) {
+    return $item->inActiveTrail;
+  });
+
+  return $menu_items;
+}
+
+/**
+ * Implements hook_theme_suggestions_block_alter().
+ */
+function expo2020_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
+  $elements = $variables['elements'];
+
+  $region = null;
+
+  if (!empty($elements['#base_plugin_id']) && !empty($elements['#configuration']['region']) && !empty($elements['#configuration']['view_mode'])) {
+    array_unshift($suggestions, 'block__region_' . $elements['#configuration']['region']);
+    $suggestions[] = 'block__region_' . $elements['#configuration']['region'] . '__' . $elements['#base_plugin_id'];
+    $suggestions[] = 'block__region_' . $elements['#configuration']['region'] . '__' . $elements['#base_plugin_id'] . '__' . $elements['#configuration']['view_mode'];
+
+  } elseif (!empty($elements['#id'])) {
+    $block = Block::load($elements['#id']);
+    // Add suggestions
+    array_unshift($suggestions, 'block__region_' . $block->getRegion());
+    $suggestions[] = 'block__region_' . $block->getRegion() . '__' . $elements['#id'];
+  }
+
+  if (!empty($elements['#base_plugin_id'])) {
+    switch ($elements['#base_plugin_id']) {
+      case 'block_content':
+        if ($bundle = $elements['content']['#bundle'] ?? null) {
+          $suggestions[] = 'block__bundle_' . $bundle;
+          $suggestions[] = 'block__bundle_' . $bundle . '__' . $elements['#derivative_plugin_id'];
+        }
+        break;
+    }
+  }
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_theme_suggestions_region_alter().
+ */
+function expo2020_theme_suggestions_region_alter(array &$suggestions, array $variables)
+{
+  if (!empty($variables['elements']['#region'])) {
+    if ($variables['elements']['#region'] === 'sidebar_search') {
+      if ($display_id = \Drupal::routeMatch()->getParameter('display_id')) {
+        $suggestions[] = 'region__' . $variables['elements']['#region'] . '__view_' . $display_id;
+      }
+
+    }
+  }
+
+}
+
+/**
+ * Implements hook_theme_suggestions_field_alter().
+ */
+function expo2020_theme_suggestions_field_alter(array &$suggestions, array $variables)
+{
+  $element = $variables['element'];
+
+  $suggestions[] = 'field__' . $element['#view_mode'];
+  $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#bundle'];
+  $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#field_name'];
+  $suggestions[] = 'field__' . $element['#entity_type'] . '__' . $element['#view_mode'] . '__' . $element['#bundle'];
+  $suggestions[] = 'field__' . $element['#entity_type'] . '__' . $element['#view_mode'] . '__' . $element['#field_name'];
+  $suggestions[] = 'field__' . $element['#entity_type'] . '__' . $element['#view_mode'] . '__' . $element['#field_name'] . '__' . $element['#bundle'];
+
+}
+
+/**
+ * Implements hook_theme_suggestions_menu_alter().
+ */
+function expo2020_theme_suggestions_menu_alter(array &$suggestions, array $variables)
+{
+  if (isset($variables['menu_block_configuration']['region'])) {
+    $region        = $variables['menu_block_configuration']['region'];
+    $suggestions[] = 'menu__' . $variables['menu_name'] . '__' . $region;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_item_list_alter().
+ */
+function expo2020_theme_suggestions_item_list_alter(array &$suggestions, array $variables)
+{
+  if (!empty($variables['attributes']['class'])) {
+    if (in_array('sub-menu--side', $variables['attributes']['class'])) {
+      $suggestions[] = 'item_list__sub_menu__side';
+    }
+    if (in_array('large-numbers', $variables['attributes']['class'])) {
+      $suggestions[] = 'item_list__large_numbers';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_form_element_alter().
+ */
+function expo2020_theme_suggestions_form_element_alter(array &$suggestions, array $variables)
+{
+  if (!empty($variables['element']['#parents'])) {
+    $parents = $variables['element']['#parents'];
+    array_pop($parents);
+
+    if (!empty($parents)) {
+      $suggestions[] = 'form_element__parent__' . implode('__', $parents);
+    }
+
+    if (!empty($variables['element']['#webform_key'])) {
+      $suggestions[] = 'form_element__webform__' . $variables['element']['#webform_key'];
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_form_element_alter().
+ */
+function expo2020_theme_suggestions_datetime_form_alter(array &$suggestions, array $variables)
+{
+  if (!empty($variables['element']['#webform_key'])) {
+    $suggestions[] = 'datetime_form__webform__' . $variables['element']['#webform_key'];
+  }}

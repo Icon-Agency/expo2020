@@ -1,0 +1,17 @@
+{% extends  "block.html.twig" %}
+
+{% if configuration.view_mode and derivative_plugin_id %}
+  {%
+    set attributes = attributes.addClass('block--' ~ derivative_plugin_id ~ '--view-mode-' ~ configuration.view_mode|clean_class)
+  %}
+{% endif %}
+
+{% block content %}
+  <div{{ content_attributes.addClass('content', 'container') }}>
+    <div class="row">
+      <div class="col">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

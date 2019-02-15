@@ -1,0 +1,20 @@
+<svg id="Circle_Left_Orange_Copy_2" data-name="Circle / Left / Orange Copy 2" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #56d6c9;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+        font-size: 21px;
+        font-family: FontAwesome5ProSolid, "Font Awesome 5 Pro";
+      }
+    </style>
+  </defs>
+  <circle id="Oval_Copy_6" data-name="Oval Copy 6" class="cls-1" cx="25" cy="25" r="25"/>
+  <text id="_" data-name="" class="cls-2" transform="translate(16 15)"><tspan x="3.438" y="18"></tspan></text>
+</svg>

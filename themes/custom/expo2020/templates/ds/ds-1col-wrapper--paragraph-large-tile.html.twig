@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column wrapper template.
+ *
+ * Available variables:
+ * - outer_wrapper: outer wrapper element
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: outer wrapper attributes
+ * - ds_content_attributes: attributes for ds_content region
+ * - ds_content: content of ds_content region
+ */
+#}
+
+{% if field_links['#items'] %}
+    {% set first_link = field_links['#items']|slice(0, 1) %}
+    {% set other_links = field_links['#items']|slice(1) %}
+{% endif %}
+
+<{{ outer_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+  {{ title_suffix.contextual_links }}
+
+  <{{ ds_content_wrapper }}{{ ds_content_attributes }}>
+
+    {{ ds_content }}
+
+    <div class="links">
+        {% for link in first_link %}
+            <h3 class="h5">
+                <a href="{{ link.url }}" class="first-link">
+                    {{ link.title }}
+                    <i class="far fa-chevron-right"></i>
+                </a>
+            </h3>
+        {% endfor %}
+
+        {{ ds_hidden.field_subtitle }}
+
+        {% if other_links %}
+            <ul class="other-links">
+            {% for link in other_links %}
+                <li>
+                    <a href="{{ link.url }}">
+                        {{ link.title }}
+                        <i class="far fa-chevron-right"></i>
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+  </{{ ds_content_wrapper }}>
+
+</{{ outer_wrapper }}>

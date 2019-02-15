@@ -1,0 +1,6 @@
+.video-embed-field-provider-youtube {
+    margin-top: $spacer * 3;
+    margin-bottom: $spacer;
+    &:first-child { margin-top: 0; }
+    &:last-child { margin-bottom: 0; }
+}

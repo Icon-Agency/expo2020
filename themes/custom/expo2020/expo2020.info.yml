@@ -1,0 +1,90 @@
+name: Expo2020
+type: theme
+description: 'SASS starter kit for a Bootstrap Barrio SubTheme.'
+# version: VERSION
+core: 8.x
+base theme: bootstrap_barrio
+
+libraries:
+  - expo2020/fonts
+
+ckeditor_stylesheets:
+  - assets/dev/css/editor.css
+
+libraries-override:
+  bootstrap_barrio/global-styling: false
+
+  # The following are used inside twig files...
+  # Nuke them out. We want a clean css base.
+
+  bootstrap_barrio/book-navigation:
+    css:
+      component:
+        css/components/book-navigation.css: false
+
+  bootstrap_barrio/breadcrumb:
+    css:
+      component:
+        css/components/breadcrumb.css: false
+
+  bootstrap_barrio/dropbutton:
+    css:
+      component:
+        css/components/dropbutton.css: false
+
+  bootstrap_barrio/file:
+    css:
+      component:
+        css/components/file.css: false
+
+  bootstrap_barrio/indented:
+    css:
+      component:
+        css/components/indented.css: false
+
+  bootstrap_barrio/links:
+    css:
+      component:
+        css/components/links.css: false
+
+  bootstrap_barrio/node:
+    css:
+      component:
+        css/components/node.css: false
+
+  bootstrap_barrio/progress:
+    css:
+      component:
+        css/components/progress.css: false
+
+  bootstrap_barrio/sidebar-collapse:
+    css:
+      component:
+        css/components/sidebar-collapse.css: false
+
+  bootstrap_barrio/tabs:
+    css:
+      component:
+        css/components/tabs.css: false
+
+  bootstrap_barrio/verticaltabs:
+    css:
+      component:
+        css/components/vertical-tabs.css: false
+
+regions:
+  header_left: 'Header left'
+  header_right: 'Header right'
+  primary_menu: 'Navigation'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  messages: 'Messages'
+  content_top: 'Content top'
+  content_admin: 'Content admin (Tabs etc)'
+  content_search: 'Content search (facets and exposed forms)'
+  content: 'Content'
+  sidebar_search: 'Sidebar search (facets etc)'
+  sidebar_first: 'Sidebar first'
+  content_bottom: 'Content bottom'
+  footer: 'Footer'
+  disabled: 'Disabled'

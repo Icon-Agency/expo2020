@@ -1,0 +1,47 @@
+$field-spacer: $spacer;
+
+.field {
+  margin-bottom: $field-spacer;
+
+  > p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  .paragraph:last-child > .field:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.field__label {
+  font-weight: bold;
+}
+
+.field-label-visually-hidden {
+  @include sr-only;
+}
+
+.field--type-block-field .item-list > ul:last-child {
+  margin-bottom: 0;
+}
+
+.field-label-inline {
+  display: inline-block;
+}
+
+.node--view-mode-full .field-name-node-changed-date {
+  text-align: center;
+  font-family: $font-family-work-sans;
+  font-weight: normal;
+  color: color('brownish-grey');
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-sm;
+  }
+
+}

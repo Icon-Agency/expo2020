@@ -1,0 +1,87 @@
+/**
+ * @file
+ * Styles for Bootstrap Barrio's tables.
+ */
+
+.sticky-header thead th {
+  vertical-align: bottom;
+  border-bottom: (2 * $table-border-width) solid $table-border-color;
+}
+
+.sticky-header th {
+  padding: $table-cell-padding;
+  vertical-align: top;
+  border-top: $table-border-width solid $table-border-color;
+}
+
+/**
+ * @file
+ * Visual styles for table drag.
+ */
+
+tr.drag {
+  background-color: #fffff0;
+}
+
+tr.drag-previous {
+  background-color: #ffd;
+}
+
+body div.tabledrag-changed-warning {
+  margin-bottom: ($spacer / 2);
+}
+
+/**
+ * @file
+ * Table select behavior.
+ *
+ * @see tableselect.js
+ */
+
+tr.selected td {
+  background: #ffc;
+}
+
+td.checkbox,
+th.checkbox {
+  text-align: center;
+}
+
+[dir="rtl"] td.checkbox,
+[dir="rtl"] th.checkbox {
+  /* This is required to win over specificity of [dir="rtl"] td */
+  text-align: center;
+}
+
+/**
+ * @file
+ * Tablesort indicator styles.
+ */
+
+.tablesort {
+  width: 14px;
+  height: 14px;
+  vertical-align: top;
+  margin: 1px 0 0 5px;
+}
+
+.tablesort--asc {
+  background-image: url(~@/../../../../../core/misc/icons/ffffff/twistie-down.svg);
+}
+
+.tablesort--desc {
+  background-image: url(~@/../../../../../core/misc/icons/ffffff/twistie-up.svg);
+}
+
+/**
+ * @file
+ * Table sort indicator.
+ */
+
+th.is-active img {
+  display: inline;
+}
+
+td.is-active {
+  background-color: $gray-300;
+}

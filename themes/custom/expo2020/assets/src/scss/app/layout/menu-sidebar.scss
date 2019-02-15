@@ -1,0 +1,122 @@
+@include media-breakpoint-up(md) {
+    #sidebar_first {
+        padding-left: $grid-gutter-width * 1.5;
+    }
+}
+
+#sidebar_first aside > .block,
+#sidebar_first aside > .sidebar-facets {
+    margin-bottom: $spacer * 2;
+}
+
+#sidebar_first nav.menu--main {
+    border-radius: $border-radius-lg;
+    background-color: color('bg_light_tan');
+    padding: 0 0 4px 0;
+    line-height: 1.31;
+
+    h3 {
+        text-align: center;
+        padding: $spacer*1.5 $spacer;
+        margin: 0;
+        color: color('brand_purple');
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-display-type: none;
+        display: block;
+    }
+
+    li {
+        margin: 0;
+        padding: 0;
+        display: block;
+        position: relative;
+
+        a {
+            display: block;
+            padding: $spacer;
+            padding-right: calc(1.25em + 0.8rem);
+            border-top: 1px solid rgba(123, 116, 107, 0.19);
+
+            &.menu-item--expanded {
+                border-bottom: 1px solid rgba(123, 116, 107, 0.19);
+            }
+        }
+
+        li:first-child > a {
+            border-top: none;
+        }
+    }
+
+
+    ul.nav {
+        font-family: $font-family-work-sans;
+        font-weight: 300;
+        font-size: $font-size-sm;
+        background-color: color('bg_extra_light_tan');
+
+        > li.menu-item--expanded {
+            background-color: rgba(255, 255, 255, 0.75);
+        }
+
+        ul > li > a {
+            padding-left: 0;
+        }
+
+        ul > li {
+            margin-left: 2rem;
+            margin-right: 0;
+
+            li {
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    // expanded menu
+    a.is-active {
+        color: color('brand_purple');
+        font-weight: 600;
+    }
+
+    .svg-inline--fa {
+        position: absolute;
+        right: 0.625rem;
+        top: $spacer + 0.125rem;
+        // border: 1px solid red;
+    }
+}
+
+
+#sidebar_first .sidebar-facets {
+    border-radius: $border-radius-lg;
+    background-color: color('bg_light_tan');
+    padding: 0 0 4px 0;
+    line-height: 1.31;
+
+    h3 {
+        text-align: center;
+        padding: $spacer*1.5 $spacer;
+        margin: 0;
+        color: color('brand_purple');
+    }
+
+    .facets-widget-dropdown {
+        margin-bottom: 0;
+    }
+
+    .sidebar-facets--facets {
+        .block-facets {
+         border-top: 1px solid rgba(123, 116, 107, 0.19);
+
+        font-family: $font-family-work-sans;
+        font-weight: 300;
+        font-size: $font-size-sm;
+        background-color: color('bg_extra_light_tan');
+        padding: $spacer;
+    }
+    }
+}

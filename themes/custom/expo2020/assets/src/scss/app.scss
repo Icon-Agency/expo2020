@@ -1,0 +1,39 @@
+@charset 'utf-8';
+@import './variables';
+
+// WYSIWYG stuff, duplicate into
+@import './editor';
+
+@import '../../../node_modules/slick-carousel/slick/slick.scss';
+
+// Bario required
+@import './components/affix';
+@import './components/common';
+@import './components/details';
+@import './components/form';
+@import './components/image-button';
+@import './components/skip-link';
+@import './components/slick';
+@import './components/table';
+@import './components/user';
+@import './components/vertical-tabs';
+
+
+// Custom styles
+@import './app/layout/home';
+@import './app/layout/containers';
+@import './app/layout/toolbar';
+@import './app/layout/header';
+@import './app/layout/header-search';
+@import './app/layout/menu-main';
+@import './app/layout/menu-sidebar';
+@import './app/layout/menu-portal';
+@import './app/layout/menu-mobile';
+@import './app/layout/menu-quick-menu';
+@import './app/layout/field';
+@import './app/layout/form';
+@import './app/layout/tabs';
+@import './app/layout/footer';
+
+// Elements
+

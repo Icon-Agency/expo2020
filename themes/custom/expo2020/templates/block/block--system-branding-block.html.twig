@@ -1,0 +1,12 @@
+{% extends  "block.html.twig" %}
+{% block content %}
+  <div{{ content_attributes.addClass('content') }}>
+    {% if site_logo or site_name %}
+      <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo">
+        {% if site_logo %}
+          <img src="{{ site_logo }}" alt="{{ site_name }} logo" class="img-fluid" />
+        {% endif %}
+      </a>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,259 @@
+{#
+/**
+ * @file
+ * Bootstrap Barrio's theme implementation to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{# development #}
+{# kint(content) #}
+
+{{ attach_library('expo2020/node') }}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+<ul class="pagination">
+    <li><a class="active" href="#panel-p0"></a></li>
+    <li><a class="" href="#panel-p1"></a></li>
+    <li><a class="" href="#panel-p2"></a></li>
+</ul>
+
+<section class="panel extra" data-section-name="extra">
+    <div id="block-bean-homepage-banner" class="banner">
+        <div class="banner-block-content" id="background">
+            <div class="">
+                <div class="field-collection-container">
+                    <div class="field-collection-view"><h1>Bringing  Australia to the UAE</h1><a href="#" class="btn btn-primary btn-orange-banner">TAKE A TOUR</a>
+                        <div class="img" data-banner-index="" data-img-src="{{ base_path ~ directory }}/assets/src/images/banner_hp1.jpg"></div>
+                    </div>
+                    <div class="field-collection-view"><h1>We’re bringing  Australia  to the UAE</h1><a href="#" class="btn btn-primary btn-orange-banner">OUR VISION</a>
+                        <div class="img" data-banner-index="" data-img-src="{{ base_path ~ directory }}/assets/src/images/banner_hp2.jpg"></div>
+                    </div>
+
+                </div>
+                <div class="spacer"></div>
+                <div class="images"></div>
+                <div class="texts">
+                    <div class="container"></div>
+                </div>
+                <div class="shape">
+                    <div class="container">
+                        <div class="col-sm-6 col-sm-offset-6">
+                            <svg version="1.1" id="Fill_2_Copy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                 y="0px" viewBox="0 0 600 450" width="600"  xml:space="preserve">
+                           <defs>
+                               <linearGradient id="HomeBannerPurpleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                   <stop offset="0%" stop-color="#2E2C29"></stop>
+                                   <stop offset="100%" stop-color="#5b5a57"></stop>
+                               </linearGradient>
+                           </defs>
+                                <polygon points="0,8 30,340 116,450 430,395 560,113" fill="url(#HomeBannerPurpleGradient)">
+                                    <animate to="0,8 30,340 116,450 430,395 560,113"  attributeName="points" dur="3s" fill="freeze" keySplines="0.42 0 0.58 1" calcMode="spline" keyTimes="0;1"></animate>
+                                    <animate to="99,3 0,210 87,401 570,450 475,32"  attributeName="points" dur="3s" fill="freeze" keySplines="0.42 0 0.58 1" calcMode="spline" keyTimes="0;1"></animate>
+                                    <animate to="0,54 37,384 37,383 340,450 600,104"  attributeName="points" dur="3s" fill="freeze" keySplines="0.42 0 0.58 1" calcMode="spline" keyTimes="0;1"></animate>
+                                    <animate to="25,9 52,450 52,450 530,390 545,98"  attributeName="points" dur="3s" fill="freeze" keySplines="0.42 0 0.58 1" calcMode="spline" keyTimes="0;1"></animate>
+                                </polygon>
+                                <!--<polygon points="366.900 326.200, 530.000 0.000, 81.500 0.000, 0.000 122.300, 0.000 367.000, 244.600 326.200, 366.900 326.200" fill="url(#HomeBannerPurpleGradient)">
+                                   &lt;!&ndash;<animate to="366.900 326.200, 530.000 0.000, 81.500 0.000, 0.000 122.300, 0.000 367.000, 244.600 326.200, 366.900 326.200" repeatCount="indefinite" attributeName="points, opacity" dur="10s"></animate>&ndash;&gt;
+
+                                  &lt;!&ndash; <animate to="437.000 308.000, 530.000 0.000, 0.000 0.000, 32.000 155.000, 0.000 367.000, 215.000 367.000, 437.000 308.000"  repeatCount="indefinite" attributeName="points" dur="10s" fill="freeze" ></animate>
+                                   <animate to="434.000 367.000, 530.000 0.000, 81.500 0.000, 0.000 119.000, 0.000 272.000, 149.000 367.000, 434.000 367.000" repeatCount="indefinite" attributeName="points" dur="10s" fill="freeze"></animate>&ndash;&gt;
+                                  &lt;!&ndash; <animate to="205.714 0.000, 102.859 34.286, 0.000 171.429, 102.859 480.000, 480.000 342.857, 480.000 171.429, 308.571 0.000" repeatCount="indefinite" attributeName="points" dur="10s" fill="freeze"></animate>&ndash;&gt;
+                                  &lt;!&ndash; <animate to="366.900 326.200, 530.000 0.000, 81.500 0.000, 0.000 122.300, 0.000 367.000, 244.600 326.200, 366.900 326.200" repeatCount="indefinite" attributeName="points" dur="10s" fill="freeze"></animate>&ndash;&gt;
+                                   &lt;!&ndash;<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 50 50" to="360 50 50" repeatCount="indefinite" dur="5s"></animateTransform>&ndash;&gt;
+
+                                   </polygon>-->
+                        </svg>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+</section>
+
+<section class="panel latest-news" data-section-name="news">
+    <div>&nbsp;</div>
+    <div class="container news-section">
+        <h2 class="news-title">Latest News</h2>
+        <div class="row">
+            <div class="news col-md-4 pb-5 pt-5">
+                <img src="{{ base_path ~ directory }}/assets/src/images/news1.png">
+                <p>Duis aute irure dolor in laboris nisi ut aliquip ex ea commodo occaecat</p>
+            </div>
+            <div class="news col-md-4 pb-5 pt-5">
+                <img src="{{ base_path ~ directory }}/assets/src/images/news2.png">
+                <p>Duis aute irure dolor in laboris nisi ut aliquip ex ea commodo occaecat</p>
+            </div>
+            <div class="news col-md-4 pb-5 pt-5">
+                <img src="{{ base_path ~ directory }}/assets/src/images/news1.png">
+                <p>Duis aute irure dolor in laboris nisi ut aliquip ex ea commodo occaecat</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="beforepannel">
+</section>
+
+
+
+{% if content['field_pinned_sliders'][0] %}
+    {{ content['field_pinned_sliders'] }}
+{% endif %}
+
+
+
+
+<section class="panel panel3 footer-section" data-section-name="footer">
+    <div class="partners container-fluid">
+        <div class="container partner-container">
+            <h2>Major Partners</h2>
+            <div class="partner-logos row">
+                <div class="col-md-12 col-sm-2">
+                    {% if content['field_top_5_major_partners'][0] %}
+                        {{ content['field_top_5_major_partners'] }}
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="footer-slide">
+        <div class="slider">
+            <div class="banner"><img class="slider-img" src="{{ base_path ~ directory }}/assets/src/images/slider1.png"><h2 class="accent">The wild beauty of Western Australia</h2><a href="http://www.google.com" target="_blank" class="slider-link">VISIT THE GALLERY</a> </div>
+            <div class="banner"><img class="slider-img" src="{{ base_path ~ directory }}/assets/src/images/slider2.png"><h2 class="accent">An Australian architectural achievement</h2><a href="#" class="slider-link">VISIT THE GALLERY</a> </div>
+        </div>
+    </div>
+    <div class="showcase container">
+        <h2 class="" style="text-align: center;margin: 2rem;">Join us in Dubai – an invitation to showcase your goods and services to the world.</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="#"> <div class="icon1"><img src="{{ base_path ~ directory }}/assets/src/images/icon1.png" ></div><div class="icon-text color-green">WORK WITH US</div></a>
+            </div>
+            <div class="col-md-4">
+                <a href="#"><div class="icon2"><img src="{{ base_path ~ directory }}/assets/src/images/icon2.png" ></div><div class="icon-text color-blue">PARTNER WITH US</div></a>
+            </div>
+            <div class="col-md-4">
+                <a href="#"><div class="icon3"><img src="{{ base_path ~ directory }}/assets/src/images/icon3.png" ></div><div class="icon-text color-orange">BUSINESS PROGRAM</div></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="banner"><div class="map-img" style="background-image: url({{ base_path ~ directory }}/assets/src/images/map.png);"></div></div>
+    <div class="footer container-fluid">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="footer-left">
+                    <ul>
+                        <li><a href="#" >Contact</a></li>
+                        <li><a href="#" >Lost & found</a></li>
+                        <li><a href="#" >Partner login</a></li>
+                        <li><a href="#" >VIP events</a></li>
+                    </ul>
+                    <div class="social-icon">
+                        <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                        <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+                        <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+                    </div>
+                    <div>
+                        <ul>
+                            <li><a href="#">Terms & conditions</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-5 footer-right">
+                <p class="footer-title">NEWSLETTER SIGN UP</p>
+                <p class="footer-text">Weekly updates on what’s happening at the Australian Pavilion.</p>
+                <form class="footer-form">
+                    <div class="input-group">
+                        <input type="email" class="form-control form-control-lg" id="email-input" placeholder="Email address" aria-label="Recipient's username" aria-describedby="">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="button">SIGN UP</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

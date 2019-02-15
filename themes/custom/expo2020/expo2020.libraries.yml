@@ -1,0 +1,30 @@
+fonts:
+  css:
+    component:
+      '//fonts.googleapis.com/css?family=Rubik|Work+Sans:400,600': { type: external }
+
+global-styling:
+  version: VERSION
+  js:
+    assets/dist/js/bootstrap.min.js: {}
+    assets/dist/js/app.js: {}
+  css:
+    component:
+      assets/dist/css/vendors.css: {}
+      assets/dist/css/app.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+dev-global-styling:
+  version: VERSION
+  js:
+    assets/dev/js/bootstrap.min.js: {}
+    assets/dev/js/app.js: {}
+  css:
+    component:
+      assets/dev/css/vendors.css: {}
+      assets/dev/css/app.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

@@ -1,0 +1,47 @@
+.menu--quick-menu-news-and-events {
+
+    background-color: color('bg_extra_light_tan');
+    padding-bottom: 0;
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+
+    nav {
+        padding: $spacer*2 0;
+
+        ul {
+            @include make-row();
+        }
+
+        li {
+            @include make-col-ready();
+            width: unset;
+            flex: 1 1 auto;
+
+
+            // responsive undo
+            // width: auto;
+            // max-width: none; // Reset earlier grid tiers
+            // border: 1px solid pink;
+            a {
+                background-color: color('bg_light_tan');
+                display: block;
+                text-align: center;
+                padding: $spacer $spacer;
+                border-radius: $border-radius;
+                color: color('brand_black');
+
+                &.menu-item--active-trail {
+                    background-color: color('brand_purple');
+                    color: $white;
+                }
+
+                &:hover, &:active, &:focus {
+                    background-color: color('teal');
+                    color: $white;
+                }
+            }
+        }
+    }
+}

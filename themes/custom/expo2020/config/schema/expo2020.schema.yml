@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Bootstrap SASS Subtheme.
+
+expo2020.settings:
+  type: theme_settings
+  label: 'Bootstrap Expo 2020 settings'

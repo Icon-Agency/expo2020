@@ -1,0 +1,65 @@
+blockquote {
+    background-color: color('bg_extra_light_tan');
+    padding: $grid-gutter-width;
+    border-radius: $border-radius-lg;
+    margin: $spacer*4 0;
+
+    @include media-breakpoint-down(sm) {
+        padding: $grid-gutter-width/2;
+    }
+
+    p,ul,ol {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+blockquote:first-child {
+    margin-top: 0;
+}
+
+blockquote:last-child {
+    margin-bottom: 0;
+}
+
+
+
+/**
+ * Add border to tree when displayed within a node
+ */
+.node .toc-tree {
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+        display: block;
+        margin: 0 0 $spacer/2 0;
+    }
+    ol {
+        margin-left: 1rem;
+        margin-bottom: $spacer;
+    }
+  }
+}
+
+.node .toc-menu {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc.toc-responsive {
+    margin: 0;
+    padding: $grid-gutter-width;
+    @include media-breakpoint-down(sm) {
+        padding: $grid-gutter-width/2;
+    }
+    background-color: color('bg_extra_light_tan');
+    border-radius: $border-radius-lg;
+}

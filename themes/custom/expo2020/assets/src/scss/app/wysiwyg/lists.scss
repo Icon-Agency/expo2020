@@ -1,0 +1,91 @@
+.cke_editable,
+.field-name-field-wysiwyg,
+.field--type-text-with-summary {
+
+    ul {
+
+        ul {
+            margin-top: $spacer;
+            margin-left: 1.5rem;
+            padding-left: 0;
+        }
+
+        li {
+            list-style-type: none;
+            position: relative;
+            margin-bottom: $spacer;
+
+            &:before {
+                content: '\2022';      /* Unicode for • character */
+                position: absolute;
+                left: -1.5rem;
+                top: -0.8rem;
+                font-size: 2em;
+                color: color('brownish-grey');
+            }
+        }
+
+
+    }
+
+}
+
+
+ul.ticks-green {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+
+    ul {
+        margin-left: 0;
+        margin-top: $spacer/2;
+    }
+
+    li {
+        list-style-type: none;
+        position: relative;
+        padding-left: 2rem;
+        margin-bottom: $spacer/2;
+
+        &:before {
+            content: unset;
+        }
+
+        // icon inserted by js
+        .svg-inline--fa {
+            position: absolute;
+            top: 0.2rem;
+            left: 0;
+            font-size: $font-size-lg;
+            color: color('mid_green');
+        }
+    }
+}
+
+
+// Something nicer for the admins
+.cke_editable ul.ticks-green {
+    li {
+        &:before {
+
+            overflow: hidden;
+            color: color('mid_green');
+            position: absolute;
+            top: 0;
+            left: 0;
+            line-height: 1;
+            text-align: center;
+            display: block;
+
+            content: '✔';
+            border: 1px solid color('mid_green');
+            border-radius: 50%;
+            padding: 0.2rem;
+            color: color('mid_green');
+            font-size: 0.875em;
+            line-height: 0.875em;
+            width: 0.75em;
+            height: 0.75em;
+        }
+    }
+}

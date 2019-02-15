@@ -1,0 +1,15 @@
+/**
+ * Just some basic overrides to normal theme.
+ */
+.mm-menu {
+  --mm-color-background: #495057;
+  --mm-color-background-emphasis: #000;
+  --mm-color-background-highlight: #212529;
+  --mm-color-border: #6c757d;
+  --mm-color-text: white;
+  --mm-color-text-dimmed: #ced4da;
+  --mm-color-button: #dee2e6; }
+
+.mm-listitem:after {
+  left: 0; }
+

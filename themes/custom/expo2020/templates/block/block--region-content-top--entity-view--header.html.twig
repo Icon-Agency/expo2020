@@ -1,0 +1,23 @@
+{% extends  "block--region-content-top.html.twig" %}
+
+{% if content['#node'].field_header_image[0] %}
+  {% set bg_image = content['#node'].field_header_image[0].entity.field_media_image.entity.uri.value | image_style('medium') %}
+{% else %}
+  {% set bg_image = false %}
+{% endif %}
+
+{% block content %}
+{% if bg_image %}
+  <div class="block--node--background-wrap">
+    <div class="inner" style="background-image: url('{{ bg_image }}');"></div>
+  </div>
+{% endif %}
+
+<div{{ content_attributes.addClass('content', 'container') }}>
+  <div class="row">
+    <div class="{{ bg_image ? 'col-sm-8' : 'col' }}">
+      {{ content }}
+    </div>
+  </div>
+</div>
+{% endblock %}

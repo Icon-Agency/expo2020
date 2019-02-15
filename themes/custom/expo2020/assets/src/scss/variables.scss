@@ -1,0 +1,115 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/mixins';
+
+// Custom colors
+
+$primary-orange:     #FF6519;
+$primary-brown:      #FFA826;
+$primary-turquoise:  #56D6C9;
+$primary-blue:       #0E0E8B;
+
+
+$input-border-color: rgba($primary-brown, 0.19);
+
+$white:    #fff;
+$gray-100: #F0F0F5;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #292A2E;
+$black:    #000;
+
+// Expo colours
+$grey-dark:   #58534F;
+$body-color:  #292A2E;
+
+// End Expo colours
+
+$icon-size-lg: 110px;
+$icon-size-md: 96px;
+$icon-size-sm: 64px;
+$icon-size-xs: 42px;
+
+$gray-border: rgba(106, 40, 117, 0.1);
+$grayer-border: rgba(165, 160, 152, 0.2);
+$black:    #000;
+
+$primary:       $primary-orange;
+$secondary:     $primary-blue;
+$success:       #36843f;
+$info:          $primary-orange;
+$danger:        #dc3545;
+$light:         $gray-100;
+$dark:          $gray-800;
+
+// Random bario requirements
+$primary-light: lighten($primary, 37%);
+$primary-dark: darken($primary, 12%);
+$accent-light: lighten($secondary, 37%);
+$accent-dark: darken($secondary, 12%);
+
+// Comments
+$comment-spacer-x: 1.25em;
+$comment-spacer-y: 1.25em;
+
+$btn-box-shadow: none;
+
+// Links
+$link-color:                inherit;
+$link-decoration:           none;
+$link-hover-color:          $black;
+$link-hover-decoration:     none;
+
+// Crumbs
+$breadcrumb-bg: transparent;
+$breadcrumb-margin-bottom: 0;
+$breadcrumb-border-radius: 0;
+$breadcrumb-padding-y: 0;
+$breadcrumb-padding-x: 0;
+
+// Radius
+$border-radius:               .3rem;
+$border-radius-lg:            .5rem;
+$border-radius-sm:            .2rem;
+
+$breadcrumb-divider-color: $white;
+$breadcrumb-divider: '>';
+
+// Replaced
+$font-family-rubik: 'Rubik', sans-serif;
+$font-family-work-sans: 'Work Sans', sans-serif;
+$font-family-sans-serif: $font-family-rubik;
+
+$font-size-base: 1rem; // 16px
+$font-size-lg:   ($font-size-base * 1.1875); // 19px
+$font-size-sm:   ($font-size-base * .875); // 14px
+$font-size-xs:   ($font-size-base * .75); // 12px
+
+// Font sizes for headers
+$h1-font-size: $font-size-base * 3; // 48px
+$h2-font-size: $font-size-base * 2.5; // 40px
+$h3-font-size: $font-size-base * 1.875; // 30px
+$h4-font-size: $font-size-base * 1.5; // 24px
+$h5-font-size: $font-size-base * 1.125; // 18px
+
+// Font sizes for small
+$font-size-base-md: 0.9375rem; // 15px;
+$h1-font-size-md: $font-size-base-md * 2.35;
+$h2-font-size-md: $font-size-base-md * 1.95;
+$h3-font-size-md: $font-size-base-md * 1.65;
+$h4-font-size-md: $font-size-base-md * 1.25;
+$h5-font-size-md: $font-size-base-md * 1.125;
+
+// Font sizes for small
+$font-size-base-sm: 0.875rem; // 14px;
+$h1-font-size-sm: $font-size-base-sm * 2.2;
+$h2-font-size-sm: $font-size-base-sm * 2;
+$h3-font-size-sm: $font-size-base-sm * 1.65;
+$h4-font-size-sm: $font-size-base-sm * 1.25;
+$h5-font-size-sm: $font-size-base-sm * 1.125;
+
+@import '~bootstrap/scss/variables';
