@@ -13,10 +13,10 @@ Run `npm install`. If it stalls, delete the `node_modules` directory and start o
 
 From the theme directory, run `npm run-script build`
 
-All compiled assets are located at `assets/dist`
+All compiled assets are located at `assets/dist`, which are ignored by git
 
 ### For development...
 1. Add the following line to your local settings file `putenv('EXPO_THEME_MODE=dev');`
 2. From the theme directory, run `npm run-script watch`
 
-All compiled assets are located at `assets/dev`
+All compiled assets are located at `assets/dev`, which are part of git
