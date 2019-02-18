@@ -134,9 +134,7 @@
             {% endif %}
 
             {# Can change between .container and .container-fluid if design required #}
-            <div{{content_main_attributes}}
-
-
+            <div{{content_main_attributes}}>
 
                   {# exposed forms, facets, etc. #}
                   {% if page.content_search %}
@@ -180,30 +178,33 @@
 
 
     <div class="pre-site-footer"><div></div></div>
-  
 
     <footer class="footer container-fluid">
       <a id="to-top" style="display: block;" aria-label="back to top"><i class="fas fa-angle-up fa-2x"></i></a>
-      {% if page.footer %}
-        {% block footer %}
+      {% if page.footer_left or page.footer_right  %}
         <div class="container">
           <div class="row">
-            <div class="col">
-              {{ page.footer }}
-              <div class="social-icon">
-                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
-                <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
-                <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
-                <i class="fas fa-circle"></i>
-              </div>
+            <div class="col-md-8 footer-left-outer-container">
+              {% if page.footer_left %}
+                {% block footer_left %}
+                  {{ page.footer_left }}
+                {% endblock %}
+              {% endif %}
             </div>
+
+            <div class="col-md-4 footer-right-outer-container">
+              {% if page.footer_right %}
+                {% block footer_right %}
+                  {{ page.footer_right }}
+                {% endblock %}
+              {% endif %}
+            </div>
+
           </div>
         </div>
-        {% endblock %}
       {% endif %}
     </footer>
+
   </div>
 </div>
 

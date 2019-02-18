@@ -86,5 +86,6 @@ regions:
   sidebar_search: 'Sidebar search (facets etc)'
   sidebar_first: 'Sidebar first'
   content_bottom: 'Content bottom'
-  footer: 'Footer'
+  footer_left: 'Footer left'
+  footer_right: 'Footer right'
   disabled: 'Disabled'
