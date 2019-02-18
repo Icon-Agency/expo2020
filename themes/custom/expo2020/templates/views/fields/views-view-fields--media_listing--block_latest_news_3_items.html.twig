@@ -33,11 +33,13 @@
 #}
 
 {% if fields.view_node.content %}
-<a href="{{ fields.view_node.content|striptags }}">
+<a href="{{ fields.view_node.content|striptags|replace({'\n':'', '\r':'', ' ':''}) }}">
   {% endif %}
 
-  {% if fields.field_media.content %}
+  {% if fields.field_media.content and '<img' in fields.field_media.content|render  %}
     {{ fields.field_media.content }}
+  {% else %}
+    <img src="{{ base_path ~ directory }}/assets/src/images/news-default.png" alt="news default image">
   {% endif %}
 
   <div class="news-lower-container">
