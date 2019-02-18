@@ -143,26 +143,18 @@
     </div>
 </section>
 
-<section class="panel latest-news" data-section-name="news">
-    <div>&nbsp;</div>
-    <div class="container news-section">
-        <h2 class="news-title">Latest News</h2>
-        <div class="row">
-            <div class="news col-md-4 pb-5 pt-5">
-                <img src="{{ base_path ~ directory }}/assets/src/images/news1.png">
-                <p>Duis aute irure dolor in laboris nisi ut aliquip ex ea commodo occaecat</p>
-            </div>
-            <div class="news col-md-4 pb-5 pt-5">
-                <img src="{{ base_path ~ directory }}/assets/src/images/news2.png">
-                <p>Duis aute irure dolor in laboris nisi ut aliquip ex ea commodo occaecat</p>
-            </div>
-            <div class="news col-md-4 pb-5 pt-5">
-                <img src="{{ base_path ~ directory }}/assets/src/images/news1.png">
-                <p>Duis aute irure dolor in laboris nisi ut aliquip ex ea commodo occaecat</p>
-            </div>
+{% if content['field_latest_3_news'][0] %}
+    <section class="panel latest-news" data-section-name="news">
+        <div>&nbsp;</div>
+        <div class="container news-section">
+            {% if content['field_latest_3_news']['#label_display'] != 'hidden' %}
+                <h2 class="news-title">{{ content['field_latest_3_news']['#title'] }}</h2>
+            {% endif %}
+            {{ content['field_latest_3_news'][0] }}
         </div>
-    </div>
-</section>
+    </section>
+
+{% endif %}
 
 <section class="beforepannel">
 </section>
