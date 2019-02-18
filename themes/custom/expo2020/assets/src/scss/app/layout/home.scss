@@ -66,6 +66,9 @@ h1.accent {
   font-family: 'Rubik', sans-serif;
   font-weight: 500;
   margin-top: .5rem;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 h2.accent {
   color: white;
