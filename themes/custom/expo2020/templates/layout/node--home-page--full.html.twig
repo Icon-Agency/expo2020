@@ -130,16 +130,10 @@
                                    </polygon>-->
                         </svg>
                         </div>
-
                     </div>
-
-
                 </div>
-
             </div>
         </div>
-    </div>
-
     </div>
 </section>
 
@@ -178,17 +172,15 @@
                         {{ content['field_top_5_major_partners'] }}
                     {% endif %}
                 </div>
-
             </div>
         </div>
 
     </div>
-    <div class="footer-slide">
-        <div class="slider">
-            <div class="banner"><img class="slider-img" src="{{ base_path ~ directory }}/assets/src/images/slider1.png"><h2 class="accent">The wild beauty of Western Australia</h2><a href="http://www.google.com" target="_blank" class="slider-link">VISIT THE GALLERY</a> </div>
-            <div class="banner"><img class="slider-img" src="{{ base_path ~ directory }}/assets/src/images/slider2.png"><h2 class="accent">An Australian architectural achievement</h2><a href="#" class="slider-link">VISIT THE GALLERY</a> </div>
-        </div>
-    </div>
+
+    {% if content.field_gallery_listing_slider %}
+        {{ content.field_gallery_listing_slider }}
+    {% endif %}
+
     <div class="showcase container">
         <h2 class="" style="text-align: center;margin: 2rem;">Join us in Dubai – an invitation to showcase your goods and services to the world.</h2>
         <div class="row">
