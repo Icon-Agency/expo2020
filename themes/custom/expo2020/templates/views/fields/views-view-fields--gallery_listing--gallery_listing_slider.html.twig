@@ -32,12 +32,16 @@
  */
 #}
 
-{% if fields.field_youtube_video_plr_slid.content|render|striptags|replace({'\n':'', '\r':'', ' ':''}) == 'On' %}
+{% if fields.field_youtube_video_plr_slid.content|render|striptags|replace({'\n':'', '\r':'', ' ':''}) == 'On' and fields.field_youtube_id.content|render|striptags|replace({'\n':'', '\r':'', ' ':''}) %}
 
+  {{ attach_library('expo2020/modaal') }}
+  <a href="https://www.youtube.com/embed/{{ fields.field_youtube_id.content|render|striptags|replace({'\n':'', '\r':'', ' ':''}) }}" class="modaal-video-trigger">
   {% if fields.field_gallery_media_imgs.content %}
     <div class="slider-img">
-    {{ fields.field_gallery_media_imgs.content }}
+      {{ fields.field_gallery_media_imgs.content }}
     </div>
+    <img class="video-play-icon" src="{{ base_path ~ directory }}/assets/src/images/diamond-play-orange.svg">
+  </a>
   {% endif %}
 
 {% else %}

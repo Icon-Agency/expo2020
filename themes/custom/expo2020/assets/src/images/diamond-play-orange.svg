@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="59.396" height="59.396" viewBox="0 0 59.396 59.396">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff6519;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-size: 20px;
+        font-family: FontAwesome5ProSolid, "Font Awesome 5 Pro";
+      }
+    </style>
+  </defs>
+  <g id="Diamond_Play_Orange" data-name="Diamond / Play Orange" transform="translate(-0.301 -0.302)">
+    <rect id="Rectangle_Copy_4" data-name="Rectangle Copy 4" class="cls-1" width="42" height="42" transform="translate(0.302 30) rotate(-45)"/>
+    <text id="_" data-name="" class="cls-2" transform="translate(22 18)"><tspan x="1.25" y="18"></tspan></text>
+  </g>
+</svg>
