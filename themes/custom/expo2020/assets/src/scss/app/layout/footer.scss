@@ -1,6 +1,6 @@
 /* footer */
 .extra,
-.footer-section {
+.footer {
     position: relative;
     z-index: 100;
 }
@@ -9,12 +9,16 @@
     background-color: $gray-900;
     padding-bottom: 5rem;
 }
-.footer-left {
+.footer-left-outer-container {
     margin-top: 5rem;
-    margin-left: 30%;
 }
 .footer a {
     color: $white;
+    border-bottom: none;
+    padding-right: 1rem;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 .footer ul {
     list-style: none;
@@ -23,32 +27,42 @@
 .footer li {
     margin: 0 1rem;
 }
+#block-socialicons {
+    margin-right: 5rem;
+}
 .social-icon {
-    margin-bottom: 5rem;
-    margin-left: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
     margin-top: 1rem;
+    a:hover {
+        color: $gray-500;
+    }
 }
-.social-icon i {
-    margin: 0 .5rem;
+.footer-right-outer-container {
+    h2 {
+        font-family: 'Rubik', sans-serif;
+        color: $primary-turquoise;
+        margin-top: 6rem;
+        font-size: 1rem;
+        margin-left: 30px;
+    }
+    .webform-submission-form {
+        padding: 0 30px;
+    }
+    #edit-email--description {
+        color: $white;
+        font-size: 1rem;
+    }
+    .form-email {
+        margin-top: 2rem;
+    }
+    .footer-form button {
+        background-color: $primary-turquoise;
+        border-color: $primary-turquoise;
+        color: $body-color;
+    }
 }
-.footer-title {
-    font-family: 'Rubik', sans-serif;
-    color: $primary-turquoise;
-    margin-top: 5rem;
-}
-.footer-text {
-    color: #fff;
-    font-weight: 500;
-    width: 30%;
-}
-.footer-form {
-    width: 30%;
-}
-.footer-form button {
-    background-color: $primary-turquoise;
-    border-color: $primary-turquoise;
-    color: $body-color;
-}
+
 
 /* back to top */
 #to-top {
@@ -61,7 +75,7 @@
     filter: alpha(opacity=60);
     opacity: .7;
     height: 55px;
-    padding-top: 13px;
+    padding: 12px;
     position: fixed;
     right: 5px;
     text-align: center;
