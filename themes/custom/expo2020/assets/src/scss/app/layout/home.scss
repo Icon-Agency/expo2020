@@ -116,6 +116,7 @@ h3 {
 }
 .image-style-gallery-silder {
   margin: auto;
+  object-fit: cover;
 }
 
 
@@ -294,24 +295,45 @@ h3 {
 /* major partners */
 
 /* footer slider */
-
+.footer-section {
+  position: relative;
+  z-index: 100;
+}
 
 /* join us in Dubai */
 .showcase {
   margin-top: 10rem;
   margin-bottom: 15rem;
+  .row {
+    margin-top: 4rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    .col-md-4 {
+      margin: 2rem 0;
+    }
+  }
 }
 .icon1{
   background-color: #208379;
-  border-radius: 50%;
   width: 100px;
   height: 100px;
   margin: auto;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 .icon1 img,
 .icon2 img,
 .icon3 img {
   margin: 1.5rem;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 .icon-text {
   font-family: 'Rubik', sans-serif;
@@ -320,17 +342,25 @@ h3 {
 }
 .icon2{
   background-color: #0E0E8B;
-  border-radius: 50%;
   width: 100px;
   height: 100px;
   margin: auto;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 .icon3{
   background-color: #D14600;
-  border-radius: 50%;
   width: 100px;
   height: 100px;
   margin: auto;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 
@@ -385,12 +415,7 @@ h3 {
   .slick-list {
     margin: 0 3rem;
   }
-  .slick-prev {
-    left: calc(50% - 360px);
-  }
-  .slick-next {
-    right: calc(50% - 330px);
-  }
+
 
   .slide {
     top: 5%;
@@ -428,6 +453,12 @@ h3 {
   .showcase {
     margin-top: 0;
     margin-bottom: 3rem;
+  }
+  .slick-prev {
+    left: calc(50% - 339px);
+  }
+  .slick-next {
+    right: calc(50% - 316px);
   }
 }
 
@@ -570,20 +601,29 @@ h3 {
 .partners {
   background-color: #F0F0F5;
   padding-top: 5rem;
-
+  h2 {
+    text-decoration: underline;
+    text-decoration-color: $gray-400;
+  }
   .partner-logos {
     padding: 3rem 0 10rem 0;
     text-align: center;
 
+    @include media-breakpoint-down(md) {
+      padding: 0;
+    }
     .inline-partner-logo {
       display: inline-block;
-
       img {
         margin: 0 2rem;
-
+        object-fit: contain;
         &:hover, &:active, &:focus {
           opacity: 0.7;
         }
+      }
+
+      @include media-breakpoint-down(md) {
+        margin: 2rem 0;
       }
     }
   }

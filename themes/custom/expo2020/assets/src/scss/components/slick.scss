@@ -145,7 +145,7 @@ $slick-opacity-not-active: 0.25 !default;
   opacity: 1;
 }
 .slick-prev {
-  left: calc(50% - 465px);
+  left: calc(50% - 440px);
   z-index: 10;
 }
 .slick-prev:before, .slick-next:before {
@@ -159,11 +159,11 @@ $slick-opacity-not-active: 0.25 !default;
   content: url('~@/images/arrow-right.svg');
 }
 .slick-next {
-  right: calc(50% - 435px);
+  right: calc(50% - 417px);
   z-index: 10;
 }
 .slick-prev, .slick-next {
-  top: 47%;
+  top: 44%;
 }
 .footer-slide {
   background: linear-gradient(180deg, #F0F0F5 50%, #fff 50%);
