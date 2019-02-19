@@ -1,3 +1,4 @@
+$slick-font-family: "slick" !default;
 $slick-arrow-color: white !default;
 $slick-dot-color: black !default;
 $slick-dot-color-active: $slick-dot-color !default;
@@ -68,7 +69,7 @@ $slick-opacity-not-active: 0.25 !default;
 
 /* Dots */
 
-/*.slick-dotted.slick-slider {
+.slick-dotted.slick-slider {
   margin-bottom: 30px;
 }
 
@@ -111,6 +112,9 @@ $slick-opacity-not-active: 0.25 !default;
         position: absolute;
         top: 0;
         left: 0;
+        content: $slick-dot-character;
+        font-family: $slick-font-family;
+        font-size: 22px;
         width: 20px;
         height: 20px;
         line-height: 20px;
@@ -122,11 +126,11 @@ $slick-opacity-not-active: 0.25 !default;
       }
     }
     &.slick-active button:before {
-      color: $slick-dot-color-active;
-      opacity: $slick-opacity-default;
+      color: $primary-turquoise;
+      opacity: 1;
     }
   }
-}*/
+}
 
 .slick-dots {
   top: 55%;
@@ -141,7 +145,7 @@ $slick-opacity-not-active: 0.25 !default;
   opacity: 1;
 }
 .slick-prev {
-  left: calc(50% - 465px);
+  left: calc(50% - 440px);
   z-index: 10;
 }
 .slick-prev:before, .slick-next:before {
@@ -155,12 +159,14 @@ $slick-opacity-not-active: 0.25 !default;
   content: url('~@/images/arrow-right.svg');
 }
 .slick-next {
-  right: calc(50% - 435px);
+  right: calc(50% - 417px);
   z-index: 10;
 }
 .slick-prev, .slick-next {
-  top: 47%;
+  top: 44%;
 }
 .footer-slide {
   background: linear-gradient(180deg, #F0F0F5 50%, #fff 50%);
+  position: relative;
+  z-index: 200;
 }
