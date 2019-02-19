@@ -49,17 +49,35 @@
     .webform-submission-form {
         padding: 0 30px;
     }
-    #edit-email--description {
+    #edit-newsletter-text {
         color: $white;
         font-size: 1rem;
     }
-    .form-email {
-        margin-top: 2rem;
-    }
-    .footer-form button {
+    .button {
         background-color: $primary-turquoise;
         border-color: $primary-turquoise;
         color: $body-color;
+        border-radius: 0 5px 5px 0;
+        padding: 0 .5rem;
+        margin-top: 0;
+        height: 41px;
+        &:hover {
+            background-color: $primary-brown;
+        }
+    }
+    .InputAddOn {
+        display: flex;
+    }
+    .InputAddOn_field {
+        flex: 1;
+    }
+    .InputAddOn_item {
+        color: #666666;
+        font: inherit;
+        font-weight: normal;
+    }
+    .InputAddOn_field {
+        border-radius: 5px 0 0 5px;
     }
 }
 
