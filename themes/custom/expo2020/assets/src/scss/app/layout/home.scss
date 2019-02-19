@@ -145,9 +145,8 @@ h3 {
       img {
         flex-shrink:0;
         min-width:100%;
-        min-height:220px;
+        height:220px;
         max-width:100%;
-        height:auto;
         object-fit:cover;
       }
     }
@@ -338,15 +337,6 @@ h3 {
 
 /* responsive */
 @media (max-width: 1440px) {
-  .footer-left {
-    margin-left: 10%;
-  }
-  .footer-text {
-    width: 70%;
-  }
-  .footer-form {
-    width: 60%;
-  }
 }
 
 @media (max-width: 1200px) {
@@ -385,15 +375,6 @@ h3 {
   }
   .partner-logo img {
     margin: 0 1rem;
-  }
-  .footer-left {
-    margin-left: 0;
-  }
-  .footer-text {
-    width: 90%;
-  }
-  .footer-form {
-    width: 90%;
   }
 }
 
@@ -522,20 +503,7 @@ h3 {
   .partners {
     padding-top: 2rem;
   }
-  .footer-left ul {
-    padding-left: 0;
-    display: block;
-  }
-  .footer li {
-    margin: .5rem 1rem;
-  }
-  .social-icon {
-    margin-left: .5rem;
-    margin-bottom: 2rem;
-  }
-  .footer-right {
-    margin-left: 1rem;
-  }
+
   .btn-blue,
   .btn-orange {
     font-size: 10px;
@@ -583,9 +551,6 @@ h3 {
   .btn-orange-banner {
     top: 32%;
     font-size: 12px;
-  }
-  .footer li {
-    margin: .5rem;
   }
   .social-icon {
     margin-left: 0;
