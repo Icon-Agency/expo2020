@@ -105,7 +105,7 @@ $slick-opacity-not-active: 0.25 !default;
       &:hover, &:focus {
         outline: none;
         &:before {
-          opacity: $slick-opacity-on-hover;
+          opacity: .8;
         }
       }
       &:before {
@@ -128,6 +128,13 @@ $slick-opacity-not-active: 0.25 !default;
     &.slick-active button:before {
       color: $primary-turquoise;
       opacity: 1;
+    }
+    &.slick-active button {
+      &:hover, &:focus {
+        &:before {
+          opacity: .8;
+        }
+      }
     }
   }
 }

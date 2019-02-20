@@ -49,7 +49,7 @@
 }
 
 h1.accent {
-  color: white;
+  color: $white;
   position: absolute;
   top: 25%;
   left: 23%;
@@ -71,7 +71,7 @@ h1.accent {
   border-radius: 5px;
 }
 h2.accent {
-  color: white;
+  color: $white;
   position: absolute;
   top: 65%;
   left: 40%;
@@ -84,31 +84,25 @@ h2.accent {
   max-width: 100%;
 }
 .slider-link {
-  color: #56D6C9;
+  color: $primary-turquoise;
   position: absolute;
   top: 85%;
   left: 47%;
   width: 20%;
   line-height: 1.5;
   font-family: 'Rubik', sans-serif;
+  &:hover {
+    color: darken($primary-turquoise, 10%);
+  }
 }
 .text {
-  color: white;
+  color: $white;
   position: absolute;
   top: 40%;
   left: 25%;
   width: 50%;
 }
-h3 {
-  background: #fff;
-  color: #3498db;
-  font-size: 36px;
-  line-height: 100px;
-  margin: 10px;
-  padding: 2%;
-  position: relative;
-  text-align: center;
-}
+
 .panel-img {
   margin: auto;
   min-height: 100%;
@@ -226,7 +220,7 @@ h3 {
 
 
 .color-white {
-  color: white;
+  color: $white;
 }
 .color-blue {
   color: #0E0E8B;
@@ -324,6 +318,9 @@ h3 {
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
+  &:hover {
+    opacity: .8;
+  }
 }
 .icon1 img,
 .icon2 img,
@@ -350,6 +347,9 @@ h3 {
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
+  &:hover {
+    opacity: .8;
+  }
 }
 .icon3{
   background-color: #D14600;
@@ -361,6 +361,9 @@ h3 {
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
+  &:hover {
+    opacity: .8;
+  }
 }
 
 
