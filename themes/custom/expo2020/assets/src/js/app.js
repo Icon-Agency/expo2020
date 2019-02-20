@@ -275,3 +275,12 @@ $(window).scroll(function() {
 $("#to-top").click(function () {
   $.scrollify.move(0);
 });
+
+$('#block-expo2020-header-site-search-block .search-trigger').on('click', function () {
+  $('#block-expo2020-header-site-search-block .header-site-search-content-wrapper').addClass('open');
+  $("#block-expo2020-header-site-search-block .header-search-form .form-item input").focus();
+});
+
+$('#block-expo2020-header-site-search-block .header-search-form .form-item input').blur(function () {
+  $('#block-expo2020-header-site-search-block .header-site-search-content-wrapper').removeClass('open');
+});

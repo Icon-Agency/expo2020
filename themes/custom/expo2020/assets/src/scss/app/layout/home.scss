@@ -84,15 +84,16 @@ h2.accent {
   max-width: 100%;
 }
 .slider-link {
-  color: $primary-turquoise;
+  @extend .btn-primary-turquoise;
+  color: $grey-dark;
   position: absolute;
   top: 85%;
-  left: 47%;
-  width: 20%;
+  left: 46.5%;
   line-height: 1.5;
   font-family: 'Rubik', sans-serif;
+  padding: .5rem 1rem;
   &:hover {
-    color: darken($primary-turquoise, 10%);
+    background-color: darken($primary-turquoise, 10%);
   }
 }
 .text {
@@ -309,7 +310,7 @@ h2.accent {
   }
 }
 .icon1{
-  background-color: #208379;
+  background-color: $icon-green;
   width: 100px;
   height: 100px;
   margin: auto;
@@ -319,7 +320,7 @@ h2.accent {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
   &:hover {
-    opacity: .8;
+    filter: brightness(110%);
   }
 }
 .icon1 img,
@@ -338,7 +339,7 @@ h2.accent {
   text-align: center;
 }
 .icon2{
-  background-color: #0E0E8B;
+  background-color: $icon-blue;
   width: 100px;
   height: 100px;
   margin: auto;
@@ -348,11 +349,11 @@ h2.accent {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
   &:hover {
-    opacity: .8;
+    filter: brightness(110%);
   }
 }
 .icon3{
-  background-color: #D14600;
+  background-color: $icon-orange;
   width: 100px;
   height: 100px;
   margin: auto;
@@ -362,7 +363,7 @@ h2.accent {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
   &:hover {
-    opacity: .8;
+    filter: brightness(110%);
   }
 }
 
@@ -370,6 +371,11 @@ h2.accent {
 
 /* responsive */
 @media (max-width: 1440px) {
+  h2.accent {
+    font-size: 32px;
+    left: 35%;
+    width: 30%;
+  }
 }
 
 @media (max-width: 1200px) {

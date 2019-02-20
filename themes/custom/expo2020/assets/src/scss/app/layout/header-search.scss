@@ -1,4 +1,4 @@
-#block-search-site-header {
+/*#block-search-site-header {
 
   max-width: 145px;
 
@@ -31,4 +31,106 @@
   .form-control {
     height: calc(2.125rem + 2px);
   }
+}*/
+#block-expo2020-header-site-search-block {
+  .header-site-search-content-wrapper {
+    z-index: 2;
+    height: 48px;
+    width: 48px;
+    background-color: white;
+    margin: 6px 0;
+    position: relative;
+    &.open{
+      .input-wrap{
+        width: 800px;
+        transition-delay: 0.25s;
+        background-color: $gray-100;
+        margin: -1rem -2rem;
+      }
+
+      button{
+        transition-delay: 0.25s;
+        background-color: transparent;
+        svg{
+          g{
+            transition-delay: 0.2s;
+            fill: $primary-blue;
+            border: 1px solid $gray-200;
+          }
+        }
+      }
+      .search-trigger{
+        transition-delay: 0.1s;
+        opacity: 0;
+        z-index: -1;
+      }
+    }
+    button,
+    .search-trigger{
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 58px;
+      width: 58px;
+      text-align: center;
+      padding: 10px;
+      border: 0 none;
+      box-shadow: none;
+      outline: 0 none;
+      cursor: pointer;
+      z-index: 2;
+      // transition: all 0.2s ease 0.3s;
+      svg{
+        g{
+          transition-delay: 0.2s;
+        }
+      }
+    }
+
+    button{
+      background-color: transparent;
+      margin: -1rem -2rem;
+      svg{
+        g{
+          fill: $primary-blue;
+        }
+      }
+    }
+
+    .search-trigger{
+      transition: all 0.3s ease 0.48s;
+      background-color: white;
+      border: 1px solid $gray-200;
+      margin: -1rem -2rem;
+
+      svg{
+        g{
+          fill: $primary-blue;
+        }
+      }
+    }
+
+    .input-wrap{
+      transition: width 0.2s ease 0.3s;
+      height: 58px;
+      width: 58px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      padding: 10px 20px;
+      margin: -1rem -2rem;
+      input[type]{
+        width: 100%;
+        height: calc(100% - 2px);
+        background-color: transparent;
+        border: 0 none;
+        box-shadow: none;
+        outline: 0 none;
+        padding-right: 40px;
+      }
+    }
+
+  }
+
 }
