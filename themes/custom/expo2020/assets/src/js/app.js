@@ -14,9 +14,11 @@ import(
 
 import Scrollify from './app/scrollify';
 import Slick from './app/slick';
+import Modaal from './app/modaal';
 
 new Scrollify();
 new Slick();
+new Modaal();
 
 (function ($, Drupal) {
   'use strict';
@@ -273,10 +275,3 @@ $(window).scroll(function() {
 $("#to-top").click(function () {
   $.scrollify.move(0);
 });
-
-if (typeof modaal !== 'undefined' && $.isFunction(modaal)) {
-  // Video Modal
-  $('.modaal-video-trigger').modaal({
-    type: 'video',
-  });
-}

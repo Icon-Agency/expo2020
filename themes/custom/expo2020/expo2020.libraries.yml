@@ -28,13 +28,3 @@ dev-global-styling:
   dependencies:
     - core/jquery
     - core/drupal
-
-modaal:
-  version: VERSION
-  css:
-    component:
-      https://cdn.jsdelivr.net/npm/modaal@0.4.4/dist/css/modaal.min.css: {type: external}
-  js:
-    https://cdn.jsdelivr.net/npm/modaal@0.4.4/dist/js/modaal.min.js: { external: true }
-  dependencies:
-    - core/jquery
