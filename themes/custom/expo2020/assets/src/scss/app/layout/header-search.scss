@@ -52,6 +52,7 @@
         transition-delay: 0.25s;
         background-color: transparent;
         svg{
+          color: $primary-orange;
           g{
             transition-delay: 0.2s;
             fill: $primary-blue;
@@ -91,6 +92,7 @@
       background-color: transparent;
       margin: -1rem -2rem;
       svg{
+        color: $primary-blue;
         g{
           fill: $primary-blue;
         }
@@ -104,14 +106,15 @@
       margin: -1rem -2rem;
 
       svg{
+        color: $primary-blue;
         g{
-          fill: $primary-blue;
+
         }
       }
     }
 
     .input-wrap{
-      transition: width 0.2s ease 0.3s;
+      //transition: width 0.2s ease 0.3s;
       height: 58px;
       width: 58px;
       position: absolute;

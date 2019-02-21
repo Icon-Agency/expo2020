@@ -8,15 +8,6 @@
   position: relative;
   overflow: hidden;
 }
-/*.bg-img {
-  background-image: url("../img/banner_hp1.jpg");
-  display: block;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 20% 70%;
-  opacity: 1;
-  z-index: -1;
-}*/
 
 .map-img {
   display: block;
@@ -24,9 +15,6 @@
   background-size: cover;
   background-position: 20% 70%;
   min-height: 400px;
-}
-.bg-img div {
-  min-height: 900px;
 }
 
 .shape {

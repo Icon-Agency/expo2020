@@ -81,25 +81,35 @@
     <li><a class="" href="#panel-p2"></a></li>
 </ul>
 
-<section class="panel extra" data-section-name="extra">
+<div id="parallax-container">
+    <div class="parallax-div">
+        <img class="pavilion-bg"
+             src="{{ file_url(content.field_top_bnr_bk_img|field_target_entity.field_media_image.entity.uri.value) }}"
+             alt="{{ content.field_top_bnr_bk_img|field_target_entity.field_media_image.alt }}"/></div>
+    <div class="parallax-div">
+        <img src="{{ base_path ~ directory }}/assets/src/images/cover1.png" class="pavilion-cover"></div>
+    <div class="parallax-div pavilion-layer-top">
+        <img src="{{ base_path ~ directory }}/assets/src/images/shape2.png" class="pavilion-shape">
+        {% if content.field_top_banner_title %}
+            <h2 class="pavilion-banner-title">
+                {{ content.field_top_banner_title }}
+            </h2>
+        {% endif %}
 
-  <img class="panel-img"
-       src="{{ file_url(content.field_top_bnr_bk_img|field_target_entity.field_media_image.entity.uri.value) }}"
-       alt="{{ content.field_top_bnr_bk_img|field_target_entity.field_media_image.alt }}"/>
+        {% if content.field_top_banner_button_link.0 %}
+            <a class="btn btn-primary btn-primary-orange" href="{{ content.field_top_banner_button_link[0]['#url'] }}">
+                {{ content.field_top_banner_button_link.0['#title'] }}
+            </a>
+        {% endif %}
+    </div>
+</div>
 
-  {% if content.field_top_banner_title %}
-    {{ content.field_top_banner_title }}
-  {% endif %}
-
-  {% if content.field_top_banner_button_link.0 %}
-    <a class="btn btn-primary btn-primary-blue" href="{{ content.field_top_banner_button_link[0]['#url'] }}">
-      {{ content.field_top_banner_button_link.0['#title'] }}
-    </a>
-  {% endif %}
-
-  {% if content.field_text_area_under_top_banner %}
-    {{ content.field_text_area_under_top_banner|raw }}
-  {% endif %}
+<section class="panel extra-pavilion" data-section-name="extra">
+    <div class="text-under">
+        {% if content.field_text_area_under_top_banner %}
+            {{ content.field_text_area_under_top_banner|raw }}
+        {% endif %}
+    </div>
 </section>
 
 <section class="beforepannel">
@@ -124,3 +134,14 @@
     <div class="map-img" style="background-image: url({{ base_path ~ directory }}/assets/src/images/map.png);"></div>
   </div>
 </section>
+
+<script type="text/javascript">
+  window.addEventListener('scroll', () => {
+    let parent = document.getElementById('parallax-container');
+    let children = parent.getElementsByTagName('div');
+    for(let i = 0; i < children.length; i++) {
+      children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)';
+    }
+  }, false)
+
+</script>
