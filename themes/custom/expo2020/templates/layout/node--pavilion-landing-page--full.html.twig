@@ -120,15 +120,49 @@
 {% endif %}
 
 
-<section class="panel panel3 footer-section" data-section-name="footer">
+<section class="panel panel3 pavilion-footer" data-section-name="footer">
 
-  {% if content.field_txt_area_befr_galry_slider %}
-    {{ content.field_txt_area_befr_galry_slider|raw }}
-  {% endif %}
+    <div class="container latest-news">
+        <div class="row news-section">
+            <div class="news col-md-4 pb-5 pt-5">
+                <a href="#"><img src="{{ base_path ~ directory }}/assets/src/images/news1.png"></a>
+                <div class="news-lower-container bg-white">Duis aute irure dolor in laboris nisi ut aliquip ex ea commodo occaecat</div>
+            </div>
+            <div class="news col-md-4 pb-5 pt-5">
+                <a href="#"><img src="{{ base_path ~ directory }}/assets/src/images/news2.png"></a>
+                <div class="news-lower-container bg-white">Duis aute irure dolor in laboris nisi ut aliquip ex ea commodo occaecat</div>
+            </div>
+            <div class="news col-md-4 pb-5 pt-5">
+                <a href="#"><img src="{{ base_path ~ directory }}/assets/src/images/news1.png"></a>
+                <div class="news-lower-container bg-white">Duis aute irure dolor in laboris nisi ut aliquip ex ea commodo occaecat</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pavilion-text-before-slider">
+        {% if content.field_txt_area_befr_galry_slider %}
+            {{ content.field_txt_area_befr_galry_slider|raw }}
+        {% endif %}
+    </div>
+
 
   {% if content.field_gallery_listing_slider %}
     {{ content.field_gallery_listing_slider }}
   {% endif %}
+    <div class="pavilion-welcome">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{ base_path ~ directory }}/assets/src/images/welcome-img.png" >
+                </div>
+                <div class="col-md-6 pavilion-welcome-text">
+                    <h2>Welcome</h2>
+                    <p>Visit a piece of Australia in Dubai. </p>
+                    <a href="#" class="btn btn-primary btn-primary-blue">GET IN TOUCH</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
   <div class="banner">
     <div class="map-img" style="background-image: url({{ base_path ~ directory }}/assets/src/images/map.png);"></div>
