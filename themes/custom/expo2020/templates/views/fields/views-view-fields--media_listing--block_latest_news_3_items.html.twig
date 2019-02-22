@@ -32,16 +32,27 @@
  */
 #}
 
-{% if fields.view_node.content %}
-<a href="{{ fields.view_node.content|striptags|replace({'\n':'', '\r':'', ' ':''}) }}">
+{% if row._entity.field_news_media_type[0].entity.name.value and row._entity.field_news_media_type[0].entity.name.value|lower == 'twitter' %}
+
+{% else %}
+
+  {% if fields.view_node.content %}
+    <a href="{{ fields.view_node.content|striptags|replace({'\n':'', '\r':'', ' ':''}) }}">
   {% endif %}
 
-  {% if fields.field_media.content and '<img' in fields.field_media.content|render  %}
+  {% if fields.field_media.content and '<img' in fields.field_media.content|render %}
     {{ fields.field_media.content }}
   {% else %}
     <img src="{{ base_path ~ directory }}/assets/src/images/news-default.png" alt="news default image">
   {% endif %}
 
+
+  {% if row._entity.field_news_media_type[0].entity.field_fontawesome_icon.value %}
+  <div class="news-type-icon">
+    {{ row._entity.field_news_media_type[0].entity.field_fontawesome_icon.value|raw }}
+  </div>
+  {% endif %}
+  
   <div class="news-lower-container">
     {% if fields.title.content %}
       <div class="news-title">
@@ -59,6 +70,7 @@
     {% endif %}
   </div>
   {% if fields.view_node.content %}
-</a>
+    </a>
+  {% endif %}
 {% endif %}
 
