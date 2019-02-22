@@ -1,3 +1,107 @@
 .latest-news {
+  position: relative;
+  z-index: 100;
+  .news-section {
+    margin-bottom: 10rem;
+    padding-top: 10rem;
+  }
+  .news-header {
+    text-decoration: underline;
+    text-decoration-color: $primary-orange;
+  }
+  .news {
+    height:100%;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+  }
+  .news {
+    a {
+      display: block;
+      img {
+        flex-shrink:0;
+        min-width:100%;
+        height:220px;
+        max-width:100%;
+        object-fit:cover;
+      }
+    }
+    .news-type-icon {
+      width: 60px;
+      height: 60px;
+      margin: -2rem auto;
+      padding: 1rem;
+      padding-left: 1.2rem;
+      background-color: $primary-orange;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      svg {
+        color: $white;
+        width: 20px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+    }
+    .news-type-twitter-outer {
+      background-image: url('~@/images/twitter-bg.png');
+      height: 440px;
+      padding: 1rem 2rem;
+      .news-type-twitter-top-container {
+        text-align: center;
+        .news-type-twitter-icon {
+          color: $twitter-blue;
+          svg {
+            width: 20px;
+            background-color: $white;
+            g {
+              padding: 1rem;
+            }
+          }
+        }
+        .news-type-twitter-name {
+          color: $twitter-blue;
+        }
 
+      }
+      .nnews-twitter-time-ago {
+        font-family: $font-family-rubik;
+        text-align: center;
+        color: $primary-orange;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+    }
+  }
+  .news-lower-container{
+    padding: 2rem;
+    background-color: $news-homepage;
+    font-size: 18px;
+    min-height: 220px;
+    .news-title {
+      height: 107px;
+    }
+    .news-date {
+      font-family: $font-family-rubik;
+      text-align: center;
+      color: $primary-orange;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-top: 2rem;
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: 1rem;
+      min-height: 100%;
+    }
+  }
 }
