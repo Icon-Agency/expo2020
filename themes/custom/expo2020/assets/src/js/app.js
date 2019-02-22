@@ -244,32 +244,33 @@ $(window).resize();
 
 
 $(window).scroll(function() {
-  var hT = $('.beforepannel').offset().top, // The vertical distance between the top of the page and the top of the element.
-    hH = $('.beforepannel').outerHeight(), // The height of the element, including padding and borders.
-    wH = $(window).height(), // Height of the window without margins, padding, borders.
-    wS = $(this).scrollTop(), // The vertical distance between the top of the page and the top of the viewport.
+    if(document.getElementsByClassName('beforepannel').length != 0) {
+        var hT = $('.beforepannel').offset().top, // The vertical distance between the top of the page and the top of the element.
+            hH = $('.beforepannel').outerHeight(), // The height of the element, including padding and borders.
+            wH = $(window).height(), // Height of the window without margins, padding, borders.
+            wS = $(this).scrollTop(), // The vertical distance between the top of the page and the top of the viewport.
 
-    hT1 = $('.footer-section').offset().top,
-    hH1 = $('.footer-section').outerHeight();
-  //console.log(hT) + console.log(hH) + console.log(wH) + console.log(wS) + console.log(hT1) + console.log(hH1);
+            hT1 = $('.footer-section').offset().top,
+            hH1 = $('.footer-section').outerHeight();
+        //console.log(hT) + console.log(hH) + console.log(wH) + console.log(wS) + console.log(hT1) + console.log(hH1);
 
-  if (hH < wH) {
-    /*if (wS > (hT + hH - wH) && wS < (hT1 - wH) ) {
-        $(".pagination a").css("display", "block");
-    } else {
-        $(".pagination a").css("display", "none");
-    }*/
-    if(wS > (hT1 + hH1 - wH) ) {
-      $(".pagination a").css("display", "none");
+        if (hH < wH) {
+            /*if (wS > (hT + hH - wH) && wS < (hT1 - wH) ) {
+                $(".pagination-hp-scroll a").css("display", "block");
+            } else {
+                $(".pagination-hp-scroll a").css("display", "none");
+            }*/
+            if(wS > (hT1 + hH1 - wH) ) {
+                $(".pagination-hp-scroll a").css("display", "none");
+            }
+        }
+
+        if ($(this).scrollTop() != 0) {
+            $("#to-top").fadeIn();
+        } else {
+            $("#to-top").fadeOut();
+        }
     }
-  }
-
-  if ($(this).scrollTop() != 0) {
-    $("#to-top").fadeIn();
-  } else {
-    $("#to-top").fadeOut();
-  }
-
 });
 
 $("#to-top").click(function () {

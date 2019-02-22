@@ -21,10 +21,10 @@ export default class Scrollify {
       before: function(i, panels) {
         var active = $(".slide.active");
         var ref = panels[i].attr("data-section-name");
-        $(".pagination a").css("display", "block");
+        $(".pagination-hp-scroll a").css("display", "block");
 
-        $(".pagination .active").removeClass("active");
-        $(".pagination").find("a[href=\"#" + ref + "\"]").addClass("active");
+        $(".pagination-hp-scroll .active").removeClass("active");
+        $(".pagination-hp-scroll").find("a[href=\"#" + ref + "\"]").addClass("active");
         active.addClass("remove");
 
         //setTimeout(function() {
@@ -41,7 +41,7 @@ export default class Scrollify {
 
       },
       afterRender: function() {
-        $(".pagination a").on("click",$.scrollify.move);
+        $(".pagination-hp-scroll a").on("click",$.scrollify.move);
       }
     })
   }
