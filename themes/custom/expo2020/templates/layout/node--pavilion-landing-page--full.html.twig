@@ -82,26 +82,26 @@
 </ul>
 
 <div id="parallax-container">
-    <div class="parallax-div">
-        <img class="pavilion-bg"
-             src="{{ file_url(content.field_top_bnr_bk_img|field_target_entity.field_media_image.entity.uri.value) }}"
-             alt="{{ content.field_top_bnr_bk_img|field_target_entity.field_media_image.alt }}"/></div>
-    <div class="parallax-div">
-        <img src="{{ base_path ~ directory }}/assets/src/images/cover1.png" class="pavilion-cover"></div>
-    <div class="parallax-div pavilion-layer-top">
-        <img src="{{ base_path ~ directory }}/assets/src/images/shape2.png" class="pavilion-shape">
-        {% if content.field_top_banner_title %}
-            <h2 class="pavilion-banner-title">
-                {{ content.field_top_banner_title }}
-            </h2>
-        {% endif %}
+  <div class="parallax-div">
+    <img class="pavilion-bg"
+         src="{{ file_url(content.field_top_bnr_bk_img|field_target_entity.field_media_image.entity.uri.value) }}"
+         alt="{{ content.field_top_bnr_bk_img|field_target_entity.field_media_image.alt }}"/></div>
+  <div class="parallax-div">
+    <img src="{{ base_path ~ directory }}/assets/src/images/cover1.png" class="pavilion-cover"></div>
+  <div class="parallax-div pavilion-layer-top">
+    <img src="{{ base_path ~ directory }}/assets/src/images/shape2.png" class="pavilion-shape">
+    {% if content.field_top_banner_title %}
+      <h2 class="pavilion-banner-title">
+        {{ content.field_top_banner_title }}
+      </h2>
+    {% endif %}
 
-        {% if content.field_top_banner_button_link.0 %}
-            <a class="btn btn-primary btn-primary-orange" href="{{ content.field_top_banner_button_link[0]['#url'] }}">
-                {{ content.field_top_banner_button_link.0['#title'] }}
-            </a>
-        {% endif %}
-    </div>
+    {% if content.field_top_banner_button_link.0 %}
+      <a class="btn btn-primary btn-primary-orange" href="{{ content.field_top_banner_button_link[0]['#url'] }}">
+        {{ content.field_top_banner_button_link.0['#title'] }}
+      </a>
+    {% endif %}
+  </div>
 </div>
 
 <section class="panel extra-pavilion" data-section-name="extra">

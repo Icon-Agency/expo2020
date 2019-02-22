@@ -1,0 +1,67 @@
+{#
+/**
+ * @file
+ * Default view template to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ *
+ * @ingroup themeable
+ */
+#}
+<div id="parallax-container news-listing-featured">
+  <div class="parallax-div">
+    <img class="pavilion-bg"
+         src="{{ file_url(row._entity.field_media[0].entity.field_media_image.entity.uri.value) }}"
+         alt="{{ row._entity.field_media[0].entity.field_media_image.alt }}"/>
+  </div>
+  <div class="parallax-div">
+    <img src="{{ base_path ~ directory }}/assets/src/images/cover1.png" class="pavilion-cover">
+  </div>
+  <div class="parallax-div pavilion-layer-top">
+    <img src="{{ base_path ~ directory }}/assets/src/images/shape2.png" class="pavilion-shape">
+
+    <a href="{{ fields.view_node.content|striptags|replace({'\n':'', '\r':'', ' ':''}) }}">
+      <h2 class="news-listing-featured-title">
+        {{ fields.title.content }}
+      </h2>
+    </a>
+
+    {% if fields.body.content %}
+      <div class="news-listing-featured-body">
+        {{ fields.body.content }}
+      </div>
+    {% endif %}
+
+    {% if fields.field_media_date.content %}
+      <div class="news-listing-featured-news-date">
+        <i class="fas fa-star"></i>
+        <p>
+          {{ fields.field_media_date.content }}
+        </p>
+      </div>
+    {% endif %}
+  </div>
+</div>
