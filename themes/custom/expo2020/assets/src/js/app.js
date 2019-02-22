@@ -244,33 +244,38 @@ $(window).resize();
 
 
 $(window).scroll(function() {
-    if($('beforepannel').length != 0 ) {
-        var hT = $('.beforepannel').offset().top, // The vertical distance between the top of the page and the top of the element.
-            hH = $('.beforepannel').outerHeight(), // The height of the element, including padding and borders.
-            wH = $(window).height(), // Height of the window without margins, padding, borders.
-            wS = $(this).scrollTop(), // The vertical distance between the top of the page and the top of the viewport.
 
-            hT1 = $('.footer-section').offset().top,
-            hH1 = $('.footer-section').outerHeight();
-        //console.log(hT) + console.log(hH) + console.log(wH) + console.log(wS) + console.log(hT1) + console.log(hH1);
+  let $body = $("body");
 
-        if (hH < wH) {
-            /*if (wS > (hT + hH - wH) && wS < (hT1 - wH) ) {
-                $(".pagination-hp-scroll a").css("display", "block");
-            } else {
-                $(".pagination-hp-scroll a").css("display", "none");
-            }*/
-            if(wS > (hT1 + hH1 - wH) ) {
-                $(".pagination-hp-scroll a").css("display", "none");
-            }
-        }
+  if (($body.hasClass('node--type-home-page') || $body.hasClass('node--type-pavilion-landing-page'))
+    && $('beforepannel').length != 0) {
 
-        if ($(this).scrollTop() != 0) {
-            $("#to-top").fadeIn();
-        } else {
-            $("#to-top").fadeOut();
-        }
+    var hT = $('.beforepannel').offset().top, // The vertical distance between the top of the page and the top of the element.
+        hH = $('.beforepannel').outerHeight(), // The height of the element, including padding and borders.
+        wH = $(window).height(), // Height of the window without margins, padding, borders.
+        wS = $(this).scrollTop(), // The vertical distance between the top of the page and the top of the viewport.
+
+        hT1 = $('.footer-section').offset().top,
+        hH1 = $('.footer-section').outerHeight();
+    //console.log(hT) + console.log(hH) + console.log(wH) + console.log(wS) + console.log(hT1) + console.log(hH1);
+
+    if (hH < wH) {
+      /*if (wS > (hT + hH - wH) && wS < (hT1 - wH) ) {
+          $(".pagination-hp-scroll a").css("display", "block");
+      } else {
+          $(".pagination-hp-scroll a").css("display", "none");
+      }*/
+      if(wS > (hT1 + hH1 - wH) ) {
+        $(".pagination-hp-scroll a").css("display", "none");
+      }
     }
+
+    if ($(this).scrollTop() != 0) {
+      $("#to-top").fadeIn();
+    } else {
+      $("#to-top").fadeOut();
+    }
+  }
 });
 
 $("#to-top").click(function () {
