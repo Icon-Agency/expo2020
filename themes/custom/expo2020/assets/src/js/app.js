@@ -244,7 +244,7 @@ $(window).resize();
 
 
 $(window).scroll(function() {
-    if(document.getElementsByClassName('beforepannel').length != 0) {
+    if($('beforepannel').length != 0 ) {
         var hT = $('.beforepannel').offset().top, // The vertical distance between the top of the page and the top of the element.
             hH = $('.beforepannel').outerHeight(), // The height of the element, including padding and borders.
             wH = $(window).height(), // Height of the window without margins, padding, borders.
