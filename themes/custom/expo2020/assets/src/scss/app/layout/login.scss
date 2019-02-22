@@ -1,0 +1,14 @@
+body {
+  &.user-logged-in {
+    #header {
+      margin-top: 2rem;
+    }
+  }
+}
+
+nav {
+  &.tabs {
+    position: relative;
+    z-index: 50;
+  }
+}

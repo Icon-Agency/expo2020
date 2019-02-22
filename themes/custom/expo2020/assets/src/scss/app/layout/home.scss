@@ -8,15 +8,6 @@
   position: relative;
   overflow: hidden;
 }
-/*.bg-img {
-  background-image: url("../img/banner_hp1.jpg");
-  display: block;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 20% 70%;
-  opacity: 1;
-  z-index: -1;
-}*/
 
 .map-img {
   display: block;
@@ -24,9 +15,6 @@
   background-size: cover;
   background-position: 20% 70%;
   min-height: 400px;
-}
-.bg-img div {
-  min-height: 900px;
 }
 
 .shape {
@@ -122,7 +110,7 @@ h2.accent {
   z-index: 100;
   .news-section {
     margin-bottom: 10rem;
-    margin-top: 10rem;
+    padding-top: 10rem;
   }
   .news-header {
     text-decoration: underline;
@@ -149,7 +137,7 @@ h2.accent {
   }
   .news-lower-container{
     padding: 2rem;
-    background-color: #FFEEE6;
+    background-color: $news-homepage;
     font-size: 18px;
     min-height: 220px;
     .news-date {
