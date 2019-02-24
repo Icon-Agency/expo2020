@@ -257,7 +257,7 @@ $(window).scroll(function() {
 
         hT1 = $('.footer-section').offset().top,
         hH1 = $('.footer-section').outerHeight();
-    //console.log(hT) + console.log(hH) + console.log(wH) + console.log(wS) + console.log(hT1) + console.log(hH1);
+    console.log(hT) + console.log(hH) + console.log(wH) + console.log(wS) + console.log(hT1) + console.log(hH1);
 
     if (hH < wH) {
       /*if (wS > (hT + hH - wH) && wS < (hT1 - wH) ) {
@@ -266,6 +266,14 @@ $(window).scroll(function() {
           $(".pagination-hp-scroll a").css("display", "none");
       }*/
       if(wS > (hT1 + hH1 - wH) ) {
+        $(".pagination-hp-scroll a").css("display", "none");
+      }
+
+    }
+    if($body.hasClass('node--type-pavilion-landing-page')) {
+      alert("aa");
+      if (wS < hT ) {
+
         $(".pagination-hp-scroll a").css("display", "none");
       }
     }
