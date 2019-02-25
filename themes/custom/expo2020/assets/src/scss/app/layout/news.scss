@@ -118,6 +118,9 @@
   text-align: center;
   padding: 2rem;
   position: relative;
+  .field {
+    margin-bottom: 0;
+  }
   a {
     border-bottom-color: $primary-orange;
     &:hover, &:active {
@@ -177,7 +180,7 @@
         margin-bottom: 0;
         padding-bottom: 4rem;
         margin-top: 2rem;
-        margin-left: 30rem;
+        justify-content: center;
         li {
           width: 32px;
           text-align: center;

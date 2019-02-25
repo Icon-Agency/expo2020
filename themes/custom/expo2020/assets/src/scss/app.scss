@@ -22,7 +22,7 @@
 
 // Custom styles
 @import './app/layout/home';
-@import 'app/layout/news';
+@import './app/layout/news';
 @import './app/layout/toolbar';
 @import './app/layout/header';
 @import './app/layout/header-search';
@@ -35,9 +35,10 @@
 @import './app/layout/form';
 @import './app/layout/tabs';
 @import './app/layout/footer';
-@import 'app/layout/home-banner';
-@import 'app/layout/login';
-@import 'app/layout/pavilion';
+@import './app/layout/home-banner';
+@import './app/layout/login';
+@import './app/layout/pavilion';
+@import './app/layout/responsive';
 
 // Elements
 
