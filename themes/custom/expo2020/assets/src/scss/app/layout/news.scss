@@ -1,4 +1,5 @@
-.latest-news {
+.latest-news,
+.view-display-id-news_listing_page {
   position: relative;
   z-index: 100;
   .news-section {
@@ -103,5 +104,27 @@
       padding: 1rem;
       min-height: 100%;
     }
+  }
+}
+#block-newstopcontenttext {
+  color: $white;
+  background-color: $gray-1000;
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  a {
+    border-bottom-color: $primary-orange;
+    &:hover, &:active {
+      color: $primary-orange;
+    }
+  }
+}
+.view-display-id-news_listing_page {
+  background-color: $white;
+  .view-header {
+    font-size: 14px;
+    color: $gray-500;
+    font-family: 'Open Sans', sans-serif;
   }
 }
