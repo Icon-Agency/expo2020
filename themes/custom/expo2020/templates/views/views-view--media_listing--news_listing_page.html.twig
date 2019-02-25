@@ -74,22 +74,26 @@
     </div>
   {% endif %}
 
-  {% if pager %}
-    {{ pager }}
-  {% endif %}
   {% if attachment_after %}
     <div class="attachment attachment-after">
       {{ attachment_after }}
     </div>
   {% endif %}
+
   {% if more %}
     {{ more }}
   {% endif %}
+
   {% if footer %}
     <div class="view-footer">
       {{ footer }}
     </div>
   {% endif %}
+
+  {% if pager %}
+    {{ pager }}
+  {% endif %}
+
   {% if feed_icons %}
     <div class="feed-icons">
       {{ feed_icons }}
