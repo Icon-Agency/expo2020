@@ -1,6 +1,6 @@
 #parallax-container {
   display: block;
-  height: 1300px;
+  height: 1100px;
   position: relative;
 
   .parallax-div {
@@ -9,7 +9,7 @@
     background-position: center !important;
     background-repeat: no-repeat;
     transform: translateY(0px);
-    height: 1300px;
+    height: 1100px;
     width: 100%;
   }
 
@@ -42,20 +42,20 @@
     .news-listing-featured-title {
       position: absolute;
       right: 26%;
-      top: 37%;
+      top: 39%;
       color: $primary-orange;
     }
     .news-listing-featured-body {
       position: absolute;
       right: 27.5%;
-      top: 42%;
+      top: 44%;
       width: 14%;
     }
     .news-listing-featured-news-date {
       position: absolute;
       display: flex;
       right: 37%;
-      top: 53%;
+      top: 56%;
       color: $primary-orange;
       text-transform: uppercase;
       font-family: $font-family-rubik;

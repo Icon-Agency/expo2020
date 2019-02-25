@@ -10,7 +10,7 @@
 @import '~jquery.mmenu/dist/jquery.mmenu.all.css';
 
 .mm-menu {
-  --mm-color-background: #{$gray-700};
+  --mm-color-background: #{$primary-blue};
   --mm-color-background-emphasis: #{$black};
   --mm-color-background-highlight: #{$gray-900};
   --mm-color-border: #{$gray-600};
@@ -21,4 +21,7 @@
 
 .mm-listitem:after {
   left: 0;
+}
+.mm-navbars_bottom {
+  display: none;
 }
