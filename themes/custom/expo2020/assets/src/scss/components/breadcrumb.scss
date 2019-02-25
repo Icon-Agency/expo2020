@@ -1,0 +1,18 @@
+#block-expo2020-breadcrumbs {
+  font-size: 14px;
+  color: $gray-500;
+  background-color: $white;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  ol {
+    li {
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: '|';
+    color: $gray-500;
+  }
+}
