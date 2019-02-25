@@ -29,11 +29,10 @@
       }
     }
     .news-type-icon {
-      width: 60px;
-      height: 60px;
-      margin: -2rem auto;
-      padding: 1rem;
-      padding-left: 1.2rem;
+      width: 50px;
+      height: 50px;
+      margin: -1.5rem auto;
+      padding: .5rem .75rem;
       background-color: $primary-orange;
       -webkit-transform: rotate(45deg);
       -moz-transform: rotate(45deg);
@@ -106,6 +105,12 @@
     }
   }
 }
+
+.latest-news {
+  .view-footer {
+    display: none;
+  }
+}
 #block-newstopcontenttext {
   color: $white;
   background-color: $gray-1000;
@@ -120,11 +125,74 @@
     }
   }
 }
-.view-display-id-news_listing_page {
+.panels.main-container {
+  position: relative;
   background-color: $white;
-  .view-header {
-    font-size: 14px;
-    color: $gray-500;
-    font-family: 'Open Sans', sans-serif;
+  .view-display-id-news_listing_page {
+    background-color: $white;
+    .view-filters {
+      display: flex;
+      .news-listing-title {
+        width: 60%;
+      }
+      .views-exposed-form {
+        .news-type-filter-links {
+          border: 1px solid $primary-orange;
+          color: $primary-orange;
+          padding: 0.5rem 1rem;
+          margin: 0 .5rem;
+          svg {
+            width: 20px;
+            padding-top: 0.7rem;
+            padding-right: 0.2rem;
+          }
+          &:hover,
+          &.active {
+            color: $white;
+            background-color: $primary-orange;
+          }
+        }
+        .news-types-collapse-search {
+          display: flex;
+          margin-top: 1rem;
+          margin-left: 10px;
+          #edit-submit-media-listing {
+            margin-top: 0;
+            width: 30%;
+          }
+        }
+      }
+    }
+    .view-header,
+    .view-footer {
+      font-size: 14px;
+      color: $gray-500;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .view-footer {
+      text-align: center;
+    }
+    nav {
+      .pagination {
+        margin-bottom: 0;
+        padding-bottom: 4rem;
+        margin-top: 2rem;
+        margin-left: 30rem;
+        li {
+          width: 32px;
+          text-align: center;
+        }
+        .page-link {
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+          border: none;
+          padding: 0.4rem 0.75rem;
+        }
+        .page-item:first-child .page-link {
+          border: none;
+        }
+      }
+    }
   }
 }
