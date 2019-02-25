@@ -97,6 +97,12 @@ function expo2020_preprocess_page(&$variables) {
     '#suffix' => '</nav>',
     '#markup' => \Drupal::service("renderer")->renderRoot($menu),
   ];
+
+  $current_path = \Drupal::service('path.current')->getPath();
+  $current_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+  if ($current_alias == '/news'){
+    $variables['content_main_attributes']->addClass('container');
+  }
 }
 
 /**
