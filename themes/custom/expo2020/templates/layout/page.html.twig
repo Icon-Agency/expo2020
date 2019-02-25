@@ -119,10 +119,6 @@
 
           <main{{ content_attributes }}>
 
-            {% if add_content_outer_wrap %}
-              <div class="content-outer-wrap container">
-            {% endif %}
-
             <a id="main-content" tabindex="-1"></a>
 
             {# headers, full width stuff. #}
@@ -138,6 +134,10 @@
 
             {# Can change between .container and .container-fluid if design required #}
             <div{{content_main_attributes}}>
+
+              {% if add_content_outer_wrap %}
+              <div class="content-outer-wrap container">
+                {% endif %}
 
                   {# exposed forms, facets, etc. #}
                   {% if page.content_search %}
@@ -167,12 +167,11 @@
                   </div>
                 {% endif %}
 
-            </div>
-
                 {% if add_content_outer_wrap %}
               </div>
-            {% endif %}
-
+              {% endif %}
+              
+            </div>
           </main>
 
             {% set has_content_bottom = page.content_bottom|render|striptags|trim is not empty %}
