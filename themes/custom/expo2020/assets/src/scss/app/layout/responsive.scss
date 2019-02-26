@@ -9,6 +9,9 @@
         height: 70%;
       }
     }
+    .pavilion-shape {
+      height: 65%;
+    }
   }
 }
 
@@ -103,6 +106,12 @@
       }
       .news-listing-featured-title {
         font-size: 1.5rem;
+      }
+    }
+    .pavilion-shape {
+      padding: 3rem;
+      .pavilion-banner-title {
+        font-size: 2rem;
       }
     }
   }

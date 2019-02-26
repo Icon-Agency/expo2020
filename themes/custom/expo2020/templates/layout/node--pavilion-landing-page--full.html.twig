@@ -89,18 +89,21 @@
   <div class="parallax-div">
     <img src="{{ base_path ~ directory }}/assets/src/images/cover1.png" class="pavilion-cover"></div>
   <div class="parallax-div pavilion-layer-top">
-    <img src="{{ base_path ~ directory }}/assets/src/images/shape2.png" class="pavilion-shape">
-    {% if content.field_top_banner_title %}
-      <h2 class="pavilion-banner-title">
-        {{ content.field_top_banner_title }}
-      </h2>
-    {% endif %}
+      <div class="pavilion-shape">
+          {% if content.field_top_banner_title %}
+              <h2 class="pavilion-banner-title">
+                  {{ content.field_top_banner_title }}
+              </h2>
+          {% endif %}
 
-    {% if content.field_top_banner_button_link.0 %}
-      <a class="btn btn-primary btn-primary-orange" href="{{ content.field_top_banner_button_link[0]['#url'] }}">
-        {{ content.field_top_banner_button_link.0['#title'] }}
-      </a>
-    {% endif %}
+          {% if content.field_top_banner_button_link.0 %}
+              <a class="btn btn-primary btn-primary-orange" href="{{ content.field_top_banner_button_link[0]['#url'] }}">
+                  {{ content.field_top_banner_button_link.0['#title'] }}
+              </a>
+          {% endif %}
+      </div>
+    {#<img src="{{ base_path ~ directory }}/assets/src/images/shape2.png" class="pavilion-shape">#}
+
   </div>
 </div>
 
