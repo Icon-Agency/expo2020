@@ -1,0 +1,229 @@
+diff --git a/modules/patched/social_feed_fetcher/src/ImportSocialFeedService.php b/modules/patched/social_feed_fetcher/src/ImportSocialFeedService.php
+index 6f84dfe3..d7b8333f 100644
+--- a/modules/patched/social_feed_fetcher/src/ImportSocialFeedService.php
++++ b/modules/patched/social_feed_fetcher/src/ImportSocialFeedService.php
+@@ -9,6 +9,7 @@
+ use Drupal\Core\State\State;
+ use Exception;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
++use Drupal\Core\Messenger\MessengerInterface;
+ 
+ /**
+  * Class ImportSocialFeedService.
+@@ -93,7 +94,7 @@ public function import() {
+         try {
+           $posts = $facebook->getPosts($posts_count_num);
+         } catch (Exception $exception) {
+-          drupal_set_message($facebook->getPluginId() . ' ' . $exception->getMessage(), 'error');
++          \Drupal::messenger()->addMessage($facebook->getPluginId() . ' ' . $exception->getMessage(), MessengerInterface::TYPE_ERROR);
+           return;
+         }
+         foreach ($posts as $item) {
+@@ -105,21 +106,26 @@ public function import() {
+       // Get twitter posts, if enabled.
+       $twitter_count = 0;
+       if ($this->config->get('twitter_enabled') === TRUE) {
+-        /** @var \Drupal\Core\Queue\QueueInterface $twitter_queue */
+-        $twitter_queue = $this->queue->get('social_posts_twitter_queue_worker');
+-        /** @var \Drupal\social_feed_fetcher\Plugin\SocialDataProvider\TwitterDataProvider $twitter */
+-        $twitter = $this->socialDataProvider->createInstance('twitter');
+-        $twitter->setTimelines($this->config->get('timeline'), $this->config->get('screen_name'));
+-        $twitter->setClient();
+-        try {
+-          $posts = $twitter->getPosts($this->config->get('tw_count'));
++        $twitter_tid = $this->getTwitterTid('twitter');
++        if ($twitter_tid != 0){
++          /** @var \Drupal\Core\Queue\QueueInterface $twitter_queue */
++          $twitter_queue = $this->queue->get('social_posts_twitter_queue_worker');
++          /** @var \Drupal\social_feed_fetcher\Plugin\SocialDataProvider\TwitterDataProvider $twitter */
++          $twitter = $this->socialDataProvider->createInstance('twitter');
++          $twitter->setTimelines($this->config->get('timeline'), $this->config->get('screen_name'));
++          $twitter->setClient();
++          try {
++            $posts = $twitter->getPosts($this->config->get('tw_count'));
++
++          } catch (Exception $exception) {
++            \Drupal::messenger()->addMessage($twitter->getPluginId() . ' ' . $exception->getMessage(), MessengerInterface::TYPE_ERROR);
++          }
+ 
+-        } catch (Exception $exception) {
+-          drupal_set_message($twitter->getPluginId() . ' ' . $exception->getMessage(), 'error');
+-        }
+-        foreach ($posts as $item) {
+-          $twitter_queue->createItem($item);
+-          $twitter_count++;
++          foreach ($posts as $item) {
++            $item->twitter_tid = $twitter_tid;
++            $twitter_queue->createItem($item);
++            $twitter_count++;
++          }
+         }
+       }
+       // Get instagram posts, if enabled.
+@@ -133,7 +139,7 @@ public function import() {
+         try {
+           $posts = $instagram->getPosts($this->config->get('in_picture_count'));
+         } catch (Exception $exception) {
+-          drupal_set_message($instagram->getPluginId() . ' ' . $exception->getMessage(), 'error');
++          \Drupal::messenger()->addMessage($instagram->getPluginId() . ' ' . $exception->getMessage(), MessengerInterface::TYPE_ERROR);
+         }
+         foreach ($posts as $item) {
+           $instagram_queue->createItem($item);
+@@ -156,7 +162,7 @@ public function import() {
+         try {
+           $linkedin_posts = $linkedin->getPosts($this->config->get('linkedin_posts_count'));
+         } catch (Exception $exception) {
+-          drupal_set_message($linkedin->getPluginId() . ' ' . $exception->getMessage(), 'error');
++          \Drupal::messenger()->addMessage($linkedin->getPluginId() . ' ' . $exception->getMessage(), MessengerInterface::TYPE_ERROR);
+         }
+         if ($linkedin_posts) {
+           foreach ($linkedin_posts['values'] as $item) {
+@@ -178,7 +184,7 @@ public function import() {
+         ]);
+ 
+       if ($this->state->get('social_feed_fetcher_show_status_message')) {
+-        drupal_set_message(t('The Social Feed Fetcher cron executed at %time', ['%time' => date_iso8601($request_time)]));
++        \Drupal::messenger()->addMessage(t('The Social Feed Fetcher cron executed at %time', ['%time' => date_iso8601($request_time)]));
+         $this->state->set('social_feed_fetcher_show_status_message', FALSE);
+       }
+ 
+@@ -198,4 +204,17 @@ public static function create(ContainerInterface $container) {
+       $container->get('logger.factory')
+     );
+   }
++
++  /**
++   * Get Term id by Name
++   */
++  public function getTwitterTid($tName){
++    $terms = \Drupal::entityTypeManager()
++                   ->getStorage('taxonomy_term')
++                   ->loadByProperties(['name' => $tName]);
++
++    $term = reset($terms);
++
++    return !empty($term) ? $term->id() : 0;
++  }
+ }
+\ No newline at end of file
+diff --git a/modules/patched/social_feed_fetcher/src/Plugin/NodeProcessor/TwitterNodeProcessor.php b/modules/patched/social_feed_fetcher/src/Plugin/NodeProcessor/TwitterNodeProcessor.php
+index 0da7465d..a7d06ce4 100644
+--- a/modules/patched/social_feed_fetcher/src/Plugin/NodeProcessor/TwitterNodeProcessor.php
++++ b/modules/patched/social_feed_fetcher/src/Plugin/NodeProcessor/TwitterNodeProcessor.php
+@@ -3,6 +3,9 @@
+ namespace Drupal\social_feed_fetcher\Plugin\NodeProcessor;
+ 
+ use Drupal\Core\Datetime\DrupalDateTime;
++use Drupal\Core\Language\Language;
++use Drupal\media\Entity\Media;
++use Drupal\node\NodeInterface;
+ use Drupal\social_feed_fetcher\PluginNodeProcessorPluginBase;
+ 
+ /**
+@@ -23,26 +26,30 @@ class TwitterNodeProcessor extends PluginNodeProcessorPluginBase {
+    * @throws \Drupal\Core\Entity\EntityStorageException
+    */
+   public function processItem($source, $data_item) {
+-    if (!$this->isPostIdExist($data_item->id)) {
+-      $node = $this->entityStorage->create([
+-        'type' => 'social_post',
+-        'title' => 'Post ID: ' . $data_item->id,
+-        'field_platform' => ucwords($source),
+-        'field_id' => $data_item->id,
+-        'field_post' => [
+-          'value' => social_feed_fetcher_linkify(html_entity_decode($data_item->full_text)),
+-          'format' => $this->config->get('formats_post_format'),
++    if (isset($data_item->id) && !$this->isPostIdExist($data_item->id)) {
++
++      $preparation_array = [
++        'type'                   => 'news',
++        'title'                  => 'Tweet ' . $data_item->id,
++        'field_twitter_post_id'  => $data_item->id,
++        'field_news_media_type' => [
++          'target_id' => $data_item->twitter_tid,
+         ],
+-        'field_social_feed_link' => [
+-          'uri' => $data_item->entities->media[0]->url,
+-          'title' => '',
+-          'options' => [],
++        'body'                   => [
++          'value'  => social_feed_fetcher_linkify(html_entity_decode($data_item->full_text)),
++          'format' => $this->config->get('formats_post_format'),
+         ],
+-        'field_sp_image' => [
++        'field_media_date'           => $this->setPostTime($data_item->created_at),
++      ];
++
++      if (isset($data_item->entities->media[0]->media_url_https)){
++        $preparation_array['field_media'] = [
+           'target_id' => $this->processImageFile($data_item->entities->media[0]->media_url_https, 'public://twitter'),
+-        ],
+-        'field_posted' => $this->setPostTime($data_item->created_at),
+-      ]);
++        ];
++      }
++
++      $node = $this->entityStorage->create($preparation_array);
++
+       return $node->save();
+     }
+     return FALSE;
+@@ -62,10 +69,55 @@ public function processImageFile($filename, $path) {
+     $uri = $path . '/' . $name;
+     file_prepare_directory($path, FILE_CREATE_DIRECTORY);
+     $uri = explode('?', $uri);
+-    if (!file_save_data($data, $uri[0], FILE_EXISTS_REPLACE)) {
+-      return 0;
++    $file_saved = file_save_data($data, $uri[0], FILE_EXISTS_REPLACE);
++
++    if (!$file_saved){
++      return NULL;
++    }
++
++    $result = \Drupal::entityQuery('media')
++                     ->condition('status' , 1)
++                     ->condition('bundle', 'image')
++                     ->condition('field_media_image', $file_saved->id())
++                     ->execute();
++
++    $media_id = reset($result);
++
++    if (!empty($media_id)){
++      return $media_id;
+     }
+-    return file_save_data($data, $uri[0], FILE_EXISTS_REPLACE)->id();
++
++    $image_media = Media::create([
++      'bundle' => 'image',
++      'uid' => '1',
++      'langcode' => Language::LANGCODE_DEFAULT,
++      'status' => NodeInterface::PUBLISHED,
++      'field_media_image' => [
++        'target_id' => $file_saved->id(),
++        'alt' => t('tweeter image ' . $name),
++      ],
++    ]);
++    $image_media->save();
++
++    return $image_media->id();
++  }
++
++
++  /**
++   * {@inheritdoc}
++   */
++  public function isPostIdExist($data_item_id){
++
++    if($data_item_id) {
++      $result = $this->entityStorage->getQuery()
++                       //            ->condition('status', 1)
++                                   ->condition('type', 'news')
++                                   ->condition('field_twitter_post_id', $data_item_id)
++                                   ->execute();
++      return $result;
++    }
++
++    return NULL;
+   }
+ 
+ }

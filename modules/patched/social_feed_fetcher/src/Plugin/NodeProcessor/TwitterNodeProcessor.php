@@ -3,6 +3,9 @@
 namespace Drupal\social_feed_fetcher\Plugin\NodeProcessor;
 
 use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Language\Language;
+use Drupal\media\Entity\Media;
+use Drupal\node\NodeInterface;
 use Drupal\social_feed_fetcher\PluginNodeProcessorPluginBase;
 
 /**
@@ -23,26 +26,30 @@ class TwitterNodeProcessor extends PluginNodeProcessorPluginBase {
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function processItem($source, $data_item) {
-    if (!$this->isPostIdExist($data_item->id)) {
-      $node = $this->entityStorage->create([
-        'type' => 'social_post',
-        'title' => 'Post ID: ' . $data_item->id,
-        'field_platform' => ucwords($source),
-        'field_id' => $data_item->id,
-        'field_post' => [
-          'value' => social_feed_fetcher_linkify(html_entity_decode($data_item->full_text)),
+    if (isset($data_item->id) && !$this->isPostIdExist($data_item->id)) {
+
+      $preparation_array = [
+        'type'                   => 'news',
+        'title'                  => 'Tweet ' . $data_item->id,
+        'field_twitter_post_id'  => $data_item->id,
+        'field_news_media_type' => [
+          'target_id' => $data_item->twitter_tid,
+        ],
+        'body'                   => [
+          'value'  => social_feed_fetcher_linkify(html_entity_decode($data_item->full_text)),
           'format' => $this->config->get('formats_post_format'),
         ],
-        'field_social_feed_link' => [
-          'uri' => $data_item->entities->media[0]->url,
-          'title' => '',
-          'options' => [],
-        ],
-        'field_sp_image' => [
+        'field_media_date'           => $this->setPostTime($data_item->created_at),
+      ];
+
+      if (isset($data_item->entities->media[0]->media_url_https)){
+        $preparation_array['field_media'] = [
           'target_id' => $this->processImageFile($data_item->entities->media[0]->media_url_https, 'public://twitter'),
-        ],
-        'field_posted' => $this->setPostTime($data_item->created_at),
-      ]);
+        ];
+      }
+
+      $node = $this->entityStorage->create($preparation_array);
+
       return $node->save();
     }
     return FALSE;
@@ -62,10 +69,55 @@ class TwitterNodeProcessor extends PluginNodeProcessorPluginBase {
     $uri = $path . '/' . $name;
     file_prepare_directory($path, FILE_CREATE_DIRECTORY);
     $uri = explode('?', $uri);
-    if (!file_save_data($data, $uri[0], FILE_EXISTS_REPLACE)) {
-      return 0;
+    $file_saved = file_save_data($data, $uri[0], FILE_EXISTS_REPLACE);
+
+    if (!$file_saved){
+      return NULL;
     }
-    return file_save_data($data, $uri[0], FILE_EXISTS_REPLACE)->id();
+
+    $result = \Drupal::entityQuery('media')
+                     ->condition('status' , 1)
+                     ->condition('bundle', 'image')
+                     ->condition('field_media_image', $file_saved->id())
+                     ->execute();
+
+    $media_id = reset($result);
+
+    if (!empty($media_id)){
+      return $media_id;
+    }
+
+    $image_media = Media::create([
+      'bundle' => 'image',
+      'uid' => '1',
+      'langcode' => Language::LANGCODE_DEFAULT,
+      'status' => NodeInterface::PUBLISHED,
+      'field_media_image' => [
+        'target_id' => $file_saved->id(),
+        'alt' => t('tweeter image ' . $name),
+      ],
+    ]);
+    $image_media->save();
+
+    return $image_media->id();
+  }
+
+
+  /**
+   * {@inheritdoc}
+   */
+  public function isPostIdExist($data_item_id){
+
+    if($data_item_id) {
+      $result = $this->entityStorage->getQuery()
+                       //            ->condition('status', 1)
+                                   ->condition('type', 'news')
+                                   ->condition('field_twitter_post_id', $data_item_id)
+                                   ->execute();
+      return $result;
+    }
+
+    return NULL;
   }
 
 }

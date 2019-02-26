@@ -9,6 +9,7 @@ use Drupal\Core\Queue\QueueFactory;
 use Drupal\Core\State\State;
 use Exception;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 
 /**
  * Class ImportSocialFeedService.
@@ -93,7 +94,7 @@ class ImportSocialFeedService implements ContainerInjectionInterface {
         try {
           $posts = $facebook->getPosts($posts_count_num);
         } catch (Exception $exception) {
-          drupal_set_message($facebook->getPluginId() . ' ' . $exception->getMessage(), 'error');
+          \Drupal::messenger()->addMessage($facebook->getPluginId() . ' ' . $exception->getMessage(), MessengerInterface::TYPE_ERROR);
           return;
         }
         foreach ($posts as $item) {
@@ -105,21 +106,26 @@ class ImportSocialFeedService implements ContainerInjectionInterface {
       // Get twitter posts, if enabled.
       $twitter_count = 0;
       if ($this->config->get('twitter_enabled') === TRUE) {
-        /** @var \Drupal\Core\Queue\QueueInterface $twitter_queue */
-        $twitter_queue = $this->queue->get('social_posts_twitter_queue_worker');
-        /** @var \Drupal\social_feed_fetcher\Plugin\SocialDataProvider\TwitterDataProvider $twitter */
-        $twitter = $this->socialDataProvider->createInstance('twitter');
-        $twitter->setTimelines($this->config->get('timeline'), $this->config->get('screen_name'));
-        $twitter->setClient();
-        try {
-          $posts = $twitter->getPosts($this->config->get('tw_count'));
+        $twitter_tid = $this->getTwitterTid('twitter');
+        if ($twitter_tid != 0){
+          /** @var \Drupal\Core\Queue\QueueInterface $twitter_queue */
+          $twitter_queue = $this->queue->get('social_posts_twitter_queue_worker');
+          /** @var \Drupal\social_feed_fetcher\Plugin\SocialDataProvider\TwitterDataProvider $twitter */
+          $twitter = $this->socialDataProvider->createInstance('twitter');
+          $twitter->setTimelines($this->config->get('timeline'), $this->config->get('screen_name'));
+          $twitter->setClient();
+          try {
+            $posts = $twitter->getPosts($this->config->get('tw_count'));
 
-        } catch (Exception $exception) {
-          drupal_set_message($twitter->getPluginId() . ' ' . $exception->getMessage(), 'error');
-        }
-        foreach ($posts as $item) {
-          $twitter_queue->createItem($item);
-          $twitter_count++;
+          } catch (Exception $exception) {
+            \Drupal::messenger()->addMessage($twitter->getPluginId() . ' ' . $exception->getMessage(), MessengerInterface::TYPE_ERROR);
+          }
+
+          foreach ($posts as $item) {
+            $item->twitter_tid = $twitter_tid;
+            $twitter_queue->createItem($item);
+            $twitter_count++;
+          }
         }
       }
       // Get instagram posts, if enabled.
@@ -133,7 +139,7 @@ class ImportSocialFeedService implements ContainerInjectionInterface {
         try {
           $posts = $instagram->getPosts($this->config->get('in_picture_count'));
         } catch (Exception $exception) {
-          drupal_set_message($instagram->getPluginId() . ' ' . $exception->getMessage(), 'error');
+          \Drupal::messenger()->addMessage($instagram->getPluginId() . ' ' . $exception->getMessage(), MessengerInterface::TYPE_ERROR);
         }
         foreach ($posts as $item) {
           $instagram_queue->createItem($item);
@@ -156,7 +162,7 @@ class ImportSocialFeedService implements ContainerInjectionInterface {
         try {
           $linkedin_posts = $linkedin->getPosts($this->config->get('linkedin_posts_count'));
         } catch (Exception $exception) {
-          drupal_set_message($linkedin->getPluginId() . ' ' . $exception->getMessage(), 'error');
+          \Drupal::messenger()->addMessage($linkedin->getPluginId() . ' ' . $exception->getMessage(), MessengerInterface::TYPE_ERROR);
         }
         if ($linkedin_posts) {
           foreach ($linkedin_posts['values'] as $item) {
@@ -178,7 +184,7 @@ class ImportSocialFeedService implements ContainerInjectionInterface {
         ]);
 
       if ($this->state->get('social_feed_fetcher_show_status_message')) {
-        drupal_set_message(t('The Social Feed Fetcher cron executed at %time', ['%time' => date_iso8601($request_time)]));
+        \Drupal::messenger()->addMessage(t('The Social Feed Fetcher cron executed at %time', ['%time' => date_iso8601($request_time)]));
         $this->state->set('social_feed_fetcher_show_status_message', FALSE);
       }
 
@@ -197,5 +203,18 @@ class ImportSocialFeedService implements ContainerInjectionInterface {
       $container->get('state'),
       $container->get('logger.factory')
     );
+  }
+
+  /**
+   * Get Term id by Name
+   */
+  public function getTwitterTid($tName){
+    $terms = \Drupal::entityTypeManager()
+                   ->getStorage('taxonomy_term')
+                   ->loadByProperties(['name' => $tName]);
+
+    $term = reset($terms);
+
+    return !empty($term) ? $term->id() : 0;
   }
 }
