@@ -216,7 +216,7 @@
 }
 
 //news detail page
-#block-expo2020-content {
+.node--type-news.node--view-mode-full {
   .field--name-field-media-date {
     font-family: 'Rubik', sans-serif;
     text-transform: uppercase;
@@ -226,9 +226,40 @@
   h2 {
     color: $primary-blue;
   }
+  h3 {
+    font-size: 1.5rem;
+    color: $gray-700;
+  }
   img {
     width: 100%;
     object-fit: cover;
+    margin: 2rem 0;
+  }
+  blockquote {
+    font-size: 20px;
+    color: $primary-blue;
+    font-weight: 500;
+    .quote {
+      width: 50px;
+      height: 50px;
+      margin: 1.5rem auto;
+      padding: .5rem .75rem;
+      background-color: $primary-orange;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      svg {
+        color: $white;
+        width: 20px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+    }
   }
   p {
     font-family: 'Open Sans', sans-serif;
