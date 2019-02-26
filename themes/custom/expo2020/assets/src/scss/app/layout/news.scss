@@ -61,11 +61,17 @@
       padding: 1rem 2rem;
       .news-type-twitter-top-container {
         text-align: center;
+        margin-bottom: 3rem;
+        margin-top: 1rem;
         .news-type-twitter-icon {
           color: $twitter-blue;
+          background-color: $white;
+          width: 50px;
+          margin: auto;
+          margin-bottom: 1rem;
+          padding: 0.3rem 0;
           svg {
             width: 20px;
-            background-color: $white;
             g {
               padding: 1rem;
             }
@@ -78,10 +84,12 @@
       }
       .nnews-twitter-time-ago {
         font-family: $font-family-rubik;
-        text-align: center;
         color: $primary-orange;
         text-transform: uppercase;
         font-size: 14px;
+        position: absolute;
+        bottom: 10%;
+        left: calc(50% - 55px);
       }
     }
   }
@@ -90,16 +98,15 @@
     background-color: $news-homepage;
     font-size: 18px;
     min-height: 220px;
-    .news-title {
-      height: 107px;
-    }
     .news-date {
       font-family: $font-family-rubik;
-      text-align: center;
       color: $primary-orange;
       text-transform: uppercase;
       font-size: 14px;
       margin-top: 2rem;
+      position: absolute;
+      bottom: 13%;
+      left: calc(50% - 35px);
       p {
         margin-bottom: 0;
       }
