@@ -287,7 +287,14 @@ $(window).scroll(function() {
 });
 
 $("#to-top").click(function () {
-  $.scrollify.move(0);
+  let $body = $("body");
+  if ($body.hasClass('node--type-home-page')
+      || $body.hasClass('node--type-pavilion-landing-page')) {
+    $.scrollify.move(0);
+  } else {
+    $("body,html").animate({scrollTop: 0}, 500);
+  }
+
 });
 
 $('#block-expo2020-header-site-search-block .search-trigger').on('click', function () {

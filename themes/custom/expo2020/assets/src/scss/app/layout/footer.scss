@@ -89,16 +89,16 @@
     bottom: 5px;
     color: white;
     cursor: pointer;
-    display: none;
+    position: absolute;
+    top: -.5rem;
+    right: 5px;
+    z-index: 11;
+    height: 55px;
+    width: 55px;
+    padding: 11px;
+    text-align: center;
     filter: alpha(opacity=60);
     opacity: .7;
-    height: 55px;
-    padding: 12px;
-    position: fixed;
-    right: 5px;
-    text-align: center;
-    width: 55px;
-    z-index: 200;
 }
 
 #to-top:active,
