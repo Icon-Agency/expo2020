@@ -41,28 +41,31 @@
     <img src="{{ base_path ~ directory }}/assets/src/images/cover1.png" class="pavilion-cover">
   </div>#}
   <div class="parallax-div pavilion-layer-top-news">
-    <img src="{{ base_path ~ directory }}/assets/src/images/shape3.png" class="pavilion-shape-news">
+    <div class="pavilion-shape-news container">
+      <a href="{{ fields.view_node.content|striptags|replace({'\n':'', '\r':'', ' ':''}) }}">
+        <h2 class="news-listing-featured-title">
+          {{ fields.title.content }}
+        </h2>
+      </a>
 
-    <a href="{{ fields.view_node.content|striptags|replace({'\n':'', '\r':'', ' ':''}) }}">
-      <h2 class="news-listing-featured-title">
-        {{ fields.title.content }}
-      </h2>
-    </a>
+      {% if fields.body.content %}
+        <div class="news-listing-featured-body">
+          {{ fields.body.content }}
+        </div>
+      {% endif %}
 
-    {% if fields.body.content %}
-      <div class="news-listing-featured-body">
-        {{ fields.body.content }}
-      </div>
-    {% endif %}
+      {% if fields.field_media_date.content %}
+        <div class="news-listing-featured-news-date">
+          <i class="fas fa-star"></i>
+          <p>
+            {{ fields.field_media_date.content }}
+          </p>
+        </div>
+      {% endif %}
+    </div>
+    {#<img src="{{ base_path ~ directory }}/assets/src/images/shape3.png" class="pavilion-shape-news">#}
 
-    {% if fields.field_media_date.content %}
-      <div class="news-listing-featured-news-date">
-        <i class="fas fa-star"></i>
-        <p>
-          {{ fields.field_media_date.content }}
-        </p>
-      </div>
-    {% endif %}
+
   </div>
 </div>
 

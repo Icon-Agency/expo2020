@@ -34,28 +34,24 @@
   }
   .pavilion-layer-top-news {
     .pavilion-shape-news {
-      position: absolute;
-      right: 20%;
+      background-image: url('~@/images/shape3.png');
+      position: relative;
+      right: -20%;
       top: 30%;
-      width: 25%;
+      background-repeat: no-repeat;
+      -webkit-background-size: contain;
+      background-size: contain;
+      padding: 6rem;
+      height: 36%;
     }
     .news-listing-featured-title {
-      position: absolute;
-      right: 26%;
-      top: 39%;
       color: $primary-orange;
     }
     .news-listing-featured-body {
-      position: absolute;
-      right: 27.5%;
-      top: 44%;
-      width: 14%;
+      width: 40%;
     }
     .news-listing-featured-news-date {
-      position: absolute;
       display: flex;
-      right: 37%;
-      top: 56%;
       color: $primary-orange;
       text-transform: uppercase;
       font-family: $font-family-rubik;
