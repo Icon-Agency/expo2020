@@ -1,5 +1,6 @@
 .latest-news,
-.view-display-id-news_listing_page {
+.view-display-id-news_listing_page,
+.news-view-latest-news-bottom {
   position: relative;
   z-index: 100;
   .news-section {
@@ -222,11 +223,24 @@
     color: $primary-orange;
     margin-top: 2rem;
   }
+  h2 {
+    color: $primary-blue;
+  }
   img {
     width: 100%;
     object-fit: cover;
   }
   p {
     font-family: 'Open Sans', sans-serif;
+  }
+}
+.region-content-bottom {
+  border-top: 5px solid $gray-100;
+  .news-view-latest-news-bottom {
+    margin-top: 2rem;
+    h2 {
+      text-decoration: underline;
+      text-decoration-color: $primary-orange;
+    }
   }
 }
