@@ -46,22 +46,22 @@
         <h2 class="news-listing-featured-title">
           {{ fields.title.content }}
         </h2>
+
+        {% if fields.body.content %}
+          <div class="news-listing-featured-body">
+            {{ fields.body.content }}
+          </div>
+        {% endif %}
+
+        {% if fields.field_media_date.content %}
+          <div class="news-listing-featured-news-date">
+            <i class="fas fa-star"></i>
+            <p>
+              {{ fields.field_media_date.content }}
+            </p>
+          </div>
+        {% endif %}
       </a>
-
-      {% if fields.body.content %}
-        <div class="news-listing-featured-body">
-          {{ fields.body.content }}
-        </div>
-      {% endif %}
-
-      {% if fields.field_media_date.content %}
-        <div class="news-listing-featured-news-date">
-          <i class="fas fa-star"></i>
-          <p>
-            {{ fields.field_media_date.content }}
-          </p>
-        </div>
-      {% endif %}
     </div>
     {#<img src="{{ base_path ~ directory }}/assets/src/images/shape3.png" class="pavilion-shape-news">#}
 

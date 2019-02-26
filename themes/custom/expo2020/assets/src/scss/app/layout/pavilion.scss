@@ -54,6 +54,9 @@
       background-size: contain;
       padding: 6rem;
       height: 36%;
+      &:hover {
+        filter: brightness(110%);
+      }
     }
     .news-listing-featured-title {
       color: $primary-orange;
