@@ -27,6 +27,12 @@
         max-width:100%;
         object-fit:cover;
       }
+      &:hover {
+        box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
+        .news-type-icon {
+          filter: brightness(110%);
+        }
+      }
     }
     .news-type-icon {
       width: 50px;
@@ -181,6 +187,7 @@
         padding-bottom: 4rem;
         margin-top: 2rem;
         justify-content: center;
+        color: $primary-orange;
         li {
           width: 32px;
           text-align: center;
@@ -197,5 +204,22 @@
         }
       }
     }
+  }
+}
+
+//news detail page
+#block-expo2020-content {
+  .field--name-field-media-date {
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    color: $primary-orange;
+    margin-top: 2rem;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  p {
+    font-family: 'Open Sans', sans-serif;
   }
 }
