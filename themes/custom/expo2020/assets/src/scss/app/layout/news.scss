@@ -10,6 +10,7 @@
   .news-header {
     text-decoration: underline;
     text-decoration-color: $primary-orange;
+    text-underline-position: under;
   }
   .news {
     height:100%;
@@ -240,7 +241,7 @@
     color: $primary-orange;
     margin-top: 2rem;
   }
-  h2 {
+  h1{
     color: $primary-blue;
   }
   h3 {
@@ -281,6 +282,20 @@
   p {
     font-family: 'Open Sans', sans-serif;
   }
+  .news-article-view-content-right {
+    .field--name-field-label {
+      color: $primary-orange;
+      font-family: $font-family-rubik;
+    }
+    .field--name-field-enquiries-contact {
+      background-color: $primary-blue;
+      padding: 1.5rem;
+      p {
+        color: $white;
+        font-size: 14px;
+      }
+    }
+  }
 }
 .region-content-bottom {
   border-top: 5px solid $gray-100;
@@ -289,6 +304,7 @@
     h2 {
       text-decoration: underline;
       text-decoration-color: $primary-orange;
+      text-underline-position: under;
     }
   }
 }
