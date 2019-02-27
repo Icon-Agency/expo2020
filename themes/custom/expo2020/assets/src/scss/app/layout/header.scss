@@ -9,11 +9,14 @@
     margin-right: $grid-gutter-width/2;
     padding-top: $grid-gutter-width;
     padding-bottom: $grid-gutter-width;
+    .region-header-right {
+      margin-top: 1rem;
+    }
   }
 
   .site-logo {
     display: inline-block;
-
+    margin-top: -0.8rem;
     &:hover, &:active, &:focus {
       opacity: 0.7;
     }

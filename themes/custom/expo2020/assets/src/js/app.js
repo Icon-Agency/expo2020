@@ -297,11 +297,63 @@ $("#to-top").click(function () {
 
 });
 
-$('#block-expo2020-header-site-search-block .search-trigger').on('click', function () {
-  $('#block-expo2020-header-site-search-block .header-site-search-content-wrapper').addClass('open');
-  $("#block-expo2020-header-site-search-block .header-search-form .form-item input").focus();
+
+var searchInput = $('#block-expo2020-header-site-search-block .header-search-form .form-item input');
+var searchButton = $('#block-expo2020-header-site-search-block .search-trigger');
+var searchForm = $('#block-expo2020-header-site-search-block .header-site-search-content-wrapper');
+var searchInputBtn = $('#block-expo2020-header-site-search-block .header-site-search-content-wrapper button');
+
+// Open search form helper function.
+var searchOpen = function() {
+  $(searchForm).addClass('open');
+  /*$(this).attr('aria-expanded', 'true');*/
+
+  // Wait for the width to transition before setting focus.
+  setTimeout(function() {
+    $(searchInput).focus();
+  }, 250);
+};
+
+// Close search form helper function.
+var searchClose = function(focusItem) {
+  $(searchForm).removeClass('open');
+  $(searchButton).attr('aria-expanded', 'false');
+  $(focusItem).focus();
+};
+
+// If they click the search icon, open the form.
+$(searchButton).on('click', function () {
+  searchOpen();
+  return false;
 });
 
-$('#block-expo2020-header-site-search-block .header-search-form .form-item input').blur(function () {
-  $('#block-expo2020-header-site-search-block .header-site-search-content-wrapper').removeClass('open');
+$(searchInput).blur(function () {
+  searchForm.removeClass('open');
+});
+
+// If they click the search button, but haven't entered keywords, close it.
+$(searchInputBtn).click(function (){
+  if (!$(searchInput).val()) {
+    searchClose(searchButton);
+    return false;
+  }
+});
+
+// If they the search form is focused when not active, open it.
+$(searchInput).focus(function() {
+  if(!searchForm.hasClass('open')) {
+    searchOpen();
+  }
+});
+
+// If they tab or esc without entering keywords, close it.
+$(searchForm).keydown(function(e) {
+  var keyCode = e.keyCode || e.which;
+
+  if (!$(searchInput).val() && (keyCode == 9 || keyCode == 27)) {
+    var menuLink = $("#header .navigation.menu--main ul.nav a").first();
+
+    searchClose(menuLink);
+    e.preventDefault();
+  }
 });
