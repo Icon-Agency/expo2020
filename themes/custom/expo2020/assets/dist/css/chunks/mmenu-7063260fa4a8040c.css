@@ -2,7 +2,7 @@
  * Just some basic overrides to normal theme.
  */
 .mm-menu {
-  --mm-color-background: #495057;
+  --mm-color-background: #0E0E8B;
   --mm-color-background-emphasis: #000;
   --mm-color-background-highlight: #292A2E;
   --mm-color-border: #6c757d;
@@ -12,4 +12,7 @@
 
 .mm-listitem:after {
   left: 0; }
+
+.mm-navbars_bottom {
+  display: none; }
 
