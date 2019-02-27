@@ -95,29 +95,36 @@
   </header>
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
 
-    {% if content.field_media_date %}
+    {% if content.field_media_date[0] %}
       {{ content.field_media_date }}
     {% endif %}
 
-    <h2{{ title_attributes.addClass('node__title') }}>
+    <h1{{ title_attributes.addClass('node__title') }}>
       {{ label }}
-    </h2>
+    </h1>
 
-    {% if content.field_media %}
+    {% if content.field_media[0] %}
       {{ content.field_media }}
     {% endif %}
 
+    {% if content.field_enquiries_contact[0] %}
     <div class="row">
       <div class="col-md-9 news-article-view-content-left">
-        {% if content.body %}
+        {% if content.body[0] %}
           {{ content.body }}
         {% endif %}
       </div>
 
       <div class="col-md-3 news-article-view-content-right">
-
+          {{ content.field_enquiries_contact }}
       </div>
     </div>
+    {% else %}
+      {% if content.body[0] %}
+        {{ content.body }}
+      {% endif %}
+    {% endif %}
+
 
   </div>
 </article>
