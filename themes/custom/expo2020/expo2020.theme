@@ -98,10 +98,22 @@ function expo2020_preprocess_page(&$variables) {
     '#markup' => \Drupal::service("renderer")->renderRoot($menu),
   ];
 
-  $current_path = \Drupal::service('path.current')->getPath();
-  $current_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
-  if (preg_match('/^\/news.*/', $current_alias)){
-    $variables['add_content_outer_wrap'] = TRUE;
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $content_types_with_content_in_container = [
+    'news',
+    'page',
+  ];
+
+  if (!empty($node)){
+    if (in_array($node->bundle(), $content_types_with_content_in_container)){
+      $variables['add_content_outer_wrap'] = TRUE;
+    }
+  }else{
+    $current_path = \Drupal::service('path.current')->getPath();
+    $current_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+    if (preg_match('/^\/news[\?\/]?/', $current_alias)){
+      $variables['add_content_outer_wrap'] = TRUE;
+    }
   }
 }
 
