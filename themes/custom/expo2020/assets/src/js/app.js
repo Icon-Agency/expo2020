@@ -297,7 +297,7 @@ $("#to-top").click(function () {
 
 });
 
-
+/* search form functions */
 var searchInput = $('#block-expo2020-header-site-search-block .header-search-form .form-item input');
 var searchButton = $('#block-expo2020-header-site-search-block .search-trigger');
 var searchForm = $('#block-expo2020-header-site-search-block .header-site-search-content-wrapper');
