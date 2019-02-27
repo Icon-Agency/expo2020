@@ -10,6 +10,7 @@
   .news-header {
     text-decoration: underline;
     text-decoration-color: $primary-orange;
+    text-underline-position: under;
   }
   .news {
     height:100%;
@@ -289,6 +290,7 @@
     h2 {
       text-decoration: underline;
       text-decoration-color: $primary-orange;
+      text-underline-position: under;
     }
   }
 }
