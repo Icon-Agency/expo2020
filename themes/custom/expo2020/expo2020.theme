@@ -104,10 +104,15 @@ function expo2020_preprocess_page(&$variables) {
   $content_types_without_content_container = [
     'home_page',
     'pavilion_landing_page',
+    'contact',
   ];
   if (!empty($node)){
     if (in_array($node->bundle(), $content_types_without_content_container)){
       $variables['add_content_outer_wrap'] = FALSE;
+    }
+
+    if ($node->bundle() == 'contact' && isset($variables['page']['content']['expo2020_breadcrumbs'])){
+      unset($variables['page']['content']['expo2020_breadcrumbs']);
     }
   }
 
@@ -386,4 +391,16 @@ function expo2020_preprocess_views_exposed_form(&$variables) {
 
     unset($form['combine']);
   }
+}
+
+
+function expo2020_preprocess_node(&$variables) {
+
+  if (!empty($variables['node']) && $variables['node']->getType() == 'contact'){
+    $block_manager = \Drupal::service('plugin.manager.block');
+    $plugin_block = $block_manager->createInstance('system_breadcrumb_block');
+
+    $variables['breadcrumbs'] =  $plugin_block->build();
+  }
+
 }
