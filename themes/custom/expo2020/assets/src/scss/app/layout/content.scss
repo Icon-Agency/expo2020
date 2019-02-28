@@ -43,6 +43,9 @@
 }
 .node--type-contact.node--view-mode-full {
   .field--name-field-bottom-content {
+    .container {
+      padding: 0;
+    }
     .time-title {
       font-family: $font-family-rubik;
       color: $primary-blue;
