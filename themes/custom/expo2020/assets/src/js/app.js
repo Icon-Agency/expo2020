@@ -248,8 +248,7 @@ $(window).scroll(function() {
   let $body = $("body");
 
   if (($body.hasClass('node--type-home-page') || $body.hasClass('node--type-pavilion-landing-page'))
-    && $('beforepannel').length != 0) {
-
+    && $('section').hasClass('beforepannel') ) {
     var hT = $('.beforepannel').offset().top, // The vertical distance between the top of the page and the top of the element.
         hH = $('.beforepannel').outerHeight(), // The height of the element, including padding and borders.
         wH = $(window).height(), // Height of the window without margins, padding, borders.
@@ -257,25 +256,15 @@ $(window).scroll(function() {
 
         hT1 = $('.footer-section').offset().top,
         hH1 = $('.footer-section').outerHeight();
-    console.log(hT) + console.log(hH) + console.log(wH) + console.log(wS) + console.log(hT1) + console.log(hH1);
+    //console.log(hT) + console.log(hH) + console.log(wH) + console.log(wS); //+ console.log(hT1) + console.log(hH1);
 
-    if (hH < wH) {
-      /*if (wS > (hT + hH - wH) && wS < (hT1 - wH) ) {
-          $(".pagination-hp-scroll a").css("display", "block");
-      } else {
-          $(".pagination-hp-scroll a").css("display", "none");
-      }*/
+    /*if (hH < wH) {
       if(wS > (hT1 + hH1 - wH) ) {
         $(".pagination-hp-scroll a").css("display", "none");
       }
-
-    }
-    if($body.hasClass('node--type-pavilion-landing-page')) {
-      alert("aa");
-      if (wS < hT ) {
-
-        $(".pagination-hp-scroll a").css("display", "none");
-      }
+    }*/
+    if (wS < (hT - wH) ) {
+      $(".pagination-hp-scroll a").css("display", "none");
     }
 
     if ($(this).scrollTop() != 0) {
@@ -297,7 +286,7 @@ $("#to-top").click(function () {
 
 });
 
-
+/* search form functions */
 var searchInput = $('#block-expo2020-header-site-search-block .header-search-form .form-item input');
 var searchButton = $('#block-expo2020-header-site-search-block .search-trigger');
 var searchForm = $('#block-expo2020-header-site-search-block .header-site-search-content-wrapper');
