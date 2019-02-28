@@ -1,0 +1,21 @@
+#block-expo2020-content {
+  margin: 3rem 0;
+}
+
+.node--type-page.node--view-mode-full {
+  h1 {
+    color: $primary-blue;
+  }
+  h2 {
+    font-size: 1.5rem;
+    color: $gray-700;
+  }
+  h3 {
+    font-family: $font-family-rubik;
+    font-size: 18px;
+    color: $primary-orange;
+  }
+  p {
+    font-family: 'Open Sans', sans-serif;
+  }
+}

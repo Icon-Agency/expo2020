@@ -284,21 +284,23 @@
   p {
     font-family: 'Open Sans', sans-serif;
   }
-  .news-article-view-content-right {
-    .field--name-field-label {
-      color: $primary-orange;
-      font-family: $font-family-rubik;
-    }
-    .field--name-field-enquiries-contact {
-      background-color: $primary-blue;
-      padding: 1.5rem;
-      p {
-        color: $white;
-        font-size: 14px;
-      }
+}
+
+.news-article-view-content-right {
+  .field--name-field-label {
+    color: $primary-orange;
+    font-family: $font-family-rubik;
+  }
+  .field--name-field-enquiries-contact {
+    background-color: $primary-blue;
+    padding: 1.5rem;
+    p {
+      color: $white;
+      font-size: 14px;
     }
   }
 }
+
 .region-content-bottom {
   border-top: 5px solid $gray-100;
   margin-top: 3rem;
