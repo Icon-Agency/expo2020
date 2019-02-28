@@ -87,7 +87,7 @@
          src="{{ file_url(content.field_top_bnr_bk_img|field_target_entity.field_media_image.entity.uri.value) }}"
          alt="{{ content.field_top_bnr_bk_img|field_target_entity.field_media_image.alt }}"/></div>
   <div class="parallax-div">
-    <img src="{{ base_path ~ directory }}/assets/src/images/cover1.png" class="pavilion-cover"></div>
+    <img src="/{{ base_path ~ directory }}/assets/src/images/cover1.png" class="pavilion-cover"></div>
   <div class="parallax-div pavilion-layer-top">
       <div class="pavilion-shape">
           {% if content.field_top_banner_title %}
@@ -102,7 +102,7 @@
               </a>
           {% endif %}
       </div>
-    {#<img src="{{ base_path ~ directory }}/assets/src/images/shape2.png" class="pavilion-shape">#}
+    {#<img src="/{{ base_path ~ directory }}/assets/src/images/shape2.png" class="pavilion-shape">#}
 
   </div>
 </div>
@@ -128,15 +128,15 @@
     <div class="container latest-news">
         <div class="row news-section">
             <div class="news col-md-4 pb-5 pt-5">
-                <a href="#"><img src="{{ base_path ~ directory }}/assets/src/images/news1.png"></a>
+                <a href="#"><img src="/{{ base_path ~ directory }}/assets/src/images/news1.png"></a>
                 <div class="news-lower-container bg-white">Duis aute irure dolor in laboris nisi ut aliquip ex ea commodo occaecat</div>
             </div>
             <div class="news col-md-4 pb-5 pt-5">
-                <a href="#"><img src="{{ base_path ~ directory }}/assets/src/images/news2.png"></a>
+                <a href="#"><img src="/{{ base_path ~ directory }}/assets/src/images/news2.png"></a>
                 <div class="news-lower-container bg-white">Duis aute irure dolor in laboris nisi ut aliquip ex ea commodo occaecat</div>
             </div>
             <div class="news col-md-4 pb-5 pt-5">
-                <a href="#"><img src="{{ base_path ~ directory }}/assets/src/images/news1.png"></a>
+                <a href="#"><img src="/{{ base_path ~ directory }}/assets/src/images/news1.png"></a>
                 <div class="news-lower-container bg-white">Duis aute irure dolor in laboris nisi ut aliquip ex ea commodo occaecat</div>
             </div>
         </div>
@@ -157,7 +157,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ base_path ~ directory }}/assets/src/images/welcome-img.png" >
+                    <img src="/{{ base_path ~ directory }}/assets/src/images/welcome-img.png" >
                 </div>
                 <div class="col-md-6 pavilion-welcome-text">
                     <h2>Welcome</h2>
@@ -169,7 +169,7 @@
     </div>
 
   <div class="banner">
-    <div class="map-img" style="background-image: url({{ base_path ~ directory }}/assets/src/images/map.png);"></div>
+    <div class="map-img" style="background-image: url(/{{ base_path ~ directory }}/assets/src/images/map.png);"></div>
   </div>
 </section>
 
