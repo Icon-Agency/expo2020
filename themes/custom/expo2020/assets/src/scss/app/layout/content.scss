@@ -12,6 +12,10 @@
     font-size: 18px;
     color: $primary-orange;
   }
+  .field--name-field-subtitle {
+    color: $primary-orange;
+    font-family: $font-family-rubik;
+  }
   .news-article-view-content-left {
     margin: 2rem 0;
     p {
@@ -39,7 +43,9 @@
 }
 .node--type-contact.node--view-mode-full {
   .field--name-field-bottom-content {
-    margin: 2rem;
+    .container {
+      padding: 0;
+    }
     .time-title {
       font-family: $font-family-rubik;
       color: $primary-blue;
@@ -49,10 +55,15 @@
     .showcase-contact {
       margin: 2rem;
       .contact-icon {
-        margin: 1rem;
+        margin-top: 1rem;
         width: 140px;
       }
-
+    }
+    .floorplan {
+      margin: 2rem 0;
+      img {
+        width: 100%;
+      }
     }
   }
 }
