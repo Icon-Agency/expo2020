@@ -256,15 +256,17 @@ $(window).scroll(function() {
 
         hT1 = $('.footer-section').offset().top,
         hH1 = $('.footer-section').outerHeight();
-    //console.log(hT) + console.log(hH) + console.log(wH) + console.log(wS); //+ console.log(hT1) + console.log(hH1);
+    console.log(hT) + console.log(hH) + console.log(wH) + console.log(wS); //+ console.log(hT1) + console.log(hH1);
 
     /*if (hH < wH) {
       if(wS > (hT1 + hH1 - wH) ) {
         $(".pagination-hp-scroll a").css("display", "none");
       }
     }*/
-    if (wS < (hT - wH) ) {
+    if (wS < (hT - 100) ) {
       $(".pagination-hp-scroll a").css("display", "none");
+    } else {
+      $(".pagination-hp-scroll a").css("display", "block");
     }
 
     if ($(this).scrollTop() != 0) {
