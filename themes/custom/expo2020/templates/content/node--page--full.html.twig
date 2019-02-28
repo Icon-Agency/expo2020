@@ -95,6 +95,10 @@
   </header>
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
 
+    {% if content.field_subtitle[0] %}
+      {{ content.field_subtitle }}
+    {% endif %}
+
     <h1{{ title_attributes.addClass('node__title') }}>
       {{ label }}
     </h1>
