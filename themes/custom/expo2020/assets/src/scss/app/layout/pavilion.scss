@@ -34,7 +34,7 @@
     -webkit-background-size: contain;
     background-size: contain;
     position: relative;
-    top: 30%;
+    top: 20%;
     left: 20%;
     height: 45%;
     padding: 6rem;
@@ -42,6 +42,7 @@
   .pavilion-layer-top {
     //position: relative;
     z-index: 20;
+    margin-top: 8rem;
   }
   .pavilion-banner-title {
     color: white;
