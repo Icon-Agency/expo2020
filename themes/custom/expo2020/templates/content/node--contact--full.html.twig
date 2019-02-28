@@ -93,17 +93,20 @@
       </div>
     {% endif %}
   </header>
-  <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+    <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+        <div class="breadcrumb-n-title-container">
+            <img src="{{ base_path ~ directory }}/assets/src/images/map.png" >
+            <div class="container">
+                {% if breadcrumbs %}
+                    {{ breadcrumbs }}
+                {% endif %}
 
-    <div class="breadcrumb-n-title-container container" style="background-image: url(/{{ base_path ~ directory }}/assets/src/images/map.png);">
-      {% if breadcrumbs %}
-        {{ breadcrumbs }}
-      {% endif %}
+                <h1{{ title_attributes.addClass('node__title') }}>
+                    {{ label }}
+                </h1>
+            </div>
+        </div>
 
-      <h1{{ title_attributes.addClass('node__title') }}>
-        {{ label }}
-      </h1>
-    </div>
 
     {% if content.field_top_content[0] %}
         {{ content.field_top_content }}

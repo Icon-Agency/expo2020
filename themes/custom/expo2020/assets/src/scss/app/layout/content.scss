@@ -19,3 +19,40 @@
     }
   }
 }
+
+.node--type-contact {
+  .breadcrumb-n-title-container {
+    position: relative;
+    nav {
+      position: absolute;
+      top: 0;
+    }
+    h1 {
+      position: absolute;
+      top: 5%;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.node--type-contact.node--view-mode-full {
+  .field--name-field-bottom-content {
+    margin: 2rem;
+    .time-title {
+      font-family: $font-family-rubik;
+      color: $primary-blue;
+      font-weight: 500;
+      margin-top: 2rem;
+    }
+    .showcase-contact {
+      margin: 2rem;
+      .contact-icon {
+        margin: 1rem;
+        width: 140px;
+      }
+
+    }
+  }
+}

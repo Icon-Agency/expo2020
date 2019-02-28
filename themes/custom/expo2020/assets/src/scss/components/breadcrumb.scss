@@ -17,3 +17,20 @@
     color: $gray-500;
   }
 }
+//breadcrumb on contact page
+.node--type-contact .breadcrumb-n-title-container nav {
+  font-size: 14px;
+  color: $gray-500;
+  font-family: 'Open Sans', sans-serif;
+  ol {
+    li {
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: '|';
+    color: $gray-500;
+  }
+}

@@ -245,53 +245,16 @@ h2.accent {
     }
   }
 }
-.icon1{
-  background-color: $icon-green;
-  width: 100px;
-  height: 100px;
-  margin: auto;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  &:hover {
-    filter: brightness(120%);
-  }
-}
-.icon1 img,
-.icon2 img,
-.icon3 img {
-  margin: 1.5rem;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
+
 .icon-text {
   font-family: 'Rubik', sans-serif;
   margin-top: 2rem;
   text-align: center;
 }
-.icon2{
-  background-color: $icon-blue;
-  width: 100px;
-  height: 100px;
-  margin: auto;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  &:hover {
-    filter: brightness(130%);
-  }
-}
-.icon3{
-  background-color: $icon-orange;
-  width: 100px;
-  height: 100px;
+.icon1 {
+  background-color: $icon-green;
+  width: 90px;
+  height: 90px;
   margin: auto;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -300,6 +263,68 @@ h2.accent {
   transform: rotate(45deg);
   &:hover {
     filter: brightness(120%);
+  }
+  svg {
+    color: $white;
+    width: 40px !important;
+    height: 40px;
+    margin: 1.5rem;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+.icon2 {
+  background-color: $icon-blue;
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  &:hover {
+    filter: brightness(120%);
+  }
+  svg {
+    color: $white;
+    width: 40px !important;
+    height: 40px;
+    margin: 1.5rem;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+.icon3 {
+  background-color: $icon-orange;
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  &:hover {
+    filter: brightness(120%);
+  }
+  svg {
+    color: $white;
+    width: 40px !important;
+    height: 40px;
+    margin: 1.5rem;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
   }
 }
 
