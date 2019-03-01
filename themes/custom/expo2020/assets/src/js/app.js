@@ -256,7 +256,7 @@ $(window).scroll(function() {
 
         hT1 = $('.footer-section').offset().top,
         hH1 = $('.footer-section').outerHeight();
-    console.log(hT) + console.log(hH) + console.log(wH) + console.log(wS); //+ console.log(hT1) + console.log(hH1);
+    //console.log(hT) + console.log(hH) + console.log(wH) + console.log(wS); //+ console.log(hT1) + console.log(hH1);
 
     /*if (hH < wH) {
       if(wS > (hT1 + hH1 - wH) ) {
@@ -308,7 +308,7 @@ var searchOpen = function() {
 // Close search form helper function.
 var searchClose = function(focusItem) {
   $(searchForm).removeClass('open');
-  $(searchButton).attr('aria-expanded', 'false');
+  //$(searchButton).attr('aria-expanded', 'false');
   $(focusItem).focus();
 };
 
