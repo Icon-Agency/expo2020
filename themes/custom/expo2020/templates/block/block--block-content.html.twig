@@ -1,4 +1,9 @@
 {% extends  "block.html.twig" %}
-{%
-  set attributes = attributes.addClass('block-block-content--type-' ~ elements.content['#bundle']|clean_class)
-%}
+{#{%#}
+  {#set attributes = attributes.addClass('block-block-content--type-' ~ elements.content['#bundle']|clean_class)#}
+{#%}#}
+{% if elements.content['#block_content'].type.target_id is defined %}
+  {%
+    set attributes = attributes.addClass('block-block-content--type-' ~ elements.content['#block_content'].type.target_id|clean_class)
+  %}
+{% endif %}

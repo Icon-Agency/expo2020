@@ -223,6 +223,35 @@ function expo2020_theme_suggestions_block_alter(array &$suggestions, array $vari
     }
   }
 
+  // Inserted block bundle type suggestion
+  if (isset($elements['content']['#block_content'])) {
+    $bundle = $elements['content']['#block_content']->bundle();
+
+    $new_suggestions = [];
+
+    $block__block_content_count = 0;
+
+    foreach ($suggestions as $suggestion){
+      if ($suggestion == 'block__block_content'){
+        $block__block_content_count++;
+      }
+    }
+
+    if($block__block_content_count !== 0){
+      foreach ($suggestions as $suggestion){
+        $new_suggestions[] = $suggestion;
+        if ($suggestion == 'block__block_content'){
+          $block__block_content_count--;
+          if ($block__block_content_count == 0){
+            $new_suggestions[] = "block__block_bundle__{$bundle}";
+          }
+        }
+      }
+    }
+
+    $suggestions = $new_suggestions;
+  }
+
   return $suggestions;
 }
 
