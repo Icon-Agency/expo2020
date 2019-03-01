@@ -318,15 +318,22 @@ $(searchButton).on('click', function () {
   return false;
 });
 
-$(searchInput).blur(function () {
+/*$(searchInput).blur(function () {
   searchForm.removeClass('open');
-});
+});*/
 
 // If they click the search button, but haven't entered keywords, close it.
 $(searchInputBtn).click(function (){
   if (!$(searchInput).val()) {
     searchClose(searchButton);
     return false;
+  }
+});
+
+// If they click outside of the search form when it's open, close it.
+$(document).click(function(e) {
+  if( searchForm.hasClass('open') && searchForm.has(e.target).length === 0) {
+    searchClose(searchButton);
   }
 });
 
