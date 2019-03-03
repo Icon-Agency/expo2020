@@ -40,6 +40,15 @@ body {
 .colour-white {
   color: $white !important;
 }
+.colour-green {
+  color: $icon-green !important;
+}
+.colour-orange {
+  color: $icon-orange;
+}
+.colour-brown {
+  color: $countdown-brown;
+}
 
 // Buttons
 .btn {
