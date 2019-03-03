@@ -46,7 +46,8 @@
     "underscore": "^1.9.0",
     "url-loader": "^1.1.2",
     "webpack": "^4.25.1",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "jquery-countdown": "^2.2.0"
   },
   "browserslist": [
     "last 2 versions"

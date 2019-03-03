@@ -123,6 +123,9 @@ function expo2020_preprocess_page(&$variables) {
  */
 function expo2020_preprocess_block(&$variables)
 {
+  $element_content = $variables['elements']['content'];
+  $content = &$variables['content'];
+
   if ($variables['base_plugin_id'] === 'block_content' && !empty($variables['label'])) {
     if (isset($variables['content']['block_description'][0][0])) {
       // Fix up the block title
@@ -140,8 +143,23 @@ function expo2020_preprocess_block(&$variables)
     // Add so we can subtheme the block suggestions on this region
     $variables['content']['#menu_block_configuration']['region']          = $block->getRegion();
     $variables['content']['#menu_block_configuration']['top_level_title'] = _expo2020_get_top_menu_title();
-
   }
+
+  if (isset($element_content['#block_content']) && $element_content['#block_content']->bundle() == 'countdown_block') {
+    if (!empty($content['field_count_down_date'][0]['#text'])) {
+      $content['field_count_down_date']['#attached']['drupalSettings']['countdownDate'] = $content['field_count_down_date'][0]['#text'];
+      $content['field_count_down_date'][0] = [
+        '#type'       => 'container',
+        '#attributes' => [
+          'id' => 'expo-2020-countdown',
+          'class' => [
+
+          ]
+        ],
+      ];
+    }
+  }
+
 }
 
 /**

@@ -5,6 +5,7 @@ window.$ = window.JQuery = $;
 
 import underscore from 'underscore';
 import wiatforimage from 'jquery.waitforimages';
+import jqCountdown from 'jquery-countdown';
 
 import(
   '@/js/app/fontawesome'
@@ -205,8 +206,11 @@ new Modaal();
   Drupal.behaviors.expo2020 = {
     attach: function (context, settings) {
       $(document).ready(function () {
-
-
+        if(typeof settings.countdownDate != 'undefined'){
+          $('#expo-2020-countdown').countdown(settings.countdownDate, function(event) {
+            $(this).html(event.strftime('%D : %H : %M : %S'));
+          });
+        }
       });
     }
   };
