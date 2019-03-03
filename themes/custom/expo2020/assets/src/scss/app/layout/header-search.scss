@@ -43,13 +43,13 @@
     &.open{
       .input-wrap{
         width: 800px;
-        transition-delay: 0.25s;
+        //transition-delay: 0.25s;
         background-color: $gray-100;
         margin: -1rem -0.5rem;
       }
 
       button{
-        transition-delay: 0.25s;
+        //transition-delay: 0.25s;
         background-color: transparent;
         svg{
           color: $primary-orange;
@@ -61,7 +61,7 @@
         }
       }
       .search-trigger{
-        transition-delay: 0.1s;
+        //transition-delay: 0.1s;
         opacity: 0;
         z-index: -1;
       }
@@ -83,7 +83,7 @@
       // transition: all 0.2s ease 0.3s;
       svg{
         g{
-          transition-delay: 0.2s;
+          //transition-delay: 0.2s;
         }
       }
     }
@@ -100,21 +100,17 @@
     }
 
     .search-trigger{
-      transition: all 0.3s ease 0.48s;
+      //transition: all 0.3s ease 0.48s;
       background-color: white;
       //border: 1px solid $gray-200;
       margin: -1rem -0.5rem;
 
       svg{
         color: $primary-blue;
-        g{
-
-        }
       }
     }
 
     .input-wrap{
-      //transition: width 0.2s ease 0.3s;
       height: 52px;
       width: 58px;
       position: absolute;
@@ -123,6 +119,7 @@
       z-index: 1;
       padding: 6px 20px;
       margin: -1rem -0.5rem;
+      transition: width 0.25s;
       input[type]{
         width: 100%;
         height: calc(100% - 2px);
