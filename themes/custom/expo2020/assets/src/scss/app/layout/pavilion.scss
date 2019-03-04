@@ -28,6 +28,12 @@
     margin-top: 8rem;
     object-fit: cover;
   }
+  .pavilion-bg-container {
+    margin-top: 8rem;
+    img {
+      min-width: 100%;
+    }
+  }
   .pavilion-shape {
     background-image: url('~@/images/shape2.png');
     background-repeat: no-repeat;
@@ -84,13 +90,24 @@
     .whats-on-shape {
       @extend .pavilion-shape-news;
       background-image: url('~@/images/shape4.png');
+      padding: 5rem;
+      .field--type-text-with-summary {
+        width: 35%;
+      }
       h2 {
         color: $icon-green;
+      }
+      p {
+        font-family: 'Open Sans', sans-serif;
       }
       a {
         color: $icon-green;
         font-family: $font-family-rubik;
         text-decoration: none;
+        border-bottom: none;
+        &:hover {
+          border-bottom: 2px solid;
+        }
       }
     }
   }
