@@ -81,6 +81,27 @@
         margin-top: -2px;
       }
     }
+    .whats-on-shape {
+      @extend .pavilion-shape-news;
+      background-image: url('~@/images/shape4.png');
+      h2 {
+        color: $icon-green;
+      }
+      a {
+        color: $icon-green;
+        font-family: $font-family-rubik;
+        text-decoration: none;
+      }
+    }
+  }
+  .whats-on-shape-under {
+    position: relative;
+    right: -46%;
+    top: 27%;
+    height: 36%;
+    &:hover {
+      filter: brightness(110%);
+    }
   }
 }
 
