@@ -151,10 +151,127 @@ function expo2020_preprocess_block(&$variables)
       $content['field_count_down_date'][0] = [
         '#type'       => 'container',
         '#attributes' => [
-          'id' => 'expo-2020-countdown',
-          'class' => [
-
-          ]
+          'id'    => 'expo-2020-countdown',
+          'class' => ['countdown', 'container'],
+        ],
+        'days'        => [
+          '#type'       => 'container',
+          '#attributes' => [
+            'class' => ['countdown-item', 'colour-primary-blue'],
+          ],
+          'day_num'     => [
+            '#type'       => 'container',
+            '#attributes' => [
+              'id'    => 'days',
+              'class' => ['countdown-number'],
+            ],
+          ],
+          'day_label'   => [
+            '#type'       => 'container',
+            '#attributes' => [
+              'class' => ['countdown-date'],
+            ],
+            '#markup'     => 'DAYS',
+          ],
+        ],
+        'colon1'      => [
+          '#type'       => 'container',
+          '#attributes' => [
+            'class' => ['countdown-item'],
+          ],
+          'inner'       => [
+            '#type'       => 'container',
+            '#attributes' => [
+              'class' => ['colon'],
+            ],
+            '#markup'     => ':',
+          ],
+        ],
+        'hours'       => [
+          '#type'       => 'container',
+          '#attributes' => [
+            'class' => ['countdown-item', 'colour-green'],
+          ],
+          'hours_num'   => [
+            '#type'       => 'container',
+            '#attributes' => [
+              'id'    => 'hours',
+              'class' => ['countdown-number'],
+            ],
+          ],
+          'hours_label' => [
+            '#type'       => 'container',
+            '#attributes' => [
+              'class' => ['countdown-date'],
+            ],
+            '#markup'     => 'HOURS',
+          ],
+        ],
+        'colon2'      => [
+          '#type'       => 'container',
+          '#attributes' => [
+            'class' => ['countdown-item'],
+          ],
+          'inner'       => [
+            '#type'       => 'container',
+            '#attributes' => [
+              'class' => ['colon'],
+            ],
+            '#markup'     => ':',
+          ],
+        ],
+        'minutes'     => [
+          '#type'       => 'container',
+          '#attributes' => [
+            'class'     => ['countdown-item', 'colour-orange'],
+          ],
+          'minutes_num'   => [
+            '#type'       => 'container',
+            '#attributes' => [
+              'id'    => 'minutes',
+              'class' => ['countdown-number'],
+            ],
+          ],
+          'minutes_label' => [
+            '#type'       => 'container',
+            '#attributes' => [
+              'class' => ['countdown-date'],
+            ],
+            '#markup'     => 'MINUTES',
+          ],
+        ],
+        'colon3'      => [
+          '#type'       => 'container',
+          '#attributes' => [
+            'class' => ['countdown-item'],
+          ],
+          'inner'       => [
+            '#type'       => 'container',
+            '#attributes' => [
+              'class' => ['colon'],
+            ],
+            '#markup'     => ':',
+          ],
+        ],
+        'seconds'     => [
+          '#type'       => 'container',
+          '#attributes' => [
+            'class'     => ['countdown-item', 'colour-brown'],
+          ],
+          'seconds_num'   => [
+            '#type'       => 'container',
+            '#attributes' => [
+              'id'    => 'seconds',
+              'class' => ['countdown-number'],
+            ],
+          ],
+          'seconds_label' => [
+            '#type'       => 'container',
+            '#attributes' => [
+              'class' => ['countdown-date'],
+            ],
+            '#markup'     => 'SECONDS',
+          ],
         ],
       ];
     }

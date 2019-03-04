@@ -208,7 +208,10 @@ new Modaal();
       $(document).ready(function () {
         if(typeof settings.countdownDate != 'undefined'){
           $('#expo-2020-countdown').countdown(settings.countdownDate, function(event) {
-            $(this).html(event.strftime('%D : %H : %M : %S'));
+            $(this).find('#days').html(event.strftime('%D'));
+            $(this).find('#hours').html(event.strftime('%H'));
+            $(this).find('#minutes').html(event.strftime('%M'));
+            $(this).find('#seconds').html(event.strftime('%S'));
           });
         }
       });
