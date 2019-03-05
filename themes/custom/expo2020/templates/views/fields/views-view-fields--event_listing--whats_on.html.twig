@@ -32,37 +32,6 @@
  */
 #}
 
-{% if row._entity.field_news_media_type[0].entity.name.value and row._entity.field_news_media_type[0].entity.name.value|lower == 'twitter' %}
-  <div class="news-type-twitter-outer">
-    <div class="news-type-twitter-top-container">
-      {% if row._entity.field_news_media_type[0].entity.field_fontawesome_icon.value %}
-        <div class="news-type-twitter-icon">
-          {{ row._entity.field_news_media_type[0].entity.field_fontawesome_icon.value|raw }}
-        </div>
-      {% endif %}
-      <div class="news-type-twitter-name">
-        EXPO2020AUS
-      </div>
-    </div>
-
-    <div class="news-type-twitter-lower-container">
-      {% if fields.body.content %}
-        <div class="news-twitter-content">
-          {{ fields.body.content }}
-        </div>
-      {% endif %}
-
-      {% if fields.field_media_date_1.content %}
-        <div class="news-twitter-time-ago">
-          <p>
-            {{ fields.field_media_date_1.content }}
-          </p>
-        </div>
-      {% endif %}
-    </div>
-  </div>
-{% else %}
-
   {% if fields.view_node.content %}
     <a href="{{ fields.view_node.content|striptags|replace({'\n':'', '\r':'', ' ':''}) }}">
   {% endif %}
@@ -75,29 +44,29 @@
 
 
   {% if row._entity.field_news_media_type[0].entity.field_fontawesome_icon.value %}
-  <div class="news-type-icon">
-    {{ row._entity.field_news_media_type[0].entity.field_fontawesome_icon.value|raw }}
-  </div>
+    <div class="event-type-icon">
+      {{ row._entity.field_news_media_type[0].entity.field_fontawesome_icon.value|raw }}
+    </div>
   {% endif %}
-  
-  <div class="news-lower-container">
+
+  <div class="event-lower-container">
     {% if fields.title.content %}
-      <div class="news-title">
+      <div class="event-title">
         <p>
           {{ fields.title.content }}
         </p>
       </div>
     {% endif %}
-    {% if fields.field_media_date.content %}
-      <div class="news-date">
+    {% if fields.field_event_date.content %}
+      <div class="event-date">
         <p>
-          {{ fields.field_media_date.content }}
+          {{ fields.field_event_date.content }}
         </p>
       </div>
     {% endif %}
   </div>
+
   {% if fields.view_node.content %}
     </a>
   {% endif %}
-{% endif %}
 
