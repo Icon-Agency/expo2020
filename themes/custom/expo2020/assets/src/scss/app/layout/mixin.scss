@@ -1,0 +1,15 @@
+@mixin type-filter-links($color) {
+  border: 1px solid $color;
+  color: $color;
+  padding: 0.5rem 1rem;
+  margin: 0 .5rem;
+  svg {
+    width: 20px;
+    padding-right: 0.2rem;
+  }
+  &:hover,
+  &.active {
+    color: $white;
+    background-color: $color;
+  }
+}

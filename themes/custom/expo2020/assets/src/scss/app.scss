@@ -22,6 +22,7 @@
 @import './components/countdown';
 
 // Custom styles
+@import 'app/layout/mixin';
 @import './app/layout/home';
 @import './app/layout/news';
 @import './app/layout/toolbar';
@@ -41,6 +42,7 @@
 @import './app/layout/pavilion';
 @import './app/layout/responsive';
 @import './app/layout/content';
+
 
 // Elements
 

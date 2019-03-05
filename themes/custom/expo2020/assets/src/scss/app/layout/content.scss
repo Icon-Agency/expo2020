@@ -72,3 +72,29 @@
     }
   }
 }
+
+#block-whatsonsecondbanner {
+  .whatson-feature {
+    h3 {
+      text-align: center;
+      color: $icon-green;
+    }
+    .col-md-6 {
+      padding: 0;
+    }
+    .col-md-6:first-child {
+      height:100%;
+      width:100%;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit:cover;
+      }
+    }
+    .col-md-6:last-child {
+      background-image: url('~@/images/feature-bg.png');
+      padding: 5rem;
+
+    }
+  }
+}

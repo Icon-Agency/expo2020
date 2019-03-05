@@ -172,20 +172,8 @@
       }
       .views-exposed-form {
         .news-type-filter-links {
-          border: 1px solid $primary-orange;
-          color: $primary-orange;
-          padding: 0.5rem 1rem;
-          margin: 0 .5rem;
-          svg {
-            width: 20px;
-            padding-top: 0.7rem;
-            padding-right: 0.2rem;
-          }
-          &:hover,
-          &.active {
-            color: $white;
-            background-color: $primary-orange;
-          }
+          @include type-filter-links($primary-orange);
+          padding-top: 0.7rem;
         }
         .news-types-collapse-search {
           display: flex;
@@ -227,6 +215,66 @@
         }
         .page-item:first-child .page-link {
           border: none;
+        }
+      }
+    }
+  }
+  //whats on
+  .view-display-id-whats_on {
+    .view-filters {
+      //display: flex;
+      .views-exposed-form {
+        .event-listing-title-links-search {
+          display: flex;
+          margin-bottom: 2rem;
+        }
+        .event-listing-title {
+          width: 70%;
+        }
+        .event-types-filter-container {
+          margin-top: 1rem;
+        }
+        .event-type-filter-links {
+          @include type-filter-links($icon-green);
+        }
+        .event-listing-date-n-submit {
+          background-color: $gray-100;
+          padding: 0.5rem 1rem;
+          display: flex;
+          .event-listing-date-outer-wrapper {
+            display: flex;
+            .event-listing-date-label {
+              color: $icon-green;
+              font-family: $font-family-rubik;
+              padding-top: 1rem;
+            }
+            .form-item-field-event-date-value-min,
+            .form-item-field-event-date-value-max {
+              display: flex;
+              margin-bottom: 0;
+              label {
+                padding-top: 1rem;
+                padding-right: 1rem;
+              }
+            }
+            .form-item-field-event-date-value-min {
+              margin-left: 3rem;
+            }
+            .form-item-field-event-date-value-max {
+              margin-left: 1rem;
+            }
+          }
+          .form-actions {
+            .btn {
+              margin-top: 5px;
+              margin-left: 1rem;
+              background-color: $icon-green;
+              border-color: $icon-green;
+              &:hover {
+                filter: brightness(110%);
+              }
+            }
+          }
         }
       }
     }
