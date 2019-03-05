@@ -107,7 +107,7 @@
       {{ content.field_media }}
     {% endif %}
 
-    {% if content.field_in_partnership_with[0] %}
+    {% if content.field_in_partnership_with[0] or content.field_event_info_in_sidebar[0] %}
     <div class="row">
       <div class="col-lg-8 news-article-view-content-left">
         {% if content.body[0] %}
@@ -116,7 +116,8 @@
       </div>
 
       <div class="col-lg-3 news-article-view-content-right offset-lg-1">
-          {{ content.field_in_partnership_with }}
+        {{ content.field_event_info_in_sidebar }}
+        {{ content.field_in_partnership_with }}
       </div>
     </div>
     {% else %}
