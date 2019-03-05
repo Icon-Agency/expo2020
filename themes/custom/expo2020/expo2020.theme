@@ -527,7 +527,7 @@ function expo2020_preprocess_views_exposed_form(&$variables) {
       ],
 
       'type_filter_links' => $form['type_filter_links'],
-      'combine' => $form['combine'],
+      //'combine' => $form['combine'],
     ];
 
     unset($form['combine']);
@@ -585,8 +585,8 @@ function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'
       ],
     ];
 
-    $current_url_str = $type == 'news' ? "{$form['#action']}?combine={$form['combine']['#value']}"
-      : "{$form['#action']}?combine={$form['combine']['#value']}&field_event_date_value[min]={$form['field_event_date_value']['min']['#value']}&field_event_date_value[max]={$form['field_event_date_value']['max']['#value']}";
+//    $current_url_str = $type == 'news' ? "{$form['#action']}?combine={$form['combine']['#value']}"
+//      : "{$form['#action']}?combine={$form['combine']['#value']}&field_event_date_value[min]={$form['field_event_date_value']['min']['#value']}&field_event_date_value[max]={$form['field_event_date_value']['max']['#value']}";
 
     foreach ($form['field_news_media_type_target_id']['#options'] as $tid => $t_name){
 
@@ -604,7 +604,7 @@ function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'
         $type_filter_links[mb_strtolower($t_name)] = [
           '#title' => ['#markup' => $icon . t($t_name)],
           '#type' => 'link',
-          '#url' =>  \Drupal\Core\Url::fromUserInput($current_url_str . "&field_news_media_type_target_id={$tid}"),
+          '#url' =>  \Drupal\Core\Url::fromUserInput("{$form['#action']}?field_news_media_type_target_id={$tid}#{$form['#id']}"),
           '#options' => [
             'attributes' => [
               'class' => $type == 'news' ? 'news-type-filter-links' . $active : 'event-type-filter-links' . $active,
@@ -616,7 +616,7 @@ function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'
         $type_filter_links['all'] = [
           '#title' => t('ALL'),
           '#type' => 'link',
-          '#url' =>  \Drupal\Core\Url::fromUserInput($current_url_str . "&field_news_media_type_target_id=All"),
+          '#url' =>  \Drupal\Core\Url::fromUserInput("{$form['#action']}?field_news_media_type_target_id=All#{$form['#id']}"),
           '#options' => [
             'attributes' => [
               'class' => $type == 'news' ? 'news-type-filter-links' . $active : 'event-type-filter-links' . $active,
