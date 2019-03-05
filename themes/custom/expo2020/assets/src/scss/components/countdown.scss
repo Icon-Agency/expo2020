@@ -1,0 +1,38 @@
+#block-expo2020countdown {
+  h2 {
+    text-align: center;
+    font-size: 24px;
+  }
+  .countdown {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .countdown-item {
+    margin: 2rem;
+    font-weight: 600;
+  }
+  .countdown-number {
+    font-size: 95px;
+  }
+  .colour-primary-blue {
+    color: $primary-blue;
+  }
+  .colour-green {
+    color: $icon-green;
+  }
+  .colour-orange {
+    color: $icon-orange;
+  }
+  .colour-brown {
+    color: $countdown-brown;
+  }
+  .countdown-date {
+    text-align: center;
+  }
+  .colon {
+    font-size: 95px;
+    color: $countdown-gray;
+  }
+}
