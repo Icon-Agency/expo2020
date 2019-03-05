@@ -1,7 +1,8 @@
 .latest-news,
 .view-display-id-news_listing_page,
 .news-view-latest-news-bottom,
-.view-display-id-whats_on {
+.view-display-id-whats_on,
+.event-view-upcoming-bottom {
   position: relative;
   z-index: 100;
   .news-section {
@@ -235,10 +236,7 @@
 //news detail page
 .node--type-news.node--view-mode-full {
   .field--name-field-media-date {
-    font-family: 'Rubik', sans-serif;
-    text-transform: uppercase;
-    color: $primary-orange;
-    margin-top: 2rem;
+    @include date-time($primary-orange);
   }
   h1{
     color: $primary-blue;
@@ -283,33 +281,71 @@
   p {
     font-family: 'Open Sans', sans-serif;
   }
-}
-
-.news-article-view-content-right {
-  .field--name-field-label {
-    color: $primary-orange;
-    font-family: $font-family-rubik;
-  }
-  .field--name-field-enquiries-contact {
-    background-color: $primary-blue;
-    padding: 1.5rem;
-    p {
-      color: $white;
-      font-size: 14px;
-      font-family: $font-family-work-sans;
+  .news-article-view-content-right {
+    .field--name-field-label {
+      color: $primary-orange;
+      font-family: $font-family-rubik;
+    }
+    .field--name-field-enquiries-contact {
+      background-color: $primary-blue;
+      padding: 1.5rem;
+      p {
+        color: $white;
+        font-size: 14px;
+        font-family: $font-family-work-sans;
+      }
     }
   }
 }
+
+.node--type-event.node--view-mode-full {
+  margin-top: 2rem;
+  .datetime {
+    @include date-time($icon-green);
+
+  }
+  h1{
+    color: $primary-blue;
+    margin-top: 1rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    color: $gray-700;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+    margin: 2rem 0;
+  }
+  .news-article-view-content-right {
+    img {
+      width: auto;
+    }
+  }
+}
+#block-floorplan {
+  .floor-plan {
+    background-size: cover;
+    height: 700px;
+    position: relative;
+    h4 {
+      position: absolute;
+      bottom: 1rem;
+      left: 2rem;
+      @include date-time($icon-green);
+      font-size: 16px;
+    }
+  }
+}
+
 
 .region-content-bottom {
   border-top: 5px solid $gray-100;
   margin-top: 3rem;
   .news-view-latest-news-bottom {
-    margin-top: 2rem;
-    h2 {
-      text-decoration: underline;
-      text-decoration-color: $primary-orange;
-      text-underline-position: under;
-    }
+    @include view-upcoming-bottom($primary-orange);
+  }
+  .event-view-upcoming-bottom {
+    @include view-upcoming-bottom($primary-turquoise);
   }
 }

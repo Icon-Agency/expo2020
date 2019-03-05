@@ -95,3 +95,19 @@
     }
   }
 }
+
+@mixin date-time($color) {
+  font-family: 'Rubik', sans-serif;
+  text-transform: uppercase;
+  color: $color;
+  margin-top: 2rem;
+}
+
+@mixin view-upcoming-bottom($color) {
+  margin-top: 2rem;
+  h2 {
+    text-decoration: underline;
+    text-decoration-color: $color;
+    text-underline-position: under;
+  }
+}
