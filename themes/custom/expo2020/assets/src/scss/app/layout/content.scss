@@ -79,12 +79,16 @@
       text-align: center;
       color: $icon-green;
     }
+    .row {
+      margin: 0;
+    }
     .col-md-6 {
       padding: 0;
     }
     .col-md-6:first-child {
-      height:100%;
-      width:100%;
+      .embedded-entity {
+        margin-bottom: 0;
+      }
       img {
         height: 100%;
         width: 100%;
@@ -94,7 +98,18 @@
     .col-md-6:last-child {
       background-image: url('~@/images/feature-bg.png');
       padding: 5rem;
-
+      .text-top {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .text-middle {
+        font-family: 'Open Sans', sans-serif;
+      }
+      .text-bottom {
+        font-family: $font-family-rubik;
+        font-weight: 600;
+        margin-top: 5rem;
+      }
     }
   }
 }
