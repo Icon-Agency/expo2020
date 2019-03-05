@@ -10,6 +10,7 @@ use Drupal\Core\Template\Attribute;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Core\Block\BlockPluginInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -484,61 +485,7 @@ function expo2020_preprocess_views_exposed_form(&$variables) {
 
   if ( $form['#id'] == 'views-exposed-form-media-listing-news-listing-page'){
 
-    $form['field_news_media_type_target_id']['#access'] = FALSE;
-
-    if (!empty($form['field_news_media_type_target_id']['#options'])){
-
-      $type_filter_links = [
-        '#type' => 'container',
-        '#attributes' => [
-          'class' => [
-            'news-types-filter-container',
-          ],
-        ],
-      ];
-
-      $current_url_str = "{$form['#action']}?combine={$form['combine']['#value']}";
-
-      foreach ($form['field_news_media_type_target_id']['#options'] as $tid => $t_name){
-
-        $active = ($form['field_news_media_type_target_id']['#value'] == $tid) ? ' active' : '';
-
-        if ($tid != 'All') {
-          $term = Term::load($tid);
-
-          if (empty($term)){
-            continue;
-          }
-
-          $icon = empty($term->field_fontawesome_icon[0]->value) ? '' : $term->field_fontawesome_icon[0]->value;
-
-          $type_filter_links[mb_strtolower($t_name)] = [
-            '#title' => ['#markup' => $icon . t($t_name)],
-            '#type' => 'link',
-            '#url' =>  \Drupal\Core\Url::fromUserInput($current_url_str . "&field_news_media_type_target_id={$tid}"),
-            '#options' => [
-              'attributes' => [
-                'class' => 'news-type-filter-links' . $active,
-              ],
-            ],
-          ];
-        }
-        else {
-          $type_filter_links['all'] = [
-            '#title' => t('ALL'),
-            '#type' => 'link',
-            '#url' =>  \Drupal\Core\Url::fromUserInput($current_url_str . "&field_news_media_type_target_id=All"),
-            '#options' => [
-              'attributes' => [
-                'class' => 'news-type-filter-links' . $active,
-              ],
-            ],
-          ];
-        }
-      }
-
-      $form['type_filter_links'] = $type_filter_links;
-    }
+    _expo2020_convert_taxonomy_type_select_to_links($form, 'news');
 
     $form['actions']['#access'] = FALSE;
 
@@ -554,6 +501,132 @@ function expo2020_preprocess_views_exposed_form(&$variables) {
     ];
 
     unset($form['combine']);
+  }
+
+
+  if ($form['#id'] == 'views-exposed-form-event-listing-whats-on') {
+
+    _expo2020_convert_taxonomy_type_select_to_links($form, 'event');
+
+    $form['title_links_search'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => [
+          'event-listing-title-links-search',
+        ],
+      ],
+
+      'title' => [
+        '#type' => 'container',
+        '#attributes' => [
+          'class' => [
+            'event-listing-title',
+          ],
+        ],
+        '#markup' => '<h2>What\'s on</h2>',
+      ],
+
+      'type_filter_links' => $form['type_filter_links'],
+      'combine' => $form['combine'],
+    ];
+
+    unset($form['combine']);
+    unset($form['type_filter_links']);
+
+    $form['field_event_date_value']['max']['#title'] = new TranslatableMarkup('to');
+
+    $form['date_n_submit'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => [
+          'event-listing-date-n-submit',
+        ],
+      ],
+      'date_outer' => [
+        '#type' => 'container',
+        '#attributes' => [
+          'class' => [
+            'event-listing-date-outer-wrapper',
+          ],
+        ],
+        'Browse_by' => [
+          '#type' => 'container',
+          '#attributes' => [
+            'class' => [
+              'event-listing-date-label',
+            ],
+          ],
+          '#markup' => '<i class="fas fa-calendar-alt"></i> BROWSE BY DATE',
+        ],
+
+        'field_event_date_value' => $form['field_event_date_value'],
+      ],
+      'actions' => $form['actions'],
+    ];
+
+    unset($form['field_event_date_value']);
+    unset($form['actions']);
+  }
+}
+
+function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'){
+
+  $form['field_news_media_type_target_id']['#prefix'] = '<div class="invisible">';
+  $form['field_news_media_type_target_id']['#suffix'] = '</div>';
+
+  if (!empty($form['field_news_media_type_target_id']['#options'])){
+
+    $type_filter_links = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => [
+          $type == 'news' ? 'news-types-filter-container' : 'event-types-filter-container',
+        ],
+      ],
+    ];
+
+    $current_url_str = $type == 'news' ? "{$form['#action']}?combine={$form['combine']['#value']}"
+      : "{$form['#action']}?combine={$form['combine']['#value']}&field_event_date_value[min]={$form['field_event_date_value']['min']['#value']}&field_event_date_value[max]={$form['field_event_date_value']['max']['#value']}";
+
+    foreach ($form['field_news_media_type_target_id']['#options'] as $tid => $t_name){
+
+      $active = ($form['field_news_media_type_target_id']['#value'] == $tid) ? ' active' : '';
+
+      if ($tid != 'All') {
+        $term = Term::load($tid);
+
+        if (empty($term)){
+          continue;
+        }
+
+        $icon = empty($term->field_fontawesome_icon[0]->value) ? '' : $term->field_fontawesome_icon[0]->value;
+
+        $type_filter_links[mb_strtolower($t_name)] = [
+          '#title' => ['#markup' => $icon . t($t_name)],
+          '#type' => 'link',
+          '#url' =>  \Drupal\Core\Url::fromUserInput($current_url_str . "&field_news_media_type_target_id={$tid}"),
+          '#options' => [
+            'attributes' => [
+              'class' => $type == 'news' ? 'news-type-filter-links' . $active : 'event-type-filter-links' . $active,
+            ],
+          ],
+        ];
+      }
+      else {
+        $type_filter_links['all'] = [
+          '#title' => t('ALL'),
+          '#type' => 'link',
+          '#url' =>  \Drupal\Core\Url::fromUserInput($current_url_str . "&field_news_media_type_target_id=All"),
+          '#options' => [
+            'attributes' => [
+              'class' => $type == 'news' ? 'news-type-filter-links' . $active : 'event-type-filter-links' . $active,
+            ],
+          ],
+        ];
+      }
+    }
+
+    $form['type_filter_links'] = $type_filter_links;
   }
 }
 
