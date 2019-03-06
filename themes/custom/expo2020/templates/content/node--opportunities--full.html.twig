@@ -106,11 +106,11 @@
 
 <section class="panel extra-pavilion" data-section-name="extra">
     <div class="text-under">
-        {% if content.field_text_area_under_top_banner %}
-      <div class="container">
-            {{ content.field_text_area_under_top_banner|raw }}
-      </div>
-        {% endif %}
+      {% if content.field_text_area_under_top_banner %}
+        <div class="container">
+          {{ content.field_text_area_under_top_banner|raw }}
+        </div>
+      {% endif %}
     </div>
 </section>
 

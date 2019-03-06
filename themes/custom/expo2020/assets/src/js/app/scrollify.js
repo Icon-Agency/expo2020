@@ -9,7 +9,8 @@ export default class Scrollify {
     let $body = $("body");
 
     if ($body.hasClass('node--type-home-page')
-        || $body.hasClass('node--type-pavilion-landing-page')) {
+        || $body.hasClass('node--type-pavilion-landing-page')
+        || $body.hasClass('node--type-opportunities')) {
       $.scrollify({
         section: ".panel",
         sectionName: false,
