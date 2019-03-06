@@ -103,12 +103,8 @@ label + small.description {
 
 
 .webform-submission-form {
-  border-radius: $border-radius-lg;
-  border-bottom-right-radius: $spacer * 1.5;
-
   background-color: color('bg_extra_light_tan');
   padding: $grid-gutter-width;
-  box-shadow: -1px 4px 2px color('bg_light_tan');
 
   h2 {
     color: color('brand_purple');
@@ -219,6 +215,43 @@ label + small.description {
       & ~ .fa-stack .fg.fa-square {
         color: color('brand_purple');
       }
+    }
+  }
+}
+.modaal-container {
+  background-color: $form-bg;
+  max-width: 600px;
+  background-image: url('~@/images/form-bg-mask.png');
+}
+#block-saygdayform {
+  .popup-form-common-header {
+    margin-left: 1.5rem;
+    margin-top: 3rem;
+    img {
+      width: 50%;
+    }
+  }
+  .webform-submission-form {
+    margin-top: 7rem;
+  }
+  #edit-heading-text {
+    p {
+      color: $primary-blue;
+      font-size: 24px;
+    }
+    p:first-child {
+      margin-bottom: 0;
+    }
+  }
+  label {
+    font-family: 'Open Sans', sans-serif;
+    color: $gray-600;
+  }
+  .form-actions {
+    width: 50%;
+    .btn {
+      background-color: $primary-blue;
+      border-color: $primary-blue;
     }
   }
 }

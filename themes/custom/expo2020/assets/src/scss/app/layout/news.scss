@@ -302,7 +302,6 @@
   margin-top: 2rem;
   .datetime {
     @include date-time($icon-green);
-
   }
   h1{
     color: $primary-blue;
@@ -311,6 +310,9 @@
   h3 {
     font-size: 1.5rem;
     color: $gray-700;
+  }
+  p {
+    font-family: 'Open Sans', sans-serif;
   }
   img {
     width: 100%;
