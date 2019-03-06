@@ -106,6 +106,7 @@ function expo2020_preprocess_page(&$variables) {
     'home_page',
     'pavilion_landing_page',
     'contact',
+    'opportunities',
   ];
   if (!empty($node)){
     if (in_array($node->bundle(), $content_types_without_content_container)){
