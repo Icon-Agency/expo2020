@@ -90,8 +90,9 @@ class TwitterNodeProcessor extends PluginNodeProcessorPluginBase {
     $image_media = Media::create([
       'bundle' => 'image',
       'uid' => '1',
-      'langcode' => Language::LANGCODE_DEFAULT,
+      'langcode' => \Drupal::languageManager()->getDefaultLanguage()->getId(),
       'status' => NodeInterface::PUBLISHED,
+      'name' => t('tweeter image ' . $name),
       'field_media_image' => [
         'target_id' => $file_saved->id(),
         'alt' => t('tweeter image ' . $name),
