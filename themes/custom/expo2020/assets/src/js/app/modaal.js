@@ -10,5 +10,8 @@ export default class Modaal {
     $('.modaal-video-trigger').modaal({
       type: 'video',
     });
+
+    // inline Modal
+    $('.modaal-inline-trigger').modaal();
   }
 }
