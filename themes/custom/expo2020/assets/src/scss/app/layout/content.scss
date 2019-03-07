@@ -75,41 +75,35 @@
 
 #block-whatsonsecondbanner {
   .whatson-feature {
+    @include feature-card($icon-green, url('~@/images/feature-bg.png'));
+  }
+}
+
+//themes page
+
+.node--type-themes.node--view-mode-full {
+  .field--name-field-text-area-under-top-banner {
+    margin: 5rem 0;
     h3 {
-      text-align: center;
-      color: $icon-green;
+      color: $icon-orange;
     }
-    .row {
-      margin: 0;
+  }
+  .field--name-field-txt-area-befr-galry-slider {
+    @include feature-card($icon-orange, url('~@/images/feature-bg.png'))
+  }
+  .field--name-field-multi-text-after-gallery {
+    margin-bottom: 0;
+    .field__item {
+      margin-top: 5rem;
     }
-    .col-md-6 {
-      padding: 0;
+    .feature-card-green {
+      @include feature-card($icon-green, url('~@/images/feature-bg.png'));
     }
-    .col-md-6:first-child {
-      .embedded-entity {
-        margin-bottom: 0;
-      }
-      img {
-        height: 100%;
-        width: 100%;
-        object-fit:cover;
-      }
+    .feature-card-blue {
+      @include feature-card($primary-blue, url('~@/images/feature-bg2.png'));
     }
-    .col-md-6:last-child {
-      background-image: url('~@/images/feature-bg.png');
-      padding: 5rem;
-      .text-top {
-        font-size: 18px;
-        font-weight: 600;
-      }
-      .text-middle {
-        font-family: 'Open Sans', sans-serif;
-      }
-      .text-bottom {
-        font-family: $font-family-rubik;
-        font-weight: 600;
-        margin-top: 5rem;
-      }
+    .field__item:last-child {
+      @include pavilion-welcome($icon-orange, $primary-blue);
     }
   }
 }

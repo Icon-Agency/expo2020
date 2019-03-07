@@ -137,3 +137,61 @@
     transform: rotate(-45deg);
   }
 }
+
+@mixin feature-card($color, $bg-img) {
+  h3 {
+    text-align: center;
+    color: $color;
+  }
+  .row {
+    margin: 0;
+  }
+  .col-md-6 {
+    padding: 0;
+  }
+  .col-md-6:first-child {
+    .embedded-entity {
+      margin-bottom: 0;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit:cover;
+    }
+  }
+  .col-md-6:last-child {
+    background-image: $bg-img;
+    padding: 5rem;
+    .text-top {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .text-middle {
+      font-family: 'Open Sans', sans-serif;
+    }
+    .text-bottom {
+      font-family: $font-family-rubik;
+      font-weight: 600;
+      margin-top: 5rem;
+    }
+  }
+}
+
+@mixin pavilion-welcome($color1, $color2) {
+  .pavilion-welcome {
+    background-color: $white;
+    padding: 5rem 0;
+    margin-top: -2rem;
+    .pavilion-welcome-text {
+      padding-top: 10rem;
+      color: $color1;
+      p {
+        font-size: 24px;
+        color: $gray-900;
+      }
+    }
+    .btn {
+      color: $color2;
+    }
+  }
+}
