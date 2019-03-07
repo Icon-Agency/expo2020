@@ -237,80 +237,14 @@ h2.accent {
   text-align: center;
 }
 .icon1 {
-  background-color: $icon-green;
-  width: 90px;
-  height: 90px;
-  margin: auto;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  &:hover {
-    filter: brightness(120%);
-  }
-  svg {
-    color: $white;
-    width: 40px !important;
-    height: 40px;
-    margin: 1.5rem;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-  }
+  @include feature-icons($icon-green);
 }
 
 .icon2 {
-  background-color: $icon-blue;
-  width: 90px;
-  height: 90px;
-  margin: auto;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  &:hover {
-    filter: brightness(120%);
-  }
-  svg {
-    color: $white;
-    width: 40px !important;
-    height: 40px;
-    margin: 1.5rem;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-  }
+  @include feature-icons($icon-blue);
 }
 .icon3 {
-  background-color: $icon-orange;
-  width: 90px;
-  height: 90px;
-  margin: auto;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  &:hover {
-    filter: brightness(120%);
-  }
-  svg {
-    color: $white;
-    width: 40px !important;
-    height: 40px;
-    margin: 1.5rem;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-  }
+  @include feature-icons($icon-orange);
 }
 
 

@@ -1,7 +1,7 @@
 import {library, dom, icon} from '@fortawesome/fontawesome-svg-core'
 import {faTwitter, faFacebook, faLinkedin, faYoutube, faInstagram} from '@fortawesome/free-brands-svg-icons'
-import {faAngleUp, faThumbtack, faBullhorn, faStar, faQuoteLeft, faPencilAlt, faEnvelope, faClipboardCheck, faIdCardAlt, faHandshake, faBriefcase, faGlassMartini, faCalendarCheck, faInfo, faHaykal, faCalendarAlt} from '@fortawesome/free-solid-svg-icons'
-import {faWheat} from '@fortawesome/pro-solid-svg-icons'
+import {faAngleUp, faThumbtack, faBullhorn, faStar, faQuoteLeft, faPencilAlt, faEnvelope, faClipboardCheck, faIdCardAlt, faHandshake, faBriefcase, faGlassMartini, faCalendarCheck, faInfo, faHaykal, faCalendarAlt, faTheaterMasks, faGraduationCap, faSolarPanel, faHeartbeat, faFingerprint, faUmbrellaBeach} from '@fortawesome/free-solid-svg-icons'
+import {faWheat, faIndustryAlt} from '@fortawesome/pro-solid-svg-icons'
 import {faSearch} from '@fortawesome/pro-regular-svg-icons'
 
 export default class FontAwesome {
@@ -10,10 +10,10 @@ export default class FontAwesome {
     library.add(faTwitter, faFacebook, faLinkedin, faYoutube, faInstagram)
 
     // free-solid-svg-icons
-    library.add(faAngleUp, faThumbtack, faBullhorn, faStar, faQuoteLeft, faPencilAlt, faEnvelope, faClipboardCheck, faIdCardAlt, faHandshake, faBriefcase, faGlassMartini, faCalendarCheck, faInfo, faHaykal, faCalendarAlt)
+    library.add(faAngleUp, faThumbtack, faBullhorn, faStar, faQuoteLeft, faPencilAlt, faEnvelope, faClipboardCheck, faIdCardAlt, faHandshake, faBriefcase, faGlassMartini, faCalendarCheck, faInfo, faHaykal, faCalendarAlt, faTheaterMasks, faGraduationCap, faSolarPanel, faHeartbeat, faFingerprint, faUmbrellaBeach)
 
     // pro-solid-svg
-    library.add(faWheat)
+    library.add(faWheat, faIndustryAlt)
 
     // pro-regular-svg
     library.add(faSearch)

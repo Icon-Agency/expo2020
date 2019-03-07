@@ -287,7 +287,7 @@ $(window).scroll(function() {
 $("#to-top").click(function () {
   let $body = $("body");
   if ($body.hasClass('node--type-home-page')
-      || $body.hasClass('node--type-pavilion-landing-page')) {
+      || $body.hasClass('node--type-pavilion-landing-page') || $body.hasClass('node--type-opportunities')) {
     $.scrollify.move(0);
   } else {
     $("body,html").animate({scrollTop: 0}, 500);

@@ -111,3 +111,29 @@
     text-underline-position: under;
   }
 }
+
+@mixin feature-icons($color) {
+  background-color: $color;
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  &:hover {
+    filter: brightness(120%);
+  }
+  svg {
+    color: $white;
+    width: 40px !important;
+    height: 40px;
+    margin: 1.5rem;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}

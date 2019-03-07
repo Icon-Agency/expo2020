@@ -252,6 +252,9 @@ label + small.description {
     .btn {
       background-color: $primary-blue;
       border-color: $primary-blue;
+      &:hover {
+        filter: brightness(120%);
+      }
     }
   }
 }

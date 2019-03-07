@@ -1,9 +1,3 @@
-.node--type-pavilion-landing-page {
-  #block-expo2020-breadcrumbs {
-    display: none;
-  }
-}
-
 #parallax-container {
   display: block;
   height: 1100px;
@@ -137,6 +131,31 @@
   z-index: 30;
   background-color: $gray-100;
 }
+.oppo-footer {
+  position: relative;
+  z-index: 30;
+  background-color: $white;
+  padding-top: 7rem;
+  .oppo-icons {
+    margin-bottom: 7rem;
+    h2 {
+      color: $primary-blue;
+      text-align: center;
+    }
+    .row {
+      margin: 5rem 0;
+    }
+    .icon-blue1 {
+      @include feature-icons($icon-blue1);
+    }
+    .icon-blue2 {
+      @include feature-icons($icon-blue2);
+    }
+    .icon-blue3 {
+      @include feature-icons($icon-blue3);
+    }
+  }
+}
 
 .pavilion-text-before-slider {
   text-align: center;
@@ -148,6 +167,9 @@
   position: relative;
   z-index: 30;
   background-color: $white;
+  .field {
+    margin-bottom: 0;
+  }
   .pavilion-welcome {
     background-color: $white;
     padding: 5rem 0;

@@ -87,6 +87,8 @@
          src="{{ file_url(content.field_top_bnr_bk_img|field_target_entity.field_media_image.entity.uri.value) }}"
          alt="{{ content.field_top_bnr_bk_img|field_target_entity.field_media_image.alt }}"/>
   </div>
+    <div class="parallax-div">
+        <img src="/{{ base_path ~ directory }}/assets/src/images/cover1.png" class="pavilion-cover"></div>
   <div class="parallax-div pavilion-layer-top">
       <div class="pavilion-shape">
           {% if content.field_top_banner_title %}
@@ -122,7 +124,7 @@
 {% endif %}
 
 
-<section class="panel panel3 pavilion-footer footer-section" data-section-name="footer">
+<section class="panel panel3 oppo-footer footer-section" data-section-name="footer">
 
 
   {% if content['field_text_under_pinned_slider'][0] %}

@@ -34,3 +34,10 @@
     color: $gray-500;
   }
 }
+
+.node--type-pavilion-landing-page,
+.node--type-opportunities {
+  #block-expo2020-breadcrumbs {
+    display: none;
+  }
+}
