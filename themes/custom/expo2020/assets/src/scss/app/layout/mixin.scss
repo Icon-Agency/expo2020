@@ -195,3 +195,16 @@
     }
   }
 }
+
+@mixin media-card($color, $color2) {
+  background-color: $news-homepage;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  h3 {
+    color: $color;
+  }
+  .btn {
+    color: $color2;
+  }
+}

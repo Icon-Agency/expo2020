@@ -107,13 +107,21 @@ function expo2020_preprocess_page(&$variables) {
     'pavilion_landing_page',
     'contact',
     'opportunities',
+      'themes',
+      'media_landing_page',
   ];
   if (!empty($node)){
     if (in_array($node->bundle(), $content_types_without_content_container)){
       $variables['add_content_outer_wrap'] = FALSE;
     }
 
-    if ($node->bundle() == 'contact' && isset($variables['page']['content']['expo2020_breadcrumbs'])){
+    $types_without_bc = [
+        'contact',
+        'media_landing_page',
+        'themes',
+    ];
+
+    if (in_array($node->bundle(),$types_without_bc) && isset($variables['page']['content']['expo2020_breadcrumbs'])){
       unset($variables['page']['content']['expo2020_breadcrumbs']);
     }
   }
@@ -634,7 +642,14 @@ function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'
 
 function expo2020_preprocess_node(&$variables) {
 
-  if (!empty($variables['node']) && $variables['node']->getType() == 'contact'){
+    $types_with_special_bc = [
+        'contact',
+        'media_landing_page',
+        'themes',
+    ];
+
+  if (!empty($variables['node'])
+      && in_array($variables['node']->getType(),$types_with_special_bc)){
     $block_manager = \Drupal::service('plugin.manager.block');
     $plugin_block = $block_manager->createInstance('system_breadcrumb_block');
 
