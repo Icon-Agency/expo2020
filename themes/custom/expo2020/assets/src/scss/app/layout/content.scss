@@ -80,7 +80,11 @@
 }
 
 //themes page
-
+.node--type-themes {
+  .panels.main-container {
+    padding-top: 3rem;
+  }
+}
 .node--type-themes.node--view-mode-full {
   .field--name-field-text-area-under-top-banner {
     margin: 5rem 0;
@@ -140,6 +144,14 @@
   }
   .media-card-right {
     @include media-card($gray-900, $icon-orange);
+  }
+  #block-newstopcontenttext {
+    a {
+      border-bottom: 2px solid $primary-orange;
+    }
+    p {
+      margin-bottom: 0;
+    }
   }
   .media-bottom {
     padding: 5rem;
