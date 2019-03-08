@@ -110,11 +110,14 @@
               {{ content.field_text_area_under_top_banner }}
           {% endif %}
       </div>
-      <div class="container media-landing-page-gallery-content">
-          {% if content.field_gallery_listing_slider[0] %}
-              {{ content.field_gallery_listing_slider }}
-          {% endif %}
+      <div class="container-fluid media-landing-page-gallery-content">
+          <div class="container">
+              {% if content.field_gallery_listing_slider[0] %}
+                  {{ content.field_gallery_listing_slider }}
+              {% endif %}
+          </div>
       </div>
+
       <div class="container">
           {% if content.field_bottom_content[0] %}
               {{ content.field_bottom_content }}

@@ -106,13 +106,15 @@
               {{ content.field_text_area_under_top_banner }}
           {% endif %}
       </div>
-      <div class="container themes-gallery-content">
-          {% if content.field_txt_area_befr_galry_slider[0] %}
-              {{ content.field_txt_area_befr_galry_slider }}
-          {% endif %}
-          {% if content.field_gallery_listing_slider[0] %}
-              {{ content.field_gallery_listing_slider }}
-          {% endif %}
+      <div class="themes-gallery-content">
+          <div class="container">
+              {% if content.field_txt_area_befr_galry_slider[0] %}
+                  {{ content.field_txt_area_befr_galry_slider }}
+              {% endif %}
+              {% if content.field_gallery_listing_slider[0] %}
+                  {{ content.field_gallery_listing_slider }}
+              {% endif %}
+          </div>
       </div>
       <div class="container">
           {% if content.field_multi_text_after_gallery[0] %}

@@ -75,7 +75,7 @@
 
 #block-whatsonsecondbanner {
   .whatson-feature {
-    @include feature-card($icon-green, url('~@/images/feature-bg.png'));
+    @include feature-card($icon-green, url('~@/images/feature-bg.png'), 'bg-img');
   }
 }
 
@@ -88,19 +88,31 @@
       color: $icon-orange;
     }
   }
+  .themes-gallery-content {
+    background-image: url('~@/images/twitter-bg.png');
+  }
   .field--name-field-txt-area-befr-galry-slider {
-    @include feature-card($icon-orange, url('~@/images/feature-bg.png'))
+    padding-top: 5rem;
+    @include feature-card($icon-orange, $white, 'no-bg-img')
+  }
+  .field--name-field-gallery-listing-slider {
+    margin-top: 5rem;
+    background-image: url('~@/images/feature-bg.png');
+    height: 50%;
   }
   .field--name-field-multi-text-after-gallery {
     margin-bottom: 0;
     .field__item {
       margin-top: 5rem;
     }
+    .row {
+      margin: 0;
+    }
     .feature-card-green {
-      @include feature-card($icon-green, url('~@/images/feature-bg.png'));
+      @include feature-card($icon-green, url('~@/images/feature-bg.png'), 'bg-img');
     }
     .feature-card-blue {
-      @include feature-card($primary-blue, url('~@/images/feature-bg2.png'));
+      @include feature-card($primary-blue, url('~@/images/feature-bg2.png'), 'bg-img');
     }
     .field__item:last-child {
       @include pavilion-welcome($icon-orange, $primary-blue);
@@ -126,5 +138,14 @@
   .media-bottom {
     padding: 5rem;
     text-align: center;
+  }
+  .media-landing-page-after-banner {
+    .field {
+      margin-bottom: 0;
+    }
+  }
+  .media-landing-page-gallery-content {
+    background-color: $news-homepage;
+    padding: 5rem 0;
   }
 }
