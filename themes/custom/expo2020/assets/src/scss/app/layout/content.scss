@@ -90,15 +90,21 @@
   }
   .themes-gallery-content {
     background-image: url('~@/images/twitter-bg.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    margin-top: 5rem;
+  }
+  .field {
+    margin-bottom: 0;
   }
   .field--name-field-txt-area-befr-galry-slider {
-    padding-top: 5rem;
-    @include feature-card($icon-orange, $white, 'no-bg-img')
+    padding: 5rem 0;
+    @include feature-card($icon-orange, $white, 'no-bg-img');
   }
-  .field--name-field-gallery-listing-slider {
-    margin-top: 5rem;
-    background-image: url('~@/images/feature-bg.png');
-    height: 50%;
+  .themes-slider {
+    background-image: url('~@/images/twitter-bg1.png');
+    background-repeat: repeat-x;
+    background-size: contain;
   }
   .field--name-field-multi-text-after-gallery {
     margin-bottom: 0;
