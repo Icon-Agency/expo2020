@@ -174,10 +174,15 @@
         </div>
 
     </div>
+    <div class="container-fluid slider-container">
+        <div class="container">
+            {% if content.field_gallery_listing_slider %}
+                {{ content.field_gallery_listing_slider }}
+            {% endif %}
+        </div>
+    </div>
 
-    {% if content.field_gallery_listing_slider %}
-        {{ content.field_gallery_listing_slider }}
-    {% endif %}
+
 
     <div class="showcase container">
         <h2 class="" style="text-align: center;margin: 2rem;">Join us in Dubai – an invitation to showcase your goods and services to the world.</h2>

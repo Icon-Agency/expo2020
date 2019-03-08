@@ -75,12 +75,16 @@
 
 #block-whatsonsecondbanner {
   .whatson-feature {
-    @include feature-card($icon-green, url('~@/images/feature-bg.png'));
+    @include feature-card($icon-green, url('~@/images/feature-bg.png'), 'bg-img');
   }
 }
 
 //themes page
-
+.node--type-themes {
+  .panels.main-container {
+    padding-top: 3rem;
+  }
+}
 .node--type-themes.node--view-mode-full {
   .field--name-field-text-area-under-top-banner {
     margin: 5rem 0;
@@ -88,19 +92,37 @@
       color: $icon-orange;
     }
   }
+  .themes-gallery-content {
+    background-image: url('~@/images/twitter-bg.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    margin-top: 5rem;
+  }
+  .field {
+    margin-bottom: 0;
+  }
   .field--name-field-txt-area-befr-galry-slider {
-    @include feature-card($icon-orange, url('~@/images/feature-bg.png'))
+    padding: 5rem 0;
+    @include feature-card($icon-orange, $white, 'no-bg-img');
+  }
+  .themes-slider {
+    background-image: url('~@/images/twitter-bg1.png');
+    background-repeat: repeat-x;
+    background-size: contain;
   }
   .field--name-field-multi-text-after-gallery {
     margin-bottom: 0;
     .field__item {
       margin-top: 5rem;
     }
+    .row {
+      margin: 0;
+    }
     .feature-card-green {
-      @include feature-card($icon-green, url('~@/images/feature-bg.png'));
+      @include feature-card($icon-green, url('~@/images/feature-bg.png'), 'bg-img');
     }
     .feature-card-blue {
-      @include feature-card($primary-blue, url('~@/images/feature-bg2.png'));
+      @include feature-card($primary-blue, url('~@/images/feature-bg2.png'), 'bg-img');
     }
     .field__item:last-child {
       @include pavilion-welcome($icon-orange, $primary-blue);
@@ -123,8 +145,25 @@
   .media-card-right {
     @include media-card($gray-900, $icon-orange);
   }
+  #block-newstopcontenttext {
+    a {
+      border-bottom: 2px solid $primary-orange;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
   .media-bottom {
     padding: 5rem;
     text-align: center;
+  }
+  .media-landing-page-after-banner {
+    .field {
+      margin-bottom: 0;
+    }
+  }
+  .media-landing-page-gallery-content {
+    background-color: $news-homepage;
+    padding: 5rem 0;
   }
 }
