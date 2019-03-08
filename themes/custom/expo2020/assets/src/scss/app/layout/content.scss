@@ -167,3 +167,89 @@
     padding: 5rem 0;
   }
 }
+
+//partners
+#block-partnerssecondheader {
+  width: 100%;
+  position: absolute;
+  z-index: 20;
+  color: #fff;
+  background-color: #2E2C29;
+  text-align: center;
+  padding: 2rem;
+  top: 25%;
+  .field {
+    margin-bottom: 0;
+  }
+  a {
+    border-bottom-color: $primary-orange;
+    &:hover, &:active {
+      color: $primary-orange;
+    }
+  }
+}
+.node--type-sponsors-partners-landing-page.node--view-mode-full {
+  .field {
+    margin-bottom: 0;
+  }
+  .viewsreference--view-title {
+    color: $primary-blue;
+    font-size: $h3-font-size;
+    font-weight: 600;
+    margin: 2rem 0;
+  }
+  .sponsor-listing-big-card {
+    text-align: center;
+    & > div {
+      border: 1px solid $countdown-gray;
+    }
+    .upper-container {
+      padding: 5rem 0;
+    }
+    .lower-container {
+      padding: 3rem;
+      background-color: $gray-100;
+      .btn {
+        display: block;
+        width: 50%;
+        margin-top: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+  .partner-listing-small-card {
+    text-align: center;
+    margin: 1rem 0;
+    & > div {
+      border: 1px solid $countdown-gray;
+    }
+    .upper-container {
+      padding-top: 2rem;
+    }
+    .lower-container {
+      padding: 1rem;
+      font-size: 14px;
+      font-family: 'Open Sans', sans-serif;
+    }
+    &:hover {
+      top: -10px;
+      text-decoration: none;
+      -webkit-transition: top 0.2s ease;
+      transition: top 0.2s ease;
+    }
+  }
+}
+
+.view-id-sponsors_partners_views_listing {
+  padding-bottom: 3rem;
+  .view-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .inline-partner-logo {
+    margin: 1rem;
+  }
+}

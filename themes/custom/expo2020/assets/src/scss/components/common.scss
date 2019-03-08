@@ -93,6 +93,11 @@ body {
   background-color: $white;
   border-color: $primary-orange;
 }
+.btn-primary-white {
+  border-color: $btn-border;
+  background-color: $white;
+  color: $gray-900;
+}
 
 .font-weight-semibold {
   font-weight: 500;
