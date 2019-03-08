@@ -107,8 +107,9 @@ function expo2020_preprocess_page(&$variables) {
     'pavilion_landing_page',
     'contact',
     'opportunities',
-      'themes',
-      'media_landing_page',
+    'themes',
+    'media_landing_page',
+    'sponsors_partners_landing_page',
   ];
   if (!empty($node)){
     if (in_array($node->bundle(), $content_types_without_content_container)){
@@ -116,9 +117,10 @@ function expo2020_preprocess_page(&$variables) {
     }
 
     $types_without_bc = [
-        'contact',
-        'media_landing_page',
-        'themes',
+      'contact',
+      'media_landing_page',
+      'themes',
+      'sponsors_partners_landing_page',
     ];
 
     if (in_array($node->bundle(),$types_without_bc) && isset($variables['page']['content']['expo2020_breadcrumbs'])){
@@ -642,11 +644,12 @@ function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'
 
 function expo2020_preprocess_node(&$variables) {
 
-    $types_with_special_bc = [
-        'contact',
-        'media_landing_page',
-        'themes',
-    ];
+  $types_with_special_bc = [
+    'contact',
+    'media_landing_page',
+    'themes',
+    'sponsors_partners_landing_page',
+  ];
 
   if (!empty($variables['node'])
       && in_array($variables['node']->getType(),$types_with_special_bc)){
