@@ -15,6 +15,12 @@
   background-size: cover;
   background-position: 20% 70%;
   min-height: 400px;
+  h2 {
+    padding-top: 4rem;
+    text-decoration: underline;
+    text-decoration-color: $primary-orange;
+    text-underline-position: under;
+  }
 }
 
 .shape {

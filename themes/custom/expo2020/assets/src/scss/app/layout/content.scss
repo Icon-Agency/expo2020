@@ -229,6 +229,7 @@
   .partner-listing-small-card {
     text-align: center;
     margin: 1rem 0;
+    transition: top 0.2s ease;
     & > div {
       border: 1px solid $countdown-gray;
     }
@@ -256,6 +257,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+  .five-items-wrap {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 1rem 0;
   }
   .inline-partner-logo {
     margin: 1rem;
