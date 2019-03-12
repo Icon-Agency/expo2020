@@ -295,37 +295,6 @@ $("#to-top").click(function () {
 
 });
 
-/* news collapsing search */
-var news_searchInput = $('#views-exposed-form-media-listing-news-listing-page .news-types-collapse-search .form-item-combine input');
-var news_searchButton = $('#views-exposed-form-media-listing-news-listing-page .search-trigger');
-var news_searchForm = $('#views-exposed-form-media-listing-news-listing-page .news-types-collapse-search-wrap');
-var news_searchInputBtn = $('#views-exposed-form-media-listing-news-listing-page .news-types-collapse-search input.form-submit');
-
-// If they click the search icon, open the form.
-$(news_searchButton).on('click', function () {
-  searchOpen(news_searchForm, news_searchInput);
-  return false;
-});
-
-// If they click the search button, but haven't entered keywords, close it.
-$(news_searchInputBtn).click(function (){
-  if (!$(news_searchInput).val()) {
-    searchClose(news_searchButton, news_searchForm);
-    return false;
-  }
-});
-
-// If they the search form is focused when not active, open it.
-$(news_searchInput).focus(function() {
-  if(!news_searchForm.hasClass('open')) {
-    searchOpen(news_searchForm, news_searchInput);
-  }
-});
-
-$(news_searchInput).focusout(function () {
-  news_searchForm.removeClass('open');
-});
-
 /* search form functions */
 var searchInput = $('#block-expo2020-header-site-search-block .header-search-form .form-item input');
 var searchButton = $('#block-expo2020-header-site-search-block .search-trigger');
