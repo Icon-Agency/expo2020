@@ -223,7 +223,9 @@ label + small.description {
   max-width: 600px;
   background-image: url('~@/images/form-bg-mask.png');
 }
-#block-saygdayform {
+#block-saygdayform,
+#block-sponsorshipform,
+#block-mediaform {
   .popup-form-common-header {
     margin-left: 1.5rem;
     margin-top: 3rem;
