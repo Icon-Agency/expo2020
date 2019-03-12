@@ -16,7 +16,7 @@ export default class Scrollify {
         sectionName: false,
         interstitialSection: ".header, .extra, .latest-news, .footer",
         easing: "easeOutExpo",
-        scrollSpeed: 1100,
+        scrollSpeed: 800,
         offset: 0,
         scrollbars: true,
         standardScrollElements: "",
