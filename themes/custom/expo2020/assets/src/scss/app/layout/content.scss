@@ -266,6 +266,11 @@
   }
   .inline-partner-logo {
     margin: 1rem;
+    img {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
   }
 }
 

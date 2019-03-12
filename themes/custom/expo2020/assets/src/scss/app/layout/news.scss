@@ -297,6 +297,18 @@
     }
   }
 }
+#block-socialsharingblock {
+  .social-media-sharing {
+    margin-top: 3rem;
+    img {
+      width: 25px;
+      height: 25px;
+      &:hover {
+        filter: invert(.5);
+      }
+    }
+  }
+}
 
 .node--type-event.node--view-mode-full {
   margin-top: 2rem;
