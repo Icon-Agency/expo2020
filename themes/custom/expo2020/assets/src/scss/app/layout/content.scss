@@ -169,16 +169,24 @@
 }
 
 //partners
+.node--type-sponsors-partners-landing-page {
+  .main-content {
+    .region.region-content-top {
+      display: block;
+      margin: 0;
+    }
+  }
+}
 #block-partnerssecondheader {
   width: 100%;
-  position: absolute;
+  position: relative;
   z-index: 20;
-  color: #fff;
-  background-color: #2E2C29;
+  color: $white;
+  background-color: $gray-1000;
   text-align: center;
   padding: 2rem;
-  top: 25%;
-  .field {
+  .field,
+  p {
     margin-bottom: 0;
   }
   a {
@@ -252,4 +260,10 @@
   .inline-partner-logo {
     margin: 1rem;
   }
+}
+
+//message
+.region-messages {
+  position: relative;
+  z-index: 5;
 }
