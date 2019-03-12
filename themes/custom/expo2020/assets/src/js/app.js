@@ -295,6 +295,36 @@ $("#to-top").click(function () {
 
 });
 
+/* news collapsing search */
+var news_searchInput = $('#views-exposed-form-media-listing-news-listing-page .news-types-collapse-search .form-item-combine input');
+var news_searchButton = $('#views-exposed-form-media-listing-news-listing-page .search-trigger');
+var news_searchForm = $('#views-exposed-form-media-listing-news-listing-page .news-types-collapse-search-wrap');
+var news_searchInputBtn = $('#views-exposed-form-media-listing-news-listing-page .news-types-collapse-search input.form-submit');
+
+// If they click the search icon, open the form.
+$(news_searchButton).on('click', function () {
+  searchOpen(news_searchForm, news_searchInput);
+  return false;
+});
+
+// If they click the search button, but haven't entered keywords, close it.
+$(news_searchInputBtn).click(function (){
+  if (!$(news_searchInput).val()) {
+    searchClose(news_searchButton, news_searchForm);
+    return false;
+  }
+});
+
+// If they tab or esc without entering keywords, close it.
+$(news_searchForm).keydown(function(e) {
+  var keyCode = e.keyCode || e.which;
+
+  if (!$(news_searchInput).val() && (keyCode == 9 || keyCode == 27)) {
+    searchClose(news_searchButton, news_searchForm);
+    e.preventDefault();
+  }
+});
+
 /* search form functions */
 var searchInput = $('#block-expo2020-header-site-search-block .header-search-form .form-item input');
 var searchButton = $('#block-expo2020-header-site-search-block .search-trigger');
@@ -302,7 +332,7 @@ var searchForm = $('#block-expo2020-header-site-search-block .header-site-search
 var searchInputBtn = $('#block-expo2020-header-site-search-block .header-site-search-content-wrapper button');
 
 // Open search form helper function.
-var searchOpen = function() {
+var searchOpen = function(searchForm, searchInput) {
   $(searchForm).addClass('open');
   /*$(this).attr('aria-expanded', 'true');*/
 
@@ -313,7 +343,7 @@ var searchOpen = function() {
 };
 
 // Close search form helper function.
-var searchClose = function(focusItem) {
+var searchClose = function(focusItem, searchForm) {
   $(searchForm).removeClass('open');
   //$(searchButton).attr('aria-expanded', 'false');
   $(focusItem).focus();
@@ -321,7 +351,7 @@ var searchClose = function(focusItem) {
 
 // If they click the search icon, open the form.
 $(searchButton).on('click', function () {
-  searchOpen();
+  searchOpen(searchForm, searchInput);
   return false;
 });
 
@@ -332,7 +362,7 @@ $(searchButton).on('click', function () {
 // If they click the search button, but haven't entered keywords, close it.
 $(searchInputBtn).click(function (){
   if (!$(searchInput).val()) {
-    searchClose(searchButton);
+    searchClose(searchButton, searchForm);
     return false;
   }
 });
@@ -340,14 +370,22 @@ $(searchInputBtn).click(function (){
 // If they click outside of the search form when it's open, close it.
 $(document).click(function(e) {
   if( searchForm.hasClass('open') && searchForm.has(e.target).length === 0) {
-    searchClose(searchButton);
+    searchClose(searchButton, searchForm);
+  }
+
+  if( news_searchForm.hasClass('open') && news_searchForm.has(e.target).length === 0) {
+    searchClose(news_searchButton, news_searchForm);
   }
 });
 
 // If they the search form is focused when not active, open it.
 $(searchInput).focus(function() {
   if(!searchForm.hasClass('open')) {
-    searchOpen();
+    searchOpen(searchForm, searchInput);
+  }
+
+  if(!news_searchForm.hasClass('open')) {
+    searchOpen(news_searchForm, news_searchInput);
   }
 });
 
@@ -358,7 +396,7 @@ $(searchForm).keydown(function(e) {
   if (!$(searchInput).val() && (keyCode == 9 || keyCode == 27)) {
     var menuLink = $("#header .navigation.menu--main ul.nav a").first();
 
-    searchClose(menuLink);
+    searchClose(menuLink, searchForm);
     e.preventDefault();
   }
 });

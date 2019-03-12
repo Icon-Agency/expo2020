@@ -500,16 +500,34 @@ function expo2020_preprocess_views_exposed_form(&$variables) {
 
     $form['actions']['#access'] = FALSE;
 
-    $form['collapse_search'] = [
-      '#type' => 'container',
-      '#attributes' => [
-        'class' => [
-          'news-types-collapse-search',
+    $form['collapse_search'] =
+      [
+        '#type' => 'container',
+        '#attributes' => [
+          'class' => [
+            'news-types-collapse-search-wrap',
+          ],
         ],
-      ],
-      'combine' => $form['combine'],
-      'submit' => $form['actions']['submit'],
-    ];
+        'collapsing-search' => [
+          '#type' => 'container',
+          '#attributes' => [
+            'class' => [
+              'news-types-collapse-search',
+            ],
+          ],
+          'combine' => $form['combine'],
+          'submit' => $form['actions']['submit'],
+        ],
+        'search-trigger' => [
+          '#type' => 'container',
+          '#attributes' => [
+            'class' => [
+              'search-trigger',
+            ],
+          ],
+          '#markup' => '<i class="far fa-search fa-2x"></i>',
+        ],
+      ];
 
     unset($form['combine']);
   }
