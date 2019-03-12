@@ -315,14 +315,15 @@ $(news_searchInputBtn).click(function (){
   }
 });
 
-// If they tab or esc without entering keywords, close it.
-$(news_searchForm).keydown(function(e) {
-  var keyCode = e.keyCode || e.which;
-
-  if (!$(news_searchInput).val() && (keyCode == 9 || keyCode == 27)) {
-    searchClose(news_searchButton, news_searchForm);
-    e.preventDefault();
+// If they the search form is focused when not active, open it.
+$(news_searchInput).focus(function() {
+  if(!news_searchForm.hasClass('open')) {
+    searchOpen(news_searchForm, news_searchInput);
   }
+});
+
+$(news_searchInput).focusout(function () {
+  news_searchForm.removeClass('open');
 });
 
 /* search form functions */
@@ -355,9 +356,9 @@ $(searchButton).on('click', function () {
   return false;
 });
 
-/*$(searchInput).blur(function () {
+$(searchInput).focusout(function () {
   searchForm.removeClass('open');
-});*/
+});
 
 // If they click the search button, but haven't entered keywords, close it.
 $(searchInputBtn).click(function (){
@@ -383,20 +384,16 @@ $(searchInput).focus(function() {
   if(!searchForm.hasClass('open')) {
     searchOpen(searchForm, searchInput);
   }
-
-  if(!news_searchForm.hasClass('open')) {
-    searchOpen(news_searchForm, news_searchInput);
-  }
 });
 
 // If they tab or esc without entering keywords, close it.
-$(searchForm).keydown(function(e) {
-  var keyCode = e.keyCode || e.which;
-
-  if (!$(searchInput).val() && (keyCode == 9 || keyCode == 27)) {
-    var menuLink = $("#header .navigation.menu--main ul.nav a").first();
-
-    searchClose(menuLink, searchForm);
-    e.preventDefault();
-  }
-});
+// $(searchForm).keydown(function(e) {
+//   var keyCode = e.keyCode || e.which;
+//
+//   if (!$(searchInput).val() && (keyCode == 9 || keyCode == 27)) {
+//     var menuLink = $("#header .navigation.menu--main ul.nav a").first();
+//
+//     searchClose(searchButton, searchForm);
+//     e.preventDefault();
+//   }
+// });
