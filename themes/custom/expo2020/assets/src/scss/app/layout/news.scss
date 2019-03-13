@@ -46,9 +46,11 @@
     }
     .news-lower-container{
       @include lower-container($news-homepage, $primary-orange);
+      text-align: center;
     }
     .event-lower-container {
       @include lower-container($event-bg, $icon-green);
+      text-align: center;
     }
     .news-type-twitter-outer {
       background-image: url('~@/images/twitter-bg.png');
@@ -78,6 +80,7 @@
 
       }
       .news-twitter-content {
+        text-align: center;
         a {
           &:hover {
             box-shadow: none;
@@ -132,20 +135,34 @@
     .view-filters {
       display: flex;
       .news-listing-title {
-        width: 60%;
+        width: 40%;
       }
       .views-exposed-form {
+        .form-group {
+          display: flex;
+          .news-types-filter-container {
+            width: 100%;
+            margin-top: 0.3rem;
+          }
+        }
         .news-type-filter-links {
           @include type-filter-links($primary-orange);
-          padding-top: 0.7rem;
         }
         .news-types-collapse-search {
           display: flex;
-          margin-top: 1rem;
+          margin-top: 0.5rem;
           margin-left: 10px;
+          .form-type-textfield {
+            input {
+              margin-top: 0;
+              border-radius: 0;
+            }
+          }
           #edit-submit-media-listing {
             margin-top: 0;
             width: 30%;
+            margin-left: 0.5rem;
+            padding: 0 0.5rem;
           }
         }
       }
@@ -234,6 +251,13 @@
 }
 
 //news detail page
+.node--type-news,
+.node--type-event,
+.node--type-media-landing-page {
+  #main-wrapper {
+    border-top: 2px solid $gray-100;
+  }
+}
 .node--type-news.node--view-mode-full {
   .field--name-field-media-date {
     @include date-time($primary-orange);
@@ -247,6 +271,7 @@
   }
   img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
     margin: 2rem 0;
   }
@@ -289,6 +314,7 @@
     .field--name-field-enquiries-contact {
       background-color: $primary-blue;
       padding: 1.5rem;
+      line-height: 1;
       p {
         color: $white;
         font-size: 14px;
@@ -358,8 +384,12 @@
   margin-top: 3rem;
   .news-view-latest-news-bottom {
     @include view-upcoming-bottom($primary-orange);
+    padding-top: 3rem;
+    padding-bottom: 5rem;
   }
   .event-view-upcoming-bottom {
     @include view-upcoming-bottom($primary-turquoise);
+    padding-top: 3rem;
+    padding-bottom: 5rem;
   }
 }

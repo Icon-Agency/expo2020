@@ -98,6 +98,17 @@ body {
   background-color: $white;
   color: $gray-900;
 }
+.btn-orange-banner {
+  color: $gray-1000;
+  position: absolute;
+  line-height: 1.5;
+  background-color: $primary-orange;
+  border-color: $primary-orange;
+  padding: .5rem 3rem;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  margin-top: .5rem;
+}
 
 .font-weight-semibold {
   font-weight: 500;
