@@ -35,28 +35,31 @@
   {% if fields.view_node.content %}
     <a href="{{ fields.view_node.content|striptags|replace({'\n':'', '\r':'', ' ':''}) }}">
   {% endif %}
-      <div class="row">
-        <div class="col-md-6 featured-middle-left">
-          {% if fields.field_media.content and '<img' in fields.field_media.content|render %}
-            {{ fields.field_media.content }}
-          {% else %}
-            <img src="/{{ base_path ~ directory }}/assets/src/images/news-default.png" alt="default image">
-          {% endif %}
-        </div>
-        <div class="col-md-6 featured-middle-right">
-          {% if fields.body.content %}
-            <div class="featured-middle-content">
-              {{ fields.body.content }}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 featured-middle-left">
+                    {% if fields.field_media.content and '<img' in fields.field_media.content|render %}
+                        {{ fields.field_media.content }}
+                    {% else %}
+                        <img src="/{{ base_path ~ directory }}/assets/src/images/news-default.png" alt="default image">
+                    {% endif %}
+                </div>
+                <div class="col-md-6 featured-middle-right">
+                    {% if fields.body.content %}
+                        <div class="featured-middle-content">
+                            {{ fields.body.content }}
+                        </div>
+                    {% endif %}
+                    {% if fields.field_event_date.content %}
+                        <div class="featured-middle-date">
+                            <i class="fas fa-star"></i>
+                            {{ fields.field_event_date.content }}
+                        </div>
+                    {% endif %}
+                </div>
             </div>
-          {% endif %}
-          {% if fields.field_event_date.content %}
-            <div class="featured-middle-date">
-              <i class="fas fa-star"></i>
-                {{ fields.field_event_date.content }}
-            </div>
-          {% endif %}
         </div>
-      </div>
+
   {% if fields.view_node.content %}
     </a>
   {% endif %}
