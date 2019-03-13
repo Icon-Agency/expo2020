@@ -125,7 +125,7 @@ module.exports = env => {
 
       // Copy from NPM to vendors in dist so we dont have to compile jquery
       new CopyWebpackPlugin([
-        { from: 'node_modules/bootstrap/dist/js/bootstrap.min.js', to: 'js/bootstrap.min.js' },
+        { from: 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', to: 'js/bootstrap.bundle.min.js' },
       ]),
     ]
   }

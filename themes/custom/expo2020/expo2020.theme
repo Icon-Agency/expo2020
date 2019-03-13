@@ -546,6 +546,9 @@ function expo2020_preprocess_views_exposed_form(&$variables) {
     unset($form['type_filter_links']);
 
     $form['field_event_date_value']['max']['#title'] = new TranslatableMarkup('to');
+    
+    $form['actions']['#attributes']['data-toggle'] = 'tooltip';
+    $form['actions']['#attributes']['title'] = "Please fill both 'from' and 'to' filters to search events successfully.";
 
     $form['date_n_submit'] = [
       '#type' => 'container',

@@ -214,6 +214,8 @@ new Modaal();
             $(this).find('#seconds').html(event.strftime('%S'));
           });
         }
+
+        $('[data-toggle="tooltip"]').tooltip();
       });
     }
   };

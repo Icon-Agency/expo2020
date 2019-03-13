@@ -6,7 +6,7 @@ fonts:
 global-styling:
   version: VERSION
   js:
-    assets/dist/js/bootstrap.min.js: {}
+    assets/dist/js/bootstrap.bundle.min.js: {}
     assets/dist/js/app.js: {}
   css:
     component:
@@ -20,7 +20,7 @@ global-styling:
 dev-global-styling:
   version: VERSION
   js:
-    assets/dev/js/bootstrap.min.js: {}
+    assets/dev/js/bootstrap.bundle.min.js: {}
     assets/dev/js/app.js: {}
   css:
     component:
