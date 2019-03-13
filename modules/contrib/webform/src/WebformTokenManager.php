@@ -58,7 +58,7 @@ class WebformTokenManager implements WebformTokenManagerInterface {
   protected $token;
 
   /**
-   * An array of support token suffixes
+   * An array of support token suffixes.
    *
    * @var array
    *
@@ -67,7 +67,7 @@ class WebformTokenManager implements WebformTokenManagerInterface {
   static protected $suffixes = [
     // Removes the token when not replaced.
     'clear',
-    // Decodes HTML enities.
+    // Decodes HTML entities.
     'htmldecode',
     // Removes all HTML tags from the token's value.
     'striptags',
@@ -341,6 +341,10 @@ class WebformTokenManager implements WebformTokenManagerInterface {
 
     // Remove suffixes which are not valid.
     $element['#value'] = preg_replace('/\[(webform[^]]+)((?::' . implode('|:', static::$suffixes) . ')+)\]/', '[\1]', $value);
+    
+    // Convert all token field deltas to 0 to prevent unexpected
+    // token validation errors.
+    $element['#value'] = preg_replace('/:\d+:/', ':0:', $element['#value']);
 
     token_element_validate($element, $form_state);
   }

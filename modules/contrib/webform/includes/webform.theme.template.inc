@@ -329,7 +329,7 @@ function template_preprocess_webform_submission_information(array &$variables) {
   $variables['language'] = isset($languages[$langcode]) ? $languages[$langcode]->getName() : $langcode;
 
   if ($source_url = $webform_submission->getSourceUrl()) {
-    $variables['uri'] = Link::fromTextAndUrl($source_url->setAbsolute(FALSE)->toString(), $source_url);;
+    $variables['uri'] = Link::fromTextAndUrl($source_url->setAbsolute(FALSE)->toString(), $source_url);
   }
 
   if ($webform->getSetting('token_update')) {
@@ -632,6 +632,23 @@ function template_preprocess_webform_message(array &$variables) {
   if (isset($element['#closed'])) {
     $variables['closed'] = $element['#closed'];
   }
+}
+
+/**
+ * Prepares variables for Webform HTML Editor markup templates.
+ *
+ * Default template: webform-html-editor-markup.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - markup: HTML markup.
+ *   - allowed_tags: Allowed tags.
+ */
+function template_preprocess_webform_html_editor_markup(array &$variables) {
+  $variables['content'] = [
+    '#markup' => $variables['markup'],
+    '#allowed_tags' => $variables['allowed_tags'],
+  ];
 }
 
 /**

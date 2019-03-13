@@ -73,9 +73,6 @@ abstract class DateBase extends WebformElementBase {
       }
     }
 
-    $element['#element_validate'] = array_merge([[get_class($this), 'preValidateDate']], $element['#element_validate']);
-    $element['#element_validate'][] = [get_class($this), 'validateDate'];
-
     // Display datepicker button.
     if (!empty($element['#datepicker_button']) || !empty($element['#date_date_datepicker_button'])) {
       $element['#attributes']['data-datepicker-button'] = TRUE;
@@ -91,6 +88,15 @@ abstract class DateBase extends WebformElementBase {
     $element['#attached']['library'][] = 'webform/webform.element.date';
 
     $element['#after_build'][] = [get_class($this), 'afterBuild'];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function prepareElementValidateCallbacks(array &$element, WebformSubmissionInterface $webform_submission = NULL) {
+    $element['#element_validate'] = array_merge([[get_class($this), 'preValidateDate']], $element['#element_validate']);
+    $element['#element_validate'][] = [get_class($this), 'validateDate'];
+    parent::prepareElementValidateCallbacks($element, $webform_submission);
   }
 
   /**
@@ -181,7 +187,7 @@ abstract class DateBase extends WebformElementBase {
     // If a default format is defined update the fallback date formats label.
     // @see \Drupal\webform\Plugin\WebformElementBase::getItemFormat
     $default_format = $this->configFactory->get('webform.settings')->get('format.' . $this->getPluginId() . '.item');
-    if ($default_format && isset($formats[$default_format])) {
+    if ($default_format && isset($date_formats[$default_format])) {
       $formats['fallback'] = t('Default date format (@label)', ['@label' => $date_formats[$default_format]->label()]);
     }
     return $formats;

@@ -123,18 +123,6 @@ class WebformSubmissionForm extends ContentEntityForm {
   protected $generate;
 
   /**
-   * The (cached) webform settings.
-   *
-   * This include default site-wide webform configuration
-   * and overridden webform settings.
-   *
-   * @var array
-   *
-   * @see \Drupal\webform\WebformSubmissionForm::getWebformSetting
-   */
-  protected $settings;
-
-  /**
    * The webform submission.
    *
    * @var \Drupal\webform\WebformSubmissionInterface
@@ -369,23 +357,8 @@ class WebformSubmissionForm extends ContentEntityForm {
       }
     }
 
-    // Alter webform settings before setting the entity.
-    $webform->invokeHandlers('overrideSettings', $entity);
-    if ($webform->isOverridden()) {
-      $this->settings = [];
-    }
-
-    // Look _webform_dialog which enables Ajax support when this form is
-    // opened in dialog.
-    // @see webform.dialog.js
-    //
-    // Must be called after WebformHandler::overrideSettings which resets all
-    // overridden settings.
-    // @see \Drupal\webform\Entity\Webform::invokeHandlers
-    // Append _webform_dialog=1 to href to trigger Ajax support.
-    if ($this->getRequest()->query->get('_webform_dialog') && !$webform->getSetting('ajax')) {
-      $webform->setSettingOverride('ajax', TRUE);
-    }
+    // Override settings.
+    $this->overrideSettings($entity);
 
     // Set the webform's current operation.
     $webform->setOperation($this->operation);
@@ -400,13 +373,34 @@ class WebformSubmissionForm extends ContentEntityForm {
     /** @var \Drupal\webform\WebformSubmissionInterface $entity */
     $entity = parent::buildEntity($form, $form_state);
 
-    // Alter webform settings before setting the entity.
-    $entity->getWebform()->invokeHandlers('overrideSettings', $entity);
-    if ($entity->getWebform()->isOverridden()) {
-      $this->settings = [];
-    }
+    // Override settings.
+    $this->overrideSettings($entity);
 
     return $entity;
+  }
+
+  /**
+   * Override webform settings for the webform submission.
+   *
+   * @param \Drupal\webform\WebformSubmissionInterface $webform_submission
+   *   A webform submission.
+   */
+  protected function overrideSettings(WebformSubmissionInterface $webform_submission) {
+    $webform = $webform_submission->getWebform();
+
+    // Invoke override settings which resets the webform settings.
+    $webform->invokeHandlers('overrideSettings', $webform_submission);
+
+    // Look for ?_webform_dialog=1 which enables Ajax support when this form is
+    // opened in dialog.
+    // @see webform.dialog.js
+    //
+    // Must be called after WebformHandler::overrideSettings which resets all
+    // overridden settings.
+    // @see \Drupal\webform\Entity\Webform::invokeHandlers
+    if ($this->getRequest()->query->get('_webform_dialog') && !$webform->getSetting('ajax')) {
+      $webform->setSettingOverride('ajax', TRUE);
+    }
   }
 
   /**
@@ -1064,7 +1058,8 @@ class WebformSubmissionForm extends ContentEntityForm {
         '#name' => 'webform_wizard_page-' . $page_name,
         '#attributes' => [
           'data-webform-page' => $page_name,
-          'class' => ['js-webform-novalidate', 'webform-wizard-pages-link', 'js-webform-wizard-pages-link'],
+          'formnovalidate' => 'formnovalidate',
+          'class' => ['webform-wizard-pages-link', 'js-webform-wizard-pages-link'],
           'title' => $this->t("Edit '@label' (Page @start of @end)", $t_args),
         ],
         '#access' => $access,
@@ -1175,7 +1170,10 @@ class WebformSubmissionForm extends ContentEntityForm {
             // @see \Drupal\webform\WebformSubmissionForm::noValidate
             '#validate' => ['::noValidate'],
             '#submit' => ['::previous'],
-            '#attributes' => ['class' => ['webform-button--previous', 'js-webform-novalidate']],
+            '#attributes' => [
+              'formnovalidate' => 'formnovalidate',
+              'class' => ['webform-button--previous'],
+            ],
             '#weight' => 0,
           ];
           if ($track) {
@@ -1198,7 +1196,10 @@ class WebformSubmissionForm extends ContentEntityForm {
             // @see \Drupal\webform\WebformSubmissionForm::noValidate
             '#validate' => ['::noValidate'],
             '#submit' => ['::previous'],
-            '#attributes' => ['class' => ['webform-button--previous', 'js-webform-novalidate']],
+            '#attributes' => [
+              'formnovalidate' => 'formnovalidate',
+              'class' => ['webform-button--previous'],
+            ],
             '#weight' => 0,
           ];
           if ($track) {
@@ -1256,7 +1257,10 @@ class WebformSubmissionForm extends ContentEntityForm {
         '#value' => $this->config('webform.settings')->get('settings.default_draft_button_label'),
         '#validate' => ['::draft'],
         '#submit' => ['::submitForm', '::save', '::rebuild'],
-        '#attributes' => ['class' => ['webform-button--draft', 'js-webform-novalidate']],
+        '#attributes' => [
+          'formnovalidate' => 'formnovalidate',
+          'class' => ['webform-button--draft'],
+        ],
         '#weight' => -10,
       ];
     }
@@ -1268,7 +1272,10 @@ class WebformSubmissionForm extends ContentEntityForm {
         '#value' => $this->config('webform.settings')->get('settings.default_reset_button_label'),
         '#validate' => ['::noValidate'],
         '#submit' => ['::reset'],
-        '#attributes' => ['class' => ['webform-button--reset', 'js-webform-novalidate']],
+        '#attributes' => [
+          'formnovalidate' => 'formnovalidate',
+          'class' => ['webform-button--reset'],
+        ],
         '#weight' => 10,
       ];
     }
@@ -2504,20 +2511,12 @@ class WebformSubmissionForm extends ContentEntityForm {
    *   A webform setting.
    */
   protected function getWebformSetting($name, $default_value = NULL) {
-    // Get webform settings with default values.
-    if (empty($this->settings)) {
-      $this->settings = $this->getWebform()->getSettings();
-      $default_settings = $this->config('webform.settings')->get('settings');
-      foreach ($default_settings as $key => $value) {
-        $key = str_replace('default_', '', $key);
-        if (empty($this->settings[$key])) {
-          $this->settings[$key] = $value;
-        }
-      }
-    }
+    $value = $this->getWebform()->getSetting($name)
+      ?: $this->config('webform.settings')->get('settings.default_' . $name)
+      ?: NULL;
 
-    if (isset($this->settings[$name])) {
-      return $this->tokenManager->replace($this->settings[$name], $this->getEntity());
+    if ($value !== NULL) {
+      return $this->tokenManager->replace($value, $this->getEntity());
     }
     else {
       return $default_value;

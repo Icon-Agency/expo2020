@@ -1126,6 +1126,22 @@ class WebformHelpManager implements WebformHelpManagerInterface {
           ],
         ],
       ],
+      'attachments' => [
+        'title' => $this->t('Sending webform email attachments'),
+        'content' => $this->t('This presentation shows how to set up and add email attachments via an email handler.'),
+        'youtube_id' => 'w7exQFDIHhQ',
+        'presentation_id' => '1DTE9nSg_CKhWkhBCmfks_o2RoeApTHc4orhNxrj2imk',
+        'links' => [
+          [
+            'title' => $this->t('How to send email attachments? | Drupal.org'),
+            'url' => 'https://www.drupal.org/node/3021480 ',
+          ],
+          [
+            'title' => $this->t('Webform Attachment sub-module | Drupal.org'),
+            'url' => 'https://www.drupal.org/node/3021481',
+          ],
+        ],
+      ],
       'translations' => [
         'title' => $this->t('Translating webforms'),
         'content' => $this->t("This screencast shows how to translate a webform's title, descriptions, label and messages."),
@@ -1721,7 +1737,7 @@ class WebformHelpManager implements WebformHelpManagerInterface {
       'group' => 'forms',
       'title' => $this->t('Webform: Test'),
       'content' => $this->t("The <strong>Test</strong> form allows a webform to be tested using a customizable test dataset.") . ' ' .
-        $this->t('Multiple test submissions can be created using the devel_generate module.'),
+        $this->t('Multiple test submissions can be created using the Devel generate module.'),
       'video_id' => 'forms',
       'routes' => [
         // @see /admin/structure/webform/manage/{webform}/test

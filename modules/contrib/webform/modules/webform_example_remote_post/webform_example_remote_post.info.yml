@@ -4,10 +4,11 @@ description: 'Provides an example of a webform submission posted to a remote ser
 package: 'Webform example'
 # core: 8.x
 dependencies:
+  - 'token:token'
   - 'webform:webform'
 
-# Information added by Drupal.org packaging script on 2019-01-25
-version: '8.x-5.2-beta1'
+# Information added by Drupal.org packaging script on 2019-03-06
+version: '8.x-5.2-rc2'
 core: '8.x'
 project: 'webform'
-datestamp: 1548435828
+datestamp: 1551880394

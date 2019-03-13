@@ -58,13 +58,15 @@ class WebformSubmissionStorage extends SqlContentEntityStorage implements Webfor
 
   /**
    * WebformSubmissionStorage constructor.
+   *
+   * @todo Webform 8.x-6.x: Move $time before $access_rules_manager.
    */
-  public function __construct(EntityTypeInterface $entity_type, Connection $database, EntityManagerInterface $entity_manager, CacheBackendInterface $cache, LanguageManagerInterface $language_manager, TimeInterface $time = NULL, AccountProxyInterface $current_user, WebformAccessRulesManagerInterface $access_rules_manager) {
+  public function __construct(EntityTypeInterface $entity_type, Connection $database, EntityManagerInterface $entity_manager, CacheBackendInterface $cache, LanguageManagerInterface $language_manager, AccountProxyInterface $current_user, WebformAccessRulesManagerInterface $access_rules_manager, TimeInterface $time = NULL) {
     parent::__construct($entity_type, $database, $entity_manager, $cache, $language_manager);
 
-    $this->time = $time;
     $this->currentUser = $current_user;
     $this->accessRulesManager = $access_rules_manager;
+    $this->time = $time;
   }
 
   /**
@@ -77,9 +79,9 @@ class WebformSubmissionStorage extends SqlContentEntityStorage implements Webfor
       $container->get('entity.manager'),
       $container->get('cache.entity'),
       $container->get('language_manager'),
-      $container->get('datetime.time'),
       $container->get('current_user'),
-      $container->get('webform.access_rules_manager')
+      $container->get('webform.access_rules_manager'),
+      $container->get('datetime.time')
     );
   }
 
@@ -211,8 +213,10 @@ class WebformSubmissionStorage extends SqlContentEntityStorage implements Webfor
     // Add account query wheneven filter by uid.
     if (isset($values['uid'])) {
       $account = User::load($values['uid']);
-      $this->addQueryConditions($entity_query, NULL, NULL, $account);
-      unset($values['uid']);
+      if ($account instanceof UserInterface) {
+        $this->addQueryConditions($entity_query, NULL, NULL, $account);
+        unset($values['uid']);
+      }
     }
 
     parent::buildPropertyQuery($entity_query, $values);
@@ -935,7 +939,7 @@ class WebformSubmissionStorage extends SqlContentEntityStorage implements Webfor
       // Log webform submission events to the 'webform_submission' log.
       $context = [
         '@title' => $entity->label(),
-        'link' => $entity->toLink($this->t('Edit'), 'edit-form')->toString(),
+        'link' => ($entity->id()) ? $entity->toLink($this->t('Edit'), 'edit-form')->toString() : NULL,
         'webform_submission' => $entity,
       ];
       switch ($entity->getState()) {
@@ -1010,7 +1014,7 @@ class WebformSubmissionStorage extends SqlContentEntityStorage implements Webfor
         $context = [
           '@id' => $entity->id(),
           '@title' => $entity->label(),
-          'link' => $entity->toLink($this->t('Edit'), 'edit-form')->toString(),
+          'link' => ($entity->id()) ? $entity->toLink($this->t('Edit'), 'edit-form')->toString() : NULL,
         ];
         \Drupal::logger('webform')->notice($message, $context);
       }
