@@ -342,10 +342,6 @@ $(document).click(function(e) {
   if( searchForm.hasClass('open') && searchForm.has(e.target).length === 0) {
     searchClose(searchButton, searchForm);
   }
-
-  if( news_searchForm.hasClass('open') && news_searchForm.has(e.target).length === 0) {
-    searchClose(news_searchButton, news_searchForm);
-  }
 });
 
 // If they the search form is focused when not active, open it.
