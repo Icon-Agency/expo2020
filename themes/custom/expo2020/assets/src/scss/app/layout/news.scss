@@ -200,6 +200,7 @@
           background-color: $gray-100;
           padding: 0.5rem 1rem;
           display: flex;
+          justify-content: space-evenly;
           .event-listing-date-outer-wrapper {
             display: flex;
             .event-listing-date-label {
@@ -215,9 +216,12 @@
                 padding-top: 1rem;
                 padding-right: 1rem;
               }
+              input {
+                margin-top: 0.5rem;
+              }
             }
             .form-item-field-event-date-value-min {
-              margin-left: 3rem;
+              margin-left: 5rem;
             }
             .form-item-field-event-date-value-max {
               margin-left: 1rem;
@@ -225,8 +229,7 @@
           }
           .form-actions {
             .btn {
-              margin-top: 5px;
-              margin-left: 1rem;
+              margin-top: 0.5rem;
               background-color: $icon-green;
               border-color: $icon-green;
               &:hover {
@@ -282,25 +285,9 @@
 
     //<div class="quote"><i class="fas fa-quote-left"></i></div>
     .quote {
-      width: 50px;
-      height: 50px;
+      @include type-icon($primary-orange);
       margin: 1.5rem auto;
       padding: .5rem .75rem;
-      background-color: $primary-orange;
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg);
-      svg {
-        color: $white;
-        width: 20px;
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-      }
     }
   }
   p {
@@ -358,6 +345,39 @@
     margin: 2rem 0;
   }
   .news-article-view-content-right {
+    .event-info {
+      background-color: $event-bg;
+      padding: 2rem;
+      .info-icon {
+        @include type-icon($primary-turquoise);
+        margin-top: -3.5rem;
+      }
+      .info-text {
+        margin-top: 5rem;
+        text-align: center;
+        .text-top {
+          font-weight: 500;
+        }
+        .add-to-calendar {
+          @include date-time($icon-green);
+          margin: 2rem 0;
+          a {
+            &:hover {
+              text-decoration: underline;
+              text-decoration-color: $icon-green;
+              text-underline-position: under;
+            }
+          }
+        }
+        .btn {
+          color: $primary-blue;
+          &:hover, &:focus {
+            background-color: darken($primary-turquoise, 10%);
+            border-color: darken($primary-turquoise, 10%);
+          }
+        }
+      }
+    }
     img {
       width: auto;
     }

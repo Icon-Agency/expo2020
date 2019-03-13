@@ -1,8 +1,7 @@
 // Header stuff - logo, main nav and search box
 
 #header {
-  z-index: 11;
-  position: relative;
+  background-color: $white;
 
   .header-row {
     margin-left: $grid-gutter-width/2;
