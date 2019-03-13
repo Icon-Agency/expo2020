@@ -15,11 +15,16 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
+{% set set_middle = false %}
+{% if rows|length > 9 %}
+  {% set set_middle = true %}
+{% endif %}
+
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
 <div class="row">
-  {% for row in rows %}
+  {% for key, row in rows %}
     {% set row_classes = [
       default_row_class ? 'views-row',
       'news',
@@ -29,5 +34,11 @@
     <div{{ row.attributes.addClass(row_classes) }}>
       {{ row.content }}
     </div>
+    {% if set_middle == true and key == (9-1) %}
+      {{ drupal_view('event_listing', 'earliest_1_featured_middle_event') }}
+    {% endif %}
   {% endfor %}
+  {% if set_middle == false %}
+    {{ drupal_view('event_listing', 'earliest_1_featured_middle_event') }}
+  {% endif %}
 </div>
