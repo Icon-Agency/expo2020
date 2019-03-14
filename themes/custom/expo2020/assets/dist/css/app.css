@@ -4003,7 +4003,7 @@ nav.tabs {
 
 #parallax-container {
   display: block;
-  height: 1100px;
+  height: 1050px;
   position: relative; }
   #parallax-container .parallax-div {
     position: fixed;
@@ -4012,7 +4012,7 @@ nav.tabs {
     background-repeat: no-repeat;
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
-    height: 1100px;
+    height: 1050px;
     width: 100%; }
   #parallax-container .pavilion-bg {
     margin-top: 8rem;
