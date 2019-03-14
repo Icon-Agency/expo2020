@@ -256,7 +256,7 @@ $(window).scroll(function() {
 
   let $body = $("body");
 
-  if (($body.hasClass('node--type-home-page') || $body.hasClass('node--type-pavilion-landing-page'))
+  if (($body.hasClass('node--type-home-page') || $body.hasClass('node--type-pavilion-landing-page') || $body.hasClass('node--type-opportunities'))
     && $('section').hasClass('beforepannel') ) {
     var hT = $('.beforepannel').offset().top, // The vertical distance between the top of the page and the top of the element.
         hH = $('.beforepannel').outerHeight(), // The height of the element, including padding and borders.
