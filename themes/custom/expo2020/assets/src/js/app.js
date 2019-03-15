@@ -284,6 +284,13 @@ $(window).scroll(function() {
       $("#to-top").fadeOut();
     }
   }
+
+  if ($(this).scrollTop() > 150){
+    $('#header').addClass("sticky");
+  }
+  else{
+    $('#header').removeClass("sticky");
+  }
 });
 
 $("#to-top").click(function () {

@@ -2,6 +2,12 @@
 
 #header {
   background-color: $white;
+  position: sticky;
+  width: 100%;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  z-index: 1020;
+  top: 0;
 
   .header-row {
     margin-left: $grid-gutter-width/2;
@@ -79,4 +85,10 @@
     }
   }
 
+}
+#header.sticky {
+  height: 100px;
+  .header-row {
+    padding: 15px 0;
+  }
 }
