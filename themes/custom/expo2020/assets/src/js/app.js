@@ -203,6 +203,10 @@ new Modaal();
     homeShapes.init();
   });
 
+  $(function(){
+    triggerPopup();
+  });
+
   Drupal.behaviors.expo2020 = {
     attach: function (context, settings) {
       $(document).ready(function () {
@@ -220,6 +224,30 @@ new Modaal();
     }
   };
 })(jQuery, Drupal);
+
+function getUrlParameter(sParam) {
+  let sPageURL = window.location.search.substring(1),
+      sURLVariables = sPageURL.split('&'),
+      sParameterName,
+      i;
+
+  for (i = 0; i < sURLVariables.length; i++) {
+    sParameterName = sURLVariables[i].split('=');
+
+    if (decodeURIComponent(sParameterName[0]) === sParam || sParameterName[0] === sParam) {
+      return (sParameterName[1] === undefined || sParameterName[1] === '') ? false : decodeURIComponent(sParameterName[1]);
+    }
+  }
+  return false;
+}
+
+function triggerPopup(){
+  let trigger_href = getUrlParameter('detpup');
+  if (trigger_href){
+    $('a[href="#'+ trigger_href +'"]').first().trigger('click');
+  }
+}
+
 
 import(
     /* webpackChunkName: "fontawesome" */
