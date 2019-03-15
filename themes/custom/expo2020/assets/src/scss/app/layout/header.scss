@@ -12,8 +12,8 @@
   .header-row {
     margin-left: $grid-gutter-width/2;
     margin-right: $grid-gutter-width/2;
-    padding-top: $grid-gutter-width;
-    padding-bottom: $grid-gutter-width;
+    padding-top: 25px;
+    padding-bottom: 15px;
     .region-header-right {
       margin-top: 1rem;
     }
@@ -46,8 +46,9 @@
 
       li.nav-item {
         display: inline-block;
-        font-family: $font-family-rubik;
+        font-family: $font-family-work-sans;
         font-size: $h5-font-size;
+        font-weight: 500;
 
         &:not(:first-of-type) {
           padding-left: 1rem;

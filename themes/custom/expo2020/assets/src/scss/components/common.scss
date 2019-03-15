@@ -92,6 +92,12 @@ body {
 .btn-border-orange {
   background-color: $white;
   border-color: $primary-orange;
+  color: $icon-orange;
+  &:hover, &:active, &:focus {
+    background-color: $primary-orange;
+    border-color: $primary-orange;
+    color: $gray-900;
+  }
 }
 .btn-primary-white {
   border-color: $btn-border;

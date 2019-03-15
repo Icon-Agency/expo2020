@@ -8,7 +8,7 @@
   ol {
     li {
       &.active {
-        text-decoration: underline;
+        //text-decoration: underline;
       }
     }
   }
@@ -26,10 +26,11 @@
   color: $gray-500;
   font-family: 'Open Sans', sans-serif;
   padding-top: 2rem;
+  padding-bottom: 3rem;
   ol {
     li {
       &.active {
-        text-decoration: underline;
+        //text-decoration: underline;
       }
     }
   }
