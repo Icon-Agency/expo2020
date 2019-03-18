@@ -13,13 +13,15 @@ import(
   new module.default()
 })
 
-import Scrollify from './app/scrollify';
+/*import Scrollify from './app/scrollify';*/
 import Slick from './app/slick';
 import Modaal from './app/modaal';
+import Scrollmagic from './app/scrollmagic';
 
-new Scrollify();
+/*new Scrollify();*/
 new Slick();
 new Modaal();
+new Scrollmagic();
 
 (function ($, Drupal) {
   'use strict';
@@ -279,57 +281,8 @@ $(window).on('resize', () => {
 $(window).resize();
 
 
-
-$(window).scroll(function() {
-
-  let $body = $("body");
-
-  if (($body.hasClass('node--type-home-page') || $body.hasClass('node--type-pavilion-landing-page') || $body.hasClass('node--type-opportunities'))
-    && $('section').hasClass('beforepannel') ) {
-    var hT = $('.beforepannel').offset().top, // The vertical distance between the top of the page and the top of the element.
-        hH = $('.beforepannel').outerHeight(), // The height of the element, including padding and borders.
-        wH = $(window).height(), // Height of the window without margins, padding, borders.
-        wS = $(this).scrollTop(), // The vertical distance between the top of the page and the top of the viewport.
-
-        hT1 = $('.footer-section').offset().top,
-        hH1 = $('.footer-section').outerHeight();
-    //console.log(hT) + console.log(hH) + console.log(wH) + console.log(wS); //+ console.log(hT1) + console.log(hH1);
-
-    /*if (hH < wH) {
-      if(wS > (hT1 + hH1 - wH) ) {
-        $(".pagination-hp-scroll a").css("display", "none");
-      }
-    }*/
-    if (wS < (hT - 100) ) {
-      $(".pagination-hp-scroll a").css("display", "none");
-    } else {
-      $(".pagination-hp-scroll a").css("display", "block");
-    }
-
-    if ($(this).scrollTop() != 0) {
-      $("#to-top").fadeIn();
-    } else {
-      $("#to-top").fadeOut();
-    }
-  }
-
-  if ($(this).scrollTop() > 150){
-    $('#header').addClass("sticky");
-  }
-  else{
-    $('#header').removeClass("sticky");
-  }
-});
-
 $("#to-top").click(function () {
-  let $body = $("body");
-  if ($body.hasClass('node--type-home-page')
-      || $body.hasClass('node--type-pavilion-landing-page') || $body.hasClass('node--type-opportunities')) {
-    $.scrollify.move(0);
-  } else {
     $("body,html").animate({scrollTop: 0}, 500);
-  }
-
 });
 
 /* search form functions */

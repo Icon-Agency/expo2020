@@ -45,7 +45,7 @@
         width: 800px;
         //transition-delay: 0.25s;
         background-color: $gray-100;
-        margin: -1rem -0.5rem;
+        margin: -1rem 0;
       }
 
       button{
@@ -90,7 +90,7 @@
 
     button{
       background-color: transparent;
-      margin: -1rem -0.5rem;
+      margin: -1rem 0;
       svg{
         color: $primary-blue;
         g{
@@ -103,7 +103,7 @@
       //transition: all 0.3s ease 0.48s;
       background-color: white;
       border: 1px solid $gray-200;
-      margin: -1rem -0.5rem;
+      margin: -1rem 0;
 
       svg{
         color: $primary-blue;
@@ -118,7 +118,7 @@
       right: 0;
       z-index: 1;
       padding: 6px 20px;
-      margin: -1rem -0.5rem;
+      margin: -1rem 0;
       transition: width 0.25s;
       input[type]{
         width: 100%;

@@ -75,13 +75,8 @@
   ]
 %}
 <h1 class="sr-only">Dubai Expo 2020</h1>
-<ul class="pagination-hp-scroll">
-    <li><a class="active" href="#panel-p0"></a></li>
-    <li><a class="" href="#panel-p1"></a></li>
-    <li><a class="" href="#panel-p2"></a></li>
-</ul>
 
-<section class="panel extra" data-section-name="extra">
+<section class="extra" data-section-name="extra">
     <div id="block-bean-homepage-banner" class="banner">
         <div class="banner-block-content" id="background">
             <div class="">
@@ -136,7 +131,7 @@
 </section>
 
 {% if content['field_latest_3_news'][0] %}
-    <section class="panel latest-news" data-section-name="news">
+    <section class="latest-news" data-section-name="news">
         <div>&nbsp;</div>
         <div class="container news-section">
             {% if content['field_latest_3_news']['#label_display'] != 'hidden' %}
@@ -148,19 +143,13 @@
 
 {% endif %}
 
-<section class="beforepannel">
-</section>
-
-
 
 {% if content['field_pinned_sliders'][0] %}
     {{ content['field_pinned_sliders'] }}
 {% endif %}
 
 
-
-
-<section class="panel panel3 footer-section" data-section-name="footer">
+<section class="footer-section" data-section-name="footer">
     <div class="partners container-fluid">
         <div class="container partner-container">
             <h2>Major Partners and Major Sponsors</h2>

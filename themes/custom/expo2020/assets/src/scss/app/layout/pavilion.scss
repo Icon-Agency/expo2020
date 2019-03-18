@@ -129,12 +129,14 @@
 
 .pavilion-footer {
   position: relative;
-  z-index: 30;
   background-color: $gray-100;
+  .latest-news {
+    z-index: 0;
+  }
 }
 .oppo-footer {
   position: relative;
-  z-index: 30;
+  z-index: 0;
   background-color: $white;
   padding-top: 9rem;
   .oppo-icons {
@@ -166,7 +168,6 @@
 
 .pavilion-last-section {
   position: relative;
-  z-index: 30;
   background-color: $white;
   .field {
     margin-bottom: 0;

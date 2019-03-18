@@ -106,7 +106,7 @@
   </div>
 </div>
 
-<section class="panel extra-pavilion" data-section-name="extra">
+<section class="extra-pavilion" data-section-name="extra">
     <div class="text-under">
       {% if content.field_text_area_under_top_banner %}
         <div class="container">
@@ -116,16 +116,13 @@
     </div>
 </section>
 
-<section class="beforepannel">
-</section>
 
 {% if content['field_pinned_sliders'][0] %}
     {{ content['field_pinned_sliders'] }}
 {% endif %}
 
 
-<section class="panel panel3 oppo-footer footer-section" data-section-name="footer">
-
+<section class="oppo-footer footer-section" data-section-name="footer">
 
   {% if content['field_text_under_pinned_slider'][0] %}
     <div class="container">
@@ -149,7 +146,7 @@
 
 </section>
 
-<section class="panel pavilion-last-section" data-section-name="footer-second">
+<section class="pavilion-last-section" data-section-name="footer-second">
   {% if content['field_bottom_content'][0] %}
   <div class="container">
     {{ content['field_bottom_content'] }}

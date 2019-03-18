@@ -158,7 +158,7 @@ $slick-opacity-not-active: 0.25 !default;
 }
 .slick-prev {
   //left: calc(50% - 440px);
-  z-index: 10;
+  z-index: 1;
   &:hover {
     filter: brightness(110%);
   }
@@ -175,7 +175,7 @@ $slick-opacity-not-active: 0.25 !default;
 }
 .slick-next {
   //right: calc(50% - 416px);
-  z-index: 10;
+  z-index: 1;
   &:hover {
     filter: brightness(110%);
   }
@@ -185,8 +185,6 @@ $slick-opacity-not-active: 0.25 !default;
 }
 .slider-container {
   background: linear-gradient(180deg, $gray-100 50%, $white 50%);
-  position: relative;
-  z-index: 200;
 }
 .video-play-icon {
   position: absolute;

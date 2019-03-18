@@ -96,6 +96,57 @@ h2.accent {
 }
 
 
+#pinSlider{
+  height: 100% !important;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+
+  div{
+    height: 100vh;
+  }
+
+  .panel {
+    width: 100%;
+    position: absolute;
+
+    img{
+      height: 100%;
+      width: 100%;
+      object-position: center;
+      object-fit: cover;
+    }
+  }
+
+  .pips{
+    position: absolute;
+    transform: translateX(-50%);
+    right: 60px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 2;
+    display: block;
+    top: 20%;
+    font-size:1.4em;
+
+    div{
+      height: 15px;
+      width: 15px;
+      margin: 1rem 0;
+      border-radius: 100%;
+      background-color: $white;
+
+      &.active{
+        box-shadow:inset 0 0 0 7px;
+        color: $primary-blue;
+        background-color: $primary-blue;
+      }
+    }
+  }
+}
+
 .fixed-content {
   position:fixed;
   z-index: 10;
@@ -117,7 +168,7 @@ h2.accent {
   top: 30%;
   left:0;
   width:100%;
-  z-index: 0;
+  z-index: 3;
 }
 .slide p {
   font-size: 24px;
@@ -145,68 +196,6 @@ h2.accent {
 }
 .slide.active {
   z-index: 10;
-}
-
-.pagination-hp-scroll {
-  display: block;
-  position:fixed;
-  right:15%;
-  top: 20%;
-  transform: translateY(-50%);
-  font-size:1.4em;
-  z-index: 10;
-  list-style: none;
-}
-.pagination-hp-scroll a {
-  display:none;
-  height:25px;
-  margin-bottom:5px;
-  color:white;
-  position:relative;
-  padding:4px;
-  cursor: default;
-}
-.pagination-hp-scroll a.active:after {
-  box-shadow:inset 0 0 0 7px;
-  color: #0E0E8B;
-}
-.pagination-hp-scroll a .hover-text {
-  position:absolute;
-  right:15px;
-  top:7px;
-  opacity:0;
-  -webkit-transition: opacity 0.5s ease;
-  transition: opacity 0.5s ease;
-  padding-right: 15px;
-}
-.pagination-hp-scroll a:hover .hover-text {
-  opacity: 1;
-}
-.pagination-hp-scroll a:after {
-  -webkit-transition:box-shadow 0.5s ease;
-  transition:box-shadow 0.5s ease;
-  width:15px;
-  height:15px;
-  display: block;
-  border:1px solid;
-  border-radius:50%;
-  content:'';
-  position: absolute;
-  margin:auto;
-  top:0;
-  right:4px;
-  bottom:0;
-  box-shadow:inset 0 0 0 7px;
-}
-
-
-
-/* major partners */
-
-/* footer slider */
-.footer-section {
-  position: relative;
-  z-index: 100;
 }
 
 /* join us in Dubai */
