@@ -14,9 +14,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 20% 70%;
-  min-height: 400px;
+  min-height: 280px;
   h2 {
-    padding-top: 4rem;
+    padding-top: 2rem;
     text-decoration: underline;
     text-decoration-color: $primary-orange;
     text-underline-position: under;
@@ -201,7 +201,7 @@ h2.accent {
 /* join us in Dubai */
 .showcase {
   margin-top: 10rem;
-  margin-bottom: 15rem;
+  margin-bottom: 10rem;
   .row {
     margin-top: 4rem;
   }
@@ -214,8 +214,10 @@ h2.accent {
 }
 
 .icon-text {
-  font-family: 'Rubik', sans-serif;
+  font-family: $font-family-rubik;
   margin-top: 2rem;
+  letter-spacing: 1px;
+  font-weight: 600;
   text-align: center;
 }
 .icon1 {
@@ -475,18 +477,19 @@ h2.accent {
   h2 {
     text-decoration: underline;
     text-decoration-color: $gray-400;
+    text-underline-position: under;
   }
   .partner-logos {
-    padding: 3rem 0 10rem 0;
+    padding: 4rem 0 6rem 0;
     text-align: center;
 
     @include media-breakpoint-down(md) {
       padding: 0;
     }
     .inline-partner-logo {
+      margin: 0;
       display: inline-block;
       img {
-        margin: 0 2rem;
         object-fit: contain;
         &:hover, &:active, &:focus {
           opacity: 0.7;

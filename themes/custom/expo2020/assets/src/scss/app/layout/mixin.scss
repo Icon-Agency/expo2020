@@ -4,6 +4,8 @@
   color: $color;
   padding: 0.5rem 1rem;
   margin: 0 .5rem;
+  font-family: $font-family-rubik;
+  font-weight: 600;
   svg {
     width: 20px;
     padding-right: 0.2rem;
@@ -48,6 +50,8 @@
   [class$="-date"] {
     font-family: $font-family-rubik;
     color: $color;
+    font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 14px;
     position: absolute;
@@ -59,6 +63,9 @@
     p {
       margin-bottom: 0;
     }
+  }
+  .news-title {
+    font-weight: 600;
   }
 
   @include media-breakpoint-down(md) {
@@ -78,6 +85,7 @@
       li {
         width: 32px;
         text-align: center;
+        margin: 0 2px;
       }
       .page-link {
         -webkit-border-radius: 50%;
@@ -85,6 +93,8 @@
         border-radius: 50%;
         border: none;
         padding: 0.4rem 0.75rem;
+        font-family: $font-family-rubik;
+        font-weight: 600;
       }
       .page-item:first-child .page-link {
         border: none;
@@ -101,6 +111,8 @@
   text-transform: uppercase;
   color: $color;
   margin-top: 4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 @mixin view-upcoming-bottom($color) {

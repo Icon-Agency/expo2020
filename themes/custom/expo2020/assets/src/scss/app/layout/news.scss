@@ -20,6 +20,7 @@
     justify-content:center;
     align-items:center;
     overflow:hidden;
+    padding-top: 5rem !important;
   }
   .news {
     a {
@@ -45,7 +46,7 @@
       @include type-icon($primary-turquoise);
     }
     .news-lower-container{
-      @include lower-container($news-homepage, $primary-orange);
+      @include lower-container($news-homepage, $icon-orange);
       text-align: center;
     }
     .event-lower-container {
@@ -76,6 +77,9 @@
         }
         .news-type-twitter-name {
           color: $twitter-blue;
+          font-family: $font-family-rubik;
+          font-weight: 600;
+          letter-spacing: 1px;
         }
 
       }
@@ -90,9 +94,11 @@
       }
       .news-twitter-time-ago {
         font-family: $font-family-rubik;
-        color: $primary-orange;
+        color: $icon-orange;
         text-transform: uppercase;
         font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
         position: absolute;
         bottom: 0.5rem;
         left: 0;
@@ -106,11 +112,11 @@
     margin: 5rem 0;
     @include feature-card($primary-orange, $news-homepage, 'no-bg-img');
     .featured-middle-content {
-      font-weight: 500;
+      font-weight: 600;
       font-size: 18px;
     }
     .featured-middle-date {
-      @include date-time($primary-orange);
+      @include date-time($icon-orange);
     }
   }
 }
@@ -131,7 +137,7 @@
     margin-bottom: 0;
   }
   a {
-    border-bottom-color: $primary-orange;
+    border-bottom: 3px solid $primary-orange;
     &:hover, &:active {
       color: $primary-orange;
     }
@@ -156,7 +162,8 @@
           }
         }
         .news-type-filter-links {
-          @include type-filter-links($primary-orange);
+          @include type-filter-links($icon-orange);
+          font-size: 14px;
         }
         .news-types-collapse-search {
           display: flex;
@@ -186,7 +193,7 @@
     .view-footer {
       text-align: center;
     }
-    @include landing-pagination($primary-orange);
+    @include landing-pagination($icon-orange);
   }
   //whats on
   .view-display-id-whats_on {
@@ -254,7 +261,7 @@
       margin: 5rem 0;
       @include feature-card($icon-green, url('~@/images/feature-bg.png'), 'bg-img');
       .featured-middle-content {
-        font-weight: 500;
+        font-weight: 600;
         font-size: 18px;
       }
       .featured-middle-date {

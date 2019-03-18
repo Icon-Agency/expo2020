@@ -1,7 +1,7 @@
 fonts:
   css:
     component:
-      '//fonts.googleapis.com/css?family=Rubik|Work+Sans:400,600': { type: external }
+      '//fonts.googleapis.com/css?family=Rubik:medium|Work+Sans:500,600': { type: external }
 
 global-styling:
   version: VERSION

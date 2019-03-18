@@ -14,12 +14,10 @@
   }
 
   .pavilion-bg {
-    margin-top: 8rem;
     min-height: 100%;
     min-width: 100%;
   }
   .pavilion-cover {
-    margin-top: 8rem;
     object-fit: cover;
   }
   .pavilion-bg-container {
@@ -66,16 +64,18 @@
       }
     }
     .news-listing-featured-title {
-      color: $primary-orange;
+      color: $icon-orange;
     }
     .news-listing-featured-body {
       width: 40%;
     }
     .news-listing-featured-news-date {
       display: flex;
-      color: $primary-orange;
+      color: $icon-orange;
       text-transform: uppercase;
       font-family: $font-family-rubik;
+      font-weight: 600;
+      letter-spacing: 1px;
       p {
         padding-left: .5rem;
         margin-top: -2px;
