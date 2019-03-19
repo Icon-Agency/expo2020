@@ -19,8 +19,8 @@ export default class Scrollmagic {
 
         // define movement of panels
         var wipeAnimation = new TimelineMax()
-            .fromTo("#slideContainer .panel-p1", 5, {y: "100%"}, {y: "0%", ease: Linear.easeInOut})
-            .fromTo("#slideContainer .panel-p2", 5, {y: "100%"}, {y: "0%", ease: Linear.easeInOut})
+            .fromTo("#slideContainer .panel-p1", 10, {y: "100%"}, {y: "0%", ease: Linear.easeInOut})
+            .fromTo("#slideContainer .panel-p2", 10, {y: "100%"}, {y: "0%", ease: Linear.easeInOut})
 
         // create scene to pin and link animation
         new ScrollMagic.Scene({
@@ -47,14 +47,21 @@ export default class Scrollmagic {
         $(window).on('resize scroll', function() {
             $('.panel').each(function() {
                 var slideID = $(this).attr('id');
+                var elems = $("#txt-" + slideID);
                 if ($(this).isInViewport()) {
                     $('.pips li div').removeClass('active');
                     $('#pip-' + slideID).addClass('active');
-                    $('.slide').removeClass('active remove');
-                    $("#txt-" + slideID).addClass("active", 2000);
+                    /*$('.slide').removeClass('active remove');
+                    $("#txt-" + slideID).addClass("active", 2000);*/
+                    for(var i = 0; i < elems.length; i++) {
+                        elems[i].style.transform = 'translate(0, -' + window.pageYOffset / 30 + 'px)';
+                    }
                 } else {
                     $('#pip-' + slideID).removeClass('active');
-                    $("#txt-" + slideID).addClass("remove", 2000);
+                   /* $("#txt-" + slideID).addClass("remove", 2000);*/
+                    for(var i = 0; i < elems.length; i++) {
+                        elems[i].style.transform = 'translate(0, ' + window.pageYOffset / 30 + 'px)';
+                    }
                 }
             });
         });
