@@ -92,7 +92,7 @@
           {% endif %}
 
           {% if content.field_top_banner_button_link.0 %}
-              <a class="btn btn-primary btn-primary-orange" href="{{ content.field_top_banner_button_link[0]['#url'] }}">
+              <a class="btn btn-primary btn-primary-turquoise" href="{{ content.field_top_banner_button_link[0]['#url'] }}">
                   {{ content.field_top_banner_button_link.0['#title'] }}
               </a>
           {% endif %}
@@ -103,7 +103,7 @@
 </div>
 
 <section class="extra-pavilion" data-section-name="extra">
-    <div class="text-under">
+    <div class="container text-under">
         {% if content.field_text_area_under_top_banner %}
             {{ content.field_text_area_under_top_banner|raw }}
         {% endif %}
@@ -135,7 +135,7 @@
         </div>
     </div>
 
-    <div class="pavilion-text-before-slider">
+    <div class="container pavilion-text-before-slider">
         {% if content.field_txt_area_befr_galry_slider %}
             {{ content.field_txt_area_befr_galry_slider|raw }}
         {% endif %}
@@ -155,7 +155,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="/{{ base_path ~ directory }}/assets/src/images/welcome-img.png" >
+                    <img src="/{{ base_path ~ directory }}/assets/src/images/pavilion-welcome.jpg" >
                 </div>
                 <div class="col-md-6 pavilion-welcome-text">
                     <h2>Welcome</h2>

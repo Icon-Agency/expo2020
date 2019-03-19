@@ -168,30 +168,29 @@ h2.accent {
   top: 30%;
   left:0;
   width:100%;
-  z-index: 3;
 }
 .slide p {
   font-size: 24px;
   margin-top: 1rem;
 }
 .slide .animatable {
-  opacity:0;
-  -webkit-transform:translate(0,30px);
-  transform:translate(0,30px);
+  //opacity:0;
+  -webkit-transform:translate(0,-200px);
+  transform:translate(0,-200px);
   -webkit-transition:opacity 0.4s ease,-webkit-transform 0.4s ease;
   transition:opacity 0.4s ease,transform 0.4s ease;
-
+  animation-duration: 5s;
 }
 .slide.active.remove .animatable {
-  opacity:0;
-  -webkit-transform:translate(0,-20px);
-  transform:translate(0,-20px);
+  //opacity:0;
+  -webkit-transform:translate(0,-400px);
+  transform:translate(0,-400px);
 }
 
 .slide.active .animatable {
   opacity:1;
-  -webkit-transform:translate(0,0);
-  transform:translate(0,0);
+  -webkit-transform:translate(0,0px);
+  transform:translate(0,0px);
 
 }
 .slide.active {
@@ -217,7 +216,7 @@ h2.accent {
   font-family: $font-family-rubik;
   margin-top: 2rem;
   letter-spacing: 1px;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
 }
 .icon1 {

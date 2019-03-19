@@ -50,12 +50,16 @@
   .field--name-field-bottom-content {
     .container {
       padding: 0;
+      p {
+        font-size: 18px;
+      }
     }
     .time-title {
       font-family: $font-family-rubik;
       color: $primary-blue;
       font-weight: 500;
       margin-top: 2rem;
+      letter-spacing: 1px;
     }
     .showcase-contact {
       margin: 2rem;
@@ -65,8 +69,8 @@
       }
     }
     .floorplan {
-      margin-top: 2rem;
-      margin-bottom: 5rem;
+      margin-top: 4rem;
+      margin-bottom: 9rem;
       img {
         width: 100%;
       }
@@ -89,8 +93,11 @@
 .node--type-themes.node--view-mode-full {
   .field--name-field-text-area-under-top-banner {
     margin: 5rem 0;
-    h3 {
+    h2, h3 {
       color: $icon-orange;
+    }
+    h2 {
+      font-size: 36px;
     }
   }
   .themes-gallery-content {
@@ -103,7 +110,7 @@
     margin-bottom: 0;
   }
   .field--name-field-txt-area-befr-galry-slider {
-    padding: 5rem 0;
+    padding: 7rem 0;
     @include feature-card($icon-orange, $white, 'no-bg-img');
   }
   .themes-slider {
@@ -114,7 +121,7 @@
   .field--name-field-multi-text-after-gallery {
     margin-bottom: 0;
     .field__item {
-      margin-top: 5rem;
+      margin-top: 7rem;
     }
     .row {
       margin: 0;
@@ -127,12 +134,24 @@
     }
     .field__item:last-child {
       @include pavilion-welcome($icon-orange, $primary-blue);
+      .pavilion-welcome {
+        .pavilion-welcome-text {
+          padding-top: 7rem;
+          padding-left: 4rem;
+          padding-right: 4rem;
+        }
+      }
     }
   }
 }
 
 //media landing page
 .node--type-media-landing-page.node--view-mode-full {
+  .node__content {
+    background-image: url('~@/images/media-fill.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
   .field--name-field-top-content {
     margin-top: 5rem;
     margin-bottom: 6rem;
@@ -156,7 +175,7 @@
     }
   }
   .media-bottom {
-    padding: 5rem;
+    padding: 7rem;
     text-align: center;
   }
   .media-landing-page-after-banner {
@@ -176,6 +195,19 @@
     .region.region-content-top {
       display: block;
       margin: 0;
+      #parallax-container {
+        .pavilion-layer-top-news {
+          .whats-on-shape {
+            h2 {
+              color: $primary-blue;
+            }
+            a {
+              color: $primary-blue;
+            }
+          }
+        }
+      }
+
     }
   }
 }
@@ -192,9 +224,9 @@
     margin-bottom: 0;
   }
   a {
-    border-bottom-color: $primary-orange;
+    border-bottom-color: $primary-brown;
     &:hover, &:active {
-      color: $primary-orange;
+      color: $primary-brown;
     }
   }
 }
@@ -202,6 +234,16 @@
   .field {
     margin-bottom: 0;
   }
+  @include pavilion-welcome($primary-blue, $white);
+  .pavilion-welcome {
+    .pavilion-welcome-text {
+      padding-top: 2rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+
   .viewsreference--view-title {
     color: $primary-blue;
     font-size: $h3-font-size;
@@ -221,7 +263,7 @@
       background-color: $gray-100;
       .btn {
         display: block;
-        width: 50%;
+        width: 55%;
         margin-top: 3rem;
         margin-left: auto;
         margin-right: auto;
@@ -280,4 +322,21 @@
 .region-messages {
   position: relative;
   z-index: 5;
+}
+
+.node--type-opportunities {
+  #parallax-container {
+    .pavilion-shape {
+      background-image: url('~@/images/shape1.png');
+      height: 35%;
+    }
+    .pavilion-banner-title {
+      width: 20%;
+    }
+  }
+  .pavilion-last-section {
+    .pavilion-welcome-text {
+      padding-top: 8rem;
+    }
+  }
 }

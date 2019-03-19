@@ -78,7 +78,7 @@
         .news-type-twitter-name {
           color: $twitter-blue;
           font-family: $font-family-rubik;
-          font-weight: 600;
+          font-weight: 500;
           letter-spacing: 1px;
         }
 
@@ -97,7 +97,7 @@
         color: $icon-orange;
         text-transform: uppercase;
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 500;
         letter-spacing: 1px;
         position: absolute;
         bottom: 0.5rem;
@@ -164,6 +164,9 @@
         .news-type-filter-links {
           @include type-filter-links($icon-orange);
           font-size: 14px;
+          .fa-twitter {
+            padding-top: 10px;
+          }
         }
         .news-types-collapse-search {
           display: flex;
@@ -180,6 +183,11 @@
             width: 30%;
             margin-left: 0.5rem;
             padding: 0 0.5rem;
+            background-color: $icon-orange;
+            border-color: $icon-orange;
+            &:hover, &:active, &:focus {
+              filter: brightness(110%);
+            }
           }
         }
       }
