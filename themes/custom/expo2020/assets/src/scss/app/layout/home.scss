@@ -330,36 +330,6 @@ h2.accent {
   }
 }
 
-@media only screen and (max-width: 480px) {
-  h2.accent {
-    font-size: 1rem;
-  }
-  .news {
-    padding-top: 0 !important;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-  .slider-link {
-    left: 35%;
-  }
-  .slide {
-    top: 2%;
-    left: 5%;
-  }
-
-  .slide p {
-    margin-top: 0;
-  }
-  .partners {
-    padding-top: 2rem;
-  }
-
-  .btn-blue,
-  .btn-orange {
-    font-size: 10px;
-    padding: .5rem 1rem;
-  }
-}
 
 @media only screen and (max-width: 375px) {
   .btn-orange-banner {

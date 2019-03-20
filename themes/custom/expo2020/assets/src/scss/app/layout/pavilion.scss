@@ -25,7 +25,6 @@
     object-fit: cover;
   }
   .pavilion-bg-container {
-    margin-top: 7rem;
     img {
       min-width: 100%;
     }
@@ -54,14 +53,14 @@
   //news page banner
   .pavilion-layer-top-news {
     .pavilion-shape-news {
-      background-image: url('~@/images/shape3.png');
+      background-image: url('~@/images/themes-shape-above.png');
       position: relative;
       right: -20%;
       top: 30%;
       background-repeat: no-repeat;
       -webkit-background-size: contain;
       background-size: contain;
-      padding: 6rem;
+      padding: 4rem 6rem;
       height: 36%;
       &:hover {
         filter: brightness(110%);
@@ -184,4 +183,13 @@
     margin-bottom: 0;
   }
   @include pavilion-welcome($primary-blue, $white);
+}
+
+.block-views-blockmedia-listing-latest1-featured-news,
+.node--type-themes {
+  #parallax-container {
+    .whats-on-shape-under {
+      right: -60%;
+    }
+  }
 }
