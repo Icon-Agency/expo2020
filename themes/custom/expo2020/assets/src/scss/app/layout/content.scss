@@ -81,6 +81,9 @@
 #block-whatsonsecondbanner {
   .whatson-feature {
     @include feature-card($icon-green, url('~@/images/feature-bg.png'), 'bg-img');
+    h3 {
+      margin: 5rem;
+    }
   }
 }
 

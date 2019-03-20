@@ -188,7 +188,8 @@
     .text-bottom {
       font-family: $font-family-rubik;
       font-weight: 500;
-      margin-top: 5rem;
+      position: absolute;
+      bottom: 1rem;
     }
   }
 }

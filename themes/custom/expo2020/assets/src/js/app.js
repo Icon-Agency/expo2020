@@ -280,7 +280,7 @@ $(window).on('resize', () => {
 
 $(window).resize();
 
-$(window).scroll(function() {
+/*$(window).scroll(function() {
   var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
   if (!isMobile) {
     if ($(this).scrollTop() > 150){
@@ -292,7 +292,7 @@ $(window).scroll(function() {
   } else {
 
   }
-})
+})*/
 
 $("#to-top").click(function () {
     $("body,html").animate({scrollTop: 0}, 500);
