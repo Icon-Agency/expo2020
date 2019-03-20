@@ -53,15 +53,16 @@ export default class Scrollmagic {
                     $('#pip-' + slideID).addClass('active');
                     /*$('.slide').removeClass('active remove');
                     $("#txt-" + slideID).addClass("active", 2000);*/
-                    for(var i = 0; i < elems.length; i++) {
-                        elems[i].style.transform = 'translate(0, -' + window.pageYOffset / 30 + 'px)';
-                    }
+                    elems.css({ transform: 'translate(0, -' + window.pageYOffset / 25 + 'px)',
+                                transition: 'transform 300ms ease'});
+                    /*elems.animate({
+                        transform: 'translate(0, -' + window.pageYOffset / 30 + 'px)'
+                    }, 'fast');*/
                 } else {
                     $('#pip-' + slideID).removeClass('active');
                    /* $("#txt-" + slideID).addClass("remove", 2000);*/
-                    for(var i = 0; i < elems.length; i++) {
-                        elems[i].style.transform = 'translate(0, ' + window.pageYOffset / 30 + 'px)';
-                    }
+                    elems.css({ transform: 'translate(0, ' + window.pageYOffset / 25 + 'px)',
+                        transition: 'transform 300ms ease'});
                 }
             });
         });

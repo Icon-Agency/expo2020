@@ -58,10 +58,34 @@
           color: $grey-dark;
           padding: .25rem;
           font-weight: 600;
+          position: relative;
+          &.is-active {
+            &:hover {
+              &::after {
+                background: $icon-blue1;
+              }
+            }
+            &::after {
+              content: ' ';
+              background: $primary-blue;
+              position: absolute;
+              height: .333rem;
+              width: 110%;
+              left: -5%;
+              bottom: -40px;
+            }
+          }
 
           &:hover {
-            color: $black;
-            border-bottom: 1px solid $black;
+            &::after {
+              content: ' ';
+              background: $gray-300;
+              position: absolute;
+              height: .333rem;
+              width: 110%;
+              left: -5%;
+              bottom: -40px;
+            }
           }
         }
       }
@@ -89,8 +113,8 @@
 
 }
 #header.sticky {
-  height: 100px;
+  height: 80px;
   .header-row {
-    padding: 15px 0;
+    padding: 10px 0;
   }
 }

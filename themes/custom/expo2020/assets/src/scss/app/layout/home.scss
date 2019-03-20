@@ -13,7 +13,7 @@
   display: block;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 20% 70%;
+  background-position: 20% 50%;
   min-height: 280px;
   h2 {
     padding-top: 2rem;
@@ -165,13 +165,14 @@ h2.accent {
 }
 .slide {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left:0;
   width:100%;
 }
 .slide p {
   font-size: 24px;
   margin-top: 1rem;
+  font-weight: 500;
 }
 .slide .animatable {
   //opacity:0;
@@ -179,7 +180,7 @@ h2.accent {
   transform:translate(0,-200px);
   -webkit-transition:opacity 0.4s ease,-webkit-transform 0.4s ease;
   transition:opacity 0.4s ease,transform 0.4s ease;
-  animation-duration: 5s;
+  animation-duration: 0.5s;
 }
 .slide.active.remove .animatable {
   //opacity:0;
@@ -472,7 +473,7 @@ h2.accent {
 
 .partners {
   background-color: #F0F0F5;
-  padding-top: 5rem;
+  padding-top: 7rem;
   h2 {
     text-decoration: underline;
     text-decoration-color: $gray-400;
@@ -484,6 +485,9 @@ h2.accent {
 
     @include media-breakpoint-down(md) {
       padding: 0;
+    }
+    .view-id-sponsors_partners_views_listing {
+      padding-bottom: 0;
     }
     .inline-partner-logo {
       margin: 0;

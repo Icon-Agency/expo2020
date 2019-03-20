@@ -18,10 +18,11 @@
     min-width: 100%;
   }
   .pavilion-cover {
+    min-width: 100%;
     object-fit: cover;
   }
   .pavilion-bg-container {
-    margin-top: 8rem;
+    margin-top: 7rem;
     img {
       min-width: 100%;
     }
@@ -40,11 +41,12 @@
   .pavilion-layer-top {
     //position: relative;
     z-index: 20;
-    margin-top: 8rem;
+    margin-top: 7rem;
   }
   .pavilion-banner-title {
     color: white;
     line-height: 1.5;
+    width: 15%;
   }
 
   //news page banner
