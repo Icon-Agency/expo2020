@@ -1,6 +1,6 @@
 #parallax-container {
   display: block;
-  height: 1050px;
+  height: 1100px;
   position: relative;
 
   .parallax-div {
@@ -9,16 +9,19 @@
     background-position: center !important;
     background-repeat: no-repeat;
     transform: translateY(0px);
-    height: 1050px;
+    height: 1100px;
     width: 100%;
+    margin-top: 7rem;
   }
 
   .pavilion-bg {
-    min-height: 100%;
-    min-width: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
   .pavilion-cover {
-    min-width: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
   .pavilion-bg-container {
@@ -41,7 +44,6 @@
   .pavilion-layer-top {
     //position: relative;
     z-index: 20;
-    margin-top: 7rem;
   }
   .pavilion-banner-title {
     color: white;

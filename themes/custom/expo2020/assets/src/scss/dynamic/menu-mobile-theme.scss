@@ -23,5 +23,10 @@
   left: 0;
 }
 .mm-navbars_bottom {
-  display: none;
+  .mm-searchfield__input {
+    input {
+      background-color: $white;
+      color: $gray-900;
+    }
+  }
 }

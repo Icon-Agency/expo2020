@@ -1,8 +1,8 @@
 @include media-breakpoint-down(lg) { //1200px
   #parallax-container {
-    height: 600px;
+    height: 900px;
     .parallax-div {
-      height: 600px;
+      height: 900px;
     }
     .pavilion-layer-top-news {
       .pavilion-shape-news {
@@ -21,7 +21,7 @@
       .search-trigger,
       button,
       .input-wrap {
-        margin: 0;
+        margin-top: -0.5rem;
       }
       &.open {
         .input-wrap {
@@ -32,9 +32,9 @@
     }
   }
   #parallax-container {
-    height: 600px;
+    height: 800px;
     .parallax-div {
-      height: 600px;
+      height: 800px;
     }
     .pavilion-layer-top-news {
       .pavilion-shape-news {
@@ -65,9 +65,9 @@
   }
 
   #parallax-container {
-    height: 500px;
+    height: 600px;
     .parallax-div {
-      height: 500px;
+      height: 600px;
     }
     .pavilion-layer-top-news {
       .pavilion-shape-news {
@@ -81,24 +81,162 @@
 }
 
 @include media-breakpoint-down(xs) {  //576px
-
-}
-
-@media only screen and (max-width: 480px) {
+  body h2 {
+    font-size: 2rem;
+  }
   #block-expo2020-header-site-search-block {
     .header-site-search-content-wrapper {
-      &.open {
-        .input-wrap {
-          width: 250px;
-        }
+      display: none;
+    }
+  }
+  #block-bean-homepage-banner {
+    .texts {
+      .inner {
+        padding: 30px;
       }
     }
   }
+  .latest-news {
+    .news-section {
+      margin-bottom: 2rem;
+      padding-top: 2rem;
+      .news-header {
+        margin-left: 15px;
+      }
+    }
+    .news {
+      padding-top: 2rem !important;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  #pinSlider {
+    .pips {
+      right: 20px;
+      top: 5rem;
+    }
+    .slide {
+      top: 40rem;
+      left:1rem;
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+        width: 90%;
+        font-size: 20px;
+      }
+    }
+  }
+  .partners {
+    padding-top: 2rem;
+  }
+  h2.accent {
+    font-size: 1.5rem;
+    left: 6rem;
+    width: 70%;
+    top: 13rem;
+  }
+  .slider-link {
+    left: 35%;
+  }
+  .slick-dots {
+    top: 11rem;
+  }
+  .video-play-icon {
+    left: 42.5%;
+  }
+  .showcase {
+    .row {
+      margin-top: 2rem;
+    }
+  }
+  .map-img {
+    min-height: 200px;
+    h2 {
+      margin-left: 15px;
+    }
+  }
+  .footer-right-outer-container {
+    h2 {
+      margin-left: 15px;
+    }
+    .webform-submission-form {
+      padding-left: 15px;
+    }
+    .button {
+      height: calc(2.5em + 1rem + 1px);
+    }
+  }
+  #parallax-container {
+    height: 500px;
+    .parallax-div {
+      height: 500px;
+      margin-top: 6rem;
+    }
+    .pavilion-shape {
+      left: 2rem;
+      padding: 3.5rem;
+      height: 53%;
+      .btn {
+        margin-top: 1rem;
+      }
+    }
+    .pavilion-banner-title {
+      width: 40%;
+    }
+  }
+  .extra-pavilion {
+    margin-top: 0;
+    .text-under {
+      padding: 2rem;
+    }
+  }
+  .latest-news {
+    .news-section {
+      margin-bottom: -2rem;
+    }
+  }
+  .pavilion-text-before-slider {
+    padding: 2rem;
+  }
+  .pavilion-last-section {
+    .pavilion-welcome {
+      padding: 2rem 0;
+      text-align: center;
+      .col-md-6 {
+        padding: 0 2rem;
+      }
+      img {
+        width: 100%;
+      }
+      .pavilion-welcome-text {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body h2 {
+    font-size: 1.5rem;
+  }
+  h2.accent {
+    left: 4rem;
+    top: 9rem;
+  }
+  .slider-link {
+    left: 30%;
+    font-size: 12px;
+    padding: 0.2rem 1rem;
+  }
+  .slick-dots {
+    top: 7.5rem;
+  }
 
   #parallax-container {
-    height: 400px;
+    height: 500px;
     .parallax-div {
-      height: 400px;
+      height: 500px;
     }
     .pavilion-layer-top-news {
       .pavilion-shape-news {
@@ -110,9 +248,6 @@
     }
     .pavilion-shape {
       padding: 3rem;
-      .pavilion-banner-title {
-        font-size: 2rem;
-      }
     }
   }
 }

@@ -113,8 +113,26 @@
 
 }
 #header.sticky {
-  height: 80px;
+  height: 95px;
   .header-row {
-    padding: 10px 0;
+    padding: 15px 0;
+  }
+  .navigation.menu--main {
+    ul.nav {
+      li.nav-item {
+        a.nav-link {
+          &.is-active {
+            &::after {
+              bottom: -29px;
+            }
+          }
+          &:hover {
+            &::after {
+              bottom: -29px;
+            }
+          }
+        }
+      }
+    }
   }
 }

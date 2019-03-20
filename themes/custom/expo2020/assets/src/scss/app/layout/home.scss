@@ -255,16 +255,6 @@ h2.accent {
     line-height: 1.5;
     text-align: center;
   }
-  .pagination-hp-scroll {
-    top: 10%;
-  }
-  .pagination-hp-scroll a {
-    height: 20px;
-  }
-  .pagination-hp-scroll a:after {
-    width: 12px;
-    height: 12px;
-  }
   .slide {
     top: 10%;
     left: 10%;
@@ -282,13 +272,6 @@ h2.accent {
 }
 
 @media (max-width: 992px) {
-  h1.accent {
-    width: 25%;
-  }
-  .slick-list {
-    margin: 0 3rem;
-  }
-
 
   .slide {
     top: 5%;
@@ -313,25 +296,9 @@ h2.accent {
   .partner-logo img {
     margin: 1rem 2rem;
   }
-  .pagination-hp-scroll {
-    top: 10%;
-  }
-  .pagination-hp-scroll a {
-    height: 15px;
-  }
-  .pagination-hp-scroll a:after {
-    width: 10px;
-    height: 10px;
-  }
   .showcase {
     margin-top: 0;
     margin-bottom: 3rem;
-  }
-  .slick-prev {
-    left: calc(50% - 339px);
-  }
-  .slick-next {
-    right: calc(50% - 316px);
   }
 }
 
@@ -353,30 +320,11 @@ h2.accent {
     top: 35%;
     left: 33%;
   }
-  .slick-prev {
-    left: calc(50% - 190px);
-  }
-  .slick-next {
-    right: calc(50% - 160px);
-  }
-  .slide p {
-    width: 40%;
-    font-size: 12px;
-  }
   .btn-blue,
   .btn-orange {
     font-size: 12px;
   }
-  .slider-link {
-    width: 100%;
-    left: 40%;
-    font-size: .8rem;
-  }
-  h2.accent {
-    font-size: 1.5rem;
-    left: 17%;
-    width: 70%;
-  }
+
   .partner-logo {
     padding: 2rem 0;
   }
@@ -398,9 +346,7 @@ h2.accent {
     top: 2%;
     left: 5%;
   }
-  .slide h2 {
-    font-size: 1.2rem;
-  }
+
   .slide p {
     margin-top: 0;
   }
@@ -412,16 +358,6 @@ h2.accent {
   .btn-orange {
     font-size: 10px;
     padding: .5rem 1rem;
-  }
-  .pagination-hp-scroll {
-    top: 6%;
-  }
-  .pagination-hp-scroll a {
-    height: 12px;
-  }
-  .pagination-hp-scroll a:after {
-    width: 8px;
-    height: 8px;
   }
 }
 
@@ -458,12 +394,6 @@ h2.accent {
   }
   .social-icon {
     margin-left: 0;
-  }
-  .slick-prev {
-    left: calc(50% - 140px);
-  }
-  .slick-next {
-    right: calc(50% - 110px);
   }
 }
 
