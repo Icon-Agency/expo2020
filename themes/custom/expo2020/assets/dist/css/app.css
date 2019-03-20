@@ -2024,6 +2024,11 @@ h2.accent {
         .partners .partner-logos .inline-partner-logo {
           margin: 2rem 0; } }
 
+img.blur {
+  -webkit-filter: blur(3px);
+  /* Safari 6.0 - 9.0 */
+  filter: blur(3px); }
+
 .latest-news,
 .view-display-id-news_listing_page,
 .news-view-latest-news-bottom,
