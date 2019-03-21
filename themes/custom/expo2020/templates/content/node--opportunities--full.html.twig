@@ -75,11 +75,6 @@
   ]
 %}
 <h1 class="sr-only">Opportunities</h1>
-<ul class="pagination-hp-scroll">
-    <li><a class="active" href="#panel-p0"></a></li>
-    <li><a class="" href="#panel-p1"></a></li>
-    <li><a class="" href="#panel-p2"></a></li>
-</ul>
 
 <div id="parallax-container">
   <div class="parallax-div">
@@ -157,7 +152,7 @@
 <script type="text/javascript">
   window.addEventListener('scroll', () => {
     let parent = document.getElementById('parallax-container');
-    let children = parent.getElementsByTagName('div');
+    let children = parent.getElementsByClassName('parallax-div');
     for(let i = 0; i < children.length; i++) {
       children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)';
     }

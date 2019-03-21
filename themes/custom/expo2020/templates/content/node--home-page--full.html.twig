@@ -100,12 +100,17 @@
                             <svg version="1.1" id="Fill_2_Copy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                  y="0px" viewBox="0 0 600 450" width="600"  xml:space="preserve">
                            <defs>
-                               <linearGradient id="HomeBannerPurpleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                               {#<linearGradient id="HomeBannerPurpleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                                    <stop offset="0%" stop-color="#2E2C29"></stop>
                                    <stop offset="100%" stop-color="#5b5a57"></stop>
-                               </linearGradient>
+                               </linearGradient>#}
+                               <pattern id="circles-1" patternUnits="userSpaceOnUse" width="600" height="600">
+                                   <image xlink:href="/{{ base_path ~ directory }}/assets/src/images/texture.png"
+                                          x="0" y="0" width="600" height="600">
+                                   </image>
+                               </pattern>
                            </defs>
-                                <polygon points="0,8 30,340 116,450 430,395 560,113" fill="url(#HomeBannerPurpleGradient)">
+                                <polygon points="0,8 30,340 116,450 430,395 560,113" fill="url(#circles-1)">
                                     <animate to="0,8 30,340 116,450 430,395 560,113"  attributeName="points" dur="3s" fill="freeze" keySplines="0.42 0 0.58 1" calcMode="spline" keyTimes="0;1"></animate>
                                     <animate to="99,3 0,210 87,401 570,450 475,32"  attributeName="points" dur="3s" fill="freeze" keySplines="0.42 0 0.58 1" calcMode="spline" keyTimes="0;1"></animate>
                                     <animate to="0,54 37,384 37,383 340,450 600,104"  attributeName="points" dur="3s" fill="freeze" keySplines="0.42 0 0.58 1" calcMode="spline" keyTimes="0;1"></animate>
