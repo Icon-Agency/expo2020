@@ -7,6 +7,48 @@
 .banner {
   position: relative;
   overflow: hidden;
+  height: 100vh;
+  min-height: 700px;
+  &.content-banner{
+    height: 700px !important;
+    min-height: 1px;
+  }
+
+  .img,
+  .field--name-field-image img{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .angled-mask{
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 9vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: -2px;
+
+    &.home-angle{
+      background-image: url(../images/angled-mask-home.svg);
+    }
+
+    &.pavillion-angle{
+      background-image: url(../images/angled-mask-pavillion.svg);
+    }
+
+    &.opportunities-angle{
+      background-image: url(../images/angled-mask-opportunities.svg);
+    }
+  }
 }
 
 .map-img {

@@ -514,6 +514,101 @@
       margin-top: 2rem;
     }
   }
+  #block-expo2020countdown {
+    .countdown {
+      display: -webkit-box;
+      .countdown-item {
+        margin: 0.5rem;
+        text-align: center;
+      }
+    }
+    .countdown-number,
+    .colon {
+      font-size: 30px;
+    }
+  }
+  #block-whatsonsecondbanner {
+    .whatson-feature {
+      h3 {
+        margin: 2rem;
+      }
+      .col-md-6:last-child {
+        padding: 2rem;
+        .text-bottom {
+          bottom: 0;
+        }
+      }
+    }
+  }
+  .panels.main-container {
+    .view-display-id-whats_on {
+      .view-filters {
+        .views-exposed-form {
+          .event-listing-title-links-search {
+            display: block;
+          }
+          .event-types-filter-container {
+            margin-top: 2rem;
+          }
+          .event-type-filter-links {
+            margin: 0;
+            margin-right: 0.5rem;
+          }
+          .event-listing-date-n-submit {
+            display: block;
+            .event-listing-date-outer-wrapper {
+              display: block;
+              .form-item-field-event-date-value-min {
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
+      .news {
+        padding-top: 2rem !important;
+      }
+      .view-display-id-earliest_1_featured_middle_event {
+        .col-md-6:last-child {
+          padding: 2rem;
+        }
+      }
+    }
+  }
+  .node--type-sponsors-partners-landing-page.node--view-mode-full {
+    .container {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .pavilion-welcome {
+      padding: 2rem 0;
+      .pavilion-welcome-text {
+        text-align: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 0;
+      }
+    }
+    .sponsor-listing-big-card {
+      margin-bottom: 2rem;
+      .lower-container {
+        padding: 2rem;
+        .btn {
+          width: 70%;
+        }
+      }
+    }
+  }
+  .view-id-sponsors_partners_views_listing {
+    .five-items-wrap {
+      display: block;
+      width: auto;
+      text-align: center;
+    }
+    .inline-partner-logo {
+      margin: 2rem;
+    }
+  }
 }
 
 @media only screen and (max-width: 480px) {

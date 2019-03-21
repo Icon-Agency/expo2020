@@ -1,6 +1,6 @@
 #parallax-container {
   display: block;
-  height: 1100px;
+  height: 100vh;
   position: relative;
 
   .parallax-div {
@@ -9,7 +9,7 @@
     background-position: center !important;
     background-repeat: no-repeat;
     transform: translateY(0px);
-    height: 1100px;
+    height: 100vh;
     width: 100%;
     margin-top: 7rem;
   }
@@ -125,6 +125,15 @@
     &:hover {
       filter: brightness(110%);
     }
+  }
+}
+
+.view-display-id-latest1_featured_news,
+#block-partnerslandingpageheader,
+#block-themesheader,
+#block-whatsonheader {
+  #parallax-container {
+    height: 700px;
   }
 }
 
