@@ -33,7 +33,7 @@
     }
     h1 {
       position: absolute;
-      top: 3rem;
+      top: 6rem;
     }
     img {
       width: 100%;
@@ -93,9 +93,9 @@
     .pavilion-layer-top-news {
       .whats-on-shape {
         background-image: url('~@/images/themes-shape-above.png');
-        top: 22rem;
+        top: 10%;
+        right: -30%;
         padding: 4rem 5rem;
-        height: 35%;
         h2 {
           color: $icon-orange;
         }
@@ -104,9 +104,9 @@
         }
       }
     }
-  }
-  .panels.main-container {
-    padding-top: 3rem;
+    .whats-on-shape-under {
+      height: 30%;
+    }
   }
 }
 .node--type-themes.node--view-mode-full {

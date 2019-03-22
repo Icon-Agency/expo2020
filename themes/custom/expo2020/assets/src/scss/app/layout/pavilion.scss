@@ -65,12 +65,11 @@
       background-image: url('~@/images/themes-shape-above.png');
       position: relative;
       right: -20%;
-      top: 30%;
+      top: 10%;
       background-repeat: no-repeat;
       -webkit-background-size: contain;
       background-size: contain;
       padding: 4rem 6rem;
-      height: 36%;
       &:hover {
         filter: brightness(110%);
       }
@@ -120,8 +119,8 @@
   .whats-on-shape-under {
     position: relative;
     right: -46%;
-    top: 27%;
-    height: 36%;
+    top: 5%;
+    height: 32%;
     &:hover {
       filter: brightness(110%);
     }
@@ -208,6 +207,12 @@
   #parallax-container {
     .whats-on-shape-under {
       right: -60%;
+      top: 5%;
+      height: 26%;
     }
   }
+}
+.node--type-opportunities #parallax-container .pavilion-shape {
+  height: 33%;
+  padding: 4rem;
 }

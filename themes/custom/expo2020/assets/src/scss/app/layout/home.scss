@@ -4,7 +4,7 @@
   display:block;
   margin:0 auto;
 }
-.banner {
+.parallax-banner {
   position: relative;
   overflow: hidden;
   height: 100vh;
@@ -290,10 +290,6 @@ h2.accent {
     line-height: 1.5;
     text-align: center;
   }
-  .slide {
-    top: 10%;
-    left: 10%;
-  }
   .slide p {
     font-size: 18px;
     margin-top: 1rem;
@@ -308,17 +304,6 @@ h2.accent {
 
 @media (max-width: 992px) {
 
-  .slide {
-    top: 5%;
-  }
-  .slide p {
-    font-size: 14px;
-  }
-  .btn-blue,
-  .btn-orange{
-    padding: .5rem 2rem;
-    margin-top: 0;
-  }
   .partner-container {
     max-width: 100%;
   }
@@ -354,10 +339,6 @@ h2.accent {
     padding: .5rem 1rem;
     top: 35%;
     left: 33%;
-  }
-  .btn-blue,
-  .btn-orange {
-    font-size: 12px;
   }
 
   .partner-logo {
