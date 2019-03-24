@@ -255,19 +255,25 @@
   }
   @include pavilion-welcome($primary-blue, $white);
   .pavilion-welcome {
+    padding: 0;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
     .pavilion-welcome-text {
       padding-top: 2rem;
       padding-left: 4rem;
       padding-right: 4rem;
     }
   }
-
+  .partners-with-background {
+    background-image: url('~@/images/partner-texture.jpg');
+  }
 
   .viewsreference--view-title {
     color: $primary-blue;
     font-size: $h3-font-size;
     font-weight: 600;
-    margin: 2rem 0;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
   }
   .sponsor-listing-big-card {
     text-align: center;
@@ -295,6 +301,7 @@
     transition: top 0.2s ease;
     & > div {
       border: 1px solid $countdown-gray;
+      background-color: $white;
     }
     .upper-container {
       padding-top: 2rem;
@@ -314,7 +321,7 @@
 }
 
 .view-id-sponsors_partners_views_listing {
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
   .view-content {
     display: flex;
     flex-direction: row;

@@ -63,20 +63,32 @@
   {% if multiple %}
     <div{{ attributes.addClass(classes, 'field__items') }}>
       {% for key, item in items %}
-        {% set additional_class = '' %}
         {% if key % 2 == 1 %}
-          {% set additional_class = 'with-background' %}
+          <div class="partners-with-background">
+            <div{{ item.attributes.addClass(item_classes) }}>
+              {{ item.content }}
+            </div>
+          </div>
+          {% else %}
+            <div{{ item.attributes.addClass(item_classes) }}>
+              {{ item.content }}
+            </div>
         {% endif %}
-        <div{{ item.attributes.addClass(item_classes, additional_class) }}>{{ item.content }}</div>
       {% endfor %}
     </div>
   {% else %}
     {% for item in items %}
-      {% set additional_class = '' %}
       {% if key % 2 == 1 %}
-        {% set additional_class = 'with-background' %}
+        <div class="partners-with-background">
+          <div{{ item.attributes.addClass(classes, item_classes) }}>
+            {{ item.content }}
+          </div>
+        </div>
+      {% else %}
+        <div{{ item.attributes.addClass(classes, item_classes) }}>
+          {{ item.content }}
+        </div>
       {% endif %}
-      <div{{ attributes.addClass(classes, item_classes, additional_class) }}>{{ item.content }}</div>
     {% endfor %}
   {% endif %}
 {% else %}
@@ -86,11 +98,17 @@
     <div class='field__items'>
       {% endif %}
       {% for item in items %}
-        {% set additional_class = '' %}
         {% if key % 2 == 1 %}
-          {% set additional_class = 'with-background' %}
+          <div class="partners-with-background">
+            <div{{ item.attributes.addClass(item_classes) }}>
+              {{ item.content }}
+            </div>
+          </div>
+        {% else %}
+          <div{{ item.attributes.addClass(item_classes) }}>
+            {{ item.content }}
+          </div>
         {% endif %}
-        <div{{ item.attributes.addClass(item_classes, additional_class) }}>{{ item.content }}</div>
       {% endfor %}
       {% if multiple %}
     </div>

@@ -93,32 +93,8 @@ h1.accent {
   width: 15%;
   line-height: 1.5;
 }
-
-h2.accent {
-  color: $white;
-  position: absolute;
-  top: 65%;
-  left: 30%;
-  width: 40%;
-  line-height: 1.2;
-  text-align: center;
-}
-
 .panel-img {
   max-width: 100%;
-}
-.slider-link {
-  @extend .btn-primary-turquoise;
-  color: $grey-dark;
-  position: absolute;
-  top: 85%;
-  left: 43%;
-  line-height: 1.5;
-  font-family: 'Rubik', sans-serif;
-  padding: .5rem 1rem;
-  &:hover {
-    background-color: darken($primary-turquoise, 10%);
-  }
 }
 .text {
   color: $white;
