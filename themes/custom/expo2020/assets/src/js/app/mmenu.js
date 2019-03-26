@@ -42,7 +42,7 @@ export default class Mmenu {
         },
         navbars: [
            {
-              position: "bottom",
+              position: "top",
               content: [
                  "searchfield"
               ]
