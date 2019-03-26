@@ -45,9 +45,12 @@
     background-size: contain;
     position: relative;
     top: 20%;
-    left: 20%;
-    height: 45%;
+    height: auto;
+    width: auto;
     padding: 6rem;
+    .btn {
+      margin-top: 1rem;
+    }
   }
   .pavilion-layer-top {
     //position: relative;
@@ -56,7 +59,7 @@
   .pavilion-banner-title {
     color: white;
     line-height: 1.5;
-    width: 15%;
+    width: 25%;
   }
 
   //news page banner
@@ -70,6 +73,8 @@
       -webkit-background-size: contain;
       background-size: contain;
       padding: 4rem 6rem;
+      height: auto;
+      width: auto;
       &:hover {
         filter: brightness(110%);
       }
@@ -119,8 +124,9 @@
   .whats-on-shape-under {
     position: relative;
     right: -46%;
-    top: 5%;
-    height: 32%;
+    top: 8%;
+    height: auto;
+    width: auto;
     &:hover {
       filter: brightness(110%);
     }
@@ -140,7 +146,23 @@
 #block-themesheader,
 #block-whatsonheader {
   #parallax-container {
-    height: 700px;
+    height: 800px;
+    .parallax-banner {
+      &.content-banner {
+        height: 800px !important;
+      }
+    }
+  }
+}
+#block-whatsonheader,
+#block-themesheader {
+  width: 100%;
+  height: 100%;
+  #parallax-container {
+    .parallax-div {
+      position: absolute;
+      margin-top: 0;
+    }
   }
 }
 
@@ -214,13 +236,12 @@
 .node--type-themes {
   #parallax-container {
     .whats-on-shape-under {
-      right: -60%;
-      top: 5%;
-      height: 26%;
+      right: -58%;
+      top: 6%;
     }
   }
 }
 .node--type-opportunities #parallax-container .pavilion-shape {
-  height: 33%;
-  padding: 4rem;
+  padding-top: 3rem;
+  padding-left: 6rem;
 }

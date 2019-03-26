@@ -1,3 +1,11 @@
+.path-news,
+.path-whats-on,
+.node--type-themes {
+  #main-wrapper {
+    overflow-x: hidden;
+  }
+}
+
 .node--type-page.node--view-mode-full {
   h1 {
     margin-top: 2rem;
@@ -95,7 +103,6 @@
       .whats-on-shape {
         background-image: url('~@/images/themes-shape-above.png');
         top: 10%;
-        right: -30%;
         padding: 4rem 5rem;
         h2 {
           color: $icon-orange;
@@ -104,9 +111,6 @@
           color: $icon-orange;
         }
       }
-    }
-    .whats-on-shape-under {
-      height: 30%;
     }
   }
 }
@@ -355,9 +359,6 @@
   #parallax-container {
     .pavilion-shape {
       background-image: url('~@/images/shape1.png');
-    }
-    .pavilion-banner-title {
-      width: 20%;
     }
   }
   .pavilion-last-section {

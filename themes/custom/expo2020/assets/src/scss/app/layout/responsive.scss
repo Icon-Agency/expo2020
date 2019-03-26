@@ -31,12 +31,9 @@
   .node--type-opportunities {
     #parallax-container {
       .pavilion-shape {
-        height: 35%;
-        top: 15%;
-        padding: 2rem 6rem;
-        .btn {
-          margin-top: 1rem;
-        }
+        padding-top: 2rem;
+        padding-left: 5rem;
+        padding-bottom: 4rem;
       }
     }
   }
@@ -69,12 +66,9 @@
     }
     .pavilion-layer-top-news {
       .pavilion-shape-news {
-        height: 40%;
+        height: 42%;
         padding: 1rem 5rem;
       }
-    }
-    .pavilion-shape {
-      padding: 4rem;
     }
     .pavilion-banner-title {
       width: 35%;
@@ -87,6 +81,7 @@
     #parallax-container {
       .whats-on-shape-under {
         top: 10%;
+        right: -53%;
         height: auto;
       }
     }
@@ -111,7 +106,6 @@
       .pavilion-layer-top-news {
         .whats-on-shape {
           padding: 2rem 4rem;
-          height: 36%;
           top: 35%;
           right: -35%;
         }
@@ -273,6 +267,23 @@
       }
       .pavilion-banner-title {
         width: 40%;
+      }
+    }
+  }
+  .view-display-id-news_listing_page,
+  .view-display-id-whats_on {
+    .news {
+      .news-type-icon,
+      .event-type-icon {
+        margin: -1.7rem auto;
+        padding: 1rem;
+      }
+      .news-lower-container,
+      .event-lower-container {
+        .news-title,
+        .event-title {
+          padding-top: 2rem;
+        }
       }
     }
   }
