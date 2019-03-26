@@ -1,6 +1,8 @@
 .path-news,
 .path-whats-on,
-.node--type-themes {
+.node--type-themes,
+.node--type-event,
+.node--type-news {
   #main-wrapper {
     overflow-x: hidden;
   }
@@ -8,7 +10,6 @@
 
 .node--type-page.node--view-mode-full {
   h1 {
-    margin-top: 2rem;
     color: $primary-blue;
   }
   h2 {
@@ -23,9 +24,12 @@
   .field--name-field-subtitle {
     color: $primary-orange;
     font-family: $font-family-rubik;
+    margin-top: 4rem;
   }
-  .news-article-view-content-left {
-    margin: 2rem 0;
+  .news-article-view-content-left,
+  .news-article-view-content-right {
+    margin-top: 2rem;
+    margin-bottom: 7rem;
     p {
       font-family: 'Open Sans', sans-serif;
     }
@@ -179,13 +183,12 @@
   .field--name-field-top-content {
     margin-top: 5rem;
     margin-bottom: 6rem;
-  }
-  .col-md-6 {
-    max-width: 48%;
+    .container {
+      padding: 0;
+    }
   }
   .media-card-left {
     @include media-card($gray-900);
-    margin-right: 2rem;
   }
   .media-card-right {
     @include media-card($gray-900);

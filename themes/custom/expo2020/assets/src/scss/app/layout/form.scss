@@ -232,6 +232,9 @@ label + small.description {
     img {
       width: 50%;
     }
+    @include media-breakpoint-down(lg) {
+      margin-top: 2rem;
+    }
   }
   .webform-submission-form {
     margin-top: 7rem;
