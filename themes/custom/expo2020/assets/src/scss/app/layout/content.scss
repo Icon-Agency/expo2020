@@ -290,6 +290,11 @@
     }
     .upper-container {
       padding: 5rem 0;
+      img {
+        min-height: 85px;
+        width: auto;
+        object-fit: cover;
+      }
     }
     .lower-container {
       padding: 3rem;
@@ -310,6 +315,7 @@
     & > div {
       border: 1px solid $countdown-gray;
       background-color: $white;
+      height: 100%;
     }
     .upper-container {
       padding-top: 2rem;

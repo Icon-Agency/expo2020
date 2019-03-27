@@ -77,6 +77,10 @@
       width: auto;
       &:hover {
         filter: brightness(110%);
+        .news-listing-featured-title {
+          text-decoration: underline;
+          text-underline-position: under;
+        }
       }
     }
     .news-listing-featured-title {
