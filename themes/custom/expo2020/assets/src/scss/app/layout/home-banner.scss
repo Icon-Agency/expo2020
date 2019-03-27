@@ -32,9 +32,9 @@
     width: 100%;
     z-index: 18;
     height: 100%;
-    .container {
+    /*.container {
       height: 100%;
-    }
+    }*/
     .text {
       width: 100%;
       height: 100%;
@@ -43,9 +43,9 @@
       left: 0;
       display: none;
     }
-    .col-sm-6 {
+    /*.col-sm-6 {
       height: 100%;
-    }
+    }*/
     .inner {
       position: absolute;
       top: 10%;
@@ -112,50 +112,63 @@
 
 @media (min-width: 768px) and (max-width: 992px) {
   #block-bean-homepage-banner h2 {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 
 @media (max-width: 768px) {
   #block-bean-homepage-banner {
-    background: #411e75;
-    background: -webkit-linear-gradient(25deg, #411e75 0%, #ad3192 100%);
-    background: -o-linear-gradient(25deg, #411e75 0%, #ad3192 100%);
-    background: linear-gradient(65deg, #411e75 0%, #ad3192 100%);
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#411e75,endColorstr=#ad3192,GradientType=1)";
-    .banner-block-content > .container {
-      background-image: url(/sites/all/themes/petermac/assets/build/images/sprites/purple-overlay.png);
-      background-position: center top;
-    }
-    h2 {
-      font-size: 23px;
-      line-height: 1.4;
-      color: #fff;
-    }
-    .texts {
-      .text {
-        padding: 0;
-        margin: 0;
+    .parallax-banner{
+      position: relative;
+      overflow: hidden;
+      height: auto;
+      min-height: 1px;
+
+      .angled-mask{
+        display: none;
       }
-      .inner {
-        top: 200px;
-        height: auto;
-        color: #1a1a1a;
-        padding: 28px 15px 20px;
+
+      .images{
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        min-height: 400px;
       }
     }
-    .spacer {
-      height: 413px;
+    .h-100{
+      height: auto !important;
     }
-    .images {
-      display: block;
-      position: static;
-      > div {
-        height: 200px;
-      }
-    }
-    .shape {
+    .shape,
+    .spacer{
       display: none !important;
     }
+
+    .texts{
+      padding: $spacer*3 0;
+      background-image: url('~@/images/texture.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center bottom;
+      position: relative;
+      top: auto;
+      left: auto;
+      height: auto;
+
+      .text,
+      .inner{
+        position: relative;
+        top: auto;
+        left: auto;
+        height: auto;
+        padding: 0;
+      }
+
+      .text{
+        text-align: center;
+      }
+    }
   }
+
+
+
 }

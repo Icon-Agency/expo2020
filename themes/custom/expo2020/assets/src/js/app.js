@@ -40,7 +40,7 @@ new Scrollmagic();
       this.rows    = $('.field-collection-container .field-collection-view', this.banner);
       this.total    = this.rows.length;
       this.start    = 0;
-      this.bootstrap = 'col-sm-6 col-sm-offset-6';
+      this.bootstrap = 'col-xl-6 col-lg-7 col-md-9 h-100';
 
 
       // Convert all images into a div with a bg.
