@@ -54,6 +54,8 @@
       font-family: $font-family-work-sans;
       font-size: $h5-font-size;
       font-weight: 500;
+      position: relative;
+      z-index: 0;
       .sf-sub-indicator {
         right: -1.2rem;
         &:after {

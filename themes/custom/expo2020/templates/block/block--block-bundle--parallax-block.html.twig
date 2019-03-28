@@ -75,9 +75,12 @@
         </div>
         <div class="parallax-div pavilion-layer-top-news">
           <div class="whats-on-shape container">
-            {% if content.body[0] %}
-              {{ content.body }}
-            {% endif %}
+            <div class="col-xl-4 col-lg-6 h-100">
+              {% if content.body[0] %}
+                {{ content.body }}
+              {% endif %}
+            </div>
+
           </div>
         </div>
       </div>

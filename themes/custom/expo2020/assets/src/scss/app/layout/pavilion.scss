@@ -59,7 +59,7 @@
   .pavilion-banner-title {
     color: white;
     line-height: 1.5;
-    width: 25%;
+    width: 50%;
   }
 
   //news page banner
@@ -106,7 +106,7 @@
       background-image: url('~@/images/shape4.png');
       padding: 5rem;
       .field--type-text-with-summary {
-        width: 35%;
+       // width: 35%;
       }
       h2 {
         color: $icon-green;
@@ -169,7 +169,24 @@
     }
   }
 }
-
+.view-display-id-latest1_featured_news,
+#block-partnerslandingpageheader {
+  #parallax-container {
+    .parallax-div {
+      margin-top: 107px;
+    }
+  }
+}
+#block-partnerslandingpageheader,
+#block-whatsonheader {
+  #parallax-container {
+    .pavilion-layer-top-news {
+      .whats-on-shape {
+        padding-top: 6rem;
+      }
+    }
+  }
+}
 .extra-pavilion {
   margin-top: 2rem;
   background-color: $white;
@@ -187,6 +204,30 @@
   background-color: $gray-100;
   .latest-news {
     z-index: 0;
+    .news {
+      a {
+        img {
+          height: auto;
+        }
+      }
+    }
+  }
+  .pavilion-type-icon {
+    @include type-icon($primary-blue);
+  }
+  .pavilion-type {
+    font-family: $font-family-rubik;
+    color: $primary-blue;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
 .oppo-footer {
