@@ -921,6 +921,9 @@
       margin: 2rem;
     }
   }
+  .node--type-contact .breadcrumb-n-title-container img {
+    height: 500px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -981,6 +984,9 @@
     .colon {
       font-size: 20px;
     }
+  }
+  .node--type-contact .breadcrumb-n-title-container img {
+    height: 400px;
   }
 }
 
