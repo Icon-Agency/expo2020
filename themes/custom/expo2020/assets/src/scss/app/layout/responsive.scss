@@ -505,7 +505,13 @@
       }
     }
   }
-
+  .pavilion-last-section {
+    .pavilion-welcome {
+      .pavilion-welcome-text {
+        padding-top: 5rem;
+      }
+    }
+  }
   .pavilion-text-before-slider {
     padding-bottom: 4rem;
   }
@@ -538,6 +544,9 @@
   }
   .node--type-themes.node--view-mode-full {
     .field--name-field-multi-text-after-gallery {
+      .field__item {
+        margin-top: 4rem;
+      }
       .field__item:last-child {
         .pavilion-welcome {
           .pavilion-welcome-text {
@@ -947,6 +956,16 @@
       }
     }
   }
+  .panels.main-container {
+    .view-display-id-news_listing_page {
+      .view-filters .views-exposed-form {
+        .news-type-filter-links {
+          margin-right: 5px;
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
   .view-display-id-news_listing_page {
     .view-display-id-latest_1_featured_middle_news {
       .col-md-6:last-child {
@@ -954,8 +973,21 @@
       }
     }
   }
+  #block-expo2020countdown {
+    #expo-2020-countdown {
+      padding: 0;
+    }
+    .countdown-number,
+    .colon {
+      font-size: 20px;
+    }
+  }
 }
 
-@media only screen and (max-width: 370px) {
-
+@media only screen and (max-width: 380px) {
+  .view-id-sponsors_partners_views_listing {
+    .five-items-wrap {
+      width: -webkit-fill-available;
+    }
+  }
 }
