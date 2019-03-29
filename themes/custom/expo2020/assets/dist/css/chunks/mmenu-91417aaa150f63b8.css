@@ -13,7 +13,7 @@
 .mm-listitem:after {
   left: 0; }
 
-.mm-navbars_bottom .mm-searchfield__input input {
+.mm-navbars_top .mm-searchfield__input input {
   background-color: #fff;
   color: #292A2E; }
 
