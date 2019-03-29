@@ -330,9 +330,6 @@ $(searchButton).on('click', function () {
   return false;
 });
 
-$(searchInput).focusout(function () {
-  searchForm.removeClass('open');
-});
 
 // If they click the search button, but haven't entered keywords, close it.
 $(searchInputBtn).click(function (){

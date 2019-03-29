@@ -376,3 +376,37 @@
     }
   }
 }
+
+//search result page
+.path-search {
+  .panels.main-container {
+    .view-filters {
+      margin-top: 3rem;
+      .form-group {
+        label {
+          font-size: 32px;
+          font-weight: 600;
+        }
+        #edit-submit-temp-db-search {
+          margin-top: 1rem;
+        }
+      }
+    }
+    .view-content {
+      .views-row {
+        margin-top: 1rem;
+        .views-field-title {
+          a {
+            font-size: 24px;
+            font-weight: 600;
+            &:hover {
+              text-decoration: underline;
+              text-underline-position: under;
+            }
+          }
+        }
+      }
+    }
+    @include landing-pagination($primary-orange);
+  }
+}
