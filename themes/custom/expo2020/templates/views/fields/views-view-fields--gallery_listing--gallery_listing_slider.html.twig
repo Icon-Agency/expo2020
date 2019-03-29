@@ -37,8 +37,10 @@
   {% if fields.field_gallery_media_imgs.content %}
     {{ fields.field_gallery_media_imgs.content }}
   {% endif %}
-  <a href="https://www.youtube.com/embed/{{ fields.field_youtube_id.content|render|striptags|replace({'\n':'', '\r':'', ' ':''}) }}" class="modaal-video-trigger">
-    <img class="video-play-icon" src="/{{ base_path ~ directory }}/assets/src/images/diamond-play-orange.svg">
+  <a href="https://www.youtube.com/embed/{{ fields.field_youtube_id.content|render|striptags|replace({'\n':'', '\r':'', ' ':''}) }}"
+     class="modaal-video-trigger" xmlns="">
+    <span class="video-play-icon"><i class="fas fa-play"></i></span>
+   {# <embed class="video-play-icon" src="/{{ base_path ~ directory }}/assets/src/images/diamond-play-orange.svg" type="image/svg+xml">#}
   </a>
     {% if fields.title.content %}
       {{ fields.title.content }}

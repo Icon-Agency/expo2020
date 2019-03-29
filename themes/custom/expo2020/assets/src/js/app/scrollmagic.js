@@ -74,17 +74,21 @@ export default class Scrollmagic {
               var txtOffsetY = parseInt(1.25 * (nextSlide.top - ($(this).outerHeight() + $(this).offset().top)), 10);
               $("#txt-" + slideID).css({transform: 'translate(0,' + txtOffsetY + 'px)'});
               // Be a little fancier by bluring the image while scrolling up
-              var blurAmount = parseInt(0 - txtOffsetY / 25, 10);
-              if (blurAmount % 5 == 0) {
-                blurAmount = blurAmount / 5;
-                $("#"+slideID+" img").css({
-                  'filter': 'blur('+blurAmount+'px)',
-                  '-webkit-filter': 'blur('+blurAmount+'px)',
-                  '-moz-filter': 'blur('+blurAmount+'px)',
-                  '-o-filter': 'blur('+blurAmount+'px)',
-                  '-ms-filter': 'blur('+blurAmount+'px)'
-                });
-              }
+              /*var blurAmount = parseInt(0 - txtOffsetY / 25, 10);
+
+              var mobile = window.matchMedia("(max-width: 768px)");
+              if(!mobile.matches) {
+                if (blurAmount % 5 == 0) {
+                  blurAmount = blurAmount / 5;
+                  $("#"+slideID+" img").css({
+                    'filter': 'blur('+blurAmount+'px)',
+                    '-webkit-filter': 'blur('+blurAmount+'px)',
+                    '-moz-filter': 'blur('+blurAmount+'px)',
+                    '-o-filter': 'blur('+blurAmount+'px)',
+                    '-ms-filter': 'blur('+blurAmount+'px)'
+                  });
+                }
+              }*/
             }
           }
           if ($(this).isInViewport()) {

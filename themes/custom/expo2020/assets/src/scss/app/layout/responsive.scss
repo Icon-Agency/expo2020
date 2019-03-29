@@ -566,7 +566,7 @@
       left: 39%;
     }
     .video-play-icon {
-      left: 44.5%;
+      left: 45.5%;
     }
   }
 }
@@ -930,6 +930,12 @@
   body h2 {
     font-size: 1.5rem;
   }
+  .slider-container {
+    padding: 0;
+    .container {
+      padding: 0;
+    }
+  }
   .slick-slide {
     h2.accent {
       top: 10rem;
@@ -940,9 +946,15 @@
       padding: 0.2rem 1rem;
     }
     .video-play-icon {
-      width: 50px;
+      width: 40px;
+      height: 40px;
       top: 35%;
-      left: 43.5%;
+      left: 45.5%;
+      padding: 0.8rem;
+      svg {
+        width: 17px;
+        height: 17px;
+      }
     }
   }
   .slick-dots {
@@ -950,6 +962,25 @@
   }
   .slick-prev, .slick-next {
     top: 35%;
+    &:before {
+      font-size: 20px;
+    }
+  }
+  .slick-prev {
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 30px solid $primary-turquoise;
+    &:before {
+      margin-left: -2.5rem;
+    }
+  }
+  .slick-next {
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-right: 30px solid $primary-turquoise;
+    &:before {
+      margin-right: -2.5rem;
+    }
   }
 
   #parallax-container {

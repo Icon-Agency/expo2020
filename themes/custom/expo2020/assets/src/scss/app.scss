@@ -7,6 +7,7 @@
 @import '../../../node_modules/slick-carousel/slick/slick.scss';
 @import '../../../node_modules/modaal/source/css/modaal.scss';
 
+@import 'app/layout/mixin';
 // Bario required
 @import './components/affix';
 @import './components/common';
@@ -23,7 +24,6 @@
 @import './components/tooltip';
 
 // Custom styles
-@import 'app/layout/mixin';
 @import './app/layout/home';
 @import './app/layout/news';
 @import './app/layout/toolbar';
