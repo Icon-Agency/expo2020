@@ -982,6 +982,11 @@
       margin-right: -2.5rem;
     }
   }
+  .node--type-media-landing-page.node--view-mode-full .media-landing-page-gallery-content {
+    .container {
+      //padding: 0;
+    }
+  }
 
   #parallax-container {
     .pavilion-layer-top-news {
