@@ -26,6 +26,9 @@
     font-family: $font-family-rubik;
     margin-top: 4rem;
   }
+  .field--type-text-with-summary {
+    margin-bottom: 5rem;
+  }
   .news-article-view-content-left,
   .news-article-view-content-right {
     margin-top: 2rem;
@@ -408,5 +411,16 @@
       }
     }
     @include landing-pagination($primary-orange);
+  }
+}
+
+//error page
+.error-page {
+  #block-expo2020-content {
+    .content {
+      font-size:  26px;
+      font-weight: 500;
+      margin: 5rem 0;
+    }
   }
 }

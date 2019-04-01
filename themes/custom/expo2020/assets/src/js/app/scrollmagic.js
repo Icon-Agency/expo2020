@@ -84,9 +84,9 @@ export default class Scrollmagic {
                   if(scaleAmount < 1) {
                     scaleAmount = 1;
                   } else {
-                    scaleAmount = Math.log(scaleAmount) * 1 + 1;
+                    scaleAmount = Math.log(scaleAmount) /2 + 1;
                   }
-                  console.log(scaleAmount);
+                  //console.log(scaleAmount);
                   $("#"+slideID+" img").css({
                     'transform': 'scale(' + scaleAmount + ')'
                     /*'filter': 'blur('+blurAmount+'px)',
