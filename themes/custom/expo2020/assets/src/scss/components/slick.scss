@@ -42,7 +42,7 @@ $slick-opacity-not-active: 0.25 !default;
     opacity: $slick-opacity-not-active;
   }
   &:before {
-    font-family: 'Font Awesome 5 Pro';
+    font-family: $slick-font-family;
     font-size: 26px;
     line-height: 0;
     color: $slick-arrow-color;
@@ -65,11 +65,11 @@ $slick-opacity-not-active: 0.25 !default;
     right: -25px;
   }
   &:before {
-    content: '\f177';
+    content: $slick-prev-character;
     text-rendering: optimizeLegibility;
     margin-left: -3.5rem;
     [dir="rtl"] & {
-      content: '\f178';
+      content: $slick-next-character;
       text-rendering: optimizeLegibility;
     }
   }
@@ -87,11 +87,11 @@ $slick-opacity-not-active: 0.25 !default;
     right: auto;
   }
   &:before {
-    content: '\f178';
+    content: $slick-next-character;
     text-rendering: optimizeLegibility;
     margin-right: -3.5rem;
     [dir="rtl"] & {
-      content: '\f177';
+      content: $slick-prev-character;
       text-rendering: optimizeLegibility;
     }
   }
