@@ -47,12 +47,14 @@ new Scrollmagic();
       this.rows.each(function(i, e){
         var $img = $('div.img', $(this));
         var $mask = $('.angled-mask', $(this));
+        var $imagecredit = $('.image-credit', $(this));
         console.log($mask);
         $(this).wrapInner('<div class="inner"></div>');
         $(this).wrapInner('<div class="'+that.bootstrap+'"></div>');
 
         $img.attr('data-banner-index', i).appendTo($('.images', that.banner));
         $mask.attr('data-banner-index', i).appendTo($('.images', that.banner));
+        $imagecredit.attr('data-banner-index', i).appendTo($('.images', that.banner));
 
         $(this).attr('data-banner-index', i).attr('class', 'text').appendTo($('.texts .container', that.banner));
       });

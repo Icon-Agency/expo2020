@@ -78,24 +78,21 @@ export default class Scrollmagic {
 
               var mobile = window.matchMedia("(max-width: 768px)");
               if(!mobile.matches) {
-                if (blurAmount % 5 == 0) {
-                  blurAmount = blurAmount / 5;
-                  var scaleAmount = blurAmount / 4;
-                  if(scaleAmount < 1) {
-                    scaleAmount = 1;
-                  } else {
-                    scaleAmount = Math.log(scaleAmount) /2 + 1;
-                  }
-                  //console.log(scaleAmount);
-                  $("#"+slideID+" img").css({
-                    'transform': 'scale(' + scaleAmount + ')'
-                    /*'filter': 'blur('+blurAmount+'px)',
-                    '-webkit-filter': 'blur('+blurAmount+'px)',
-                    '-moz-filter': 'blur('+blurAmount+'px)',
-                    '-o-filter': 'blur('+blurAmount+'px)',
-                    '-ms-filter': 'blur('+blurAmount+'px)'*/
-                  });
+                var scaleAmount = blurAmount / 25;
+                if(scaleAmount < 1) {
+                  scaleAmount = 1;
+                } else {
+                  scaleAmount = Math.log(scaleAmount) /2 + 1;
                 }
+                //console.log(scaleAmount);
+                $("#"+slideID+" img").css({
+                  'transform': 'scale(' + scaleAmount + ')'
+                  /*'filter': 'blur('+blurAmount+'px)',
+                  '-webkit-filter': 'blur('+blurAmount+'px)',
+                  '-moz-filter': 'blur('+blurAmount+'px)',
+                  '-o-filter': 'blur('+blurAmount+'px)',
+                  '-ms-filter': 'blur('+blurAmount+'px)'*/
+                });
               }
             }
           }
