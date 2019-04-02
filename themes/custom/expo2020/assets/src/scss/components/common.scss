@@ -122,6 +122,11 @@ body {
   letter-spacing: 1px;
   margin-top: .5rem;
 }
+.btn-primary-brown {
+  background-color: $primary-brown;
+  border-color: $primary-brown;
+  color: $gray-1000;
+}
 
 .font-weight-semibold {
   font-weight: 500;
