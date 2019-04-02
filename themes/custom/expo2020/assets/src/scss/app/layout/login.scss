@@ -1,3 +1,17 @@
+.user-logged-in {
+  &.node--type-pavilion-landing-page,
+  &.node--type-opportunities {
+    #parallax-container .parallax-div {
+      position: absolute;
+    }
+  }
+  .view-display-id-latest1_featured_news,
+  #block-partnerslandingpageheader {
+    #parallax-container .parallax-div {
+      margin-top: 12rem;
+    }
+  }
+}
 nav {
   &.tabs {
     position: relative;
