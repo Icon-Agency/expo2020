@@ -930,6 +930,12 @@
   body h2 {
     font-size: 1.5rem;
   }
+  .parallax-banner {
+    .image-credit {
+      left: 1rem;
+      top: 1rem;
+    }
+  }
   .slider-container {
     padding: 0;
     .container {
@@ -942,6 +948,7 @@
     }
     .slider-link {
       left: 33%;
+      top: 70%;
       font-size: 12px;
       padding: 0.2rem 1rem;
     }
@@ -955,6 +962,10 @@
         width: 17px;
         height: 17px;
       }
+    }
+    .field--name-field-image-credit {
+      padding-right: 0.5rem;
+      font-size: 12px;
     }
   }
   .slick-dots {
