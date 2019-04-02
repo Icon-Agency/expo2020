@@ -664,3 +664,15 @@ function expo2020_preprocess_node(&$variables) {
   }
 
 }
+
+function expo2020_preprocess_superfish_menu_items(&$vars){
+  if (!empty($vars['menu_items'])) {
+    foreach ($vars['menu_items'] as $key => $menu_item) {
+      if (!empty($menu_item['children']) && isset($menu_item['link_menuparent'])) {
+        $vars['menu_items'][$key]['link_menuparent']['#title'] = [
+          '#markup' => $menu_item['link_menuparent']['#title'] . '<span class="sf-fas-menu-icon"><i class="fas fa-chevron-down"></i></span>'
+        ];
+      }
+    }
+  }
+}
