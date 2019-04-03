@@ -2,12 +2,12 @@
 
 #header {
   background-color: $white;
-  position: sticky;
+  //position: sticky;
   width: 100%;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   z-index: 1020;
-  top: 0;
+  top: 0 !important;
 
   .header-row {
     margin-left: $grid-gutter-width/2;
@@ -148,23 +148,28 @@
 
 }
 #header.sticky {
-  height: 95px;
+  height: 90px;
   .header-row {
-    padding: 15px 0;
+    padding-top: 5px;
   }
-  .navigation.menu--main {
-    ul.nav {
-      li.nav-item {
-        a.nav-link {
-          &.is-active {
-            &::after {
-              bottom: -29px;
-            }
-          }
+  #block-mainnavigation-2 {
+    ul.sf-menu {
+      li.sf-depth-1 {
+        > a {
           &:hover {
             &::after {
-              bottom: -29px;
+              bottom: -35px;
             }
+          }
+          &.is-active {
+            &:after {
+              bottom: -35px;
+            }
+          }
+        }
+        ul {
+          li {
+            margin-top: 1rem;
           }
         }
       }

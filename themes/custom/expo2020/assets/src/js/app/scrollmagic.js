@@ -42,6 +42,13 @@ export default class Scrollmagic {
         .setTween(wipeAnimation)
         .addTo(controller);
 
+      //make header sticky to top
+      new ScrollMagic.Scene({
+        triggerElement: "#header"
+      })
+          .setPin("#header")
+          .addTo(controller);
+
       // Pips
       //
       $.fn.isInViewport = function () {
@@ -86,7 +93,11 @@ export default class Scrollmagic {
                 }
                 //console.log(scaleAmount);
                 $("#"+slideID+" img").css({
-                  'transform': 'scale(' + scaleAmount + ')'
+                  'transform': 'scale(' + scaleAmount + ')',
+                  '-webkit-transform': 'scale(' + scaleAmount + ')',
+                  '-moz-transform': 'scale(' + scaleAmount + ')',
+                  '-ms-transform': 'scale(' + scaleAmount + ')',
+                  '-o-transform': 'scale(' + scaleAmount + ')'
                   /*'filter': 'blur('+blurAmount+'px)',
                   '-webkit-filter': 'blur('+blurAmount+'px)',
                   '-moz-filter': 'blur('+blurAmount+'px)',

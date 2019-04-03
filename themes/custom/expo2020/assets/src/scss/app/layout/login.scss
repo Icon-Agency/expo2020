@@ -1,4 +1,7 @@
 .user-logged-in {
+  #header {
+    top: 80px !important;
+  }
   &.node--type-pavilion-landing-page,
   &.node--type-opportunities {
     #parallax-container .parallax-div {
