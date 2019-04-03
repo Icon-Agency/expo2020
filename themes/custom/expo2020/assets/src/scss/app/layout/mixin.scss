@@ -43,6 +43,7 @@
 
 @mixin lower-container($background-color, $color) {
   padding: 2rem;
+  padding-top: 3rem;
   background-color: $background-color;
   font-size: 18px;
   height: 220px;
@@ -125,28 +126,39 @@
 }
 
 @mixin feature-icons($color) {
-  background-color: $color;
-  width: 90px;
-  height: 90px;
   margin: auto;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  &:hover {
-    filter: brightness(120%);
+  width: 0;
+  height: 0;
+  border: 70px solid transparent;
+  border-bottom-color: $color;
+  position: relative;
+  top: -70px;
+  &:after {
+    content: '';
+    position: absolute;
+    left: -70px;
+    top: 70px;
+    width: 0;
+    height: 0;
+    border: 70px solid transparent;
+    border-top-color: $color;
   }
   svg {
     color: $white;
     width: 40px !important;
     height: 40px;
-    margin: 1.5rem;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+    margin-top: 3rem;
+    margin-left: -1.2rem;
+    position: absolute;
+    z-index: 10;
+  }
+  &:hover {
+    filter: brightness(120%);
+    -webkit-transform:translate(0,-10px);
+    transform:translate(0,-10px);
+    -webkit-transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    animation-duration: 0.5s;
   }
 }
 

@@ -82,6 +82,13 @@
       .contact-icon {
         margin-top: 1rem;
         width: 140px;
+        a {
+          &:hover {
+            .icon-text {
+              text-decoration: underline;
+            }
+          }
+        }
       }
     }
     .floorplan {

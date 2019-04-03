@@ -234,33 +234,28 @@ $slick-opacity-not-active: 0.25 !default;
       background-color: darken($primary-turquoise, 10%);
     }
   }
+  a.modaal-video-trigger {
+    &:hover {
+      color: $youtube-red;
+      svg {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        -webkit-transition: -webkit-transform 0.5s ease;
+        transition: transform 0.5s ease;
+        animation-duration: 0.5s;
+      }
+    }
+  }
   .video-play-icon {
     position: absolute;
-    top: 50%;
+    top: 47%;
     left: 47%;
     width: 60px;
     height: 60px;
-    margin: -1.5rem auto;
-    padding: 1rem;
     z-index: 10;
-    background-color: $primary-orange;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
     svg {
-      color: $white;
-      width: 24px;
-      height: 24px;
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
-      transform: rotate(-45deg);
-    }
-    &:hover {
-      filter: brightness(110%);
+      width: 60px;
+      height: 60px;
     }
   }
   .field--name-field-image-credit {

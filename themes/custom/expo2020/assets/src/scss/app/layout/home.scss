@@ -232,6 +232,13 @@ h1.accent {
   margin-bottom: 10rem;
   .row {
     margin-top: 4rem;
+    a {
+      &:hover {
+        .icon-text {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 
   @include media-breakpoint-down(md) {

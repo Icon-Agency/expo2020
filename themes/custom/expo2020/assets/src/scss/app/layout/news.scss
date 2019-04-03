@@ -34,8 +34,9 @@
       }
       &:hover {
         box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
-        .news-type-icon {
-          filter: brightness(110%);
+        .news-type-icon,
+        .event-type-icon {
+          background-color: $gray-600;
         }
       }
     }

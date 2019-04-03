@@ -196,6 +196,13 @@
     padding: 5rem;
     text-align: center;
     color: $btn-border;
+    a {
+      &:hover {
+        .icon-text {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
 
@@ -249,6 +256,13 @@
     }
     .row {
       margin: 5rem 0;
+      a {
+        &:hover {
+          .icon-text {
+            text-decoration: underline;
+          }
+        }
+      }
     }
     .icon-blue1 {
       @include feature-icons($icon-blue1);
