@@ -154,9 +154,16 @@
   }
   &:hover {
     filter: brightness(120%);
-    -webkit-transform:translate(0,-10px);
-    transform:translate(0,-10px);
+    -webkit-transform: translate(0,-10px);
+    -moz-transform: translate(0,-10px);
+    -ms-transform: translate(0,-10px);
+    -o-transform: translate(0,-10px);
+    transform: translate(0,-10px);
+
     -webkit-transition: -webkit-transform 0.5s ease;
+    -moz-transition: -moz-transform 0.5s ease;
+    -ms-transition: -ms-transform 0.5s ease;
+    -o-transition: -o-transform 0.5s ease;
     transition: transform 0.5s ease;
     animation-duration: 0.5s;
   }
