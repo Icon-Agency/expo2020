@@ -35,6 +35,7 @@ class TwitterNodeProcessor extends PluginNodeProcessorPluginBase {
         'field_news_media_type' => [
           'target_id' => $data_item->twitter_tid,
         ],
+        'field_is_twitter_feed'  => '1',
         'body'                   => [
           'value'  => social_feed_fetcher_linkify(html_entity_decode($data_item->full_text)),
           'format' => $this->config->get('formats_post_format'),
