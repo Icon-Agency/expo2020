@@ -442,7 +442,7 @@ class WebformHelpManager implements WebformHelpManagerInterface {
           'data-source' => 'tbody tr',
           'data-parent' => 'tr',
           'data-summary' => '.webform-help-videos-summary',
-          'data-item-single' => $this->t('video'),
+          'data-item-singlular' => $this->t('video'),
           'data-item-plural' => $this->t('videos'),
           'data-no-results' => '.webform-help-videos-no-results',
           'title' => $this->t('Enter a keyword to filter by.'),
@@ -478,7 +478,6 @@ class WebformHelpManager implements WebformHelpManagerInterface {
           'cellspacing' => 0,
         ],
       ];
-
 
       $build['#attached']['library'][] = 'webform/webform.admin';
       $build['#attached']['library'][] = 'webform/webform.help';
@@ -974,6 +973,18 @@ class WebformHelpManager implements WebformHelpManagerInterface {
           ],
         ],
       ],
+      'import' => [
+        'title' => $this->t('Importing webform submissions'),
+        'content' => $this->t("This screencast shows how to import submissions using CSV (comma separated values) file."),
+        'youtube_id' => 'AYGr4O-jZBo',
+        'presentation_id' => '189XhD6m0879EMo44ym8uaZaIAFiEl8tkH31WUtge_u8',
+        'links' => [
+          [
+            'title' => $this->t('Webform module now supports importing submissions | Drupal.org'),
+            'url' => 'https://www.drupal.org/node/3040513',
+          ],
+        ],
+      ],
       'configuration' => [
         'title' => $this->t("Configuring the Webform module"),
         'content' => $this->t('This screencast walks through all the configuration settings available to manage forms, submissions, options, handlers, exporters, libraries and assets.'),
@@ -1209,6 +1220,12 @@ class WebformHelpManager implements WebformHelpManagerInterface {
         'content' => $this->t('This presentation gives you the extra knowledge you need to get the most out the Webform module.'),
         'youtube_id' => 'Yg2lAzE1heM',
         'presentation_id' => '1TMo0vBjkdtfcIsYWhxQnjO_rG9ebK64oHhdPvTvwNus',
+      ],
+      'healthcare' => [
+        'title' => $this->t('Webforms for Healthcare'),
+        'content' => $this->t('This presentation discusses how healthcare organizations can leverage the Webform module for Drupal 8.'),
+        'youtube_id' => 'YiK__YobDJw',
+        'presentation_id' => '1jxbJkovaubHrhvjIZ-_OoK0zsANqC1vG4HFvAxfszOE/edit?usp=sharing',
       ],
     ];
 

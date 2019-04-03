@@ -603,7 +603,7 @@ abstract class WebformManagedFileBase extends WebformElementBase implements Webf
     $max_filesize = $this->configFactory->get('webform.settings')->get('file.default_max_filesize') ?: file_upload_max_size();
     $max_filesize = Bytes::toInt($max_filesize);
     if (!empty($element['#max_filesize'])) {
-      $max_filesize = min($max_filesize, Bytes::toInt($element['#max_filesize']) * 1024 * 1024);
+      $max_filesize = min($max_filesize, Bytes::toInt($element['#max_filesize'] . 'MB'));
     }
     return $max_filesize;
   }
@@ -989,6 +989,7 @@ abstract class WebformManagedFileBase extends WebformElementBase implements Webf
       '#description' => $this->t('Enter the max file size a user may upload.'),
       '#min' => 1,
       '#max' => $max_filesize,
+      '#step' => 'any',
     ];
     $form['file']['file_extensions'] = [
       '#type' => 'textfield',

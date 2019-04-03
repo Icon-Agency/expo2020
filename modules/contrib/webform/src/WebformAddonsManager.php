@@ -156,6 +156,14 @@ class WebformAddonsManager implements WebformAddonsManagerInterface {
       'category' => 'config',
     ];
 
+    // Config: Multiline config.
+    $projects['multiline_config'] = [
+      'title' => $this->t('Multiline config'),
+      'description' => $this->t('Allows configuration strings to be exported as multiline instead of one long single line.'),
+      'url' => Url::fromUri('https://www.drupal.org/project/multiline_config'),
+      'category' => 'config',
+    ];
+
     // Config: Webform Config Ignore.
     $projects['webform_config_ignore'] = [
       'title' => $this->t('Webform Config Ignore'),
@@ -190,6 +198,14 @@ class WebformAddonsManager implements WebformAddonsManagerInterface {
       'title' => $this->t('Loqate'),
       'description' => $this->t('Provides the webform element called Address Loqate which integration with Loqate (previously PCA/Addressy) address lookup.'),
       'url' => Url::fromUri('https://www.drupal.org/project/loqate'),
+      'category' => 'element',
+    ];
+
+    // Element: Webform Belgian National Insurance Number.
+    $projects['webform_rrn_nrn'] = [
+      'title' => $this->t('Webform Belgian National Insurance Number'),
+      'description' => $this->t('Provides webform fieldtype for the Belgian National Insurance Number.'),
+      'url' => Url::fromUri('https://www.drupal.org/project/webform_rrn_nrn'),
       'category' => 'element',
     ];
 
@@ -262,6 +278,14 @@ class WebformAddonsManager implements WebformAddonsManagerInterface {
       'title' => $this->t('Range Slider'),
       'description' => $this->t('Integration with http://rangeslider.js.org.'),
       'url' => Url::fromUri('https://github.com/baikho/RangeSlider'),
+      'category' => 'element',
+    ];
+
+    // Element: Webform RUT.
+    $projects['webform_rut'] = [
+      'title' => $this->t('Webform RUT'),
+      'description' => $this->t("Provides a RUT (A unique identification number assigned to natural or legal persons of Chile) element."),
+      'url' => Url::fromUri('https://www.drupal.org/project/webform_rut'),
       'category' => 'element',
     ];
 
@@ -783,6 +807,22 @@ class WebformAddonsManager implements WebformAddonsManagerInterface {
       'category' => 'submission',
     ];
 
+    // Submissions: Webform Submissions Notification.
+    $projects['webform_digests'] = [
+      'title' => $this->t(' Webform Submissions Notification'),
+      'description' => $this->t('Adds a daily digest email for webform submissions.'),
+      'url' => Url::fromUri('https://www.drupal.org/project/webform_digests'),
+      'category' => 'submission',
+    ];
+
+    // Submissions: Webform Submission Files Download.
+    $projects['webform_submission_files_download'] = [
+      'title' => $this->t(' Webform Submission Files Download'),
+      'description' => $this->t('Allows you to download files attached to a single submission'),
+      'url' => Url::fromUri('https://www.drupal.org/project/webform_submission_files_download'),
+      'category' => 'submission',
+    ];
+
     /**************************************************************************/
     // REST.
     /**************************************************************************/
@@ -813,7 +853,7 @@ class WebformAddonsManager implements WebformAddonsManagerInterface {
       'description' => $this->t('IMCE is an image/file uploader and browser that supports personal directories and quota.'),
       'url' => Url::fromUri('https://www.drupal.org/project/imce'),
       'category' => 'utility',
-      'install' => TRUE,
+      'install' => $this->t('The IMCE module makes it easier to update images to webforms and elements.'),
       'recommended' => TRUE,
     ];
 
@@ -823,7 +863,7 @@ class WebformAddonsManager implements WebformAddonsManagerInterface {
       'description' => $this->t('Provides a user interface for the Token API and some missing core tokens.'),
       'url' => Url::fromUri('https://www.drupal.org/project/token'),
       'category' => 'utility',
-      'install' => TRUE,
+      'install' => $this->t('The Token module allows site builders to browser available webform-related tokens.'),
       'recommended' => TRUE,
     ];
 

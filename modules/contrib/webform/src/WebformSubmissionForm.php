@@ -12,6 +12,7 @@ use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormState;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Path\AliasManagerInterface;
 use Drupal\Core\Path\PathValidatorInterface;
 use Drupal\Core\Render\Element;
@@ -26,6 +27,7 @@ use Drupal\webform\Plugin\WebformElementManagerInterface;
 use Drupal\webform\Plugin\WebformHandlerInterface;
 use Drupal\webform\Plugin\WebformSourceEntityManager;
 use Drupal\webform\Utility\WebformArrayHelper;
+use Drupal\webform\Utility\WebformDialogHelper;
 use Drupal\webform\Utility\WebformElementHelper;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
@@ -905,11 +907,16 @@ class WebformSubmissionForm extends ContentEntityForm {
           ];
         }
         $query['destination'] = $this->requestHandler->getUrl($webform, $source_entity, 'webform.results_submissions')->toString();
+        $offcanvas = WebformDialogHelper::useOffCanvas();
         $build = [
           '#type' => 'link',
           '#title' => $this->t('Generate %title submissions', ['%title' => $webform->label()]),
           '#url' => Url::fromRoute('devel_generate.webform_submission', [], ['query' => $query]),
+          '#attributes' => ($offcanvas) ? WebformDialogHelper::getOffCanvasDialogAttributes(400) : [],
         ];
+        if ($offcanvas) {
+          WebformDialogHelper::attachLibraries($form);
+        }
         $this->messenger()->addWarning($this->renderer->renderPlain($build));
       }
     }
@@ -963,8 +970,11 @@ class WebformSubmissionForm extends ContentEntityForm {
       if ($previous_submission_total > 1) {
         $this->getMessageManager()->display(WebformMessageManagerInterface::PREVIOUS_SUBMISSIONS);
       }
-      elseif ($webform_submission->id() != $this->getLastSubmission(FALSE)->id()) {
-        $this->getMessageManager()->display(WebformMessageManagerInterface::PREVIOUS_SUBMISSION);
+      else {
+        $last_submission = $this->getLastSubmission(FALSE);
+        if ($last_submission && $webform_submission->id() !== $last_submission->id()) {
+          $this->getMessageManager()->display(WebformMessageManagerInterface::PREVIOUS_SUBMISSION);
+        }
       }
     }
 
@@ -1025,6 +1035,13 @@ class WebformSubmissionForm extends ContentEntityForm {
       '#weight' => -20,
       '#attributes' => [
         'class' => ['webform-wizard-pages-links', 'js-webform-wizard-pages-links'],
+      ],
+      // Only process the container and prevent .form-actions from being added
+      // which force submit buttons to be rendered in dialogs.
+      // @see \Drupal\Core\Render\Element\Actions
+      // @see Drupal.behaviors.dialog.prepareDialogButtons
+      '#process' => [
+        ['\Drupal\Core\Render\Element\Actions', 'processContainer'],
       ],
     ];
     if ($this->getWebformSetting('wizard_progress_link')) {
@@ -1494,6 +1511,12 @@ class WebformSubmissionForm extends ContentEntityForm {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     parent::validateForm($form, $form_state);
+
+    // Disable inline form error when performing validation via the API.
+    if ($this->operation === 'api') {
+      // @see \Drupal\webform\WebformSubmissionForm::submitWebformSubmission
+      $form['#disable_inline_form_errors'] = TRUE;
+    }
 
     // Build webform submission with validated and processed data.
     $this->entity = $this->buildEntity($form, $form_state);
@@ -2658,11 +2681,27 @@ class WebformSubmissionForm extends ContentEntityForm {
     // form is submitted.
     $form_state = new FormState();
 
+    // Set the triggering element to an empty element to prevent
+    // errors from managed files.
+    // @see \Drupal\file\Element\ManagedFile::validateManagedFile
+    $form_state->setTriggeringElement(['#parents' => []]);
+
+    // Get existing error messages.
+    $error_messages = \Drupal::messenger()->messagesByType(MessengerInterface::TYPE_ERROR);
+
     // Submit the form.
     \Drupal::formBuilder()->submitForm($form_object, $form_state);
 
     // Get the errors but skip drafts.
     $errors = ($webform_submission->isDraft() && !$validate_only) ? [] : $form_state->getErrors();
+
+    // Delete all form related error messages.
+    \Drupal::messenger()->deleteByType(MessengerInterface::TYPE_ERROR);
+
+    // Restore existing error message.
+    foreach ($error_messages as $error_message) {
+      \Drupal::messenger()->addError($error_message);
+    }
 
     if ($errors) {
       return $errors;
