@@ -574,6 +574,7 @@ function expo2020_preprocess_views_exposed_form(&$variables) {
     
     $form['actions']['#attributes']['data-toggle'] = 'tooltip';
     $form['actions']['#attributes']['title'] = "Please fill both 'from' and 'to' filters to search events successfully.";
+    $form['actions']['#attributes']['data-placement'] = 'right';
 
     $form['date_n_submit'] = [
       '#type' => 'container',
