@@ -6,13 +6,16 @@
   position: relative;
   z-index: 100;
   .news-section {
-    margin-bottom: 10rem;
+    margin-bottom: 4rem;
     padding-top: 3rem;
   }
   .news-header {
-    text-decoration: underline;
-    text-decoration-color: $primary-orange;
-    text-underline-position: under;
+    a {
+      border-bottom: 5px solid $primary-orange;
+      &:hover {
+        border-color: $icon-orange;
+      }
+    }
   }
   .news {
     height:100%;
@@ -71,7 +74,7 @@
         margin-bottom: 2rem;
         .news-type-twitter-icon {
           color: $twitter-blue;
-          //background-color: $white;
+          background-color: $white;
           width: 50px;
           margin: auto;
           margin-bottom: 1rem;
@@ -146,11 +149,15 @@
 }
 #block-newstopcontenttext {
   color: $white;
-  background-color: $gray-1000;
+  background-image: url('~@/images/footer-texture.svg');
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
   width: 100%;
   text-align: center;
-  padding: 2rem;
+  padding: 2.5rem;
   position: relative;
+  font-size: 1.2rem;
   .field {
     margin-bottom: 0;
   }

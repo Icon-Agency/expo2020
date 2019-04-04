@@ -39,7 +39,7 @@
 
   }
   .pavilion-shape {
-    background-image: url('~@/images/shape2.png');
+    background-image: url('~@/images/pavilion-shape.svg');
     background-repeat: no-repeat;
     -webkit-background-size: contain;
     background-size: contain;
@@ -47,7 +47,7 @@
     top: 20%;
     height: auto;
     width: auto;
-    padding: 6rem;
+    padding: 8rem 6rem;
     .btn {
       margin-top: 1rem;
     }
@@ -58,7 +58,7 @@
   }
   .pavilion-banner-title {
     color: white;
-    line-height: 1.5;
+    line-height: 1.2;
     width: 70%;
   }
 
@@ -279,7 +279,7 @@
 .pavilion-text-before-slider {
   text-align: center;
   color: $primary-blue;
-  padding-bottom: 8rem;
+  padding-bottom: 6rem;
 }
 
 .pavilion-last-section {

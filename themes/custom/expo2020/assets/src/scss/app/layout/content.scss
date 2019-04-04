@@ -66,6 +66,7 @@
   .field--name-field-bottom-content {
     .container {
       padding: 0;
+      margin-top: 4rem;
       p {
         font-size: 18px;
       }
@@ -392,32 +393,54 @@
   .panels.main-container {
     .view-filters {
       margin-top: 3rem;
-      .form-group {
-        label {
-          font-size: 32px;
-          font-weight: 600;
-        }
-        #edit-submit-temp-db-search {
-          margin-top: 1rem;
-        }
-      }
-    }
-    .view-content {
-      .views-row {
-        margin-top: 1rem;
-        .views-field-title {
-          a {
-            font-size: 24px;
-            font-weight: 600;
-            &:hover {
-              text-decoration: underline;
-              text-underline-position: under;
+      .views-exposed-form {
+        .form-group {
+          position: relative;
+          input {
+            border-radius: 0;
+            border: 1px solid $gray-300;
+            &.form-control {
+              height: calc(2em + 1rem + 2px);
+            }
+          }
+          button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            border: none;
+            padding: 0.5rem;
+            background-color: transparent;
+            color: $primary-blue;
+            padding-right: 1rem;
+            svg {
+              width: 25px;
             }
           }
         }
       }
+
     }
-    @include landing-pagination($primary-orange);
+    .view-content {
+      .views-row {
+        margin: 4rem 0;
+      }
+      .views-field-title {
+        color: $primary-blue;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+      .views-field-body {
+        font-family: 'Open Sans', sans-serif;
+        margin: 1rem 0;
+      }
+      .views-field-url {
+        font-family: 'Open Sans', sans-serif;
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+    @include landing-pagination($primary-blue);
   }
 }
 
@@ -431,4 +454,9 @@
       margin-bottom: 10rem;
     }
   }
+}
+
+//search result
+.path-search {
+
 }

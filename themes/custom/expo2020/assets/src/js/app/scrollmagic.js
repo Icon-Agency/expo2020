@@ -42,13 +42,6 @@ export default class Scrollmagic {
         .setTween(wipeAnimation)
         .addTo(controller);
 
-      //make header sticky to top
-      new ScrollMagic.Scene({
-        triggerElement: "#header"
-      })
-          .setPin("#header")
-          .addTo(controller);
-
       // Pips
       //
       $.fn.isInViewport = function () {
@@ -81,7 +74,7 @@ export default class Scrollmagic {
               var txtOffsetY = parseInt(1.25 * (nextSlide.top - ($(this).outerHeight() + $(this).offset().top)), 10);
               $("#txt-" + slideID).css({transform: 'translate(0,' + txtOffsetY + 'px)'});
               // Be a little fancier by bluring the image while scrolling up
-              var blurAmount = parseInt(0 - txtOffsetY / 25, 10);
+              /*var blurAmount = parseInt(0 - txtOffsetY / 25, 10);
 
               var mobile = window.matchMedia("(max-width: 768px)");
               if(!mobile.matches) {
@@ -91,20 +84,14 @@ export default class Scrollmagic {
                 } else {
                   scaleAmount = Math.log(scaleAmount) /2 + 1;
                 }
-                //console.log(scaleAmount);
                 $("#"+slideID+" img").css({
                   'transform': 'scale(' + scaleAmount + ')',
                   '-webkit-transform': 'scale(' + scaleAmount + ')',
                   '-moz-transform': 'scale(' + scaleAmount + ')',
                   '-ms-transform': 'scale(' + scaleAmount + ')',
                   '-o-transform': 'scale(' + scaleAmount + ')'
-                  /*'filter': 'blur('+blurAmount+'px)',
-                  '-webkit-filter': 'blur('+blurAmount+'px)',
-                  '-moz-filter': 'blur('+blurAmount+'px)',
-                  '-o-filter': 'blur('+blurAmount+'px)',
-                  '-ms-filter': 'blur('+blurAmount+'px)'*/
                 });
-              }
+              }*/
             }
           }
           if ($(this).isInViewport()) {
@@ -117,6 +104,13 @@ export default class Scrollmagic {
       });
     }
 
+    var controller = new ScrollMagic.Controller();
+    //make header sticky to top
+    new ScrollMagic.Scene({
+      triggerElement: "#header"
+    })
+        .setPin("#header")
+        .addTo(controller);
   }
 
 }
