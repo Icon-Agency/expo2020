@@ -1039,8 +1039,8 @@
 
 @media only screen and (max-width: 380px) {
   .view-id-sponsors_partners_views_listing {
-    .five-items-wrap {
-      width: -webkit-fill-available;
+    .inline-partner-logo {
+      margin: 2rem 1rem;
     }
   }
 }

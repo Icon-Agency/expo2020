@@ -3,7 +3,7 @@
 #header {
   background-color: $white;
   //position: sticky;
-  width: 100%;
+  width: 100% !important;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   z-index: 1020;
