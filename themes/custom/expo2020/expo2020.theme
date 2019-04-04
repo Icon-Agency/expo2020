@@ -622,6 +622,15 @@ function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'
 //    $current_url_str = $type == 'news' ? "{$form['#action']}?combine={$form['combine']['#value']}"
 //      : "{$form['#action']}?combine={$form['combine']['#value']}&field_event_date_value[min]={$form['field_event_date_value']['min']['#value']}&field_event_date_value[max]={$form['field_event_date_value']['max']['#value']}";
 
+    if ($type == 'news') {
+      $anchor_id = 'block-newstopcontenttext';
+      $class_to_add = 'news-type-filter-links';
+    }
+    else {
+      $anchor_id = 'block-whatsonsecondbanner';
+      $class_to_add = 'event-type-filter-links';
+    }
+
     foreach ($form['field_news_media_type_target_id']['#options'] as $tid => $t_name){
 
       $active = ($form['field_news_media_type_target_id']['#value'] == $tid) ? ' active' : '';
@@ -638,10 +647,10 @@ function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'
         $type_filter_links[mb_strtolower($t_name)] = [
           '#title' => ['#markup' => $icon . t($t_name)],
           '#type' => 'link',
-          '#url' =>  \Drupal\Core\Url::fromUserInput("{$form['#action']}?field_news_media_type_target_id={$tid}#{$form['#id']}"),
+          '#url' =>  \Drupal\Core\Url::fromUserInput("{$form['#action']}?field_news_media_type_target_id={$tid}#{$anchor_id}"),
           '#options' => [
             'attributes' => [
-              'class' => $type == 'news' ? 'news-type-filter-links' . $active : 'event-type-filter-links' . $active,
+              'class' => $class_to_add . $active,
             ],
           ],
         ];
@@ -650,10 +659,10 @@ function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'
         $type_filter_links['all'] = [
           '#title' => t('ALL'),
           '#type' => 'link',
-          '#url' =>  \Drupal\Core\Url::fromUserInput("{$form['#action']}?field_news_media_type_target_id=All#{$form['#id']}"),
+          '#url' =>  \Drupal\Core\Url::fromUserInput("{$form['#action']}?field_news_media_type_target_id=All#{$anchor_id}"),
           '#options' => [
             'attributes' => [
-              'class' => $type == 'news' ? 'news-type-filter-links' . $active : 'event-type-filter-links' . $active,
+              'class' => $class_to_add . $active,
             ],
           ],
         ];
