@@ -222,16 +222,16 @@ $slick-opacity-not-active: 0.25 !default;
     text-align: center;
   }
   .slider-link {
-    @extend .btn-primary-turquoise;
-    color: $grey-dark;
+    color: $primary-turquoise;
     position: absolute;
     top: 80%;
     left: 42.5%;
     line-height: 1.5;
     font-family: 'Rubik', sans-serif;
     padding: .5rem 1rem;
+    text-decoration: underline;
     &:hover {
-      background-color: darken($primary-turquoise, 10%);
+      color: $white;
     }
   }
   a.modaal-video-trigger {

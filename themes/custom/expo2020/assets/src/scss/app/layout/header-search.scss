@@ -52,7 +52,7 @@
         //transition-delay: 0.25s;
         background-color: transparent;
         svg{
-          color: $primary-orange;
+          color: $primary-blue;
           g{
             transition-delay: 0.2s;
             fill: $primary-blue;
@@ -107,6 +107,7 @@
 
       svg{
         color: $primary-blue;
+        font-size: 1.8rem;
       }
     }
 
