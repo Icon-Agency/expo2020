@@ -131,7 +131,7 @@ function expo2020_preprocess_page(&$variables) {
   $route_name = \Drupal::routeMatch()->getRouteName();
   if (\Drupal::routeMatch()->getRouteName() == 'system.404' && isset($variables['page']['content']['expo2020_content'])){
     $variables['page']['content']['expo2020_content'] = [
-      '#markup' => '<div class="mt-5"><h2>This page can not be found</h2><a href="/">Click here to go back to the home page.</a></div>',
+      '#markup' => '<div class="page-not-found-content mt-5 mb-5"><h2>This page can not be found</h2><br><a href="/">Click here to go back to the home page.</a></div>',
     ];
   }
 }
