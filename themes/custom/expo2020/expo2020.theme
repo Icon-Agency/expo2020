@@ -582,6 +582,23 @@ function expo2020_preprocess_views_exposed_form(&$variables) {
     unset($form['field_event_date_value']);
     unset($form['actions']);
   }
+
+  if ( $form['#id'] == 'views-exposed-form-search-api-db-search-api-db'){
+    if (isset($form['actions']) && isset($form['keys'])){
+      $form['actions']['#access'] = FALSE;
+      $form['keys']['#theme_wrappers'] = ['global_fulltext_search_theme_wrapper'];
+    }
+  }
+}
+
+function expo2020_theme(){
+
+  $handler = \Drupal::service('theme_handler');
+  $path    = $handler->getTheme('expo2020')->getPath();
+
+  return [
+    'global_fulltext_search_theme_wrapper' => ['render element' => 'element',],
+  ];
 }
 
 function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'){
