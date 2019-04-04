@@ -126,6 +126,25 @@ function expo2020_preprocess_page(&$variables) {
     if (in_array($node->bundle(),$types_without_bc) && isset($variables['page']['content']['expo2020_breadcrumbs'])){
       unset($variables['page']['content']['expo2020_breadcrumbs']);
     }
+  }else{
+    $current_path = \Drupal::service('path.current')->getPath();
+    $result = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+
+    $path_aliases_without_container = [
+      '/search'
+    ];
+
+    if (in_array($result, $path_aliases_without_container)){
+      $variables['add_content_outer_wrap'] = FALSE;
+    }
+
+    $path_aliases_without_bc = [
+      '/search'
+    ];
+
+    if (in_array($result,$path_aliases_without_bc) && isset($variables['page']['content']['expo2020_breadcrumbs'])){
+      unset($variables['page']['content']['expo2020_breadcrumbs']);
+    }
   }
 
   $route_name = \Drupal::routeMatch()->getRouteName();
@@ -594,6 +613,18 @@ function expo2020_preprocess_views_exposed_form(&$variables) {
       $form['actions']['#access'] = FALSE;
       $form['keys']['#theme_wrappers'] = ['global_fulltext_search_theme_wrapper'];
     }
+  }
+}
+
+function expo2020_preprocess_views_view(&$vars){
+  if (isset($vars['id'])
+      && $vars['id'] == 'search_api_db'
+      && isset($vars['display_id'])
+      && $vars['id'] == 'search_api_db') {
+    $block_manager = \Drupal::service('plugin.manager.block');
+    $plugin_block = $block_manager->createInstance('system_breadcrumb_block');
+
+    $vars['breadcrumbs'] =  $plugin_block->build();
   }
 }
 
