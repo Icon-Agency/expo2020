@@ -97,6 +97,16 @@ body {
   border-color: $primary-orange;
   color: $primary-blue;
 }
+.btn-secondary-orange {
+  background-color: $primary-orange;
+  border-color: $primary-orange;
+  color: $gray-1000;
+  &:hover {
+    background-color: $icon-orange;
+    border-color: $icon-orange;
+    color: $white;
+  }
+}
 .btn-primary-turquoise {
   background-color: $primary-turquoise;
   border-color: $primary-turquoise;

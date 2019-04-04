@@ -378,7 +378,7 @@
 .node--type-opportunities {
   #parallax-container {
     .pavilion-shape {
-      background-image: url('~@/images/shape1.png');
+      background-image: url('~@/images/oppo-shape.svg');
     }
   }
   .pavilion-last-section {
@@ -392,8 +392,10 @@
 .path-search {
   .panels.main-container {
     .view-filters {
-      margin-top: 3rem;
+      padding: 2rem 0 3rem 0;
+      background-color: $gray-100;
       .views-exposed-form {
+        margin-top: 3rem;
         .form-group {
           position: relative;
           input {
@@ -418,7 +420,9 @@
           }
         }
       }
-
+    }
+    .view-header {
+      padding-top: 2rem;
     }
     .view-content {
       .views-row {
@@ -446,12 +450,12 @@
 
 //error page
 .error-page {
-  #block-expo2020-content {
-    .content {
-      font-size:  26px;
-      font-weight: 500;
-      margin-top: 5rem;
-      margin-bottom: 10rem;
+  .page-not-found-content {
+    font-weight: 500;
+    margin-top: 5rem;
+    margin-bottom: 10rem !important;
+    a {
+      text-decoration: underline;
     }
   }
 }
