@@ -128,6 +128,12 @@ function expo2020_preprocess_page(&$variables) {
     }
   }
 
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if (\Drupal::routeMatch()->getRouteName() == 'system.404' && isset($variables['page']['content']['expo2020_content'])){
+    $variables['page']['content']['expo2020_content'] = [
+      '#markup' => '<div class="mt-5"><h2>This page can not be found</h2><a href="/">Click here to go back to the home page.</a></div>',
+    ];
+  }
 }
 
 /**
@@ -592,10 +598,6 @@ function expo2020_preprocess_views_exposed_form(&$variables) {
 }
 
 function expo2020_theme(){
-
-  $handler = \Drupal::service('theme_handler');
-  $path    = $handler->getTheme('expo2020')->getPath();
-
   return [
     'global_fulltext_search_theme_wrapper' => ['render element' => 'element',],
   ];
