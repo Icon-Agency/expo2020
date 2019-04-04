@@ -9,7 +9,8 @@
         "drush/drush": "^9.5",
         "abraham/twitteroauth": "^0.7.2",
         "drupal/core": "^8.6",
-        "drupal/search_api_solr": "^2.7"
+        "drupal/search_api_solr": "^2.7",
+        "drupal/webform": "^5.2"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -27,7 +28,8 @@
         ],
         "merge-plugin": {
             "include": [
-                "core/composer.json"
+                "core/composer.json",
+                "modules/contrib/webform/composer.libraries.json"
             ],
             "recurse": true,
             "replace": false,
