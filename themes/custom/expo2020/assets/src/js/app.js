@@ -48,7 +48,7 @@ new Scrollmagic();
         var $img = $('div.img', $(this));
         var $mask = $('.angled-mask', $(this));
         var $imagecredit = $('.image-credit', $(this));
-        console.log($mask);
+        // console.log($mask);
         $(this).wrapInner('<div class="inner"></div>');
         $(this).wrapInner('<div class="'+that.bootstrap+'"></div>');
 
