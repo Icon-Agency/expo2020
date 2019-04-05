@@ -193,7 +193,7 @@
   position: relative;
   z-index: 20;
   .text-under {
-    padding: 5rem;
+    padding: 5rem 0 7rem 0;
     text-align: center;
     color: $btn-border;
     a {
@@ -241,7 +241,7 @@
   position: relative;
   z-index: 0;
   background-color: $white;
-  padding-top: 7rem;
+  padding-top: 9rem;
   .partners {
     padding-top: 6rem;
     .view-id-sponsors_partners_views_listing {
@@ -249,13 +249,14 @@
     }
   }
   .oppo-icons {
-    margin-bottom: 7rem;
+    margin-bottom: 9rem;
     h2 {
       color: $primary-blue;
       text-align: center;
+      margin-bottom: 5rem;
     }
     .row {
-      margin: 5rem 0;
+      margin: 3rem 0;
       a {
         &:hover {
           .icon-text {
