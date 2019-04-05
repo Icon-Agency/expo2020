@@ -161,8 +161,8 @@ h1.accent {
     font-size:1.4em;
 
     div{
-      height: 15px;
-      width: 15px;
+      height: 11px;
+      width: 11px;
       margin: 1rem 0;
       border-radius: 100%;
       background-color: $white;
@@ -377,9 +377,8 @@ h1.accent {
   background-color: #F0F0F5;
   padding-top: 7rem;
   h2 {
-    text-decoration: underline;
-    text-decoration-color: $gray-400;
-    text-underline-position: under;
+    border-bottom: 5px solid $gray-400;
+    width: fit-content;
   }
   .partner-logos {
     padding: 4rem 0 6rem 0;

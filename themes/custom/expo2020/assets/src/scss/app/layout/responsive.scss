@@ -973,24 +973,27 @@
   }
   .slick-prev, .slick-next {
     top: 35%;
-    &:before {
-      font-size: 20px;
-    }
   }
   .slick-prev {
     border-top: 30px solid transparent;
     border-bottom: 30px solid transparent;
     border-left: 30px solid $primary-turquoise;
-    &:before {
+    svg {
+      width: 15px;
+      height: 15px;
       margin-left: -2.5rem;
+      margin-top: -7px;
     }
   }
   .slick-next {
     border-top: 30px solid transparent;
     border-bottom: 30px solid transparent;
     border-right: 30px solid $primary-turquoise;
-    &:before {
-      margin-right: -2.5rem;
+    svg {
+      width: 15px;
+      height: 15px;
+      margin-left: 9px;
+      margin-top: -7px;
     }
   }
   .node--type-media-landing-page.node--view-mode-full .media-landing-page-gallery-content {

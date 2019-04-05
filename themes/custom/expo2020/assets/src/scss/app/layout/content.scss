@@ -199,7 +199,7 @@
     }
   }
   .media-card-left {
-    @include media-card($gray-900);
+    @include media-card($icon-orange);
   }
   .media-card-right {
     @include media-card($gray-900);
@@ -213,7 +213,7 @@
     }
   }
   .media-bottom {
-    padding: 7rem;
+    padding: 7rem 0 5rem 0;
     text-align: center;
   }
   .media-landing-page-after-banner {
@@ -223,7 +223,8 @@
   }
   .media-landing-page-gallery-content {
     background-color: $news-homepage;
-    padding: 5rem 0;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
   }
 }
 

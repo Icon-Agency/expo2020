@@ -13,5 +13,8 @@ export default class Slick {
       infinite: true,
       speed: 500
     });
+
+    $('.slick-prev').append('<i class="fas fa-long-arrow-left"></i>');
+    $('.slick-next').append('<i class="fas fa-long-arrow-right"></i>');
   }
 }
