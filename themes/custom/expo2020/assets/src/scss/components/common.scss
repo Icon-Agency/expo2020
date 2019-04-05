@@ -71,7 +71,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 2;
-  height: 50px;
 }
 .btn-white {
   background-color: $white;
@@ -131,6 +130,11 @@ body {
   border-color: $btn-border;
   background-color: $white;
   color: $gray-900;
+  &:hover {
+    background-color: $primary-blue;
+    border-color: $primary-blue;
+    color: $white;
+  }
 }
 .btn-orange-banner {
   color: $gray-1000;
