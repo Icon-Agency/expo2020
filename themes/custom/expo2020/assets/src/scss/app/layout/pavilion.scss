@@ -65,10 +65,10 @@
   //news page banner
   .pavilion-layer-top-news {
     .pavilion-shape-news {
-      background-image: url('~@/images/themes-shape-above.png');
+      background-image: url('~@/images/shape-themes-white.svg');
       position: relative;
       right: -20%;
-      top: 10%;
+      top: 6rem;
       background-repeat: no-repeat;
       -webkit-background-size: contain;
       background-size: contain;
@@ -85,9 +85,12 @@
     }
     .news-listing-featured-title {
       color: $icon-orange;
+      font-size: 2rem;
     }
     .news-listing-featured-body {
       width: 40%;
+      margin-top: 1rem;
+      font-family: 'Open Sans', sans-serif;
     }
     .news-listing-featured-news-date {
       display: flex;
@@ -97,12 +100,12 @@
       font-weight: 500;
       letter-spacing: 1px;
       p {
-        padding-left: .5rem;
         margin-top: -2px;
       }
     }
     .whats-on-shape {
       @extend .pavilion-shape-news;
+      right: -22%;
       background-image: url('~@/images/shape4.png');
       padding: 5rem;
       .field--type-text-with-summary {
@@ -197,10 +200,14 @@
     padding: 5rem 0 7rem 0;
     text-align: center;
     color: $btn-border;
+    .row {
+      margin: 0 6rem;
+    }
     a {
       &:hover {
         .icon-text {
-          text-decoration: underline;
+          border-bottom: 2px solid;
+          width: 65%;
         }
       }
     }
@@ -297,8 +304,9 @@
 .node--type-themes {
   #parallax-container {
     .whats-on-shape-under {
-      right: -58%;
-      top: 6%;
+      right: -24rem;
+      margin-top: 2rem;
+      mix-blend-mode: multiply;
     }
   }
 }

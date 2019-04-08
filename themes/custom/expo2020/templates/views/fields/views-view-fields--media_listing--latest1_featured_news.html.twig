@@ -38,7 +38,9 @@
          alt="{{ row._entity.field_media[0].entity.field_media_image.alt }}"/>
   </div>
   <div class="parallax-div">
-    <img src="/{{ base_path ~ directory }}/assets/src/images/themes-shape.png" class="container whats-on-shape-under">
+    <div class="container col-xl-3 col-lg-6">
+      <img src="/{{ base_path ~ directory }}/assets/src/images/shape-themes-orange.svg" class="whats-on-shape-under">
+    </div>
   </div>
   <div class="parallax-div pavilion-layer-top-news">
     <div class="pavilion-shape-news container">
@@ -55,7 +57,6 @@
 
         {% if fields.field_media_date.content %}
           <div class="news-listing-featured-news-date">
-            <i class="fas fa-star"></i>
             <p>
               {{ fields.field_media_date.content }}
             </p>
