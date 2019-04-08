@@ -215,13 +215,11 @@ $slick-opacity-not-active: 0.25 !default;
     color: $primary-turquoise;
     position: absolute;
     top: 80%;
-    left: 42.5%;
-    line-height: 1.5;
+    left: 43.5%;
     font-family: 'Rubik', sans-serif;
-    padding: .5rem 1rem;
-    text-decoration: underline;
+    letter-spacing: 1px;
     &:hover {
-      color: $white;
+      border-bottom: 2px solid;
     }
   }
   a.modaal-video-trigger {

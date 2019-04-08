@@ -239,7 +239,8 @@ h1.accent {
     a {
       &:hover {
         .icon-text {
-          text-decoration: underline;
+          border-bottom: 2px solid;
+          width: 65%;
         }
       }
     }
@@ -259,6 +260,8 @@ h1.accent {
   font-weight: 500;
   text-align: center;
   line-height: 1.2;
+  margin-left: auto;
+  margin-right: auto;
 }
 .icon1 {
   @include feature-icons($icon-green);

@@ -86,7 +86,8 @@
         a {
           &:hover {
             .icon-text {
-              text-decoration: underline;
+              border-bottom: 2px solid;
+              width: 70%;
             }
           }
         }
