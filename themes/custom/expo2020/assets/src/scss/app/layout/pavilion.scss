@@ -207,7 +207,7 @@
       &:hover {
         .icon-text {
           border-bottom: 2px solid;
-          width: 65%;
+          width: fit-content;
         }
       }
     }
@@ -268,7 +268,8 @@
       a {
         &:hover {
           .icon-text {
-            text-decoration: underline;
+            border-bottom: 2px solid;
+            width: fit-content;
           }
         }
       }
@@ -298,6 +299,13 @@
     margin-bottom: 0;
   }
   @include pavilion-welcome($primary-blue, $white);
+  .btn {
+    &:hover {
+      color: $primary-orange;
+      background-color: $icon-blue3;
+      border-color: $icon-blue3;
+    }
+  }
 }
 
 .block-views-blockmedia-listing-latest1-featured-news,
@@ -306,7 +314,8 @@
     .whats-on-shape-under {
       right: -24rem;
       margin-top: 2rem;
-      mix-blend-mode: multiply;
+      filter: brightness(0.75);
+      opacity: 0.85;
     }
   }
 }

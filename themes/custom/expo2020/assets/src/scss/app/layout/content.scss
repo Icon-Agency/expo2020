@@ -87,7 +87,7 @@
           &:hover {
             .icon-text {
               border-bottom: 2px solid;
-              width: 70%;
+              width: fit-content;
             }
           }
         }
@@ -175,6 +175,13 @@
     .field__item:last-child {
       @include pavilion-welcome($icon-orange, $primary-blue);
       .pavilion-welcome {
+        .btn {
+          &:hover {
+            color: $white;
+            background-color: $icon-orange;
+            border-color: $icon-orange;
+          }
+        }
         .pavilion-welcome-text {
           padding-top: 4rem;
           padding-left: 4rem;
@@ -283,6 +290,13 @@
     padding: 0;
     padding-top: 5rem;
     padding-bottom: 1rem;
+    .btn {
+      &:hover {
+        color: $primary-orange;
+        background-color: $icon-blue3;
+        border-color: $icon-blue3;
+      }
+    }
     .pavilion-welcome-text {
       padding-top: 2rem;
       padding-left: 4rem;

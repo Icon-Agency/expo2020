@@ -302,6 +302,12 @@ $("#to-top").click(function () {
     $("body,html").animate({scrollTop: 0}, 500);
 });
 
+$('.modaal-video-trigger').hover(function () {
+  $('.image-style-gallery-silder').css('filter', 'brightness(120%)');
+}, function () {
+  $('.image-style-gallery-silder').css('filter', 'brightness(100%)');
+});
+
 /* search form functions */
 var searchInput = $('#block-expo2020-header-site-search-block .header-search-form .form-item input');
 var searchButton = $('#block-expo2020-header-site-search-block .search-trigger');

@@ -1,7 +1,7 @@
 .tooltip-inner {
   background-color: $icon-green !important;
 }
-.bs-tooltip-top .arrow::before,
-.bs-tooltip-auto[x-placement^="top"] .arrow::before{
-  border-top-color: $icon-green;
+.bs-tooltip-right .arrow::before,
+.bs-tooltip-auto[x-placement^="right"] .arrow::before {
+  border-right-color: $icon-green !important;
 }

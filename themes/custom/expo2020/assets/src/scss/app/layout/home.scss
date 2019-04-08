@@ -240,7 +240,7 @@ h1.accent {
       &:hover {
         .icon-text {
           border-bottom: 2px solid;
-          width: 65%;
+          width: fit-content;
         }
       }
     }

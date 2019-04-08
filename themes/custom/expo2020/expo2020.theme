@@ -677,7 +677,7 @@ function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'
         $icon = empty($term->field_fontawesome_icon[0]->value) ? '' : $term->field_fontawesome_icon[0]->value;
 
         $type_filter_links[mb_strtolower($t_name)] = [
-          '#title' => ['#markup' => $icon . t($t_name)],
+          '#title' => ['#markup' => (mb_strtolower($t_name) == 'twitter' && $type == 'news') ? $icon : $icon . t($t_name)],
           '#type' => 'link',
           '#url' =>  \Drupal\Core\Url::fromUserInput("{$form['#action']}?field_news_media_type_target_id={$tid}#{$anchor_id}"),
           '#options' => [
