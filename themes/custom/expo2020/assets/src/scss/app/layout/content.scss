@@ -465,6 +465,9 @@
       }
     }
     @include landing-pagination($primary-blue);
+    .view-footer {
+      margin-bottom: 3rem;
+    }
   }
 }
 
@@ -478,9 +481,4 @@
       text-decoration: underline;
     }
   }
-}
-
-//search result
-.path-search {
-
 }

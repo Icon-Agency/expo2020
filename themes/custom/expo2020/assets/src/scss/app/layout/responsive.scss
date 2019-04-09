@@ -97,15 +97,30 @@
     #parallax-container {
       .pavilion-layer-top-news {
         .whats-on-shape {
-          height: 50%;
+          height: auto;
+          padding: 7rem 3rem 5rem;
+          top: 0;
+          margin-top: 5rem;
         }
       }
       .whats-on-shape-under {
         height: auto;
         right: -39%;
+        top: 0;
+        margin-top: 3rem;
       }
     }
   }
+  .node--type-sponsors-partners-landing-page.node--view-mode-full {
+    .sponsor-listing-big-card {
+      .lower-container {
+        .btn {
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+
   #block-themesheader {
     #parallax-container {
       .col-xl-3 {
@@ -1049,7 +1064,7 @@
 @media only screen and (max-width: 380px) {
   .view-id-sponsors_partners_views_listing {
     .inline-partner-logo {
-      margin: 2rem 1rem;
+      margin: 2rem 0;
     }
   }
 }
