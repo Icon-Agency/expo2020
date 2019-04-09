@@ -305,10 +305,10 @@ h1, h2, h3, h4, h5, h6,
   line-height: 1.2; }
 
 h1, .h1 {
-  font-size: 3rem; }
+  font-size: 2.625rem; }
   @media (max-width: 1200px) {
     h1, .h1 {
-      font-size: calc(1.425rem + 2.1vw) ; } }
+      font-size: calc(1.3875rem + 1.65vw) ; } }
 
 h2, .h2 {
   font-size: 2.5rem; }
