@@ -262,6 +262,7 @@ h1.accent {
   line-height: 1.2;
   margin-left: auto;
   margin-right: auto;
+  border-bottom: 2px solid transparent;
 }
 .icon1 {
   @include feature-icons($icon-green);

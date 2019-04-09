@@ -54,6 +54,9 @@
       padding: 18% 25% 0 25%;
       color: #fff;
       height: 100%;
+      .btn {
+        margin-top: 0;
+      }
       &:hover {
         cursor: pointer;
       }

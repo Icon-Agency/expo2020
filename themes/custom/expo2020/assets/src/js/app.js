@@ -362,13 +362,10 @@ $(searchInput).focus(function() {
 });
 
 // If they tab or esc without entering keywords, close it.
-// $(searchForm).keydown(function(e) {
-//   var keyCode = e.keyCode || e.which;
-//
-//   if (!$(searchInput).val() && (keyCode == 9 || keyCode == 27)) {
-//     var menuLink = $("#header .navigation.menu--main ul.nav a").first();
-//
-//     searchClose(searchButton, searchForm);
-//     e.preventDefault();
-//   }
-// });
+$(searchForm).keydown(function(e) {
+   var keyCode = e.keyCode || e.which;
+
+   if (!$(searchInput).val() && (keyCode == 9 || keyCode == 27)) {
+    searchClose(searchButton, searchForm);
+   }
+});

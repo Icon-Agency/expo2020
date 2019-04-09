@@ -111,8 +111,9 @@
       .field--type-text-with-summary {
        // width: 35%;
       }
-      h2 {
+      h1, h2 {
         color: $icon-green;
+        margin-bottom: 1rem;
       }
       p {
         font-family: 'Open Sans', sans-serif;

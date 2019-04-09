@@ -120,7 +120,7 @@
         background-image: url('~@/images/themes-shape-above.png');
         top: 6rem;
         padding: 4rem 5rem;
-        h2 {
+        h1, h2 {
           color: $icon-orange;
         }
         a {
@@ -245,7 +245,7 @@
       #parallax-container {
         .pavilion-layer-top-news {
           .whats-on-shape {
-            h2 {
+            h1, h2 {
               color: $primary-blue;
             }
             a {
@@ -254,7 +254,6 @@
           }
         }
       }
-
     }
   }
 }
