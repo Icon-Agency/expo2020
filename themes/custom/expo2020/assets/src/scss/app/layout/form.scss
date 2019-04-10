@@ -222,6 +222,7 @@ label + small.description {
   background-color: $form-bg;
   max-width: 600px;
   background-image: url('~@/images/form-bg-mask.png');
+  background-repeat: no-repeat;
 }
 #block-saygdayform,
 #block-sponsorshipform,

@@ -58,42 +58,46 @@
         font-size: 1rem;
         margin-left: 30px;
     }
-    .webform-submission-form {
-        padding: 0 30px;
+    #block-newslettersignup {
+        .content {
+            padding: 0 30px;
+        }
     }
-    #edit-newsletter-text {
+    .field--type-text-with-summary {
         color: $white;
         font-size: 1rem;
         margin-bottom: 2.5rem;
-    }
-    .button {
-        background-color: $primary-turquoise;
-        border: none;
-        color: $body-color;
-        font-weight: 500;
-        letter-spacing: 1px;
-        font-size: 14px;
-        padding: 0 .5rem;
-        margin-top: 0;
-        height: calc(2.5em + 1rem + 6px);
-        &:hover {
-            filter: brightness(110%);
+        p {
+            margin: 2rem 0;
         }
-    }
-    .InputAddOn {
-        display: flex;
-    }
-    .InputAddOn_item {
-        color: $gray-900;
-        font: inherit;
-        font-weight: normal;
-        margin-left: -1px;
-    }
-    .InputAddOn_field {
-        flex: 1;
-        border-radius: 0;
-        height: calc(2.5em + 1rem + 1px);
-        border: none;
+        .input-group {
+            .field {
+                margin-bottom: 0;
+            }
+            #email {
+                flex: 1;
+                border-radius: 0;
+                height: calc(2.5em + 1rem + 1px);
+                border: none;
+                font-size: 1rem;
+                padding: 0.5rem 2rem 0.5rem 1rem;
+                width: 110%;
+            }
+            .form-trigger.submit {
+                background-color: $primary-turquoise;
+                border: none;
+                color: $body-color;
+                font-weight: 600;
+                letter-spacing: 1px;
+                font-size: 14px;
+                padding: 0 .5rem;
+                margin-top: 0;
+                height: calc(2.5em + 1rem + 6px);
+                &:hover {
+                    filter: brightness(110%);
+                }
+            }
+        }
     }
 }
 

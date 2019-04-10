@@ -587,6 +587,16 @@
       left: 45.5%;
     }
   }
+  .footer-right-outer-container {
+    .field--type-text-with-summary {
+      .input-group {
+        .form-trigger.submit {
+          height: calc(2.5em + 1rem + 4px);
+        }
+      }
+    }
+  }
+
 }
 @include media-breakpoint-down(sm) {  //768px
   #parallax-container {
@@ -678,10 +688,12 @@
     h2 {
       margin-left: 15px;
     }
-    .webform-submission-form {
-      padding-left: 15px;
+    #block-newslettersignup {
+      .content {
+        padding-left: 15px;
+      }
     }
-    .button {
+    .field--type-text-with-summary .input-group .form-trigger.submit {
       height: calc(2.5em + 1rem + 1px);
     }
   }
