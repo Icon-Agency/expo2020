@@ -3973,7 +3973,8 @@ label + small.description {
 .modaal-container {
   background-color: #F5F5FA;
   max-width: 600px;
-  background-image: url(/themes/custom/expo2020/assets/dist/images/form-bg-mask.png); }
+  background-image: url(/themes/custom/expo2020/assets/dist/images/form-bg-mask.png);
+  background-repeat: no-repeat; }
 
 #block-saygdayform .popup-form-common-header,
 #block-sponsorshipform .popup-form-common-header,
@@ -4100,41 +4101,39 @@ nav.tabs {
     margin-top: 6rem;
     font-size: 1rem;
     margin-left: 30px; }
-  .footer-right-outer-container .webform-submission-form {
+  .footer-right-outer-container #block-newslettersignup .content {
     padding: 0 30px; }
-  .footer-right-outer-container #edit-newsletter-text {
+  .footer-right-outer-container .field--type-text-with-summary {
     color: #fff;
     font-size: 1rem;
     margin-bottom: 2.5rem; }
-  .footer-right-outer-container .button {
-    background-color: #56D6C9;
-    border: none;
-    color: #292A2E;
-    font-weight: 500;
-    letter-spacing: 1px;
-    font-size: 14px;
-    padding: 0 .5rem;
-    margin-top: 0;
-    height: calc(2.5em + 1rem + 6px); }
-    .footer-right-outer-container .button:hover {
-      -webkit-filter: brightness(110%);
-              filter: brightness(110%); }
-  .footer-right-outer-container .InputAddOn {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-  .footer-right-outer-container .InputAddOn_item {
-    color: #292A2E;
-    font: inherit;
-    font-weight: normal;
-    margin-left: -1px; }
-  .footer-right-outer-container .InputAddOn_field {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    border-radius: 0;
-    height: calc(2.5em + 1rem + 1px);
-    border: none; }
+    .footer-right-outer-container .field--type-text-with-summary p {
+      margin: 2rem 0; }
+    .footer-right-outer-container .field--type-text-with-summary .input-group .field {
+      margin-bottom: 0; }
+    .footer-right-outer-container .field--type-text-with-summary .input-group #email {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      border-radius: 0;
+      height: calc(2.5em + 1rem + 1px);
+      border: none;
+      font-size: 1rem;
+      padding: 0.5rem 2rem 0.5rem 1rem;
+      width: 110%; }
+    .footer-right-outer-container .field--type-text-with-summary .input-group .form-trigger.submit {
+      background-color: #56D6C9;
+      border: none;
+      color: #292A2E;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 14px;
+      padding: 0 .5rem;
+      margin-top: 0;
+      height: calc(2.5em + 1rem + 6px); }
+      .footer-right-outer-container .field--type-text-with-summary .input-group .form-trigger.submit:hover {
+        -webkit-filter: brightness(110%);
+                filter: brightness(110%); }
 
 /* back to top */
 #to-top {
@@ -5571,7 +5570,9 @@ nav.tabs {
   .slick-slide .slider-link {
     left: 39%; }
   .slick-slide .video-play-icon {
-    left: 45.5%; } }
+    left: 45.5%; }
+  .footer-right-outer-container .field--type-text-with-summary .input-group .form-trigger.submit {
+    height: calc(2.5em + 1rem + 4px); } }
 
 @media (max-width: 767.98px) {
   #parallax-container .pavilion-layer-top-news .news-listing-featured-title {
@@ -5627,9 +5628,9 @@ nav.tabs {
       margin-left: 15px; }
   .footer-right-outer-container h2 {
     margin-left: 15px; }
-  .footer-right-outer-container .webform-submission-form {
+  .footer-right-outer-container #block-newslettersignup .content {
     padding-left: 15px; }
-  .footer-right-outer-container .button {
+  .footer-right-outer-container .field--type-text-with-summary .input-group .form-trigger.submit {
     height: calc(2.5em + 1rem + 1px); }
   #parallax-container .pavilion-layer-top-news .pavilion-shape-news, #parallax-container .pavilion-layer-top-news .whats-on-shape {
     padding: 2rem;
