@@ -354,9 +354,14 @@
       }
     }
     .upper-container {
-      padding: 2rem 0 1rem 0;
+      padding: 1rem 5rem;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .lower-container {
+      display: none;
       padding: 1rem;
       font-size: 14px;
       font-family: 'Open Sans', sans-serif;

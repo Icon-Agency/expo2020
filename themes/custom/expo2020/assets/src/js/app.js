@@ -30,7 +30,7 @@ new Scrollmagic();
   var homeBanners = {
 
     duration: 3000,
-    delay: 12000,
+    delay: 6000,
 
     init: function() {
       var $banners = $('.banner-block-content');
