@@ -5243,6 +5243,13 @@ nav.tabs {
   .error-page .page-not-found-content a {
     text-decoration: underline; }
 
+.sitemap .sitemap-box-front {
+  font-weight: 600;
+  font-size: 24px; }
+
+.sitemap a:hover {
+  text-decoration: underline; }
+
 @media (max-width: 1440px) {
   .node--type-sponsors-partners-landing-page #parallax-container .whats-on-shape,
   #block-whatsonheader #parallax-container .whats-on-shape {
