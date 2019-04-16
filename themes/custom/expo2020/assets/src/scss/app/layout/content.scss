@@ -486,3 +486,17 @@
     }
   }
 }
+
+//site map
+.sitemap {
+  .sitemap-box-front {
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
