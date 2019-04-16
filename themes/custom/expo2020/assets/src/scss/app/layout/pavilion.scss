@@ -67,12 +67,12 @@
     .pavilion-shape-news {
       background-image: url('~@/images/shape-themes-white.svg');
       position: relative;
-      right: -20%;
+      right: -11%;
       top: 6rem;
       background-repeat: no-repeat;
       -webkit-background-size: contain;
       background-size: contain;
-      padding: 4rem 6rem;
+      padding: 3rem 8rem 4rem 6rem;
       height: auto;
       width: auto;
       &:hover {
@@ -88,7 +88,6 @@
       font-size: 2rem;
     }
     .news-listing-featured-body {
-      width: 40%;
       margin-top: 1rem;
       font-family: 'Open Sans', sans-serif;
     }
@@ -99,6 +98,7 @@
       font-family: $font-family-rubik;
       font-weight: 500;
       letter-spacing: 1px;
+      margin-top: 0.5rem;
       p {
         margin-top: -2px;
       }
