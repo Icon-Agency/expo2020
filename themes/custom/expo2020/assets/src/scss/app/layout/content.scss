@@ -489,9 +489,13 @@
 
 //site map
 .sitemap {
+  margin-bottom: 5rem;
   .sitemap-box-front {
     font-weight: 600;
     font-size: 24px;
+    .placeholder {
+      font-style: normal;
+    }
   }
 
   a {
