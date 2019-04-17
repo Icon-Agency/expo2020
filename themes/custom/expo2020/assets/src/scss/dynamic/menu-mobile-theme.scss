@@ -10,7 +10,7 @@
 @import '~jquery.mmenu/dist/jquery.mmenu.all.css';
 
 .mm-menu {
-  --mm-color-background: #{$primary-blue};
+  --mm-color-background: #{$gray-900};
   --mm-color-background-emphasis: #{$black};
   --mm-color-background-highlight: #{$gray-900};
   --mm-color-border: #{$gray-600};
@@ -23,10 +23,22 @@
   left: 0;
 }
 .mm-navbars_top {
+  height: 55px;
   .mm-searchfield__input {
     input {
       background-color: $white;
       color: $gray-900;
+      height: 40px;
     }
   }
+}
+
+.mm-navbar__title {
+  font-family: $font-family-rubik;
+  text-transform: uppercase;
+  color: $primary-orange !important;
+}
+
+.mm-panels {
+  top: 55px !important;
 }
