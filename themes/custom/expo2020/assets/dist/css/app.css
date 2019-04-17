@@ -1339,7 +1339,7 @@ header #search-block-form {
   height: 100%; }
 
 .slick-dots {
-  top: 58%;
+  bottom: 5rem;
   height: 1rem; }
 
 .slick-dots li.slick-active button:before {
@@ -1371,6 +1371,7 @@ header #search-block-form {
   overflow: hidden; }
 
 .slick-slide h2.accent {
+  display: none;
   color: #fff;
   position: absolute;
   top: 65%;
@@ -1380,6 +1381,7 @@ header #search-block-form {
   text-align: center; }
 
 .slick-slide .slider-link {
+  display: none;
   color: #56D6C9;
   position: absolute;
   top: 80%;
@@ -4366,7 +4368,7 @@ nav.tabs {
     top: 6rem;
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 3rem 8rem 4rem 6rem;
+    padding: 3rem 9rem 4rem 6rem;
     height: auto;
     width: auto; }
     #parallax-container .pavilion-layer-top-news .pavilion-shape-news:hover, #parallax-container .pavilion-layer-top-news .whats-on-shape:hover {
