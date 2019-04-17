@@ -1,0 +1,30 @@
+/**
+ * Just some basic overrides to normal theme.
+ */
+.mm-menu {
+  --mm-color-background: #292A2E;
+  --mm-color-background-emphasis: #000;
+  --mm-color-background-highlight: #292A2E;
+  --mm-color-border: #6c757d;
+  --mm-color-text: white;
+  --mm-color-text-dimmed: #ced4da;
+  --mm-color-button: #dee2e6; }
+
+.mm-listitem:after {
+  left: 0; }
+
+.mm-navbars_top {
+  height: 55px; }
+  .mm-navbars_top .mm-searchfield__input input {
+    background-color: #fff;
+    color: #292A2E;
+    height: 40px; }
+
+.mm-navbar__title {
+  font-family: "Rubik", sans-serif;
+  text-transform: uppercase;
+  color: #FF6519 !important; }
+
+.mm-panels {
+  top: 55px !important; }
+

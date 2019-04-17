@@ -4208,7 +4208,7 @@ nav.tabs {
       top: 10%;
       left: 0;
       width: 100%;
-      padding: 10% 25% 0 20%;
+      padding: 6% 25% 0 20%;
       color: #fff;
       height: 100%; }
       #block-bean-homepage-banner .texts .inner .btn {
@@ -5243,12 +5243,15 @@ nav.tabs {
   .error-page .page-not-found-content a {
     text-decoration: underline; }
 
-.sitemap .sitemap-box-front {
-  font-weight: 600;
-  font-size: 24px; }
-
-.sitemap a:hover {
-  text-decoration: underline; }
+.sitemap {
+  margin-bottom: 5rem; }
+  .sitemap .sitemap-box-front {
+    font-weight: 600;
+    font-size: 24px; }
+    .sitemap .sitemap-box-front .placeholder {
+      font-style: normal; }
+  .sitemap a:hover {
+    text-decoration: underline; }
 
 @media (max-width: 1440px) {
   .node--type-sponsors-partners-landing-page #parallax-container .whats-on-shape,
