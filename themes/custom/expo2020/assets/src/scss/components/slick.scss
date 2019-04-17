@@ -167,7 +167,7 @@ $slick-opacity-not-active: 0.25 !default;
   }
 }
 .slick-dots {
-  top: 58%;
+  bottom: 5rem;
   height: 1rem;
 }
 .slick-dots li.slick-active button:before {
@@ -199,6 +199,7 @@ $slick-opacity-not-active: 0.25 !default;
     overflow: hidden;
   }
   h2.accent {
+    display: none;
     color: $white;
     position: absolute;
     top: 65%;
@@ -208,6 +209,7 @@ $slick-opacity-not-active: 0.25 !default;
     text-align: center;
   }
   .slider-link {
+    display: none;
     color: $primary-turquoise;
     position: absolute;
     top: 80%;
