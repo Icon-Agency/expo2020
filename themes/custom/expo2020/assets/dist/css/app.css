@@ -3699,7 +3699,8 @@ img.blur {
       margin-left: 30px; } }
   @media (max-width: 991.98px) and (max-width: 991.98px) {
     #mobile-menu-button {
-      margin-left: 20px; } }
+      margin-left: 20px;
+      margin-top: -10px; } }
   @media (max-width: 991.98px) and (max-width: 767.98px) {
     #mobile-menu-button {
       margin-left: 10px; } }
