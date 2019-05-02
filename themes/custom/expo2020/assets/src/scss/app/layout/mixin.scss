@@ -21,7 +21,7 @@
   width: 48px;
   height: 48px;
   margin: -1.5rem auto;
-  padding: 0.7rem;
+  padding: 0.8rem;
   position: relative;
   z-index: 10;
   background-color: $color;
@@ -33,6 +33,7 @@
   svg {
     color: $white;
     width: 20px;
+    height: 20px;
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
@@ -56,7 +57,7 @@
     text-transform: uppercase;
     font-size: 14px;
     position: absolute;
-    bottom: 1.5rem;
+    bottom: 2rem;
     left: 0;
     width: 100%;
     display: flex;
@@ -145,12 +146,12 @@
   }
   svg {
     color: $white;
-    width: 60px !important;
-    height: 60px;
+    width: 55px !important;
+    height: 55px;
     position: absolute;
     z-index: 10;
-    top: 35px;
-    left: -30px;
+    top: 40px;
+    left: -27px;
   }
   &:hover {
     filter: brightness(120%);

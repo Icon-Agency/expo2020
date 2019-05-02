@@ -70,9 +70,8 @@
   h2 {
     padding-top: 2rem;
     margin-bottom: 0;
-    text-decoration: underline;
-    text-decoration-color: $primary-orange;
-    text-underline-position: under;
+    border-bottom: 5px solid $primary-orange;
+    width: 9rem;
   }
 }
 

@@ -35,6 +35,7 @@
   .news {
     a {
       display: block;
+      border-bottom: 3px solid transparent;
       img {
         flex-shrink:0;
         min-width:100%;
@@ -43,10 +44,12 @@
         object-fit:cover;
       }
       &:hover {
-        box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
-        .news-type-icon,
+        border-bottom: 3px solid $icon-orange;
+        .news-type-icon {
+          background-color: $icon-orange;
+        }
         .event-type-icon {
-          background-color: $gray-600;
+          background-color: $icon-green;
         }
       }
     }
@@ -57,7 +60,7 @@
       @include type-icon($primary-turquoise);
     }
     .news-lower-container{
-      @include lower-container($news-homepage, $icon-orange);
+      @include lower-container($news-tile, $icon-orange);
       text-align: center;
     }
     .event-lower-container {
@@ -113,7 +116,7 @@
         font-weight: 500;
         letter-spacing: 1px;
         position: absolute;
-        bottom: 0.5rem;
+        bottom: 1rem;
         left: 0;
         width: 100%;
         display: flex;
@@ -139,6 +142,16 @@
     }
     .featured-middle-date {
       @include date-time($icon-orange);
+    }
+  }
+}
+
+.view-display-id-whats_on {
+  .news {
+    a {
+      &:hover {
+        border-bottom: 3px solid $icon-green;
+      }
     }
   }
 }
@@ -376,6 +389,7 @@
   }
   h1{
     color: $primary-blue;
+    margin-bottom: 3rem;
   }
   h3 {
     font-size: 1.5rem;
@@ -422,6 +436,7 @@
 #block-socialsharingblock {
   .social-media-sharing {
     margin-top: 3rem;
+    margin-bottom: 6rem;
     img {
       width: 25px;
       height: 25px;
