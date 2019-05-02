@@ -72,13 +72,13 @@
     -o-transform: translate3D(0, 0, 0);
     transform: translate3D(0, 0, 0);
     &.hover-ready {
-      opacity: 1;
+      opacity: 0.9;
       -webkit-transition: opacity 0.25s linear;
       -o-transition: opacity 0.25s linear;
       transition: opacity 0.25s linear;
     }
     &.hover {
-      opacity: 0.9;
+      opacity: 0.85;
       cursor: pointer;
     }
     svg {
