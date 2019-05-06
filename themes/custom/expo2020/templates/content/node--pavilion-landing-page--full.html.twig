@@ -162,21 +162,10 @@
         </div>
     </div>
 
-    <div class="pavilion-welcome">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="/{{ base_path ~ directory }}/assets/src/images/pavilion-welcome.png" >
-                </div>
-                <div class="col-md-6 pavilion-welcome-text">
-                    <h2>Welcome</h2>
-                    <p>Visit a piece of Australia in Dubai. </p>
-                    <a href="/contact" class="btn btn-primary btn-primary-blue">GET IN TOUCH</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
+  {% if content.field_bottom_content %}
+    {{ content.field_bottom_content }}
+  {% endif %}
+  
   <div class="banner-map">
     <div class="map-img" style="background-image: url(/{{ base_path ~ directory }}/assets/src/images/map.png);">
       <div class="container">
