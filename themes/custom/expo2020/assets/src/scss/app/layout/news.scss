@@ -528,7 +528,13 @@
   border-top: 5px solid $gray-100;
   margin-top: 3rem;
   .news-view-latest-news-bottom {
-    @include view-upcoming-bottom($primary-orange);
+    a {
+      border-bottom: 5px solid $primary-orange;
+
+      &:hover {
+        border-color: $icon-orange;
+      }
+    }
     padding-top: 3rem;
     padding-bottom: 5rem;
   }

@@ -58,6 +58,13 @@
           {% if content.field_image[0] %}
             <div class="pavilion-bg-container">
               {{ content.field_image }}
+
+              {% set block_id = attributes.id|render %}
+          {% if block_id == "block-whatsonheader" %}
+              <div class="image-credit">Image courtesy of Tourism Australia / Time Out Australia</div>
+              {% elseif block_id == "block-partnerslandingpageheader" %}
+                <div class="image-credit">Image courtesy of The Kitchen</div>
+          {% endif %}
             </div>
           {% endif %}
         </div>
