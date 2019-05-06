@@ -1745,6 +1745,16 @@ td.is-active {
 .bs-tooltip-auto[x-placement^="right"] .arrow::before {
   border-right-color: #208379 !important; }
 
+.modaal-close {
+  position: absolute;
+  right: 25%;
+  top: 5%; }
+  .modaal-close:before, .modaal-close:after {
+    width: 6px;
+    height: 30px;
+    top: 10px;
+    left: 22px; }
+
 .main {
   font-family: "Work Sans", sans-serif;
   width: 100%;
