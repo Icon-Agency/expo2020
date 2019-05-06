@@ -16,8 +16,9 @@
  */
 #}
 {% set set_middle = false %}
-{% if rows|length > 9 %}
+{% if rows|length > 3 %}
   {% set set_middle = true %}
+  {% set key_to_insert = (rows|length / 3)|round(0, 'ceil')//2*3-1 %}
 {% endif %}
 
 {% if title %}
@@ -35,7 +36,7 @@
     <div{{ row.attributes.addClass(row_classes) }}>
       {{ row.content }}
     </div>
-    {% if set_middle == true and key == (9-1) %}
+    {% if set_middle == true and key == key_to_insert %}
       {{ drupal_view('media_listing', 'latest_1_featured_middle_news') }}
     {% endif %}
   {% endfor %}
