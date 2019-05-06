@@ -103,7 +103,7 @@
       {{ label }}
     </h1>
 
-    {% if content.field_media[0] %}
+    {% if content.field_media[0] and not node.field_hide_featured_img_on_ctnt.value %}
       {{ content.field_media }}
     {% endif %}
 
