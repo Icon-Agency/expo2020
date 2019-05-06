@@ -1,9 +1,12 @@
 .modaal-close {
   position: absolute;
-  right: 31%;
-  top: 12%;
-}
+  right: 25%;
+  top: 5%;
 
-.ytp-chrome-top-buttons {
-  margin-right: 4rem;
+  &:before, &:after {
+    width: 6px;
+    height: 30px;
+    top: 10px;
+    left: 22px;
+  }
 }
