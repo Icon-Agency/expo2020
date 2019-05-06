@@ -1,0 +1,12 @@
+.modaal-close {
+  position: absolute;
+  right: 25%;
+  top: 5%;
+
+  &:before, &:after {
+    width: 6px;
+    height: 30px;
+    top: 10px;
+    left: 22px;
+  }
+}
