@@ -227,6 +227,22 @@ h1.accent {
   z-index: 10;
 }
 
+.image-courtesy {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px !important;
+  color: $white;
+  margin-top: -10rem;
+  padding-left: 15px;
+}
+
+.image-credit {
+  float: right;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  padding-top: 0.5rem;
+  color: #adb5bd;
+}
+
 /* join us in Dubai */
 .showcase {
   margin-top: 10rem;
