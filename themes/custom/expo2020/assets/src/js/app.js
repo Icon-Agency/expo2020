@@ -54,7 +54,7 @@ new Scrollmagic();
 
         $img.attr('data-banner-index', i).appendTo($('.images', that.banner));
         $mask.attr('data-banner-index', i).appendTo($('.images', that.banner));
-        $imagecredit.attr('data-banner-index', i).appendTo($('.texts', that.banner));
+        $imagecredit.attr('data-banner-index', i).appendTo($('.images', that.banner));
 
         $(this).attr('data-banner-index', i).attr('class', 'text').appendTo($('.texts .container', that.banner));
       });
@@ -63,14 +63,14 @@ new Scrollmagic();
 
       this.imgDivs = $('.images .img', this.banner);
       this.txtDivs = $('.texts .text', this.banner);
-      this.imgCreDivs = $('.texts .image-credit', this.banner);
+      this.imgCreDivs = $('.images .image-credit', this.banner);
 
       this.imgDivs.eq(this.start).css('background-image', 'url(' + this.imgDivs.eq(this.start).data('img-src') + ')');
       this.imgDivs.eq(this.start).addClass('current').show();
 
       this.txtDivs.eq(this.start).addClass('current').fadeIn(this.duration);
 
-      this.imgCreDivs.eq(this.start).addClass('current').fadeIn(this.duration);
+      this.imgCreDivs.eq(this.start).addClass('current').show();
 
       this.txtDivs.find('.inner').on('mouseenter', function(){
         $('.shape', this.banner).addClass('hover');
@@ -95,6 +95,9 @@ new Scrollmagic();
     reIndex: function(){
       this.imgDivs.not('.current').css('z-index', 8);
       this.imgDivs.filter('.current').css('z-index', 9);
+
+      this.imgCreDivs.not('.current').css('z-index', 8);
+      this.imgCreDivs.filter('.current').css('z-index', 9);
     },
 
     // Fade in
@@ -107,19 +110,20 @@ new Scrollmagic();
       this.reIndex();
 
       $now.hide();
+      $imgcre.hide();
 
       $now.css('background-image','url(' + $now.data('img-src') + ')')
         .waitForImages(function() {
 
           that.imgDivs.removeClass('current');
           that.txtDivs.removeClass('current').fadeOut(that.duration);
-          that.imgCreDivs.removeClass('current').fadeOut(that.duration);
+          that.imgCreDivs.removeClass('current');
 
           $now.css('z-index', 10).fadeIn(that.duration).addClass('current');
 
           $txt.hide().fadeIn(that.duration).addClass('current');
 
-          $imgcre.hide().fadeIn(that.duration).addClass('current');
+          $imgcre.css('z-index', 10).fadeIn(that.duration).addClass('current');
 
           if ($(window).width() > 768) {
             // Shapes

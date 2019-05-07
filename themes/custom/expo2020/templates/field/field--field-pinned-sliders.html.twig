@@ -68,7 +68,7 @@
           </div>
           <div class="container">
               <div class="row">
-                  <p class="image-courtesy">{{ item['content']['#paragraph'].field_image_courtesy.value }}</p>
+                  <p class="image-courtesy">{{ item['content']['#paragraph'].field_image_courtesy.value|raw}}</p>
               </div>
           </div>
       </div>
