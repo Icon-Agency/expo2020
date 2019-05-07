@@ -347,6 +347,7 @@
         @include date-time($icon-green);
       }
     }
+    @include landing-pagination($icon-green);
   }
   .view-header,
   .view-footer {
@@ -357,7 +358,6 @@
   .view-footer {
     text-align: center;
   }
-  @include landing-pagination($icon-green);
 }
 
 //news detail page

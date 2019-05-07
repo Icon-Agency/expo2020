@@ -80,8 +80,8 @@
   nav {
     .pagination {
       margin-bottom: 0;
-      padding-bottom: 8rem;
-      margin-top: 2rem;
+      padding-bottom: 6rem;
+      margin-top: 0;
       justify-content: center;
       color: $color;
       li {
@@ -146,12 +146,12 @@
   }
   svg {
     color: $white;
-    width: 55px !important;
-    height: 55px;
+    width: 50px !important;
+    height: 50px;
     position: absolute;
     z-index: 10;
-    top: 40px;
-    left: -27px;
+    top: 43px;
+    left: -24px;
   }
   &:hover {
     filter: brightness(120%);

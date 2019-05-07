@@ -54,7 +54,7 @@ new Scrollmagic();
 
         $img.attr('data-banner-index', i).appendTo($('.images', that.banner));
         $mask.attr('data-banner-index', i).appendTo($('.images', that.banner));
-        $imagecredit.attr('data-banner-index', i).appendTo($('.images', that.banner));
+        $imagecredit.attr('data-banner-index', i).appendTo($('.texts', that.banner));
 
         $(this).attr('data-banner-index', i).attr('class', 'text').appendTo($('.texts .container', that.banner));
       });
@@ -63,11 +63,14 @@ new Scrollmagic();
 
       this.imgDivs = $('.images .img', this.banner);
       this.txtDivs = $('.texts .text', this.banner);
+      this.imgCreDivs = $('.texts .image-credit', this.banner);
 
       this.imgDivs.eq(this.start).css('background-image', 'url(' + this.imgDivs.eq(this.start).data('img-src') + ')');
       this.imgDivs.eq(this.start).addClass('current').show();
 
       this.txtDivs.eq(this.start).addClass('current').fadeIn(this.duration);
+
+      this.imgCreDivs.eq(this.start).addClass('current').fadeIn(this.duration);
 
       this.txtDivs.find('.inner').on('mouseenter', function(){
         $('.shape', this.banner).addClass('hover');
@@ -98,6 +101,7 @@ new Scrollmagic();
     showImage: function(i){
       var $now = this.imgDivs.eq(i);
       var $txt = this.txtDivs.eq(i);
+      var $imgcre = this.imgCreDivs.eq(i);
       var that = this;
 
       this.reIndex();
@@ -109,10 +113,13 @@ new Scrollmagic();
 
           that.imgDivs.removeClass('current');
           that.txtDivs.removeClass('current').fadeOut(that.duration);
+          that.imgCreDivs.removeClass('current').fadeOut(that.duration);
 
           $now.css('z-index', 10).fadeIn(that.duration).addClass('current');
 
           $txt.hide().fadeIn(that.duration).addClass('current');
+
+          $imgcre.hide().fadeIn(that.duration).addClass('current');
 
           if ($(window).width() > 768) {
             // Shapes
@@ -369,3 +376,13 @@ $(searchForm).keydown(function(e) {
     searchClose(searchButton, searchForm);
    }
 });
+
+let $body = $("body");
+if ($body.hasClass('path-news')) {
+  if($('.panels.main-container .view-display-id-news_listing_page nav .pagination')[0]
+      || $('.panels.main-container.view-display-id-whats_on nav .pagination')[0] ) {
+    $('.panels.main-container .view-footer').css('margin-bottom', '2rem');
+  } else {
+    $('.panels.main-container .view-footer').css('margin-bottom', '6rem');
+  }
+}
