@@ -1955,7 +1955,7 @@ h1.accent {
 
 .image-courtesy {
   font-family: 'Open Sans', sans-serif;
-  font-size: 18px !important;
+  font-size: 15px !important;
   color: #fff;
   margin-top: -10rem;
   padding-left: 15px; }
@@ -2014,12 +2014,12 @@ h1.accent {
     border-top-color: #208379; }
   .icon1 svg {
     color: #fff;
-    width: 55px !important;
-    height: 55px;
+    width: 50px !important;
+    height: 50px;
     position: absolute;
     z-index: 10;
-    top: 40px;
-    left: -27px; }
+    top: 43px;
+    left: -24px; }
   .icon1:hover {
     -webkit-filter: brightness(120%);
             filter: brightness(120%);
@@ -2051,12 +2051,12 @@ h1.accent {
     border-top-color: #0E0E8B; }
   .icon2 svg {
     color: #fff;
-    width: 55px !important;
-    height: 55px;
+    width: 50px !important;
+    height: 50px;
     position: absolute;
     z-index: 10;
-    top: 40px;
-    left: -27px; }
+    top: 43px;
+    left: -24px; }
   .icon2:hover {
     -webkit-filter: brightness(120%);
             filter: brightness(120%);
@@ -2088,12 +2088,12 @@ h1.accent {
     border-top-color: #D14600; }
   .icon3 svg {
     color: #fff;
-    width: 55px !important;
-    height: 55px;
+    width: 50px !important;
+    height: 50px;
     position: absolute;
     z-index: 10;
-    top: 40px;
-    left: -27px; }
+    top: 43px;
+    left: -24px; }
   .icon3:hover {
     -webkit-filter: brightness(120%);
             filter: brightness(120%);
@@ -2738,8 +2738,8 @@ img.blur {
     text-align: center; }
   .panels.main-container .view-display-id-news_listing_page nav .pagination {
     margin-bottom: 0;
-    padding-bottom: 8rem;
-    margin-top: 2rem;
+    padding-bottom: 6rem;
+    margin-top: 0;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -2866,6 +2866,28 @@ img.blur {
       margin-top: 4rem;
       font-weight: 500;
       letter-spacing: 1px; }
+  .panels.main-container .view-display-id-whats_on nav .pagination {
+    margin-bottom: 0;
+    padding-bottom: 6rem;
+    margin-top: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: #208379; }
+    .panels.main-container .view-display-id-whats_on nav .pagination li {
+      width: 32px;
+      text-align: center;
+      margin: 0 2px; }
+    .panels.main-container .view-display-id-whats_on nav .pagination .page-link {
+      border-radius: 50%;
+      border: none;
+      padding: 0.4rem 0.75rem;
+      font-family: "Rubik", sans-serif;
+      font-weight: 500; }
+    .panels.main-container .view-display-id-whats_on nav .pagination .page-item:first-child .page-link {
+      border: none; }
+    .panels.main-container .view-display-id-whats_on nav .pagination .page-item.active .page-link {
+      background-color: #208379; }
   .panels.main-container .view-header,
   .panels.main-container .view-footer {
     font-size: 14px;
@@ -2873,28 +2895,6 @@ img.blur {
     font-family: 'Open Sans', sans-serif; }
   .panels.main-container .view-footer {
     text-align: center; }
-  .panels.main-container nav .pagination {
-    margin-bottom: 0;
-    padding-bottom: 8rem;
-    margin-top: 2rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    color: #208379; }
-    .panels.main-container nav .pagination li {
-      width: 32px;
-      text-align: center;
-      margin: 0 2px; }
-    .panels.main-container nav .pagination .page-link {
-      border-radius: 50%;
-      border: none;
-      padding: 0.4rem 0.75rem;
-      font-family: "Rubik", sans-serif;
-      font-weight: 500; }
-    .panels.main-container nav .pagination .page-item:first-child .page-link {
-      border: none; }
-    .panels.main-container nav .pagination .page-item.active .page-link {
-      background-color: #208379; }
 
 .node--type-news #main-wrapper,
 .node--type-event #main-wrapper,
@@ -4584,12 +4584,12 @@ nav.tabs {
         border-top-color: #4C4C8B; }
       .oppo-footer .oppo-icons .icon-blue1 svg {
         color: #fff;
-        width: 55px !important;
-        height: 55px;
+        width: 50px !important;
+        height: 50px;
         position: absolute;
         z-index: 10;
-        top: 40px;
-        left: -27px; }
+        top: 43px;
+        left: -24px; }
       .oppo-footer .oppo-icons .icon-blue1:hover {
         -webkit-filter: brightness(120%);
                 filter: brightness(120%);
@@ -4620,12 +4620,12 @@ nav.tabs {
         border-top-color: #0E0E8B; }
       .oppo-footer .oppo-icons .icon-blue2 svg {
         color: #fff;
-        width: 55px !important;
-        height: 55px;
+        width: 50px !important;
+        height: 50px;
         position: absolute;
         z-index: 10;
-        top: 40px;
-        left: -27px; }
+        top: 43px;
+        left: -24px; }
       .oppo-footer .oppo-icons .icon-blue2:hover {
         -webkit-filter: brightness(120%);
                 filter: brightness(120%);
@@ -4656,12 +4656,12 @@ nav.tabs {
         border-top-color: #090958; }
       .oppo-footer .oppo-icons .icon-blue3 svg {
         color: #fff;
-        width: 55px !important;
-        height: 55px;
+        width: 50px !important;
+        height: 50px;
         position: absolute;
         z-index: 10;
-        top: 40px;
-        left: -27px; }
+        top: 43px;
+        left: -24px; }
       .oppo-footer .oppo-icons .icon-blue3:hover {
         -webkit-filter: brightness(120%);
                 filter: brightness(120%);
@@ -4773,7 +4773,8 @@ nav.tabs {
   padding: 0;
   margin-top: 4rem; }
   .node--type-contact.node--view-mode-full .field--name-field-bottom-content .container p {
-    font-size: 18px; }
+    font-size: 18px;
+    margin-bottom: 0; }
 
 .node--type-contact.node--view-mode-full .field--name-field-bottom-content .time-title {
   font-family: "Rubik", sans-serif;
@@ -5246,8 +5247,8 @@ nav.tabs {
 
 .path-search .panels.main-container nav .pagination {
   margin-bottom: 0;
-  padding-bottom: 8rem;
-  margin-top: 2rem;
+  padding-bottom: 6rem;
+  margin-top: 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
