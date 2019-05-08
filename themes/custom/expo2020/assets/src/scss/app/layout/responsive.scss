@@ -653,6 +653,18 @@
   body h2 {
     font-size: 2rem;
   }
+  .node--type-home-page {
+    #slide1 {
+      .animatable {
+        p {
+          color: $primary-blue;
+        }
+      }
+    }
+  }
+  .image-courtesy {
+    padding-left: 30px;
+  }
   .latest-news {
     .news-section {
       margin-bottom: 2rem;

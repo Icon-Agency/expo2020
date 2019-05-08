@@ -275,7 +275,7 @@
     margin-bottom: 0;
   }
   a {
-    border-bottom-color: $primary-brown;
+    border-bottom: 3px solid $primary-brown;
     &:hover, &:active {
       color: $primary-brown;
     }
