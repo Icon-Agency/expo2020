@@ -386,6 +386,8 @@
   }
   .inline-partner-logo {
     margin: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
     img {
       &:hover {
         opacity: 0.7;
