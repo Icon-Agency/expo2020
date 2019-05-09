@@ -8,6 +8,7 @@
   transition: all 0.4s ease;
   z-index: 1020;
   top: 0 !important;
+  border-bottom: 2px solid $gray-100;
 
   .header-row {
     margin-left: $grid-gutter-width/2;
@@ -89,7 +90,7 @@
               height: .333rem;
               width: 110%;
               left: -5%;
-              bottom: -42px;
+              bottom: -44px;
             }
           }
 
@@ -102,13 +103,13 @@
               height: .333rem;
               width: 110%;
               left: -5%;
-              bottom: -42px;
+              bottom: -44px;
             }
           }
         }
         ul {
           li {
-            margin-top: 1.4rem;
+            margin-top: 1.5rem;
             a {
               box-shadow: none;
               background-color: $white;
