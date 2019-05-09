@@ -1676,7 +1676,6 @@ td.is-active {
   padding-top: 2rem;
   font-size: 14px;
   color: #adb5bd;
-  background-color: #fff;
   position: relative;
   font-family: 'Open Sans', sans-serif; }
   #block-expo2020-breadcrumbs .breadcrumb-item + .breadcrumb-item::before {
@@ -2973,6 +2972,11 @@ img.blur {
 .node--type-page.node--view-mode-full p {
   font-family: 'Open Sans', sans-serif; }
 
+.node--type-news.node--view-mode-full .news-article-view-content-left p,
+.node--type-page.node--view-mode-full .news-article-view-content-left p {
+  line-height: 1.75;
+  margin-bottom: 1.75rem; }
+
 .node--type-news.node--view-mode-full .news-article-view-content-right .field--name-field-label,
 .node--type-page.node--view-mode-full .news-article-view-content-right .field--name-field-label {
   color: #FF6519;
@@ -2988,6 +2992,9 @@ img.blur {
     color: #fff;
     font-size: 14px;
     font-family: "Work Sans", sans-serif; }
+  .node--type-news.node--view-mode-full .news-article-view-content-right .field--name-field-enquiries-contact .field--name-body,
+  .node--type-page.node--view-mode-full .news-article-view-content-right .field--name-field-enquiries-contact .field--name-body {
+    margin-bottom: 0; }
 
 #block-socialsharingblock .social-media-sharing {
   margin-top: 3rem;
@@ -4395,7 +4402,7 @@ nav.tabs {
     background-size: contain;
     position: relative;
     top: 20%;
-    height: auto;
+    height: 30rem;
     width: auto;
     padding: 8rem 6rem; }
     #parallax-container .pavilion-shape .btn {
@@ -4872,7 +4879,7 @@ nav.tabs {
   background-image: url(/themes/custom/expo2020/assets/dist/images/twitter-bg.png);
   background-repeat: repeat-x;
   background-size: contain;
-  margin-top: 5rem; }
+  margin-top: 7rem; }
 
 .node--type-themes.node--view-mode-full .field {
   margin-bottom: 0; }
@@ -6000,4 +6007,7 @@ nav.tabs {
 
 .node--type-sponsors-partners-landing-page.node--view-mode-full .pavilion-welcome {
   padding-bottom: 5rem; }
+
+.showcase {
+  margin-bottom: 12.5rem; }
 
