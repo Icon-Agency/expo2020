@@ -410,6 +410,14 @@
   p {
     font-family: 'Open Sans', sans-serif;
   }
+
+  .news-article-view-content-left {
+    p {
+      line-height: 1.75;
+      margin-bottom: 1.75rem;
+    }
+  }
+
   .news-article-view-content-right {
     .field--name-field-label {
       color: $primary-orange;
@@ -423,6 +431,9 @@
         color: $white;
         font-size: 14px;
         font-family: $font-family-work-sans;
+      }
+      .field--name-body {
+        margin-bottom: 0;
       }
     }
   }
