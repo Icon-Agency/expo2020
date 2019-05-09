@@ -152,6 +152,11 @@ body {
   background-color: $primary-brown;
   border-color: $primary-brown;
   color: $gray-1000;
+  &:hover {
+    background-color: $countdown-brown;
+    border-color: $countdown-brown;
+    color: $white;
+  }
 }
 
 .font-weight-semibold {

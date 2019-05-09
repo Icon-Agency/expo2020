@@ -12,6 +12,41 @@
   }
 }
 
+@media (max-width: 1900px) {
+  .block-views-blockmedia-listing-latest1-featured-news {
+    #parallax-container {
+      .col-xl-3 {
+        max-width: 33.3333333333%;
+      }
+      .pavilion-shape-news {
+        right: -16%;
+      }
+    }
+  }
+
+  .node--type-sponsors-partners-landing-page,
+  #block-whatsonheader {
+    #parallax-container {
+      .whats-on-shape {
+        right: -29%;
+      }
+    }
+  }
+
+  #block-themesheader {
+    #parallax-container {
+      .col-xl-3 {
+        max-width: 30%;
+      }
+      .pavilion-layer-top-news {
+        .whats-on-shape {
+          right: -30%;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 1440px) {
   .node--type-sponsors-partners-landing-page,
   #block-whatsonheader {
