@@ -127,17 +127,32 @@
   .view-display-id-latest_1_featured_middle_news {
     margin: 5rem 0;
     @include feature-card($primary-orange, $media-card, 'no-bg-img');
+
+    .news-type-icon {
+      @include type-icon($primary-orange);
+      top: 12rem;
+      left: -1.5rem;
+    }
+
     .views-row {
       a {
         .container .row {
           &:hover {
-            box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
+            .news-type-icon {
+              background-color: $icon-orange;
+            }
+            .featured-middle-right {
+              border-bottom: 3px solid $icon-orange;
+            }
           }
         }
       }
     }
+    .featured-middle-right {
+      margin-left: -3rem;
+    }
     .featured-middle-content {
-      font-weight: 600;
+      font-weight: 300;
       font-size: 18px;
     }
     .featured-middle-date {
