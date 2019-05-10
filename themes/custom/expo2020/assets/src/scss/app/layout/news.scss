@@ -6,7 +6,7 @@
   position: relative;
   z-index: 100;
   .news-section {
-    margin-bottom: 4rem;
+    padding-bottom: 4rem;
     padding-top: 3rem;
   }
   .news-header {
@@ -186,6 +186,7 @@
 }
 
 .latest-news {
+  background-color: $white;
   .view-footer {
     display: none;
   }
@@ -233,6 +234,10 @@
           @include type-filter-links($icon-orange);
           padding: 0.5rem;
           font-size: 14px;
+          &:nth-child(4) {
+            padding-left: 6.5px;
+            padding-right: 6.5px;
+          }
           .fa-twitter {
             padding-top: 10px;
           }
