@@ -33,6 +33,9 @@
 #}
 
 {% if row._entity.field_news_media_type[0].entity.name.value and row._entity.field_news_media_type[0].entity.name.value|lower == 'twitter' %}
+  {% if fields.field_twitter_post_id.content %}
+      <a target="_blank" href="{{ fields.field_twitter_post_id.content|striptags|replace({'\n':'', '\r':'', ' ':''}) }}">
+  {% endif %}
   <div class="news-type-twitter-outer">
     <div class="news-type-twitter-top-container">
       {% if row._entity.field_news_media_type[0].entity.field_fontawesome_icon.value %}
@@ -61,6 +64,9 @@
       {% endif %}
     </div>
   </div>
+  {% if fields.field_twitter_post_id.content %}
+    </a>
+  {% endif %}
 {% else %}
 
   {% if fields.view_node.content %}
