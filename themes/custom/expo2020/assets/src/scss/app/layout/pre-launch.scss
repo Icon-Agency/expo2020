@@ -20,9 +20,16 @@
   margin-bottom: 0;
 }
 
-.node--type-contact .breadcrumb-n-title-container {
-  height: 100px;
+.node--type-contact {
+  .breadcrumb-n-title-container {
+    height: 100px;
+  }
+
+  .field--name-field-bottom-content {
+    margin-bottom: 5rem;
+  }
 }
+
 
 .field--name-field-multi-s-n-p-listing {
   > .field__item {
