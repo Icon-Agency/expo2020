@@ -95,32 +95,47 @@
   </header>
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
 
-    {% if content.field_subtitle[0] %}
-      {{ content.field_subtitle }}
-    {% endif %}
+    <div class="container">
+      {% if breadcrumbs %}
+        {{ breadcrumbs }}
+      {% endif %}
+      {% if content.field_subtitle[0] %}
+        {{ content.field_subtitle }}
+      {% endif %}
 
-    <h1{{ title_attributes.addClass('node__title') }}>
-      {{ label }}
-    </h1>
+      <h1{{ title_attributes.addClass('node__title') }}>
+        {{ label }}
+      </h1>
 
+      {% if content.field_media[0] and not node.field_hide_featured_img_on_ctnt.value %}
+        {{ content.field_media }}
+      {% endif %}
+    </div>
+
+    <div class="container">
     {% if content.field_enquiries_contact[0] %}
-    <div class="row">
-      <div class="col-lg-8 news-article-view-content-left">
-        {% if content.body[0] %}
-          {{ content.body }}
-        {% endif %}
-      </div>
-
-      <div class="col-lg-3 offset-lg-1 news-article-view-content-right">
-          {{ content.field_enquiries_contact }}
-      </div>
+        <div class="row">
+          <div class="col-lg-8 news-article-view-content-left">
+            {% if content.body[0] %}
+              {{ content.body }}
+            {% endif %}
+          </div>
+          <div class="col-lg-3 offset-lg-1 news-article-view-content-right">
+            {{ content.field_enquiries_contact }}
+          </div>
     </div>
     {% else %}
       {% if content.body[0] %}
         {{ content.body }}
       {% endif %}
     {% endif %}
+    </div>
 
+    <div class="container">
+      {% if content.field_multi_text_after_gallery[0] %}
+        {{ content.field_multi_text_after_gallery }}
+      {% endif %}
+    </div>
 
   </div>
 </article>

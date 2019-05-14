@@ -110,6 +110,7 @@ function expo2020_preprocess_page(&$variables) {
     'themes',
     'media_landing_page',
     'sponsors_partners_landing_page',
+    'page',
   ];
   if (!empty($node)){
     if (in_array($node->bundle(), $content_types_without_content_container)){
@@ -121,6 +122,7 @@ function expo2020_preprocess_page(&$variables) {
       'media_landing_page',
       'themes',
       'sponsors_partners_landing_page',
+      'page',
     ];
 
     if (in_array($node->bundle(),$types_without_bc) && isset($variables['page']['content']['expo2020_breadcrumbs'])){
@@ -713,6 +715,7 @@ function expo2020_preprocess_node(&$variables) {
     'media_landing_page',
     'themes',
     'sponsors_partners_landing_page',
+    'page',
   ];
 
   if (!empty($variables['node'])
