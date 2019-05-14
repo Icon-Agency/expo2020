@@ -1975,10 +1975,13 @@ h1.accent {
 .dark-credit {
   color: #58534F !important; }
 
+.footer-section {
+  background-color: #fff;
+  position: relative; }
+
 /* join us in Dubai */
 .showcase {
-  margin-top: 10rem;
-  margin-bottom: 10rem; }
+  margin-top: 10rem; }
   .showcase .row {
     margin-top: 6rem;
     margin-left: 6rem;
@@ -6091,5 +6094,5 @@ nav.tabs {
   padding-bottom: 5rem; }
 
 .showcase {
-  margin-bottom: 12.5rem; }
+  padding-bottom: 12.5rem; }
 
