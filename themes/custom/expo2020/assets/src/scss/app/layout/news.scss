@@ -51,6 +51,18 @@
         .event-type-icon {
           background-color: $icon-green;
         }
+        .news-type-twitter-name {
+          position: relative;
+          &:after {
+            position: absolute;
+            content: ' ';
+            background: $twitter-blue;
+            height: 2px;
+            width: 45%;
+            left: 80px;
+            bottom: 0;
+          }
+        }
       }
     }
     .news-type-icon {
