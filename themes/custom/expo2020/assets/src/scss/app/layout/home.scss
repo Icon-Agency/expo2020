@@ -248,10 +248,15 @@ h1.accent {
   color: $grey-dark !important;
 }
 
+.footer-section {
+  background-color: $white;
+  position: relative;
+}
+
 /* join us in Dubai */
 .showcase {
   margin-top: 10rem;
-  margin-bottom: 10rem;
+  //margin-bottom: 10rem;
   .row {
     margin-top: 6rem;
     margin-left: 6rem;
