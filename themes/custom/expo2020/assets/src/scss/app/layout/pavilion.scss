@@ -154,7 +154,8 @@
 #block-partnerslandingpageheader,
 #block-themesheader,
 #block-whatsonheader,
-#block-ourvisionheader {
+#block-ourvisionheader,
+#block-testbasiccontentpagetopheader {
   #parallax-container {
     height: 600px;
     .parallax-banner {
@@ -166,7 +167,8 @@
 }
 #block-whatsonheader,
 #block-themesheader,
-#block-ourvisionheader {
+#block-ourvisionheader,
+#block-testbasiccontentpagetopheader {
   width: 100%;
   height: 100%;
   #parallax-container {
@@ -186,7 +188,8 @@
 }
 #block-partnerslandingpageheader,
 #block-whatsonheader,
-#block-ourvisionheader {
+#block-ourvisionheader,
+#block-testbasiccontentpagetopheader {
   #parallax-container {
     .pavilion-layer-top-news {
       .whats-on-shape {
@@ -328,7 +331,8 @@
   padding-left: 6rem;
 }
 
-#block-ourvisionheader {
+#block-ourvisionheader,
+#block-testbasiccontentpagetopheader {
   #parallax-container {
     .whats-on-shape-under {
       right: -49.5%;

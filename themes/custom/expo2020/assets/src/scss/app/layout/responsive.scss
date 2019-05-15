@@ -34,7 +34,8 @@
   }
 
   #block-themesheader,
-  #block-ourvisionheader {
+  #block-ourvisionheader,
+  #block-testbasiccontentpagetopheader {
     #parallax-container {
       .col-xl-3 {
         max-width: 30%;
@@ -83,7 +84,8 @@
     }
   }
   #block-themesheader,
-  #block-ourvisionheader {
+  #block-ourvisionheader,
+  #block-testbasiccontentpagetopheader {
     #parallax-container {
       .col-xl-3 {
         max-width: 41.666667%;
@@ -195,7 +197,8 @@
   }
 
   #block-themesheader,
-  #block-ourvisionheader {
+  #block-ourvisionheader,
+  #block-testbasiccontentpagetopheader {
     #parallax-container {
       .col-xl-3 {
         max-width: 52%;
@@ -212,7 +215,8 @@
     }
   }
 
-  #block-ourvisionheader {
+  #block-ourvisionheader,
+  #block-testbasiccontentpagetopheader {
     #parallax-container {
       .pavilion-layer-top-news {
         .whats-on-shape {
@@ -270,7 +274,9 @@
   .node--type-themes.node--view-mode-full .field--name-field-multi-text-after-gallery .feature-card-blue .col-md-6:last-child {
     padding: 2rem;
   }
-  .node--view-mode-themes-our-vision .themes-over-vision-content-after-slider .field--name-field-txt-area-befr-galry-slider .col-md-6:last-child {
+  .node--view-mode-themes-our-vision .themes-over-vision-content-after-slider .field--name-field-txt-area-befr-galry-slider .col-md-6:last-child,
+  .node--type-page.node--view-mode-full .field--name-field-multi-text-after-gallery .field__item:nth-child(2) .feature-card-blue .col-md-6:last-child,
+  .node--type-page.node--view-mode-full .field--name-field-multi-text-after-gallery .field__item:nth-child(3) .feature-card-blue .col-md-6:first-child {
     padding: 3rem;
   }
   .news-article-view-content-right {
@@ -454,7 +460,8 @@
   #block-themesheader,
   #block-partnerslandingpageheader,
   #block-whatsonheader,
-  #block-ourvisionheader {
+  #block-ourvisionheader,
+  #block-testbasiccontentpagetopheader {
     #parallax-container {
       height: auto;
       .parallax-banner.content-banner {
@@ -517,7 +524,8 @@
       border-bottom: 2px solid $primary-orange;
     }
   }
-  #block-ourvisionheader {
+  #block-ourvisionheader,
+  #block-testbasiccontentpagetopheader {
     .whats-on-shape {
       border-bottom: 2px solid $primary-blue;
     }

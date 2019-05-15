@@ -7,37 +7,39 @@
     overflow-x: hidden;
   }
 }
-
-.node--type-page.node--view-mode-full {
-  h1 {
-    color: $primary-blue;
-  }
-  h2 {
-    font-size: 1.5rem;
-    color: $gray-700;
-  }
-  h3 {
-    font-family: $font-family-rubik;
-    font-size: 18px;
-    color: $primary-orange;
-  }
-  .field--name-field-subtitle {
-    color: $primary-orange;
-    font-family: $font-family-rubik;
-    margin-top: 4rem;
-  }
-  .field--type-text-with-summary {
-    margin-bottom: 5rem;
-  }
-  .news-article-view-content-left,
-  .news-article-view-content-right {
-    margin-top: 2rem;
-    margin-bottom: 7rem;
-    p {
-      font-family: 'Open Sans', sans-serif;
+.node--type-news {
+  .node--type-page.node--view-mode-full {
+    h1 {
+      color: $primary-blue;
+    }
+    h2 {
+      font-size: 1.5rem;
+      color: $gray-700;
+    }
+    h3 {
+      font-family: $font-family-rubik;
+      font-size: 18px;
+      color: $primary-orange;
+    }
+    .field--name-field-subtitle {
+      color: $primary-orange;
+      font-family: $font-family-rubik;
+      margin-top: 4rem;
+    }
+    .field--type-text-with-summary {
+      margin-bottom: 5rem;
+    }
+    .news-article-view-content-left,
+    .news-article-view-content-right {
+      margin-top: 2rem;
+      margin-bottom: 7rem;
+      p {
+        font-family: 'Open Sans', sans-serif;
+      }
     }
   }
 }
+
 
 .node--type-contact {
   .breadcrumb-n-title-container {
@@ -572,4 +574,87 @@
       }
     }
   }
+}
+
+//template
+.node--type-page {
+  .main-content {
+    .region.region-content-top {
+      display: block;
+      margin: 0;
+    }
+  }
+}
+.node--type-page.node--view-mode-full {
+  h3, h5 {
+    color: $primary-blue;
+  }
+
+  .field--name-field-multi-text-after-gallery {
+    .field__item:nth-child(2) {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      .feature-card-blue {
+        padding-left: 15px;
+        padding-right: 15px;
+        @include feature-card($primary-blue, url('~@/images/feature-bg2.png'), 'bg-img');
+        .col-md-6:first-child {
+          img {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .field__item:nth-child(3) {
+      padding-top: 3rem;
+      padding-bottom: 6rem;
+      .feature-card-blue {
+        padding-left: 15px;
+        padding-right: 15px;
+        .col-md-6:first-child {
+          background-image: url('~@/images/feature-bg2.png');
+          padding: 5rem;
+          .text-top {
+            font-size: 24px;
+            font-weight: 600;
+          }
+          .text-middle {
+            font-family: 'Open Sans', sans-serif;
+          }
+          .text-bottom {
+            font-family: $font-family-rubik;
+            font-weight: 500;
+            position: absolute;
+            bottom: 1rem;
+          }
+        }
+        .col-md-6:last-child {
+          .embedded-entity {
+            margin-bottom: 0;
+            width: 100%;
+            height: 100%;
+          }
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit:cover;
+            margin: 0;
+          }
+        }
+      }
+    }
+    @include pavilion-welcome($primary-blue, $white);
+    .pavilion-welcome {
+      padding: 6rem 0;
+      .btn {
+        &:hover {
+          color: $primary-orange;
+          background-color: $icon-blue3;
+          border-color: $icon-blue3;
+        }
+      }
+    }
+  }
+
 }
