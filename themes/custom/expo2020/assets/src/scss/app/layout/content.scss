@@ -507,3 +507,69 @@
     }
   }
 }
+
+//our vision
+.node--view-mode-themes-our-vision {
+  .themes-over-vision-content-under-top-content {
+    background-image: url('~@/images/angles-background-blue.svg');
+    background-repeat: no-repeat;
+    background-position: center right;
+
+    .field--name-field-text-area-under-top-banner {
+      text-align: center;
+      padding: 5rem;
+
+      &.field {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .themes-slider {
+    background-image: url('~@/images/background-860h-lightblue-terrain.svg');
+    background-repeat: repeat-x;
+    background-size: contain;
+
+    .field {
+      margin-bottom: 0;
+    }
+
+    .slick-dotted.slick-slider {
+      margin-bottom: 0;
+    }
+  }
+
+  .themes-over-vision-content-after-slider {
+    background-image: url('~@/images/background-860h-lightblue-terrain.svg');
+
+    .field--name-field-txt-area-befr-galry-slider {
+      padding: 7rem 0;
+      @include feature-card($primary-blue, $white, 'no-bg-img');
+
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .field--name-field-multi-text-after-gallery {
+    padding: 7rem 0;
+
+    @extend .oppo-footer;
+    @include pavilion-welcome($primary-blue, $white);
+
+    .pavilion-welcome {
+      .pavilion-welcome-text {
+        padding-top: 6rem;
+      }
+    }
+
+    .btn {
+      &:hover {
+        color: $primary-orange;
+        background-color: $icon-blue3;
+        border-color: $icon-blue3;
+      }
+    }
+  }
+}
