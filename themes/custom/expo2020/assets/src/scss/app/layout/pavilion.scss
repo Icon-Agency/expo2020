@@ -331,6 +331,20 @@
   padding-left: 6rem;
 }
 
+#block-views-block-media-listing-latest1-featured-news {
+  #parallax-container {
+    .pavilion-layer-top-news {
+      .pavilion-shape-news {
+        padding: 3rem 10rem 9rem 5rem;
+
+        .news-listing-featured-news-date {
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+}
+
 #block-ourvisionheader,
 #block-testbasiccontentpagetopheader {
   #parallax-container {
