@@ -5499,6 +5499,13 @@ nav.tabs {
 .node--type-page.node--view-mode-full h3, .node--type-page.node--view-mode-full h5 {
   color: #0E0E8B; }
 
+.node--type-page.node--view-mode-full .field--name-field-subtitle {
+  font-family: 'Rubik', sans-serif;
+  text-transform: uppercase;
+  color: #FF6519;
+  font-weight: 500;
+  letter-spacing: 1px; }
+
 .node--type-page.node--view-mode-full .field--name-field-multi-text-after-gallery .field__item:nth-child(2) {
   padding-top: 3rem;
   padding-bottom: 3rem; }
@@ -5556,16 +5563,18 @@ nav.tabs {
         font-weight: 500;
         position: absolute;
         bottom: 1rem; }
-    .node--type-page.node--view-mode-full .field--name-field-multi-text-after-gallery .field__item:nth-child(3) .feature-card-blue .col-md-6:last-child .embedded-entity {
-      margin-bottom: 0;
-      width: 100%;
-      height: 100%; }
-    .node--type-page.node--view-mode-full .field--name-field-multi-text-after-gallery .field__item:nth-child(3) .feature-card-blue .col-md-6:last-child img {
-      height: 100%;
-      width: 100%;
-      -o-object-fit: cover;
-         object-fit: cover;
-      margin: 0; }
+    .node--type-page.node--view-mode-full .field--name-field-multi-text-after-gallery .field__item:nth-child(3) .feature-card-blue .col-md-6:last-child {
+      padding: 0; }
+      .node--type-page.node--view-mode-full .field--name-field-multi-text-after-gallery .field__item:nth-child(3) .feature-card-blue .col-md-6:last-child .embedded-entity {
+        margin-bottom: 0;
+        width: 100%;
+        height: 100%; }
+      .node--type-page.node--view-mode-full .field--name-field-multi-text-after-gallery .field__item:nth-child(3) .feature-card-blue .col-md-6:last-child img {
+        height: 100%;
+        width: 100%;
+        -o-object-fit: cover;
+           object-fit: cover;
+        margin: 0; }
 
 .node--type-page.node--view-mode-full .field--name-field-multi-text-after-gallery .pavilion-welcome {
   background-color: #fff;
