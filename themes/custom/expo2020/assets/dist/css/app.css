@@ -5192,6 +5192,13 @@ nav.tabs {
 .node--type-sponsors-partners-landing-page.node--view-mode-full .field {
   margin-bottom: 0; }
 
+.node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .partners-with-background:last-child .inline-partner-logo {
+  border: 1px solid #D2D4D6;
+  background-color: #fff;
+  padding: 1rem; }
+  .node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .partners-with-background:last-child .inline-partner-logo:hover {
+    border: 1px solid #0E0E8B; }
+
 .node--type-sponsors-partners-landing-page.node--view-mode-full .pavilion-welcome {
   background-color: #fff;
   padding: 7rem 0 9.5rem 0; }
@@ -5423,16 +5430,15 @@ nav.tabs {
       margin-bottom: 0; }
 
 .node--view-mode-themes-our-vision .themes-slider {
-  background-image: url(/themes/custom/expo2020/assets/dist/images/background-860h-lightblue-terrain.svg);
-  background-repeat: repeat-x;
-  background-size: contain; }
+  background-image: url(/themes/custom/expo2020/assets/dist/images/our-vision-gallery-bg.svg); }
   .node--view-mode-themes-our-vision .themes-slider .field {
     margin-bottom: 0; }
   .node--view-mode-themes-our-vision .themes-slider .slick-dotted.slick-slider {
     margin-bottom: 0; }
 
 .node--view-mode-themes-our-vision .themes-over-vision-content-after-slider {
-  background-image: url(/themes/custom/expo2020/assets/dist/images/background-860h-lightblue-terrain.svg); }
+  background-image: url(/themes/custom/expo2020/assets/dist/images/background-860h-lightblue-terrain.svg);
+  background-position: 0 -30px; }
   .node--view-mode-themes-our-vision .themes-over-vision-content-after-slider .field--name-field-txt-area-befr-galry-slider {
     padding: 7rem 0; }
     .node--view-mode-themes-our-vision .themes-over-vision-content-after-slider .field--name-field-txt-area-befr-galry-slider h3 {
