@@ -287,6 +287,20 @@
   .field {
     margin-bottom: 0;
   }
+
+  .field--name-field-multi-s-n-p-listing {
+    .partners-with-background:last-child {
+      .inline-partner-logo {
+        border: 1px solid $countdown-gray;
+        background-color: $white;
+        padding: 1rem;
+        &:hover {
+          border: 1px solid $primary-blue;
+        }
+      }
+    }
+  }
+
   @include pavilion-welcome($primary-blue, $white);
   .pavilion-welcome {
     padding: 0;
@@ -528,9 +542,7 @@
   }
 
   .themes-slider {
-    background-image: url('~@/images/background-860h-lightblue-terrain.svg');
-    background-repeat: repeat-x;
-    background-size: contain;
+    background-image: url('~@/images/our-vision-gallery-bg.svg');
 
     .field {
       margin-bottom: 0;
@@ -543,6 +555,7 @@
 
   .themes-over-vision-content-after-slider {
     background-image: url('~@/images/background-860h-lightblue-terrain.svg');
+    background-position: 0 -30px;
 
     .field--name-field-txt-area-befr-galry-slider {
       padding: 7rem 0;
