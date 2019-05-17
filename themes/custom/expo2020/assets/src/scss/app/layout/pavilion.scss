@@ -329,6 +329,7 @@
 .node--type-opportunities #parallax-container .pavilion-shape {
   padding-top: 3rem;
   padding-left: 6rem;
+  height: auto;
 }
 
 #block-views-block-media-listing-latest1-featured-news {
@@ -345,7 +346,27 @@
   }
 }
 
-#block-ourvisionheader,
+#block-ourvisionheader {
+  #parallax-container {
+    .whats-on-shape-under {
+      right: -49.5%;
+      top: 4rem;
+    }
+    .pavilion-layer-top-news {
+      .whats-on-shape {
+        @extend .pavilion-shape-news;
+        right: -22%;
+        background-image: url('~@/images/shape-vision-white.png');
+        padding: 6rem 6rem 7rem;
+
+        h2 {
+          color: $primary-blue;
+        }
+      }
+    }
+  }
+}
+
 #block-testbasiccontentpagetopheader {
   #parallax-container {
     .whats-on-shape-under {

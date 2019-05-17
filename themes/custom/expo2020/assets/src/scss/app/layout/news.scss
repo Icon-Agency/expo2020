@@ -263,13 +263,16 @@
               margin-top: 2px;
               border-radius: 0;
               height: calc(1.5em + 0.75rem + 1px);
+              border: none;
+              border-top: 1px solid $gray-100;
+              border-bottom: 1px solid $gray-100;
+              border-left: 1px solid $gray-100;
             }
           }
           #edit-submit-media-listing {
             margin-top: 2px;
             height: calc(1.5em + 0.75rem + 4px);
-            width: 32%;
-            margin-left: 0.5rem;
+            width: 40%;
             padding: 0 0.5rem;
             background-color: $white;
             border-color: $icon-orange;
