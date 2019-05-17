@@ -215,7 +215,6 @@
     }
   }
 
-  #block-ourvisionheader,
   #block-testbasiccontentpagetopheader {
     #parallax-container {
       .pavilion-layer-top-news {
@@ -226,6 +225,20 @@
       }
     }
   }
+  #block-ourvisionheader {
+    .whats-on-shape-under {
+      height: 23rem;
+    }
+    #parallax-container {
+      .pavilion-layer-top-news {
+        .whats-on-shape {
+          padding: 6rem 6rem 7rem;
+          right: -40%;
+        }
+      }
+    }
+  }
+
   .node--type-opportunities {
     #parallax-container {
       .pavilion-shape {
