@@ -5335,6 +5335,8 @@ nav.tabs {
     margin-bottom: auto; }
     .view-id-sponsors_partners_views_listing .inline-partner-logo img:hover {
       opacity: 0.7; }
+  .view-id-sponsors_partners_views_listing.view-display-id-sponsors > .view-content > .row {
+    width: 100%; }
 
 .region-messages {
   position: relative;
