@@ -410,6 +410,14 @@
       }
     }
   }
+
+  &.view-display-id-sponsors{
+    & >.view-content{
+      & > .row{
+        width: 100%;
+      }
+    }
+  }
 }
 
 //message
