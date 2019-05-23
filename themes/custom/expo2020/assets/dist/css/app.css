@@ -1799,6 +1799,15 @@ td.is-active {
     font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     text-shadow: 1px 1px 1px #e9ecef; }
+  .parallax-banner .image-credit-partner {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 10;
+    color: #6c757d;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    text-shadow: 1px 1px 1px #e9ecef; }
   .parallax-banner .angled-mask {
     z-index: 1;
     position: absolute;
@@ -5215,11 +5224,18 @@ nav.tabs {
 .node--type-sponsors-partners-landing-page.node--view-mode-full .field {
   margin-bottom: 0; }
 
-.node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .partners-with-background:last-child .inline-partner-logo {
+.node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .partners-with-background:last-child .view-content,
+.node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .view-display-id-official_providers .view-content {
+  margin-right: -15px;
+  margin-left: -15px; }
+
+.node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .partners-with-background:last-child .inline-partner-logo,
+.node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .view-display-id-official_providers .inline-partner-logo {
   border: 1px solid #D2D4D6;
   background-color: #fff;
   padding: 1rem; }
-  .node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .partners-with-background:last-child .inline-partner-logo:hover {
+  .node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .partners-with-background:last-child .inline-partner-logo:hover,
+  .node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .view-display-id-official_providers .inline-partner-logo:hover {
     border: 1px solid #0E0E8B; }
 
 .node--type-sponsors-partners-landing-page.node--view-mode-full .pavilion-welcome {
@@ -5353,6 +5369,9 @@ nav.tabs {
 .region-messages {
   position: relative;
   z-index: 5; }
+  .region-messages .alert-wrapper {
+    position: absolute;
+    margin-top: 5rem; }
 
 .node--type-opportunities #parallax-container .pavilion-shape {
   background-image: url(/themes/custom/expo2020/assets/dist/images/oppo-shape.svg); }
@@ -6075,7 +6094,10 @@ nav.tabs {
   .slick-slide .video-play-icon {
     left: 45.5%; }
   .footer-right-outer-container .field--type-text-with-summary .input-group .form-trigger.submit {
-    height: calc(2.5em + 1rem + 4px); } }
+    height: calc(2.5em + 1rem + 4px); }
+  .panels.main-container .view-display-id-news_listing_page .view-filters .views-exposed-form .news-type-filter-links {
+    margin-right: 5px;
+    padding: 0.5rem; } }
 
 @media (max-width: 767.98px) {
   #parallax-container .pavilion-layer-top-news .news-listing-featured-title {
@@ -6354,9 +6376,6 @@ nav.tabs {
       margin-top: -7px; }
   #parallax-container .pavilion-layer-top-news .news-listing-featured-title {
     font-size: 1.5rem; }
-  .panels.main-container .view-display-id-news_listing_page .view-filters .views-exposed-form .news-type-filter-links {
-    margin-right: 5px;
-    padding: 0.5rem; }
   .view-display-id-news_listing_page .view-display-id-latest_1_featured_middle_news .featured-middle-date {
     margin-top: 2rem; }
   #block-expo2020countdown #expo-2020-countdown {
