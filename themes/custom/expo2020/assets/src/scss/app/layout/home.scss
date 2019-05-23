@@ -36,6 +36,16 @@
     font-size: 12px;
     text-shadow: 1px 1px 1px $gray-200;
   }
+  .image-credit-partner {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 10;
+    color: $gray-600;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    text-shadow: 1px 1px 1px $gray-200;
+  }
   .angled-mask{
     z-index: 1;
     position: absolute;

@@ -294,7 +294,12 @@
   }
 
   .field--name-field-multi-s-n-p-listing {
-    .partners-with-background:last-child {
+    .partners-with-background:last-child,
+    .view-display-id-official_providers {
+      .view-content {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
       .inline-partner-logo {
         border: 1px solid $countdown-gray;
         background-color: $white;
@@ -429,6 +434,10 @@
 .region-messages {
   position: relative;
   z-index: 5;
+  .alert-wrapper {
+    position: absolute;
+    margin-top: 5rem;
+  }
 }
 
 .node--type-opportunities {
