@@ -1241,6 +1241,14 @@
   .btn {
     height: auto;
   }
+  .node--type-sponsors-partners-landing-page.node--view-mode-full {
+    .partner-listing-small-card {
+      .upper-container {
+        padding: 0;
+      }
+    }
+  }
+
 }
 
 @media only screen and (max-width: 380px) {
