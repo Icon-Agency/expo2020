@@ -52,3 +52,14 @@
 .showcase {
   padding-bottom: 12.5rem;
 }
+
+@media (max-width: 576px) {
+  .showcase {
+    margin-top: 5rem;
+    padding-bottom: 2rem;
+  }
+
+  .partners {
+    padding-top: 5rem;
+  }
+}

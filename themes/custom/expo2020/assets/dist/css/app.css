@@ -1706,7 +1706,8 @@ td.is-active {
     color: #adb5bd; }
 
 .node--type-pavilion-landing-page #block-expo2020-breadcrumbs,
-.node--type-opportunities #block-expo2020-breadcrumbs {
+.node--type-opportunities #block-expo2020-breadcrumbs,
+.node--type-home-page #block-expo2020-breadcrumbs {
   display: none; }
 
 #block-expo2020countdown {
@@ -3847,7 +3848,6 @@ img.blur {
     .menu--quick-menu-news-and-events nav li {
       position: relative;
       width: 100%;
-      min-height: 1px;
       padding-right: 15px;
       padding-left: 15px;
       width: unset;
@@ -3965,7 +3965,6 @@ label + small.description {
   .context--stories-search .region-content-search .filter-text {
     position: relative;
     width: 100%;
-    min-height: 1px;
     padding-right: 15px;
     padding-left: 15px; }
     @media (min-width: 576px) {
@@ -3980,7 +3979,6 @@ label + small.description {
 .context--stories-search .region-content-search .block {
   position: relative;
   width: 100%;
-  min-height: 1px;
   padding-right: 15px;
   padding-left: 15px; }
   @media (min-width: 576px) {
@@ -4024,7 +4022,6 @@ label + small.description {
 .context--news-search .region-content-search .block {
   position: relative;
   width: 100%;
-  min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
   -webkit-box-flex: 0;
@@ -4049,7 +4046,7 @@ label + small.description {
   .webform-submission-form .form-select {
     padding-top: .75rem;
     padding-bottom: .75rem;
-    height: calc(2.78125rem + 2px); }
+    height: calc(1.5em + 1rem + 2px); }
   .webform-submission-form .intro {
     border-radius: 0.5rem;
     background-color: #fff;
@@ -4400,6 +4397,8 @@ nav.tabs {
       overflow: hidden;
       height: 100%;
       min-height: 400px; }
+  #block-bean-homepage-banner .parallax-div {
+    margin-top: 0 !important; }
   #block-bean-homepage-banner .h-100 {
     height: auto !important; }
   #block-bean-homepage-banner .shape,
@@ -4807,6 +4806,9 @@ nav.tabs {
         color: #292A2E;
         font-weight: 500;
         line-height: 1.3; }
+    .pavilion-last-section .pavilion-welcome img {
+      width: 100%;
+      height: 100%; }
     .pavilion-last-section .pavilion-welcome .btn {
       color: #fff; }
   .pavilion-last-section .btn:hover {
@@ -5118,6 +5120,9 @@ nav.tabs {
         color: #292A2E;
         font-weight: 500;
         line-height: 1.3; }
+    .node--type-themes.node--view-mode-full .field--name-field-multi-text-after-gallery .field__item:last-child .pavilion-welcome img {
+      width: 100%;
+      height: 100%; }
     .node--type-themes.node--view-mode-full .field--name-field-multi-text-after-gallery .field__item:last-child .pavilion-welcome .btn {
       color: #0E0E8B; }
   .node--type-themes.node--view-mode-full .field--name-field-multi-text-after-gallery .field__item:last-child .pavilion-welcome .btn:hover {
@@ -5231,6 +5236,9 @@ nav.tabs {
       color: #292A2E;
       font-weight: 500;
       line-height: 1.3; }
+  .node--type-sponsors-partners-landing-page.node--view-mode-full .pavilion-welcome img {
+    width: 100%;
+    height: 100%; }
   .node--type-sponsors-partners-landing-page.node--view-mode-full .pavilion-welcome .btn {
     color: #fff; }
 
@@ -5332,11 +5340,11 @@ nav.tabs {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    margin: 1rem 0; }
+    margin: 1rem 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
   .view-id-sponsors_partners_views_listing .inline-partner-logo {
-    margin: 1rem;
-    margin-top: auto;
-    margin-bottom: auto; }
+    margin: 1rem; }
     .view-id-sponsors_partners_views_listing .inline-partner-logo img:hover {
       opacity: 0.7; }
   .view-id-sponsors_partners_views_listing.view-display-id-sponsors > .view-content > .row {
@@ -5509,6 +5517,9 @@ nav.tabs {
         color: #292A2E;
         font-weight: 500;
         line-height: 1.3; }
+    .node--view-mode-themes-our-vision .field--name-field-multi-text-after-gallery .pavilion-welcome img {
+      width: 100%;
+      height: 100%; }
     .node--view-mode-themes-our-vision .field--name-field-multi-text-after-gallery .pavilion-welcome .btn {
       color: #fff; }
   .node--view-mode-themes-our-vision .field--name-field-multi-text-after-gallery .pavilion-welcome .pavilion-welcome-text {
@@ -5616,6 +5627,9 @@ nav.tabs {
       color: #292A2E;
       font-weight: 500;
       line-height: 1.3; }
+  .node--type-page.node--view-mode-full .field--name-field-multi-text-after-gallery .pavilion-welcome img {
+    width: 100%;
+    height: 100%; }
   .node--type-page.node--view-mode-full .field--name-field-multi-text-after-gallery .pavilion-welcome .btn {
     color: #fff; }
 
@@ -6119,8 +6133,6 @@ nav.tabs {
   .slick-slide .video-play-icon {
     left: 43.5%;
     width: 60px; }
-  .slick-dots {
-    top: 12.5rem; }
   .slick-prev,
   .slick-next {
     top: 40%; }
@@ -6152,7 +6164,8 @@ nav.tabs {
     .pavilion-last-section .pavilion-welcome .col-md-6 {
       padding: 0 2rem; }
     .pavilion-last-section .pavilion-welcome img {
-      width: 100%; }
+      width: 100%;
+      height: 100%; }
     .pavilion-last-section .pavilion-welcome .pavilion-welcome-text {
       padding-top: 0; }
   .content-outer-wrap {
@@ -6276,11 +6289,16 @@ nav.tabs {
   .view-id-sponsors_partners_views_listing .five-items-wrap {
     display: block;
     width: auto;
-    text-align: center; }
+    text-align: center;
+    margin: auto; }
   .view-id-sponsors_partners_views_listing .inline-partner-logo {
     margin: 2rem; }
   .node--type-contact .breadcrumb-n-title-container img {
-    height: 500px; } }
+    height: 500px; }
+  .news-view-latest-news-bottom h2 {
+    margin-top: 2rem; }
+  .news-view-latest-news-bottom .news .news-lower-container {
+    padding: 3rem; } }
 
 @media only screen and (max-width: 480px) {
   body h1 {
@@ -6313,8 +6331,6 @@ nav.tabs {
   .slick-slide .field--name-field-image-credit {
     padding-right: 0.5rem;
     font-size: 12px; }
-  .slick-dots {
-    top: 8.5rem; }
   .slick-prev,
   .slick-next {
     top: 35%; }
@@ -6392,4 +6408,11 @@ nav.tabs {
 
 .showcase {
   padding-bottom: 12.5rem; }
+
+@media (max-width: 576px) {
+  .showcase {
+    margin-top: 5rem;
+    padding-bottom: 2rem; }
+  .partners {
+    padding-top: 5rem; } }
 
