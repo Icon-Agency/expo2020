@@ -3,9 +3,18 @@
     top: 80px !important;
   }
   &.node--type-pavilion-landing-page,
-  &.node--type-opportunities {
+  &.node--type-opportunities,
+  &.node--type-home-page {
     #parallax-container .parallax-div {
       position: absolute;
+    }
+  }
+  &.node--type-home-page {
+    #parallax-container .parallax-div {
+      margin-top: 0 !important;
+    }
+    .parallax-banner .angled-mask.home-angle {
+      bottom: 0;
     }
   }
   .view-display-id-latest1_featured_news,

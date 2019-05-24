@@ -1799,6 +1799,15 @@ td.is-active {
     font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     text-shadow: 1px 1px 1px #e9ecef; }
+  .parallax-banner .image-credit-partner {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 10;
+    color: #6c757d;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    text-shadow: 1px 1px 1px #e9ecef; }
   .parallax-banner .angled-mask {
     z-index: 1;
     position: absolute;
@@ -1811,7 +1820,8 @@ td.is-active {
     background-repeat: no-repeat;
     margin-bottom: -2px; }
     .parallax-banner .angled-mask.home-angle {
-      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQwIDEyNC44Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjtmaWxsLXJ1bGU6ZXZlbm9kZDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPjIwMjBfQW5nbGVGcmFtZUhvbWVBc3NldCA5PC90aXRsZT48ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPjxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIyNTQuMTIgMCA5MzEuNzYgODQuNzggMTE4NS44OCA4NC43OCAxNDQwIDAgMTQ0MCAxMjQuOCAwIDEyNC44IDAgODQuNzggMjU0LjEyIDAiLz48L2c+PC9nPjwvc3ZnPg==); }
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQwIDEyNC44Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjtmaWxsLXJ1bGU6ZXZlbm9kZDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPjIwMjBfQW5nbGVGcmFtZUhvbWVBc3NldCA5PC90aXRsZT48ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iTGF5ZXJfMS0yIiBkYXRhLW5hbWU9IkxheWVyIDEiPjxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIyNTQuMTIgMCA5MzEuNzYgODQuNzggMTE4NS44OCA4NC43OCAxNDQwIDAgMTQ0MCAxMjQuOCAwIDEyNC44IDAgODQuNzggMjU0LjEyIDAiLz48L2c+PC9nPjwvc3ZnPg==);
+      bottom: 30px; }
     .parallax-banner .angled-mask.pavillion-angle {
       background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQwIDEyNC44Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjtmaWxsLXJ1bGU6ZXZlbm9kZDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPjIwMjBfQW5nbGVGcmFtZVBhdmlsaW9uMjJBc3NldCAxMTwvdGl0bGU+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMCAwIDI1NSAyMCA0NjUgODggMTE4NSAwIDE0NDAgMCAxNDQwIDEyNC44IDAgMTI0LjggMCAwIi8+PC9nPjwvZz48L3N2Zz4=); }
     .parallax-banner .angled-mask.opportunities-angle {
@@ -4427,8 +4437,14 @@ nav.tabs {
 .user-logged-in #header {
   top: 80px !important; }
 
-.user-logged-in.node--type-pavilion-landing-page #parallax-container .parallax-div, .user-logged-in.node--type-opportunities #parallax-container .parallax-div {
+.user-logged-in.node--type-pavilion-landing-page #parallax-container .parallax-div, .user-logged-in.node--type-opportunities #parallax-container .parallax-div, .user-logged-in.node--type-home-page #parallax-container .parallax-div {
   position: absolute; }
+
+.user-logged-in.node--type-home-page #parallax-container .parallax-div {
+  margin-top: 0 !important; }
+
+.user-logged-in.node--type-home-page .parallax-banner .angled-mask.home-angle {
+  bottom: 0; }
 
 .user-logged-in .view-display-id-latest1_featured_news #parallax-container .parallax-div,
 .user-logged-in #block-partnerslandingpageheader #parallax-container .parallax-div {
@@ -4856,8 +4872,8 @@ nav.tabs {
     color: #0E0E8B; }
 
 .view-empty {
-  margin-top: 5em;
-  margin-bottom: 3em; }
+  padding-top: 5em;
+  padding-bottom: 3em; }
 
 .path-news #main-wrapper,
 .path-whats-on #main-wrapper,
@@ -5215,11 +5231,18 @@ nav.tabs {
 .node--type-sponsors-partners-landing-page.node--view-mode-full .field {
   margin-bottom: 0; }
 
-.node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .partners-with-background:last-child .inline-partner-logo {
+.node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .partners-with-background:last-child .view-content,
+.node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .view-display-id-official_providers .view-content {
+  margin-right: -15px;
+  margin-left: -15px; }
+
+.node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .partners-with-background:last-child .inline-partner-logo,
+.node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .view-display-id-official_providers .inline-partner-logo {
   border: 1px solid #D2D4D6;
   background-color: #fff;
   padding: 1rem; }
-  .node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .partners-with-background:last-child .inline-partner-logo:hover {
+  .node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .partners-with-background:last-child .inline-partner-logo:hover,
+  .node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .view-display-id-official_providers .inline-partner-logo:hover {
     border: 1px solid #0E0E8B; }
 
 .node--type-sponsors-partners-landing-page.node--view-mode-full .pavilion-welcome {
@@ -5353,6 +5376,9 @@ nav.tabs {
 .region-messages {
   position: relative;
   z-index: 5; }
+  .region-messages .alert-wrapper {
+    position: absolute;
+    margin-top: 5rem; }
 
 .node--type-opportunities #parallax-container .pavilion-shape {
   background-image: url(/themes/custom/expo2020/assets/dist/images/oppo-shape.svg); }
@@ -6075,7 +6101,10 @@ nav.tabs {
   .slick-slide .video-play-icon {
     left: 45.5%; }
   .footer-right-outer-container .field--type-text-with-summary .input-group .form-trigger.submit {
-    height: calc(2.5em + 1rem + 4px); } }
+    height: calc(2.5em + 1rem + 4px); }
+  .panels.main-container .view-display-id-news_listing_page .view-filters .views-exposed-form .news-type-filter-links {
+    margin-right: 5px;
+    padding: 0.5rem; } }
 
 @media (max-width: 767.98px) {
   #parallax-container .pavilion-layer-top-news .news-listing-featured-title {
@@ -6354,9 +6383,6 @@ nav.tabs {
       margin-top: -7px; }
   #parallax-container .pavilion-layer-top-news .news-listing-featured-title {
     font-size: 1.5rem; }
-  .panels.main-container .view-display-id-news_listing_page .view-filters .views-exposed-form .news-type-filter-links {
-    margin-right: 5px;
-    padding: 0.5rem; }
   .view-display-id-news_listing_page .view-display-id-latest_1_featured_middle_news .featured-middle-date {
     margin-top: 2rem; }
   #block-expo2020countdown #expo-2020-countdown {
@@ -6367,7 +6393,9 @@ nav.tabs {
   .node--type-contact .breadcrumb-n-title-container img {
     height: 400px; }
   .btn {
-    height: auto; } }
+    height: auto; }
+  .node--type-sponsors-partners-landing-page.node--view-mode-full .partner-listing-small-card .upper-container {
+    padding: 0; } }
 
 @media only screen and (max-width: 380px) {
   .view-id-sponsors_partners_views_listing .inline-partner-logo {
