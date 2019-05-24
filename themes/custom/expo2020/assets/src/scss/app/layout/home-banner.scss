@@ -152,7 +152,7 @@
     }
 
     .texts{
-      padding: $spacer*3 0;
+      padding: $spacer*1;
       background-image: url('~@/images/texture.svg');
       background-repeat: no-repeat;
       background-size: cover;
@@ -160,13 +160,12 @@
       position: relative;
       top: auto;
       left: auto;
-      height: auto;
+      height: 200px;
 
       .text,
       .inner{
-        position: relative;
+        position: absolute;
         top: auto;
-        left: auto;
         height: auto;
         padding: 0;
       }
@@ -174,6 +173,14 @@
       .text{
         text-align: center;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #block-bean-homepage-banner {
+    .texts {
+      height: 150px;
     }
   }
 }
