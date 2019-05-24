@@ -4415,7 +4415,7 @@ nav.tabs {
   #block-bean-homepage-banner .spacer {
     display: none !important; }
   #block-bean-homepage-banner .texts {
-    padding: 3rem 0;
+    padding: 1rem;
     background-image: url(/themes/custom/expo2020/assets/dist/images/texture.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -4423,16 +4423,19 @@ nav.tabs {
     position: relative;
     top: auto;
     left: auto;
-    height: auto; }
+    height: 200px; }
     #block-bean-homepage-banner .texts .text,
     #block-bean-homepage-banner .texts .inner {
-      position: relative;
+      position: absolute;
       top: auto;
-      left: auto;
       height: auto;
       padding: 0; }
     #block-bean-homepage-banner .texts .text {
       text-align: center; } }
+
+@media only screen and (max-width: 480px) {
+  #block-bean-homepage-banner .texts {
+    height: 150px; } }
 
 .user-logged-in #header {
   top: 80px !important; }
@@ -6395,7 +6398,7 @@ nav.tabs {
   .btn {
     height: auto; }
   .node--type-sponsors-partners-landing-page.node--view-mode-full .partner-listing-small-card .upper-container {
-    padding: 0; } }
+    padding: 1rem 0; } }
 
 @media only screen and (max-width: 380px) {
   .view-id-sponsors_partners_views_listing .inline-partner-logo {
