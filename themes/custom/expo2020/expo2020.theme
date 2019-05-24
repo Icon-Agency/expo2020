@@ -4,6 +4,7 @@
  * @file
  * Functions to support theming in the SASS Starterkit subtheme.
  */
+
 use Drupal\Core\Link;
 use Drupal\block\Entity\Block;
 use Drupal\Core\Template\Attribute;
@@ -17,8 +18,7 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
  *
  * Replace Barrio setting options with subtheme ones.
  */
-function expo2020_form_system_theme_settings_alter(&$form, FormStateInterface $form_state)
-{
+function expo2020_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
   unset($form['affix']);
   unset($form['fonts']);
   unset($form['components']['navbar']);
@@ -27,9 +27,9 @@ function expo2020_form_system_theme_settings_alter(&$form, FormStateInterface $f
 /**
  * Implements hook_preprocess_html();
  */
-function expo2020_preprocess_html(&$variables)
-{
-  $exception = \Drupal::requestStack()->getCurrentRequest()->attributes->get('exception');
+function expo2020_preprocess_html(&$variables) {
+  $exception = \Drupal::requestStack()
+                      ->getCurrentRequest()->attributes->get('exception');
   if ($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
     $variables['attributes']['class'][] = 'error-page';
   }
@@ -44,7 +44,8 @@ function expo2020_preprocess_page(&$variables) {
 
   if ($dev) {
     $libs = ['expo2020/dev-global-styling'];
-  } else {
+  }
+  else {
     $libs = ['expo2020/global-styling'];
   }
 
@@ -68,9 +69,9 @@ function expo2020_preprocess_page(&$variables) {
   $menus = ["main", "portal"];
 
   $combined_tree = [];
-  $menu_tree     = \Drupal::menuTree();
-  $parameters    = $menu_tree->getCurrentRouteMenuTreeParameters(trim($menus[0]));
-  $manipulators  = [
+  $menu_tree = \Drupal::menuTree();
+  $parameters = $menu_tree->getCurrentRouteMenuTreeParameters(trim($menus[0]));
+  $manipulators = [
     // Show links to nodes that are accessible for the current user.
     ['callable' => 'menu.default_tree_manipulators:checkNodeAccess'],
     // Only show links that are accessible for the current user.
@@ -83,14 +84,14 @@ function expo2020_preprocess_page(&$variables) {
   $parameters->expandedParents = [];
   // Iterate over the menus and merge them together.
   foreach ($menus as $menu_name) {
-    $tree_items       = $menu_tree->load(trim($menu_name), $parameters);
+    $tree_items = $menu_tree->load(trim($menu_name), $parameters);
     $tree_manipulated = $menu_tree->transform($tree_items, $manipulators);
-    $combined_tree    = array_merge($combined_tree, $tree_manipulated);
+    $combined_tree = array_merge($combined_tree, $tree_manipulated);
   }
 
   $menu = $menu_tree->build($combined_tree);
 
-  $menu['#theme']     = 'menu__mobile';
+  $menu['#theme'] = 'menu__mobile';
   $menu['#menu_name'] = 'mobile';
 
   $variables['mobile_menu'] = [
@@ -112,8 +113,8 @@ function expo2020_preprocess_page(&$variables) {
     'sponsors_partners_landing_page',
     'page',
   ];
-  if (!empty($node)){
-    if (in_array($node->bundle(), $content_types_without_content_container)){
+  if (!empty($node)) {
+    if (in_array($node->bundle(), $content_types_without_content_container)) {
       $variables['add_content_outer_wrap'] = FALSE;
     }
 
@@ -125,32 +126,35 @@ function expo2020_preprocess_page(&$variables) {
       'page',
     ];
 
-    if (in_array($node->bundle(),$types_without_bc) && isset($variables['page']['content']['expo2020_breadcrumbs'])){
+    if (in_array($node->bundle(), $types_without_bc) && isset($variables['page']['content']['expo2020_breadcrumbs'])) {
       unset($variables['page']['content']['expo2020_breadcrumbs']);
     }
-  }else{
+  }
+  else {
     $current_path = \Drupal::service('path.current')->getPath();
-    $result = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+    $result = \Drupal::service('path.alias_manager')
+                     ->getAliasByPath($current_path);
 
     $path_aliases_without_container = [
-      '/search'
+      '/search',
     ];
 
-    if (in_array($result, $path_aliases_without_container)){
+    if (in_array($result, $path_aliases_without_container)) {
       $variables['add_content_outer_wrap'] = FALSE;
     }
 
     $path_aliases_without_bc = [
-      '/search'
+      '/search',
     ];
 
-    if (in_array($result,$path_aliases_without_bc) && isset($variables['page']['content']['expo2020_breadcrumbs'])){
+    if (in_array($result, $path_aliases_without_bc) && isset($variables['page']['content']['expo2020_breadcrumbs'])) {
       unset($variables['page']['content']['expo2020_breadcrumbs']);
     }
   }
 
   $route_name = \Drupal::routeMatch()->getRouteName();
-  if (\Drupal::routeMatch()->getRouteName() == 'system.404' && isset($variables['page']['content']['expo2020_content'])){
+  if (\Drupal::routeMatch()
+             ->getRouteName() == 'system.404' && isset($variables['page']['content']['expo2020_content'])) {
     $variables['page']['content']['expo2020_content'] = [
       '#markup' => '<div class="page-not-found-content mt-5 mb-5"><h2>This page can not be found</h2><br><a href="/">Click here to go back to the home page.</a></div>',
     ];
@@ -160,8 +164,7 @@ function expo2020_preprocess_page(&$variables) {
 /**
  * Implements hook_preprocess_block().
  */
-function expo2020_preprocess_block(&$variables)
-{
+function expo2020_preprocess_block(&$variables) {
   $element_content = $variables['elements']['content'];
   $content = &$variables['content'];
 
@@ -169,18 +172,18 @@ function expo2020_preprocess_block(&$variables)
     if (isset($variables['content']['block_description'][0][0])) {
       // Fix up the block title
       $false_title = $variables['content']['block_description'][0][0]['#markup'];
-      $replaced    = preg_replace('/(<h[0-9]>)(.*?)(<\/h[0-9]>)/i', '$1' . $variables['label'] . '$3', $false_title);
+      $replaced = preg_replace('/(<h[0-9]>)(.*?)(<\/h[0-9]>)/i', '$1' . $variables['label'] . '$3', $false_title);
       // Replace the content
       $variables['content']['block_description'][0][0]['#markup'] = $replaced;
       // Hide original
-      $variables['label'] = null;
+      $variables['label'] = NULL;
     }
   }
 
   if ($variables['base_plugin_id'] === 'menu_block' && !empty($variables['elements']['#id'])) {
     $block = Block::load($variables['elements']['#id']);
     // Add so we can subtheme the block suggestions on this region
-    $variables['content']['#menu_block_configuration']['region']          = $block->getRegion();
+    $variables['content']['#menu_block_configuration']['region'] = $block->getRegion();
     $variables['content']['#menu_block_configuration']['top_level_title'] = _expo2020_get_top_menu_title();
   }
 
@@ -260,9 +263,9 @@ function expo2020_preprocess_block(&$variables)
           ],
         ],
         'minutes'     => [
-          '#type'       => 'container',
-          '#attributes' => [
-            'class'     => ['countdown-item', 'colour-orange'],
+          '#type'         => 'container',
+          '#attributes'   => [
+            'class' => ['countdown-item', 'colour-orange'],
           ],
           'minutes_num'   => [
             '#type'       => 'container',
@@ -293,9 +296,9 @@ function expo2020_preprocess_block(&$variables)
           ],
         ],
         'seconds'     => [
-          '#type'       => 'container',
-          '#attributes' => [
-            'class'     => ['countdown-item', 'colour-brown'],
+          '#type'         => 'container',
+          '#attributes'   => [
+            'class' => ['countdown-item', 'colour-brown'],
           ],
           'seconds_num'   => [
             '#type'       => 'container',
@@ -320,10 +323,10 @@ function expo2020_preprocess_block(&$variables)
 
 /**
  * Returns the title of the top level menu item for the current node.
+ *
  * @return Link
  */
-function _expo2020_get_top_menu_title()
-{
+function _expo2020_get_top_menu_title() {
   $result = &drupal_static(__FUNCTION__);
 
   if (is_null($result)) {
@@ -335,10 +338,11 @@ function _expo2020_get_top_menu_title()
 
     if (!empty($menu_items)) {
       $menu_item = reset($menu_items);
-      $url       = $menu_item->link->getUrlObject();
-      $title     = $menu_item->link->getTitle();
-      $result    = Link::fromTextAndUrl($title, $url);
-    } else {
+      $url = $menu_item->link->getUrlObject();
+      $title = $menu_item->link->getTitle();
+      $result = Link::fromTextAndUrl($title, $url);
+    }
+    else {
       $result = [];
     }
   }
@@ -348,11 +352,11 @@ function _expo2020_get_top_menu_title()
 
 /**
  * @param $menu
+ *
  * @return \Drupal\Core\Menu\MenuLinkTreeElement
  */
-function _expo2020_get_top_menu_title_for_menu($menu)
-{
-  $menu_tree  = Drupal::menuTree();
+function _expo2020_get_top_menu_title_for_menu($menu) {
+  $menu_tree = Drupal::menuTree();
   $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu);
   $parameters->setTopLevelOnly();
 
@@ -368,18 +372,18 @@ function _expo2020_get_top_menu_title_for_menu($menu)
 /**
  * Implements hook_theme_suggestions_block_alter().
  */
-function expo2020_theme_suggestions_block_alter(array &$suggestions, array $variables)
-{
+function expo2020_theme_suggestions_block_alter(array &$suggestions, array $variables) {
   $elements = $variables['elements'];
 
-  $region = null;
+  $region = NULL;
 
   if (!empty($elements['#base_plugin_id']) && !empty($elements['#configuration']['region']) && !empty($elements['#configuration']['view_mode'])) {
     array_unshift($suggestions, 'block__region_' . $elements['#configuration']['region']);
     $suggestions[] = 'block__region_' . $elements['#configuration']['region'] . '__' . $elements['#base_plugin_id'];
     $suggestions[] = 'block__region_' . $elements['#configuration']['region'] . '__' . $elements['#base_plugin_id'] . '__' . $elements['#configuration']['view_mode'];
 
-  } elseif (!empty($elements['#id'])) {
+  }
+  elseif (!empty($elements['#id'])) {
     $block = Block::load($elements['#id']);
     // Add suggestions
     array_unshift($suggestions, 'block__region_' . $block->getRegion());
@@ -389,7 +393,7 @@ function expo2020_theme_suggestions_block_alter(array &$suggestions, array $vari
   if (!empty($elements['#base_plugin_id'])) {
     switch ($elements['#base_plugin_id']) {
       case 'block_content':
-        if ($bundle = $elements['content']['#bundle'] ?? null) {
+        if ($bundle = $elements['content']['#bundle'] ?? NULL) {
           $suggestions[] = 'block__bundle_' . $bundle;
           $suggestions[] = 'block__bundle_' . $bundle . '__' . $elements['#derivative_plugin_id'];
         }
@@ -405,18 +409,18 @@ function expo2020_theme_suggestions_block_alter(array &$suggestions, array $vari
 
     $block__block_content_count = 0;
 
-    foreach ($suggestions as $suggestion){
-      if ($suggestion == 'block__block_content'){
+    foreach ($suggestions as $suggestion) {
+      if ($suggestion == 'block__block_content') {
         $block__block_content_count++;
       }
     }
 
-    if($block__block_content_count !== 0){
-      foreach ($suggestions as $suggestion){
+    if ($block__block_content_count !== 0) {
+      foreach ($suggestions as $suggestion) {
         $new_suggestions[] = $suggestion;
-        if ($suggestion == 'block__block_content'){
+        if ($suggestion == 'block__block_content') {
           $block__block_content_count--;
-          if ($block__block_content_count == 0){
+          if ($block__block_content_count == 0) {
             $new_suggestions[] = "block__block_bundle__{$bundle}";
           }
         }
@@ -432,8 +436,7 @@ function expo2020_theme_suggestions_block_alter(array &$suggestions, array $vari
 /**
  * Implements hook_theme_suggestions_region_alter().
  */
-function expo2020_theme_suggestions_region_alter(array &$suggestions, array $variables)
-{
+function expo2020_theme_suggestions_region_alter(array &$suggestions, array $variables) {
   if (!empty($variables['elements']['#region'])) {
     if ($variables['elements']['#region'] === 'sidebar_search') {
       if ($display_id = \Drupal::routeMatch()->getParameter('display_id')) {
@@ -448,8 +451,7 @@ function expo2020_theme_suggestions_region_alter(array &$suggestions, array $var
 /**
  * Implements hook_theme_suggestions_field_alter().
  */
-function expo2020_theme_suggestions_field_alter(array &$suggestions, array $variables)
-{
+function expo2020_theme_suggestions_field_alter(array &$suggestions, array $variables) {
   $element = $variables['element'];
 
   $suggestions[] = 'field__' . $element['#view_mode'];
@@ -464,10 +466,9 @@ function expo2020_theme_suggestions_field_alter(array &$suggestions, array $vari
 /**
  * Implements hook_theme_suggestions_menu_alter().
  */
-function expo2020_theme_suggestions_menu_alter(array &$suggestions, array $variables)
-{
+function expo2020_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
   if (isset($variables['menu_block_configuration']['region'])) {
-    $region        = $variables['menu_block_configuration']['region'];
+    $region = $variables['menu_block_configuration']['region'];
     $suggestions[] = 'menu__' . $variables['menu_name'] . '__' . $region;
   }
 }
@@ -475,8 +476,7 @@ function expo2020_theme_suggestions_menu_alter(array &$suggestions, array $varia
 /**
  * Implements hook_theme_suggestions_item_list_alter().
  */
-function expo2020_theme_suggestions_item_list_alter(array &$suggestions, array $variables)
-{
+function expo2020_theme_suggestions_item_list_alter(array &$suggestions, array $variables) {
   if (!empty($variables['attributes']['class'])) {
     if (in_array('sub-menu--side', $variables['attributes']['class'])) {
       $suggestions[] = 'item_list__sub_menu__side';
@@ -490,8 +490,7 @@ function expo2020_theme_suggestions_item_list_alter(array &$suggestions, array $
 /**
  * Implements hook_theme_suggestions_form_element_alter().
  */
-function expo2020_theme_suggestions_form_element_alter(array &$suggestions, array $variables)
-{
+function expo2020_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
   if (!empty($variables['element']['#parents'])) {
     $parents = $variables['element']['#parents'];
     array_pop($parents);
@@ -509,11 +508,11 @@ function expo2020_theme_suggestions_form_element_alter(array &$suggestions, arra
 /**
  * Implements hook_theme_suggestions_form_element_alter().
  */
-function expo2020_theme_suggestions_datetime_form_alter(array &$suggestions, array $variables)
-{
+function expo2020_theme_suggestions_datetime_form_alter(array &$suggestions, array $variables) {
   if (!empty($variables['element']['#webform_key'])) {
     $suggestions[] = 'datetime_form__webform__' . $variables['element']['#webform_key'];
-  }}
+  }
+}
 
 /**
  * Implements template_preprocess_views_exposed_form().
@@ -521,7 +520,7 @@ function expo2020_theme_suggestions_datetime_form_alter(array &$suggestions, arr
 function expo2020_preprocess_views_exposed_form(&$variables) {
   $form =& $variables['form'];
 
-  if ( $form['#id'] == 'views-exposed-form-media-listing-news-listing-page'){
+  if ($form['#id'] == 'views-exposed-form-media-listing-news-listing-page') {
 
     _expo2020_convert_taxonomy_type_select_to_links($form, 'news');
 
@@ -548,7 +547,7 @@ function expo2020_preprocess_views_exposed_form(&$variables) {
     _expo2020_convert_taxonomy_type_select_to_links($form, 'event');
 
     $form['title_links_search'] = [
-      '#type' => 'container',
+      '#type'       => 'container',
       '#attributes' => [
         'class' => [
           'event-listing-title-links-search',
@@ -556,13 +555,13 @@ function expo2020_preprocess_views_exposed_form(&$variables) {
       ],
 
       'title' => [
-        '#type' => 'container',
+        '#type'       => 'container',
         '#attributes' => [
           'class' => [
             'event-listing-title',
           ],
         ],
-        '#markup' => '<h2>What\'s on</h2>',
+        '#markup'     => '<h2>What\'s on</h2>',
       ],
 
       'type_filter_links' => $form['type_filter_links'],
@@ -573,53 +572,53 @@ function expo2020_preprocess_views_exposed_form(&$variables) {
     unset($form['type_filter_links']);
 
     $form['field_event_date_value']['max']['#title'] = new TranslatableMarkup('to');
-    
+
     $form['actions']['#attributes']['data-toggle'] = 'tooltip';
     $form['actions']['#attributes']['title'] = "Please fill both 'from' and 'to' filters to search events successfully.";
     $form['actions']['#attributes']['data-placement'] = 'right';
 
     $form['date_n_submit'] = [
-      '#type' => 'container',
+      '#type'       => 'container',
       '#attributes' => [
         'class' => [
           'event-listing-date-n-submit',
         ],
       ],
-      'date_outer' => [
-        '#type' => 'container',
+      'date_outer'  => [
+        '#type'       => 'container',
         '#attributes' => [
           'class' => [
             'event-listing-date-outer-wrapper',
           ],
         ],
-        'Browse_by' => [
-          '#type' => 'container',
+        'Browse_by'   => [
+          '#type'       => 'container',
           '#attributes' => [
             'class' => [
               'event-listing-date-label',
             ],
           ],
-          '#markup' => '<i class="fas fa-calendar-alt"></i> BROWSE BY DATE',
+          '#markup'     => '<i class="fas fa-calendar-alt"></i> BROWSE BY DATE',
         ],
 
         'field_event_date_value' => $form['field_event_date_value'],
       ],
-      'actions' => $form['actions'],
+      'actions'     => $form['actions'],
     ];
 
     unset($form['field_event_date_value']);
     unset($form['actions']);
   }
 
-  if ( $form['#id'] == 'views-exposed-form-search-api-db-search-api-db'){
-    if (isset($form['actions']) && isset($form['keys'])){
+  if ($form['#id'] == 'views-exposed-form-search-api-db-search-api-db') {
+    if (isset($form['actions']) && isset($form['keys'])) {
       $form['actions']['#access'] = FALSE;
       $form['keys']['#theme_wrappers'] = ['global_fulltext_search_theme_wrapper'];
     }
   }
 }
 
-function expo2020_preprocess_views_view(&$vars){
+function expo2020_preprocess_views_view(&$vars) {
   if (isset($vars['id'])
       && $vars['id'] == 'search_api_db'
       && isset($vars['display_id'])
@@ -627,25 +626,25 @@ function expo2020_preprocess_views_view(&$vars){
     $block_manager = \Drupal::service('plugin.manager.block');
     $plugin_block = $block_manager->createInstance('system_breadcrumb_block');
 
-    $vars['breadcrumbs'] =  $plugin_block->build();
+    $vars['breadcrumbs'] = $plugin_block->build();
   }
 }
 
-function expo2020_theme(){
+function expo2020_theme() {
   return [
     'global_fulltext_search_theme_wrapper' => ['render element' => 'element',],
   ];
 }
 
-function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'){
+function _expo2020_convert_taxonomy_type_select_to_links(&$form, $type = 'news') {
 
   $form['field_news_media_type_target_id']['#prefix'] = '<div class="invisible">';
   $form['field_news_media_type_target_id']['#suffix'] = '</div>';
 
-  if (!empty($form['field_news_media_type_target_id']['#options'])){
+  if (!empty($form['field_news_media_type_target_id']['#options'])) {
 
     $type_filter_links = [
-      '#type' => 'container',
+      '#type'       => 'container',
       '#attributes' => [
         'class' => [
           $type == 'news' ? 'news-types-filter-container' : 'event-types-filter-container',
@@ -653,8 +652,8 @@ function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'
       ],
     ];
 
-//    $current_url_str = $type == 'news' ? "{$form['#action']}?combine={$form['combine']['#value']}"
-//      : "{$form['#action']}?combine={$form['combine']['#value']}&field_event_date_value[min]={$form['field_event_date_value']['min']['#value']}&field_event_date_value[max]={$form['field_event_date_value']['max']['#value']}";
+    //    $current_url_str = $type == 'news' ? "{$form['#action']}?combine={$form['combine']['#value']}"
+    //      : "{$form['#action']}?combine={$form['combine']['#value']}&field_event_date_value[min]={$form['field_event_date_value']['min']['#value']}&field_event_date_value[max]={$form['field_event_date_value']['max']['#value']}";
 
     if ($type == 'news') {
       $anchor_id = 'block-newstopcontenttext';
@@ -665,23 +664,23 @@ function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'
       $class_to_add = 'event-type-filter-links';
     }
 
-    foreach ($form['field_news_media_type_target_id']['#options'] as $tid => $t_name){
+    foreach ($form['field_news_media_type_target_id']['#options'] as $tid => $t_name) {
 
       $active = ($form['field_news_media_type_target_id']['#value'] == $tid) ? ' active' : '';
 
       if ($tid != 'All') {
         $term = Term::load($tid);
 
-        if (empty($term)){
+        if (empty($term)) {
           continue;
         }
 
         $icon = empty($term->field_fontawesome_icon[0]->value) ? '' : $term->field_fontawesome_icon[0]->value;
 
         $type_filter_links[mb_strtolower($t_name)] = [
-          '#title' => ['#markup' => (mb_strtolower($t_name) == 'twitter' && $type == 'news') ? $icon : $icon . t($t_name)],
-          '#type' => 'link',
-          '#url' =>  \Drupal\Core\Url::fromUserInput("{$form['#action']}?field_news_media_type_target_id={$tid}#{$anchor_id}"),
+          '#title'   => ['#markup' => (mb_strtolower($t_name) == 'twitter' && $type == 'news') ? $icon : $icon . t($t_name)],
+          '#type'    => 'link',
+          '#url'     => \Drupal\Core\Url::fromUserInput("{$form['#action']}?field_news_media_type_target_id={$tid}#{$anchor_id}"),
           '#options' => [
             'attributes' => [
               'class' => $class_to_add . $active,
@@ -691,9 +690,9 @@ function _expo2020_convert_taxonomy_type_select_to_links(&$form , $type = 'news'
       }
       else {
         $type_filter_links['all'] = [
-          '#title' => t('ALL'),
-          '#type' => 'link',
-          '#url' =>  \Drupal\Core\Url::fromUserInput("{$form['#action']}?field_news_media_type_target_id=All#{$anchor_id}"),
+          '#title'   => t('ALL'),
+          '#type'    => 'link',
+          '#url'     => \Drupal\Core\Url::fromUserInput("{$form['#action']}?field_news_media_type_target_id=All#{$anchor_id}"),
           '#options' => [
             'attributes' => [
               'class' => $class_to_add . $active,
@@ -719,21 +718,21 @@ function expo2020_preprocess_node(&$variables) {
   ];
 
   if (!empty($variables['node'])
-      && in_array($variables['node']->getType(),$types_with_special_bc)){
+      && in_array($variables['node']->getType(), $types_with_special_bc)) {
     $block_manager = \Drupal::service('plugin.manager.block');
     $plugin_block = $block_manager->createInstance('system_breadcrumb_block');
 
-    $variables['breadcrumbs'] =  $plugin_block->build();
+    $variables['breadcrumbs'] = $plugin_block->build();
   }
 
 }
 
-function expo2020_preprocess_superfish_menu_items(&$vars){
+function expo2020_preprocess_superfish_menu_items(&$vars) {
   if (!empty($vars['menu_items'])) {
     foreach ($vars['menu_items'] as $key => $menu_item) {
       if (!empty($menu_item['children']) && isset($menu_item['link_menuparent'])) {
         $vars['menu_items'][$key]['link_menuparent']['#title'] = [
-          '#markup' => $menu_item['link_menuparent']['#title'] . '<span class="sf-fas-menu-icon"><i class="fas fa-chevron-down"></i></span>'
+          '#markup' => $menu_item['link_menuparent']['#title'] . '<span class="sf-fas-menu-icon"><i class="fas fa-chevron-down"></i></span>',
         ];
       }
     }
