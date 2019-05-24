@@ -1792,8 +1792,8 @@ td.is-active {
        object-fit: cover; }
   .parallax-banner .image-credit {
     position: absolute;
-    left: 2rem;
-    top: 2rem;
+    right: 2rem;
+    bottom: 16rem;
     z-index: 10;
     color: #fff;
     font-family: 'Open Sans', sans-serif;
@@ -4415,7 +4415,7 @@ nav.tabs {
   #block-bean-homepage-banner .spacer {
     display: none !important; }
   #block-bean-homepage-banner .texts {
-    padding: 1rem;
+    padding: 3rem 1rem;
     background-image: url(/themes/custom/expo2020/assets/dist/images/texture.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -4423,7 +4423,7 @@ nav.tabs {
     position: relative;
     top: auto;
     left: auto;
-    height: 200px; }
+    height: 250px; }
     #block-bean-homepage-banner .texts .text,
     #block-bean-homepage-banner .texts .inner {
       position: absolute;
@@ -4433,9 +4433,13 @@ nav.tabs {
     #block-bean-homepage-banner .texts .text {
       text-align: center; } }
 
+@media (max-width: 575.98px) {
+  #block-bean-homepage-banner .texts {
+    height: 220px; } }
+
 @media only screen and (max-width: 480px) {
   #block-bean-homepage-banner .texts {
-    height: 150px; } }
+    height: 200px; } }
 
 .user-logged-in #header {
   top: 80px !important; }
