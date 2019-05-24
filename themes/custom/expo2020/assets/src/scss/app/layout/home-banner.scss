@@ -177,6 +177,14 @@
   }
 }
 
+@include media-breakpoint-down(xs) { //576px
+  #block-bean-homepage-banner {
+    .texts {
+      height: 170px;
+    }
+  }
+}
+
 @media only screen and (max-width: 480px) {
   #block-bean-homepage-banner {
     .texts {
