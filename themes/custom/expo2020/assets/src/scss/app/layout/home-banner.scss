@@ -152,7 +152,7 @@
     }
 
     .texts{
-      padding: $spacer*1;
+      padding: $spacer*3 1rem;
       background-image: url('~@/images/texture.svg');
       background-repeat: no-repeat;
       background-size: cover;
@@ -160,7 +160,7 @@
       position: relative;
       top: auto;
       left: auto;
-      height: 200px;
+      height: 250px;
 
       .text,
       .inner{
@@ -177,10 +177,18 @@
   }
 }
 
+@include media-breakpoint-down(xs) { //576px
+  #block-bean-homepage-banner {
+    .texts {
+      height: 220px;
+    }
+  }
+}
+
 @media only screen and (max-width: 480px) {
   #block-bean-homepage-banner {
     .texts {
-      height: 150px;
+      height: 200px;
     }
   }
 }
