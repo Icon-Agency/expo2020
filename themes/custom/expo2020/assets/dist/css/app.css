@@ -3224,10 +3224,13 @@ img.blur {
       opacity: 0.7; }
     @media (max-width: 1199.98px) {
       #header .site-logo {
-        max-width: 200px; } }
+        max-width: 200px; }
+        #header .site-logo img {
+          max-width: 200px;
+          height: auto; } }
     #header .site-logo img {
-      width: 100%;
-      height: 100%;
+      width: 280px;
+      height: 105px;
       -o-object-fit: contain;
          object-fit: contain; }
   #header #block-mainnavigation-2.block-superfish {
