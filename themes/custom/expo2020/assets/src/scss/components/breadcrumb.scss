@@ -49,3 +49,22 @@
     display: none;
   }
 }
+
+.path-sitemap {
+  #block-expo2020-breadcrumbs {
+    ol {
+      .breadcrumb-item:first-child {
+        display: none;
+      }
+
+      li {
+        &.active {
+          margin-left: -1rem;
+          &:before {
+            content: '';
+          }
+        }
+      }
+    }
+  }
+}

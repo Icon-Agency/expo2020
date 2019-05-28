@@ -841,7 +841,7 @@
   }
   .showcase {
     .row {
-      margin-top: 2rem;
+      margin-top: 2rem auto;
     }
   }
   .map-img {
@@ -875,6 +875,9 @@
   .extra-pavilion {
     .text-under {
       padding: 2rem;
+      .row {
+        margin: auto;
+      }
     }
   }
   .latest-news {
@@ -1118,6 +1121,7 @@
     }
     .inline-partner-logo {
       margin: 2rem;
+      height: 200px;
     }
   }
   .node--type-contact .breadcrumb-n-title-container img {
@@ -1145,8 +1149,8 @@
   }
   .parallax-banner {
     .image-credit {
-      left: 1rem;
-      top: 1rem;
+      right: 1rem;
+      bottom: 1rem;
     }
   }
   .slider-container {
