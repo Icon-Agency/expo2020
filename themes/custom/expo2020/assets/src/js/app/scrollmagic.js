@@ -9,9 +9,6 @@ window.jQuery = $;
 
 export default class Scrollmagic {
   constructor() {
-
-		window.test = this;
-
     this.pinSliderController = new ScrollMagic.Controller();
 
     this.init();
@@ -19,6 +16,9 @@ export default class Scrollmagic {
 
 	pinSliderInit() {
 		$('body').addClass('pinSlider-active');
+
+    this.pinSliderController = new ScrollMagic.Controller();
+
 		// define movement of panels
 		var wipeAnimation = new TimelineMax()
 			.fromTo("#slideContainer .panel-p1", 10, {y: "100%"}, {
@@ -44,7 +44,7 @@ export default class Scrollmagic {
 
 	pinSliderDestroy() {
 			$('body').removeClass('pinSlider-active');
-			this.pinSliderScene.destroy(true);
+			$('#pinSlider .panel').removeAttr('style');
 			this.pinSliderController.destroy(true);
 	}
 
@@ -57,13 +57,13 @@ export default class Scrollmagic {
       || $body.hasClass('node--type-opportunities')) {
 			var breakpoint = 768;
 
-			var _this = this;
 
+			// Create/destroy Pinned Slider depending on screen width
 			$(window).resize(_.debounce(function () {
 				if ($(window).width() < breakpoint) {
 					this.pinSliderDestroy();
 				} else if (!$('body').hasClass('pinSlider-active')) {
-					//	_this.pinSliderInit();
+					this.pinSliderInit();
 				}
 			}.bind(this)));
 
