@@ -29,19 +29,23 @@
     margin-right: $grid-gutter-width/2;
 
     @include media-breakpoint-down(lg) {
-      max-width: 200px;
+      max-width: 220px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+
       img {
-        max-width: 200px;
+        max-width: 220px;
         height: auto;
       }
     }
 
     width: 280px;
-    height: 105px;
+    padding-top: 32px;
+    padding-bottom: 32px;
 
     img {
       width: 280px;
-      height: 105px;
+      height: 47px;
       object-fit: contain;
     }
   }

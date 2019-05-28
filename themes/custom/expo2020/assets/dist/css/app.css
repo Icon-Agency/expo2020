@@ -3219,18 +3219,21 @@ img.blur {
     margin-top: -0.8rem;
     margin-right: 15px;
     width: 280px;
-    height: 105px; }
+    padding-top: 32px;
+    padding-bottom: 32px; }
     #header .site-logo:hover, #header .site-logo:active, #header .site-logo:focus {
       opacity: 0.7; }
     @media (max-width: 1199.98px) {
       #header .site-logo {
-        max-width: 200px; }
+        max-width: 220px;
+        padding-top: 12px;
+        padding-bottom: 12px; }
         #header .site-logo img {
-          max-width: 200px;
+          max-width: 220px;
           height: auto; } }
     #header .site-logo img {
       width: 280px;
-      height: 105px;
+      height: 47px;
       -o-object-fit: contain;
          object-fit: contain; }
   #header #block-mainnavigation-2.block-superfish {
