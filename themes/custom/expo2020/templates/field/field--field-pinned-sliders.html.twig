@@ -56,7 +56,7 @@
                           <div class="animatable colour-{{ item['content']['#paragraph'].field_text_colour.value }}">
                               {{ item['content']['#paragraph'].field_content.value|raw }}
                               {% if item['content']['#paragraph'].field_link.0.url %}
-                              <a class="btn btn-primary btn-{{ item['content']['#paragraph'].field_button_colour.value }}" href="{{ item['content']['#paragraph'].field_link.0.url }}">
+                              <a target="_blank" class="btn btn-primary btn-{{ item['content']['#paragraph'].field_button_colour.value }}" href="{{ item['content']['#paragraph'].field_link.0.url }}">
                                   {{ item['content']['#paragraph'].field_link.0.title }}
                               </a>
                               {% endif %}
