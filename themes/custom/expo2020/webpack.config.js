@@ -36,7 +36,7 @@ module.exports = env => {
     },
 
     entry: {
-      app: resolve('assets/src/js/app.js'),
+      app: [resolve('node_modules/@babel/polyfill'), resolve('assets/src/js/app.js')],
       vendors: resolve('assets/src/scss/vendors.scss'),
       editor: resolve('assets/src/scss/editor.scss'),
     },

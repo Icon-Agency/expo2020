@@ -3859,7 +3859,6 @@ img.blur {
     .menu--quick-menu-news-and-events nav li {
       position: relative;
       width: 100%;
-      min-height: 1px;
       padding-right: 15px;
       padding-left: 15px;
       width: unset;
@@ -3977,7 +3976,6 @@ label + small.description {
   .context--stories-search .region-content-search .filter-text {
     position: relative;
     width: 100%;
-    min-height: 1px;
     padding-right: 15px;
     padding-left: 15px; }
     @media (min-width: 576px) {
@@ -3992,7 +3990,6 @@ label + small.description {
 .context--stories-search .region-content-search .block {
   position: relative;
   width: 100%;
-  min-height: 1px;
   padding-right: 15px;
   padding-left: 15px; }
   @media (min-width: 576px) {
@@ -4036,7 +4033,6 @@ label + small.description {
 .context--news-search .region-content-search .block {
   position: relative;
   width: 100%;
-  min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
   -webkit-box-flex: 0;
@@ -4061,7 +4057,7 @@ label + small.description {
   .webform-submission-form .form-select {
     padding-top: .75rem;
     padding-bottom: .75rem;
-    height: calc(2.78125rem + 2px); }
+    height: calc(1.5em + 1rem + 2px); }
   .webform-submission-form .intro {
     border-radius: 0.5rem;
     background-color: #fff;
