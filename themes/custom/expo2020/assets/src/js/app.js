@@ -29,7 +29,7 @@ new Scrollmagic();
 
   var homeBanners = {
 
-    duration: 3500,
+    duration: 3888,
     delay: 6000,
 
     init: function() {
@@ -70,7 +70,7 @@ new Scrollmagic();
       this.imgDivs.eq(this.start).css('background-image', 'url(' + this.imgDivs.eq(this.start).data('img-src') + ')');
       this.imgDivs.eq(this.start).addClass('current').show();
 
-      this.txtDivs.eq(this.start).addClass('current').fadeIn(this.duration);
+      this.txtDivs.eq(this.start).addClass('current').fadeTo(500, 1);
 
       this.imgCreDivs.eq(this.start).addClass('current').show();
 
@@ -118,14 +118,14 @@ new Scrollmagic();
         .waitForImages(function() {
 
           that.imgDivs.removeClass('current');
-          that.txtDivs.removeClass('current').fadeOut(that.duration);
+          //that.txtDivs.removeClass('current').fadeTo(that.duration, 0);
           that.imgCreDivs.removeClass('current');
 
-          $now.css('z-index', 10).fadeIn(that.duration).addClass('current');
+          $now.css('z-index', 10).fadeTo(that.duration, 1).addClass('current');
 
-          $txt.hide().fadeIn(that.duration).addClass('current');
+          //$txt.hide().fadeTo(10, 1).addClass('current');
 
-          $imgcre.css('z-index', 10).fadeIn(that.duration).addClass('current');
+          $imgcre.css('z-index', 10).fadeTo(that.duration, 1).addClass('current');
 
           if ($(window).width() > 768) {
             // Shapes

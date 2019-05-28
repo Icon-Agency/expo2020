@@ -1714,6 +1714,14 @@ td.is-active {
 .node--type-home-page #block-expo2020-breadcrumbs {
   display: none; }
 
+.path-sitemap #block-expo2020-breadcrumbs ol .breadcrumb-item:first-child {
+  display: none; }
+
+.path-sitemap #block-expo2020-breadcrumbs ol li.active {
+  margin-left: -1rem; }
+  .path-sitemap #block-expo2020-breadcrumbs ol li.active:before {
+    content: ''; }
+
 #block-expo2020countdown {
   margin: 5rem 0; }
   #block-expo2020countdown h2 {
@@ -5262,6 +5270,12 @@ nav.tabs {
   .node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .partners-with-background:last-child .inline-partner-logo:hover,
   .node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .view-display-id-official_providers .inline-partner-logo:hover {
     border: 1px solid #0E0E8B; }
+  .node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .partners-with-background:last-child .inline-partner-logo img,
+  .node--type-sponsors-partners-landing-page.node--view-mode-full .field--name-field-multi-s-n-p-listing .view-display-id-official_providers .inline-partner-logo img {
+    width: 170px;
+    height: 170px;
+    -o-object-fit: contain;
+       object-fit: contain; }
 
 .node--type-sponsors-partners-landing-page.node--view-mode-full .pavilion-welcome {
   background-color: #fff;
@@ -6184,7 +6198,7 @@ nav.tabs {
   .slick-next {
     top: 40%; }
   .showcase .row {
-    margin-top: 2rem; }
+    margin-top: 2rem auto; }
   .map-img {
     min-height: 200px; }
     .map-img h2 {
@@ -6201,6 +6215,8 @@ nav.tabs {
     margin-left: 0; }
   .extra-pavilion .text-under {
     padding: 2rem; }
+    .extra-pavilion .text-under .row {
+      margin: auto; }
   .latest-news .news-section {
     margin-bottom: -2rem; }
   .pavilion-text-before-slider {
@@ -6339,7 +6355,8 @@ nav.tabs {
     text-align: center;
     margin: auto; }
   .view-id-sponsors_partners_views_listing .inline-partner-logo {
-    margin: 2rem; }
+    margin: 2rem;
+    height: 200px; }
   .node--type-contact .breadcrumb-n-title-container img {
     height: 500px; }
   .news-view-latest-news-bottom h2 {
@@ -6353,8 +6370,8 @@ nav.tabs {
   body h2 {
     font-size: 1.5rem; }
   .parallax-banner .image-credit {
-    left: 1rem;
-    top: 1rem; }
+    right: 1rem;
+    bottom: 1rem; }
   .slider-container {
     padding: 0; }
     .slider-container .container {
