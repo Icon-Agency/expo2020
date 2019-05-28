@@ -29,26 +29,28 @@ new Scrollmagic();
 
   var homeBanners = {
 
-    duration: 3000,
+    duration: 30000,
     delay: 6000,
 
     init: function() {
-      var $banners = $('.banner-block-content');
       var that = this;
 
       this.banner  = $('.banner-block-content');
+      this.wrapper = $('.field-collection-container .field-collection-view');
       this.rows    = $('.field-collection-container .field-collection-view', this.banner);
-      this.total    = this.rows.length;
+      this.total   = this.rows.length;
       this.start    = 0;
       this.bootstrap = 'col-xl-6 col-lg-7 col-md-9 h-100';
 
+      this.wrapper.each(function(){
+        $(this).removeClass('hidden');
+      });
 
       // Convert all images into a div with a bg.
       this.rows.each(function(i, e){
         var $img = $('div.img', $(this));
         var $mask = $('.angled-mask', $(this));
         var $imagecredit = $('.image-credit', $(this));
-        // console.log($mask);
         $(this).wrapInner('<div class="inner"></div>');
         $(this).wrapInner('<div class="'+that.bootstrap+'"></div>');
 

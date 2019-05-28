@@ -1097,6 +1097,10 @@ body {
 .font-weight-semibold {
   font-weight: 600; }
 
+.hidden-behind {
+  z-index: -1;
+  opacity: 0; }
+
 /**
  * @file
  * Collapsible details.
