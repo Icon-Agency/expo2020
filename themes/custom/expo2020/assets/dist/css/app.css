@@ -5254,7 +5254,8 @@ nav.tabs {
   #block-partnerssecondheader p {
     margin-bottom: 0; }
   #block-partnerssecondheader a {
-    border-bottom: 3px solid #FFA826; }
+    border-bottom: 3px solid #FFA826;
+    display: inline-block; }
     #block-partnerssecondheader a:hover, #block-partnerssecondheader a:active {
       color: #FFA826; }
 
