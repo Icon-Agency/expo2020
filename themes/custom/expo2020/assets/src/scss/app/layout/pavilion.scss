@@ -52,6 +52,10 @@
       margin-top: 1rem;
     }
   }
+  .pavilion-layer-top {
+    position: absolute;
+  }
+
   .pavilion-banner-title {
     color: white;
     line-height: 1.2;
@@ -178,7 +182,7 @@
 #block-partnerslandingpageheader {
   #parallax-container {
     .parallax-div {
-      margin-top: 109px;
+      margin-top: 115px;
     }
   }
 }
