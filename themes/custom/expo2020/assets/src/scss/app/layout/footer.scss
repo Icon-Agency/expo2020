@@ -86,6 +86,9 @@
             .form-trigger.submit {
                 background-color: $primary-turquoise;
                 border: none;
+                -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                border-radius: 0;
                 color: $body-color;
                 font-family: $font-family-rubik;
                 font-weight: 600;
