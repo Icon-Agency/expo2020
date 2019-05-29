@@ -55,8 +55,7 @@ export default class Scrollmagic {
     if ($body.hasClass('node--type-home-page')
       || $body.hasClass('node--type-pavilion-landing-page')
       || $body.hasClass('node--type-opportunities')) {
-			var breakpoint = 768;
-
+			var breakpoint = 768; // Change this to determain when the pinSlider will enable/disable
 
 			// Create/destroy Pinned Slider depending on screen width
 			$(window).resize(_.debounce(function () {
@@ -74,7 +73,6 @@ export default class Scrollmagic {
 			}
 
       // Pips
-      
        $.fn.isInViewport = function () {
          var elementTop = $(this).offset().top;
          var viewportTop = $(window).scrollTop();
