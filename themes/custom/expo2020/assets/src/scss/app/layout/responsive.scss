@@ -755,6 +755,7 @@
 			bottom: 12px;
 			display: flex;
 			align-items: flex-end;
+			padding: 0 1rem;
 			padding-bottom: 5rem;
 		}
 
@@ -775,21 +776,21 @@
 
 		.image-courtesy {
 			margin-top: 0;
-			padding: 1rem;
+			padding: 0 1rem 1rem 2rem;
 		}
 
 		h2  {
 			font-size: $h1-font-size;
-			line-height: $h1-font-size;
+			line-height: 1.125;
 			color: #fff!important;
 			margin: 0;
 			margin-bottom: 2rem;
 		}
 
-		p  {
+		.animatable p  {
 			//font-size: $h5-font-size;
 			margin: 0;
-			margin-bottom: 2rem;
+			margin-bottom: 2.5rem;
 			width: 100%;
 			color: #fff!important;
 		}
