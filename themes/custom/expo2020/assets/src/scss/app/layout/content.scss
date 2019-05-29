@@ -283,6 +283,7 @@
   }
   a {
     border-bottom: 3px solid $primary-brown;
+    display: inline-block;
     &:hover, &:active {
       color: $primary-brown;
     }
