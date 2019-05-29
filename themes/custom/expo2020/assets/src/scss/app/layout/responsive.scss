@@ -735,10 +735,6 @@
   }
 }
 @include media-breakpoint-down(sm) {  //768px
-
-	.banner {
-		border: 2px green solid;
-	} 	
 	
 	#pinSlider{
 		position: relative;
