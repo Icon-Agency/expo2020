@@ -733,6 +733,9 @@
       }
     }
   }
+  .parallax-banner .image-credit-partner {
+    bottom: 13rem;
+  }
 }
 @include media-breakpoint-down(sm) {  //768px
   #parallax-container {
