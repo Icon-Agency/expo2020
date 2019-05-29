@@ -387,7 +387,7 @@
       }
     }
     .upper-container {
-      padding: 1rem 5rem;
+      padding: 1rem 0;
       height: 100%;
       display: flex;
       justify-content: center;
@@ -404,12 +404,12 @@
 
 .view-id-sponsors_partners_views_listing {
   padding-bottom: 5rem;
-  .view-content {
+  /*.view-content {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
+  }*/
   .five-items-wrap {
     display: flex;
     width: 100%;

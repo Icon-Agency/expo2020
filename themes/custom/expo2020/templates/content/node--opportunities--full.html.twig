@@ -156,7 +156,7 @@
 <script type="text/javascript">
     var mobile = window.matchMedia("(max-width: 768px)");
     if(!mobile.matches) {
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', function() {
             let parent = document.getElementById('parallax-container');
             let children = parent.getElementsByClassName('parallax-div');
             for(let i = 0; i < children.length; i++) {
