@@ -29,7 +29,7 @@ new Scrollmagic();
 
   var homeBanners = {
 
-    duration: 3888,
+    duration: 5858,
     delay: 6000,
 
     init: function() {
