@@ -1,0 +1,7 @@
+name: Dubai Expo 2020 general custom module
+type: module
+description: 'Provide general customisation for dubai expo 2020 site'
+# core: 8.x
+dependencies:
+- drupal:views
+core: '8.x'
