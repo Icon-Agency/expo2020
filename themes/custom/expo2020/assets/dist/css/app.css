@@ -1987,7 +1987,7 @@ h1.accent {
 
 .image-courtesy {
   font-family: 'Open Sans', sans-serif;
-  font-size: 15px !important;
+  font-size: 12px !important;
   color: #fff;
   margin-top: -10rem;
   padding-left: 15px; }
@@ -2241,6 +2241,9 @@ img.blur {
   -webkit-filter: blur(3px);
   /* Safari 6.0 - 9.0 */
   filter: blur(3px); }
+
+.img-mobile {
+  display: none; }
 
 .latest-news,
 .view-display-id-news_listing_page,
@@ -6139,6 +6142,56 @@ nav.tabs {
     bottom: 13rem; } }
 
 @media (max-width: 767.98px) {
+  #pinSlider {
+    position: relative; }
+    #pinSlider div {
+      height: auto; }
+    #pinSlider .panel {
+      position: relative;
+      height: calc(100vh - 100px); }
+    #pinSlider .slide {
+      position: absolute;
+      top: auto;
+      left: 0;
+      bottom: 12px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+      padding: 0 1rem;
+      padding-bottom: 5rem; }
+    #pinSlider .slide .animatable {
+      -webkit-transform: none;
+              transform: none; }
+    #pinSlider .img-mobile {
+      display: block; }
+    #pinSlider .img-desktop {
+      display: none; }
+    #pinSlider .pips {
+      display: none; }
+    #pinSlider .panel > .container {
+      position: absolute;
+      bottom: -1rem;
+      left: 0;
+      right: 0; }
+    #pinSlider .image-courtesy {
+      margin-top: 0;
+      padding: 0 1rem 1rem 2rem; }
+    #pinSlider h2 {
+      font-size: 42px;
+      line-height: 1.125;
+      color: #fff !important;
+      margin: 0;
+      margin-bottom: 2rem; }
+    #pinSlider .animatable p {
+      margin: 0;
+      margin-bottom: 2.5rem;
+      width: 100%;
+      color: #fff !important; }
+    #pinSlider .btn {
+      margin-top: 0; }
   #parallax-container .pavilion-layer-top-news .news-listing-featured-title {
     font-size: 2rem; }
   .view-display-id-news_listing_page .view-display-id-latest_1_featured_middle_news .views-row .row {
@@ -6173,17 +6226,6 @@ nav.tabs {
     padding-right: 30px; }
   .view-display-id-news_listing_page .news {
     padding-top: 2rem !important; }
-  #pinSlider .pips {
-    right: 20px;
-    top: 5rem; }
-  #pinSlider .slide {
-    top: 40rem;
-    left: 1rem; }
-    #pinSlider .slide h2 {
-      font-size: 2rem; }
-    #pinSlider .slide p {
-      width: 90%;
-      font-size: 20px; }
   .partners {
     padding-top: 2rem; }
   .slick-slide h2.accent {
