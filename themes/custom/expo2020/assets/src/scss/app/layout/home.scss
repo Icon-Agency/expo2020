@@ -241,7 +241,7 @@ h1.accent {
 
 .image-courtesy {
   font-family: 'Open Sans', sans-serif;
-  font-size: 15px !important;
+  font-size: 12px !important;
   color: $white;
   margin-top: -10rem;
   padding-left: 15px;
@@ -451,4 +451,9 @@ h1.accent {
 img.blur {
   -webkit-filter: blur(3px); /* Safari 6.0 - 9.0 */
   filter: blur(3px);
+}
+
+
+.img-mobile  {
+	display: none;
 }
