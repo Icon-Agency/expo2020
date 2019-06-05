@@ -6165,8 +6165,10 @@ nav.tabs {
     #pinSlider .slide .animatable {
       -webkit-transform: none;
               transform: none; }
-    #pinSlider .img-mobile {
-      display: block; }
+    #pinSlider .panel .img-mobile {
+      display: block;
+      -o-object-position: top;
+         object-position: top; }
     #pinSlider .img-desktop {
       display: none; }
     #pinSlider .pips {

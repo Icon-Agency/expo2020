@@ -766,8 +766,9 @@
 			transform: none;
 		}
 
-		.img-mobile  {
+		.panel .img-mobile  {
 			display: block;
+			object-position: top;
 		}
 
 		.img-desktop  {
