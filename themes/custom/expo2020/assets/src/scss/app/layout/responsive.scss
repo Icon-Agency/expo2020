@@ -748,7 +748,8 @@
 
 		.panel {
 			position: relative;
-			height: calc(100vh - 100px);
+			height: calc(100vh - 76px);
+			min-height: 830px;
 		}
 
 		.slide {
