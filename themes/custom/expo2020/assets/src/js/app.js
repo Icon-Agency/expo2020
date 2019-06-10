@@ -26,7 +26,6 @@ new Scrollmagic();
 (function ($, Drupal) {
   'use strict';
 
-
   var homeBanners = {
 
     duration: 5858,
@@ -41,6 +40,8 @@ new Scrollmagic();
       this.total   = this.rows.length;
       this.start    = 0;
       this.bootstrap = 'col-xl-6 col-lg-7 col-md-9 h-100';
+
+			this.banner.fadeTo('slow', 1);
 
       this.wrapper.each(function(){
         $(this).removeClass('hidden');
